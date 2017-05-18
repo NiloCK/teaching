@@ -47,6 +47,11 @@ body {
   z-index: 10;
 }
 
+.carousel-caption-text {
+  /*background-color: rgba(0,0,0,.15);*/
+  /*background-image: radial-gradient(circle, rgba(0,0,0,.2), rgba(0,0,0,0));*/
+}
+
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
