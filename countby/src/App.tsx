@@ -7,6 +7,7 @@ import * as RX from 'reactxp'
 
 import ToggleSwitch from './ToggleSwitch';
 import AdditionProblem from './questions/addition';
+import Numpad from './components/numpad';
 
 interface AppState {
     toggleValue?: boolean;
@@ -80,26 +81,18 @@ class App extends RX.Component<null, AppState> {
         return (
             <RX.View style={styles.container}>
                 <RX.Animated.Text style={[styles.helloWorld, this._animatedStyle]}>
-                    This has been edited
+                    Hi there!
                 </RX.Animated.Text>
                 <RX.Text style={styles.welcome}>
                     Welcome to ReactXP
                 </RX.Text>
-                <RX.Text style={styles.instructions}>
-                    Edit App.tsx to get started
-                </RX.Text>
-                <RX.Link style={styles.docLink} url={'https://microsoft.github.io/reactxp/docs'}>
-                    View ReactXP documentation
-                </RX.Link>
+
 
                 <RX.Text style={styles.toggleTitle}>
-                    Here is a simple control built using ReactXP
+                    Here is a work-in-progress implementation of a count-by numberpad visualization aide.
                 </RX.Text>
-                <ToggleSwitch
-                    value={this.state.toggleValue}
-                    onChange={this._onChangeToggle}
-                />
-                <AdditionProblem a={4} b={6} />
+
+                <Numpad num={4} />
 
             </RX.View>
         );
