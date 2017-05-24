@@ -15,7 +15,7 @@ export default class Recorder {
 
     static addRecord(record: object) {
         let records = Recorder.getRecord();
-        console.log('Records: ' + records.toString());
+        // console.log('Records: ' + records.toString());
 
         records.push(record);
 
