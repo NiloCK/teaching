@@ -17,7 +17,6 @@ const styles = {
 class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplicationProblemProps, null> {
     a: number;
     b: number;
-    inputBox: any; // actually an HTMLInputElement
 
     constructor(props: SingleDigitMultiplicationProblemProps) {
         super(props);
@@ -37,7 +36,7 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
                     </div>
                     <form onSubmit={this.submit.bind(this)}>
                         <input className="mousetrap"
-                            ref={(input) => { this.inputBox = input; }}
+                            autoFocus
                             id="answer" type="number" autoComplete={false} />
                         <button>Submit</button>
                     </form>
@@ -45,10 +44,6 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
                 <Numpad num={this.b} />
             </RX.View>
         );
-    }
-
-    componentDidMount() {
-        this.inputBox.focus();
     }
 
     submit(e) {
