@@ -3,15 +3,14 @@
 */
 
 import * as RX from 'reactxp'
+import * as pouch from 'pouchdb-browser'
+import Recorder from './Recorder'
 
 
 import ToggleSwitch from './ToggleSwitch';
 import AdditionProblem from './questions/addition';
+import Multiplication from './questions/multiplication';
 import Numpad from './components/numpad';
-
-interface AppState {
-    toggleValue?: boolean;
-}
 
 const styles = {
     container: RX.Styles.createViewStyle({
@@ -45,9 +44,17 @@ const styles = {
     })
 };
 
+interface AppState {
+    record: Array<object>
+}
+
 class App extends RX.Component<null, AppState> {
     private _translationValue: RX.Animated.Value;
     private _animatedStyle: RX.Types.AnimatedTextStyleRuleSet;
+
+    newQuestion() {
+        console.log("a new question is being generated"); //todo
+    }
 
     constructor() {
         super();
@@ -61,9 +68,6 @@ class App extends RX.Component<null, AppState> {
             ]
         });
 
-        this.state = {
-            toggleValue: true
-        };
     }
 
     componentDidMount() {
@@ -84,7 +88,7 @@ class App extends RX.Component<null, AppState> {
                     Hi there!
                 </RX.Animated.Text>
                 <RX.Text style={styles.welcome}>
-                    Welcome to ReactXP
+                    Let's get a little practice with our multiplication and division facts.
                 </RX.Text>
 
 
@@ -92,7 +96,7 @@ class App extends RX.Component<null, AppState> {
                     Here is a work-in-progress implementation of a count-by numberpad visualization aide.
                 </RX.Text>
 
-                <Numpad num={4} />
+                <Multiplication a={3} b={7} onanswer={this.newQuestion.bind(this)} />
 
             </RX.View>
         );
@@ -103,9 +107,9 @@ class App extends RX.Component<null, AppState> {
     // that each time we pass the variable as a prop in the render function, it will
     // not change. We want to avoid unnecessary prop changes because this will trigger
     // extra work within React's virtual DOM diffing mechanism.
-    private _onChangeToggle = (newValue: boolean) => {
-        this.setState({ toggleValue: newValue });
-    }
+    // private _onChangeToggle = (newValue: boolean) => {
+    //     this.setState({ toggleValue: newValue });
+    // }
 }
 
 export = App;
