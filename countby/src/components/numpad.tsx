@@ -48,6 +48,15 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
         }
     }
 
+    shouldComponentUpdate(nextProps: NumpadProps, nextState: NumpadState) {
+        if (nextProps) {
+            this.setState({
+                counted: 0
+            })
+        }
+        return true;
+    }
+
     componentDidMount() {
         mt.bind('right',
             () => {
@@ -72,7 +81,6 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
 
         return (
             <RX.View>
-                <RX.Text> {num} * {counted} = {num * counted} </RX.Text>
                 <div>
                     {keys.map((keyrow) => {
                         return this.renderKeyRow(keyrow);

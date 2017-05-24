@@ -8,21 +8,41 @@ interface SingleDigitMultiplicationProblemProps extends RX.CommonProps {
     onanswer: Function;
 }
 
+interface MultState {
+    count: number;
+}
+
 const styles = {
     form: RX.Styles.createViewStyle({
         flexDirection: "row"
     })
 }
 
-class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplicationProblemProps, null> {
+class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplicationProblemProps, MultState> {
     a: number;
     b: number;
+
 
     constructor(props: SingleDigitMultiplicationProblemProps) {
         super(props);
 
         this.a = props.a;
         this.b = props.b;
+
+        this.state = {
+            count: 0
+        }
+    }
+
+
+
+    shouldComponentUpdate(nextProps: SingleDigitMultiplicationProblemProps) {
+        console.log("considering an update...");
+        console.log(this.props);
+        console.log(this.state);
+
+        this.forceUpdate();
+        return true;
     }
 
     render() {
@@ -32,7 +52,7 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
                 <RX.View style={styles.form}>
 
                     <div>
-                        {this.a} &times; {this.b} =&nbsp;
+                        {this.props.a} &times; {this.props.b} =&nbsp;
                     </div>
                     <form onSubmit={this.submit.bind(this)}>
                         <input className="mousetrap"
@@ -41,23 +61,26 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
                         <button>Submit</button>
                     </form>
                 </RX.View>
-                <Numpad num={this.b} />
+                <Numpad num={this.props.b} />
             </RX.View>
         );
     }
 
     submit(e) {
         e.preventDefault();
-        let userans = parseInt(document.getElementById('answer').value);
+        let input = document.getElementById('answer');
+        let userans = parseInt(input.value);
 
         console.log("I'm beind called!");
         Recorder.addRecord({
             q: 'multiplication',
-            a: this.a,
-            b: this.b,
+            a: this.props.a,
+            b: this.props.b,
             answer: userans,
-            correct: (this.a * this.b === userans)
+            correct: (this.props.a * this.props.b === userans)
         });
+
+        input.value = "";
 
         this.props.onanswer();
 

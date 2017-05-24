@@ -17079,6 +17079,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var RX = __webpack_require__(74);
+var Recorder_1 = __webpack_require__(507);
 var multiplication_1 = __webpack_require__(506);
 var styles = {
     container: RX.Styles.createViewStyle({
@@ -17111,6 +17112,14 @@ var styles = {
         color: 'black'
     })
 };
+function randDigit() {
+    return getRandomInt(0, 10);
+}
+;
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+;
 var App = (function (_super) {
     __extends(App, _super);
     function App() {
@@ -17123,10 +17132,18 @@ var App = (function (_super) {
                 }
             ]
         });
+        _this.state = {
+            currentQ: [randDigit(), randDigit()],
+            record: Recorder_1.default.getRecord()
+        };
         return _this;
     }
     App.prototype.newQuestion = function () {
-        console.log("a new question is being generated"); //todo
+        console.log("a new question is being generated");
+        this.setState({
+            record: this.state ? this.state.record : Recorder_1.default.getRecord(),
+            currentQ: [randDigit(), randDigit()]
+        });
     };
     App.prototype.componentDidMount = function () {
         var animation = RX.Animated.timing(this._translationValue, {
@@ -17140,8 +17157,19 @@ var App = (function (_super) {
         return (RX.createElement(RX.View, { style: styles.container },
             RX.createElement(RX.Animated.Text, { style: [styles.helloWorld, this._animatedStyle] }, "Hi there!"),
             RX.createElement(RX.Text, { style: styles.welcome }, "Let's get a little practice with our multiplication and division facts."),
-            RX.createElement(RX.Text, { style: styles.toggleTitle }, "Here is a work-in-progress implementation of a count-by numberpad visualization aide."),
-            RX.createElement(multiplication_1.default, { a: 3, b: 7, onanswer: this.newQuestion.bind(this) })));
+            RX.createElement(RX.Text, { style: styles.toggleTitle }, "Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!"),
+            this.renderCurrentQ()));
+    };
+    App.prototype.renderCurrentQ = function () {
+        console.log("Trying to render");
+        var nums;
+        if (this.state) {
+            nums = this.state.currentQ;
+        }
+        else {
+            nums = [randDigit(), randDigit()];
+        }
+        return RX.createElement(multiplication_1.default, { a: nums[0], b: nums[1], onanswer: this.newQuestion.bind(this) });
     };
     return App;
 }(RX.Component));
@@ -17194,6 +17222,14 @@ var Numpad = (function (_super) {
         };
         return _this;
     }
+    Numpad.prototype.shouldComponentUpdate = function (nextProps, nextState) {
+        if (nextProps) {
+            this.setState({
+                counted: 0
+            });
+        }
+        return true;
+    };
     Numpad.prototype.componentDidMount = function () {
         var _this = this;
         mt.bind('right', function () {
@@ -17213,14 +17249,6 @@ var Numpad = (function (_super) {
         var num = this.props.num;
         var counted = this.state.counted;
         return (RX.createElement(RX.View, null,
-            RX.createElement(RX.Text, null,
-                " ",
-                num,
-                " * ",
-                counted,
-                " = ",
-                num * counted,
-                " "),
             RX.createElement("div", null, keys.map(function (keyrow) {
                 return _this.renderKeyRow(keyrow);
             }))));
@@ -43567,7 +43595,7 @@ function hasOwnProperty(obj, prop) {
 
 var RX = __webpack_require__(74);
 var App = __webpack_require__(205);
-RX.App.initialize(true, true);
+RX.App.initialize(false, false);
 RX.UserInterface.setMainView(RX.createElement(App, null));
 
 
@@ -43607,36 +43635,44 @@ var SingleDigitMultiplicationProblem = (function (_super) {
         var _this = _super.call(this, props) || this;
         _this.a = props.a;
         _this.b = props.b;
+        _this.state = {
+            count: 0
+        };
         return _this;
     }
+    SingleDigitMultiplicationProblem.prototype.shouldComponentUpdate = function (nextProps) {
+        console.log("considering an update...");
+        console.log(this.props);
+        console.log(this.state);
+        this.forceUpdate();
+        return true;
+    };
     SingleDigitMultiplicationProblem.prototype.render = function () {
-        var _this = this;
         return (RX.createElement(RX.View, null,
             RX.createElement(RX.View, { style: styles.form },
                 RX.createElement("div", null,
-                    this.a,
+                    this.props.a,
                     " \u00D7 ",
-                    this.b,
+                    this.props.b,
                     " =\u00A0"),
                 RX.createElement("form", { onSubmit: this.submit.bind(this) },
-                    RX.createElement("input", { className: "mousetrap", ref: function (input) { _this.inputBox = input; }, id: "answer", type: "number", autoComplete: false }),
+                    RX.createElement("input", { className: "mousetrap", autoFocus: true, id: "answer", type: "number", autoComplete: false }),
                     RX.createElement("button", null, "Submit"))),
-            RX.createElement(numpad_1.default, { num: this.b })));
-    };
-    SingleDigitMultiplicationProblem.prototype.componentDidMount = function () {
-        this.inputBox.focus();
+            RX.createElement(numpad_1.default, { num: this.props.b })));
     };
     SingleDigitMultiplicationProblem.prototype.submit = function (e) {
         e.preventDefault();
-        var userans = parseInt(document.getElementById('answer').value);
+        var input = document.getElementById('answer');
+        var userans = parseInt(input.value);
         console.log("I'm beind called!");
         Recorder_1.default.addRecord({
             q: 'multiplication',
-            a: this.a,
-            b: this.b,
+            a: this.props.a,
+            b: this.props.b,
             answer: userans,
-            correct: (this.a * this.b === userans)
+            correct: (this.props.a * this.props.b === userans)
         });
+        input.value = "";
         this.props.onanswer();
         console.log(Recorder_1.default.getRecord());
     };
@@ -43667,7 +43703,7 @@ var Recorder = (function () {
     };
     Recorder.addRecord = function (record) {
         var records = Recorder.getRecord();
-        console.log('Records: ' + records.toString());
+        // console.log('Records: ' + records.toString());
         records.push(record);
         window.localStorage.setItem(key, JSON.stringify(records));
     };

@@ -3,7 +3,6 @@
 */
 
 import * as RX from 'reactxp'
-import * as pouch from 'pouchdb-browser'
 import Recorder from './Recorder'
 
 
@@ -46,15 +45,34 @@ const styles = {
 
 interface AppState {
     record: Array<object>
+    currentQ: any
 }
+
+function randDigit() {
+    return getRandomInt(0, 10);
+};
+
+function getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+
+
 
 class App extends RX.Component<null, AppState> {
     private _translationValue: RX.Animated.Value;
     private _animatedStyle: RX.Types.AnimatedTextStyleRuleSet;
 
     newQuestion() {
-        console.log("a new question is being generated"); //todo
+        console.log("a new question is being generated");
+
+        this.setState({
+            record: this.state ? this.state.record : Recorder.getRecord(),
+            currentQ: [randDigit(), randDigit()]
+        });
     }
+
+
 
     constructor() {
         super();
@@ -67,6 +85,11 @@ class App extends RX.Component<null, AppState> {
                 }
             ]
         });
+
+        this.state = {
+            currentQ: [randDigit(), randDigit()],
+            record: Recorder.getRecord()
+        };
 
     }
 
@@ -91,15 +114,26 @@ class App extends RX.Component<null, AppState> {
                     Let's get a little practice with our multiplication and division facts.
                 </RX.Text>
 
-
                 <RX.Text style={styles.toggleTitle}>
-                    Here is a work-in-progress implementation of a count-by numberpad visualization aide.
+                    Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!
                 </RX.Text>
 
-                <Multiplication a={3} b={7} onanswer={this.newQuestion.bind(this)} />
+                {this.renderCurrentQ()}
 
             </RX.View>
         );
+    }
+
+    renderCurrentQ(): JSX.Element | null {
+        console.log("Trying to render");
+        let nums: Array<number>;
+        if (this.state) {
+            nums = this.state.currentQ;
+        } else {
+            nums = [randDigit(), randDigit()];
+        }
+
+        return <Multiplication a={nums[0]} b={nums[1]} onanswer={this.newQuestion.bind(this)} />
     }
 
     // Note that we define this as a variable rather than a normal method. Using this
