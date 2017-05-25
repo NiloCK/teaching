@@ -46,6 +46,7 @@ const styles = {
 interface AppState {
     record: Array<object>
     currentQ: any
+    sessionQcount: number
 }
 
 function randDigit() {
@@ -64,12 +65,19 @@ class App extends RX.Component<null, AppState> {
     private _animatedStyle: RX.Types.AnimatedTextStyleRuleSet;
 
     newQuestion() {
-        console.log("a new question is being generated");
 
         this.setState({
             record: this.state ? this.state.record : Recorder.getRecord(),
-            currentQ: [randDigit(), randDigit()]
+            currentQ: [randDigit(), randDigit()],
+            sessionQcount: this.state ? (this.state.sessionQcount + 1) : 0
         });
+
+        console.log("a new question is being generated. " + this.state.sessionQcount + " questions completed.");
+
+
+        if (this.state.sessionQcount >= 25){
+            window.alert("You've done 25 questions! Great! Have some free time!");
+        }
     }
 
 
@@ -88,7 +96,8 @@ class App extends RX.Component<null, AppState> {
 
         this.state = {
             currentQ: [randDigit(), randDigit()],
-            record: Recorder.getRecord()
+            record: Recorder.getRecord(),
+            sessionQcount: 0
         };
 
     }
@@ -108,7 +117,7 @@ class App extends RX.Component<null, AppState> {
         return (
             <RX.View style={styles.container}>
                 <RX.Animated.Text style={[styles.helloWorld, this._animatedStyle]}>
-                    Hi there!
+                    Hello again!
                 </RX.Animated.Text>
                 <RX.Text style={styles.welcome}>
                     Let's get a little practice with our multiplication and division facts.

@@ -17165,16 +17165,21 @@ var App = (function (_super) {
         });
         _this.state = {
             currentQ: [randDigit(), randDigit()],
-            record: Recorder_1.default.getRecord()
+            record: Recorder_1.default.getRecord(),
+            sessionQcount: 0
         };
         return _this;
     }
     App.prototype.newQuestion = function () {
-        console.log("a new question is being generated");
         this.setState({
             record: this.state ? this.state.record : Recorder_1.default.getRecord(),
-            currentQ: [randDigit(), randDigit()]
+            currentQ: [randDigit(), randDigit()],
+            sessionQcount: this.state ? (this.state.sessionQcount + 1) : 0
         });
+        console.log("a new question is being generated. " + this.state.sessionQcount + " questions completed.");
+        if (this.state.sessionQcount >= 25) {
+            window.alert("You've done 25 questions! Great! Have some free time!");
+        }
     };
     App.prototype.componentDidMount = function () {
         var animation = RX.Animated.timing(this._translationValue, {
@@ -17186,7 +17191,7 @@ var App = (function (_super) {
     };
     App.prototype.render = function () {
         return (RX.createElement(RX.View, { style: styles.container },
-            RX.createElement(RX.Animated.Text, { style: [styles.helloWorld, this._animatedStyle] }, "Hi there!"),
+            RX.createElement(RX.Animated.Text, { style: [styles.helloWorld, this._animatedStyle] }, "Hello again!"),
             RX.createElement(RX.Text, { style: styles.welcome }, "Let's get a little practice with our multiplication and division facts."),
             RX.createElement(RX.Text, { style: styles.toggleTitle }, "Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!"),
             this.renderCurrentQ()));
