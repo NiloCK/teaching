@@ -18,7 +18,6 @@ class FingerCounter extends RX.Component<FingerCounterProps, null> {
             <RX.View>
                 <img src={"img/fingerCounter/" + this.props.counted + ".PNG"} alt=""/>
             </RX.View>
-            
         )
     }    
 }
