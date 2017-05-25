@@ -1,5 +1,5 @@
 .correct-true {
-    animation: greenFade 500ms;
+    animation: greenFade 500ms ease-out;
 }
 
 @keyframes greenFade {
@@ -8,7 +8,7 @@
 }
 
 .correct-false {
-    animation: purpleFade 500ms;
+    animation: purpleFade 1000ms ease-out;
 }
 
 @keyframes purpleFade {
