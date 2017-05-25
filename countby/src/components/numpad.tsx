@@ -1,5 +1,6 @@
 import * as RX from 'reactxp';
 import * as mt from 'mousetrap';
+import FingerCounter from './fingerCounter/fingerCounter'
 
 export interface NumpadProps extends RX.CommonProps {
     num: number;
@@ -86,6 +87,7 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
                         return this.renderKeyRow(keyrow);
                     })}
                 </div>
+                <FingerCounter counted={counted} />
             </RX.View>
         )
     }
