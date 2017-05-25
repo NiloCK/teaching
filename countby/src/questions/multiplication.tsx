@@ -14,7 +14,8 @@ interface MultState {
 
 const styles = {
     form: RX.Styles.createViewStyle({
-        flexDirection: "row"
+        flexDirection: "row",
+        padding: 15
     })
 }
 
@@ -86,7 +87,9 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
 
         this.animate(isCorrect);
 
-        this.props.onanswer();
+        if (isCorrect){ // only give a new question if this one was right
+            this.props.onanswer();
+        }
 
         console.log(Recorder.getRecord());
     }
