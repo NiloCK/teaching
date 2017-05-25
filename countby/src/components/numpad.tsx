@@ -61,14 +61,14 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
         mt.bind('right',
             () => {
                 this.setState({
-                    counted: (this.state.counted + 1)
+                    counted: Math.min(10, (this.state.counted + 1) )
                 });
             });
 
         mt.bind('left',
             () => {
                 this.setState({
-                    counted: (this.state.counted - 1)
+                    counted: Math.max(0, (this.state.counted - 1) )
                 });
             })
 
