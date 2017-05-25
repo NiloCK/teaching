@@ -51,7 +51,7 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
 
                 <RX.View style={styles.form}>
 
-                    <div>
+                    <div id="question">
                         {this.props.a} &times; {this.props.b} =&nbsp;
                     </div>
                     <form onSubmit={this.submit.bind(this)}>
@@ -71,23 +71,36 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
         let input = document.getElementById('answer');
         let userans = parseInt(input.value);
 
+        let isCorrect = (this.props.a * this.props.b === userans);
+
         console.log("I'm beind called!");
         Recorder.addRecord({
             q: 'multiplication',
             a: this.props.a,
             b: this.props.b,
             answer: userans,
-            correct: (this.props.a * this.props.b === userans)
+            correct: isCorrect
         });
 
         input.value = "";
+
+        this.animate(isCorrect);
 
         this.props.onanswer();
 
         console.log(Recorder.getRecord());
     }
 
-
+    animate(correct : boolean){
+        let questionDiv = document.getElementById("question");
+        questionDiv.classList.add("correct-"+correct); //todo do this in a react-way
+        setTimeout(function() {
+            console.log("Removing (in)correct class tags.");
+            
+            questionDiv.classList.remove("correct-true", "correct-false")
+        }, 1000);
+    }
+    
 }
 
 export default SingleDigitMultiplicationProblem;
