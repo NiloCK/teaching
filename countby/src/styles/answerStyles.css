@@ -15,3 +15,8 @@
     0% { background: purple;}
     100% {background: white;}
 }
+
+.finger {
+    height: 100%;
+    width: auto;
+}

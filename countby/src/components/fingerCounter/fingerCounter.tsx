@@ -5,6 +5,13 @@ export interface FingerCounterProps extends RX.CommonProps {
     counted: number;
 }
 
+const styles = {
+    img: RX.Styles.createViewStyle({
+        height: 120,
+        width: 150
+    })
+}
+
 
 class FingerCounter extends RX.Component<FingerCounterProps, null> {
 
@@ -15,8 +22,8 @@ class FingerCounter extends RX.Component<FingerCounterProps, null> {
 
     render() {
         return (
-            <RX.View>
-                <img src={"img/fingerCounter/" + this.props.counted + ".PNG"} alt=""/>
+            <RX.View style={styles.img}>
+                <img className="finger" src={"img/fingerCounter/" + this.props.counted + ".PNG"} alt=""/>
             </RX.View>
         )
     }    
