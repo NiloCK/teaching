@@ -7,6 +7,7 @@ import * as mt from 'mousetrap'
 import Recorder from './Recorder'
 
 import ToggleSwitch from './ToggleSwitch';
+import SessionReport from './components/sessionReport';
 
 import AdditionProblem from './questions/addition';
 import Multiplication from './questions/multiplication';
@@ -49,9 +50,15 @@ const styles = {
     })
 };
 
+enum ViewState {
+    QUESTIONS,
+    REPORT
+}
+
 interface AppState {
-    record: Array<object>
-    sessionQcount: number
+    record?: Array<object>
+    sessionQcount?: number
+    viewState?: ViewState
 }
 
 function randDigit() {
@@ -92,7 +99,8 @@ class App extends RX.Component<null, AppState> {
 
         this.state = {
             record: Recorder.getRecord(),
-            sessionQcount: 0
+            sessionQcount: 0,
+            viewState: ViewState.QUESTIONS
         };
 
     }
@@ -107,31 +115,48 @@ class App extends RX.Component<null, AppState> {
 
         animation.start();
 
-        mt.bind('q', () => {
-            console.log("mousetrap!");
+        // mt.bind('r', () => {
+        //     console.log("Toggling state...");
             
-            // alert(this.state.sessionQcount + " questions completed!");
-        })
+        //     this.setState({
+        //         viewState: ViewState.REPORT
+        //     })
+        // })
+        // mt.bind('q', () => {
+        //     console.log("Toggling state...");
+            
+        //     this.setState({
+        //         viewState: ViewState.QUESTIONS
+        //     })
+        // })
     }
 
     render(): JSX.Element | null {
-        return (
-            <RX.View style={styles.container}>
-                <RX.Animated.Text style={[styles.helloWorld, this._animatedStyle]}>
-                    Hello again!
-                </RX.Animated.Text>
-                <RX.Text style={styles.welcome}>
-                    Let's get a little practice with our multiplication and division facts.
-                </RX.Text>
+        switch (this.state.viewState){
+            case ViewState.QUESTIONS:
+                return (
+                    
+                    <RX.View style={styles.container}>
+                        <RX.Animated.Text style={[styles.helloWorld, this._animatedStyle]}>
+                            AHHHHHH!
+                        </RX.Animated.Text>
+                        <RX.Text style={styles.welcome}>
+                            Let's get a little practice with our multiplication and division facts.
+                        </RX.Text>
 
-                <RX.Text style={styles.toggleTitle}>
-                    Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!
-                </RX.Text>
+                        <RX.Text style={styles.toggleTitle}>
+                            Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!
+                        </RX.Text>
 
-                {this.renderCurrentQ()}
+                        {this.renderCurrentQ()}
 
-            </RX.View>
-        );
+                    </RX.View>
+                );
+            case ViewState.REPORT:
+                return (
+                    <SessionReport records={this.state.record} />
+                );
+        }
     }
 
     renderCurrentQ(): JSX.Element | null {

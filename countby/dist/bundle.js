@@ -33719,8 +33719,8 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 var RX = __webpack_require__(41);
-var mt = __webpack_require__(284);
 var Recorder_1 = __webpack_require__(122);
+var sessionReport_1 = __webpack_require__(616);
 var multiplication_1 = __webpack_require__(326);
 var division_1 = __webpack_require__(615);
 var qTypes = [
@@ -33758,6 +33758,11 @@ var styles = {
         color: 'black'
     })
 };
+var ViewState;
+(function (ViewState) {
+    ViewState[ViewState["QUESTIONS"] = 0] = "QUESTIONS";
+    ViewState[ViewState["REPORT"] = 1] = "REPORT";
+})(ViewState || (ViewState = {}));
 function randDigit() {
     return getRandomInt(0, 10);
 }
@@ -33780,7 +33785,8 @@ var App = (function (_super) {
         });
         _this.state = {
             record: Recorder_1.default.getRecord(),
-            sessionQcount: 0
+            sessionQcount: 0,
+            viewState: ViewState.QUESTIONS
         };
         return _this;
     }
@@ -33800,17 +33806,30 @@ var App = (function (_super) {
             duration: 500
         });
         animation.start();
-        mt.bind('q', function () {
-            console.log("mousetrap!");
-            // alert(this.state.sessionQcount + " questions completed!");
-        });
+        // mt.bind('r', () => {
+        //     console.log("Toggling state...");
+        //     this.setState({
+        //         viewState: ViewState.REPORT
+        //     })
+        // })
+        // mt.bind('q', () => {
+        //     console.log("Toggling state...");
+        //     this.setState({
+        //         viewState: ViewState.QUESTIONS
+        //     })
+        // })
     };
     App.prototype.render = function () {
-        return (RX.createElement(RX.View, { style: styles.container },
-            RX.createElement(RX.Animated.Text, { style: [styles.helloWorld, this._animatedStyle] }, "Hello again!"),
-            RX.createElement(RX.Text, { style: styles.welcome }, "Let's get a little practice with our multiplication and division facts."),
-            RX.createElement(RX.Text, { style: styles.toggleTitle }, "Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!"),
-            this.renderCurrentQ()));
+        switch (this.state.viewState) {
+            case ViewState.QUESTIONS:
+                return (RX.createElement(RX.View, { style: styles.container },
+                    RX.createElement(RX.Animated.Text, { style: [styles.helloWorld, this._animatedStyle] }, "AHHHHHH!"),
+                    RX.createElement(RX.Text, { style: styles.welcome }, "Let's get a little practice with our multiplication and division facts."),
+                    RX.createElement(RX.Text, { style: styles.toggleTitle }, "Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!"),
+                    this.renderCurrentQ()));
+            case ViewState.REPORT:
+                return (RX.createElement(sessionReport_1.default, { records: this.state.record }));
+        }
     };
     App.prototype.renderCurrentQ = function () {
         console.log("Trying to render");
@@ -59682,6 +59701,37 @@ var SingleDigitDivisionProblem = (function (_super) {
 }(RX.Component));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SingleDigitDivisionProblem;
+
+
+/***/ }),
+/* 616 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var RX = __webpack_require__(41);
+var Recorder_1 = __webpack_require__(122);
+var SessionReport = (function (_super) {
+    __extends(SessionReport, _super);
+    function SessionReport(props) {
+        return _super.call(this, props) || this;
+    }
+    SessionReport.prototype.render = function () {
+        var recorps = Recorder_1.default.getRecord();
+        return (RX.createElement(RX.View, null,
+            RX.createElement("ul", null, this.props.records.map(function (record) {
+                return (RX.createElement("li", null, record.toString()));
+            }))));
+    };
+    return SessionReport;
+}(RX.Component));
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = SessionReport;
 
 
 /***/ })
