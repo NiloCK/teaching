@@ -35,17 +35,6 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
         }
     }
 
-
-
-    shouldComponentUpdate(nextProps: SingleDigitMultiplicationProblemProps) {
-        console.log("considering an update...");
-        console.log(this.props);
-        console.log(this.state);
-
-        this.forceUpdate();
-        return true;
-    }
-
     render() {
         return (
             <RX.View>
@@ -59,7 +48,7 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
                         <input className="mousetrap"
                             autoFocus
                             id="answer" type="number" autoComplete={false} />
-                        <button>Submit</button>
+                        {/*<button>Submit</button>*/}
                     </form>
                 </RX.View>
                 <Numpad num={this.props.b} />
