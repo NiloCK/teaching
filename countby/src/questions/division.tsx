@@ -102,7 +102,7 @@ class SingleDigitDivisionProblem extends RX.Component<SingleDigitDivisionProblem
             this.props.onanswer();
         }
 
-        console.log(Recorder.getRecord());
+        // console.log(Recorder.getRecord());
     }
 
     animate(correct : boolean){//todo do this in a react-way

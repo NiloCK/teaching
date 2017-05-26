@@ -34071,7 +34071,7 @@ var SingleDigitMultiplicationProblem = (function (_super) {
         if (isCorrect) {
             this.props.onanswer();
         }
-        console.log(Recorder_1.default.getRecord());
+        // console.log(Recorder.getRecord());
     };
     SingleDigitMultiplicationProblem.prototype.animate = function (correct) {
         var questionDiv = document.getElementById("question");
@@ -59688,7 +59688,7 @@ var SingleDigitDivisionProblem = (function (_super) {
         if (isCorrect) {
             this.props.onanswer();
         }
-        console.log(Recorder_1.default.getRecord());
+        // console.log(Recorder.getRecord());
     };
     SingleDigitDivisionProblem.prototype.animate = function (correct) {
         var questionDiv = document.getElementById("question");
