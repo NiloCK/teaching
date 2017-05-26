@@ -104,14 +104,22 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
             </RX.View>
         )
     }
-    renderKey(key: number) {
-        const style = RX.Styles.createTextStyle({
-            backgroundColor: this.getBackgroundColor(key)
-        })
 
+    renderKey(key: number) {
         return (
-            <RX.Text style={style}> {key} </RX.Text>
+            <RX.Text style={this.getKeyStyle(key)}> {key} </RX.Text>
         );
+    }
+    getKeyStyle(key){
+        return  RX.Styles.createTextStyle({
+            borderStyle: "solid",
+            borderColor: "black",
+            borderWidth: 1,
+            borderRadius: 4,
+            padding: 4,
+            margin: 3,
+            backgroundColor: this.getBackgroundColor(key)
+        });
     }
 
     getBackgroundColor(key: number): string {
