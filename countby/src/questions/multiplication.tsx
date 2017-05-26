@@ -9,10 +9,6 @@ interface SingleDigitMultiplicationProblemProps extends RX.CommonProps {
     onanswer: Function;
 }
 
-interface MultState {
-    count: number;
-}
-
 const styles = {
     form: RX.Styles.createViewStyle({
         flexDirection: "row",
@@ -27,17 +23,13 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
 
     constructor(props: SingleDigitMultiplicationProblemProps) {
         super(props);
-    
-        this.state = {
-            count: 0
-        }
     }
     
     init(){
         this.startTime = moment();
         this.attempts = 0;
     }
-    
+
     componentDidMount(){
         this.init();
     }
