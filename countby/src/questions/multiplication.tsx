@@ -93,8 +93,6 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
 
         if (isCorrect){ // only give a new question if this one was right
             this.props.onanswer();
-        } else {
-            this.
         }
 
         console.log(Recorder.getRecord());
