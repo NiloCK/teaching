@@ -33710,10 +33710,23 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 var RX = __webpack_require__(41);
 var mt = __webpack_require__(284);
 var Recorder_1 = __webpack_require__(122);
 var multiplication_1 = __webpack_require__(326);
+var division_1 = __webpack_require__(615);
+var qTypes = [
+    multiplication_1.default,
+    division_1.default
+];
 var styles = {
     container: RX.Styles.createViewStyle({
         flex: 1,
@@ -33766,7 +33779,6 @@ var App = (function (_super) {
             ]
         });
         _this.state = {
-            currentQ: [randDigit(), randDigit()],
             record: Recorder_1.default.getRecord(),
             sessionQcount: 0
         };
@@ -33775,12 +33787,10 @@ var App = (function (_super) {
     App.prototype.newQuestion = function () {
         this.setState({
             record: this.state ? this.state.record : Recorder_1.default.getRecord(),
-            currentQ: [randDigit(), randDigit()],
             sessionQcount: this.state ? (this.state.sessionQcount + 1) : 0
         });
-        console.log("a new question is being generated. " + this.state.sessionQcount + " questions completed.");
         if (this.state.sessionQcount >= 25) {
-            window.alert("You've done 25 questions! Great! Have some free time!");
+            window.alert("You've done " + this.state.sessionQcount + " questions! Great! Have some free time!");
         }
     };
     App.prototype.componentDidMount = function () {
@@ -33804,14 +33814,9 @@ var App = (function (_super) {
     };
     App.prototype.renderCurrentQ = function () {
         console.log("Trying to render");
-        var nums;
-        if (this.state) {
-            nums = this.state.currentQ;
-        }
-        else {
-            nums = [randDigit(), randDigit()];
-        }
-        return RX.createElement(multiplication_1.default, { a: nums[0], b: nums[1], onanswer: this.newQuestion.bind(this) });
+        var Question = qTypes[getRandomInt(0, 1)];
+        var questionProps = Question.getProps();
+        return RX.createElement(Question, __assign({}, questionProps, { onanswer: this.newQuestion.bind(this) }));
     };
     return App;
 }(RX.Component));
@@ -33987,11 +33992,22 @@ var styles = {
         padding: 15
     })
 };
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+;
 var SingleDigitMultiplicationProblem = (function (_super) {
     __extends(SingleDigitMultiplicationProblem, _super);
     function SingleDigitMultiplicationProblem(props) {
         return _super.call(this, props) || this;
     }
+    SingleDigitMultiplicationProblem.getProps = function () {
+        return {
+            a: getRandomInt(0, 10),
+            b: getRandomInt(1, 10),
+            onanswer: null
+        };
+    };
     SingleDigitMultiplicationProblem.prototype.init = function () {
         this.startTime = moment();
         this.attempts = 0;
@@ -59569,6 +59585,103 @@ var RX = __webpack_require__(41);
 var App = __webpack_require__(323);
 RX.App.initialize(false, false);
 RX.UserInterface.setMainView(RX.createElement(App, null));
+
+
+/***/ }),
+/* 615 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var RX = __webpack_require__(41);
+var Recorder_1 = __webpack_require__(122);
+var numpad_1 = __webpack_require__(325);
+var moment = __webpack_require__(0);
+var styles = {
+    form: RX.Styles.createViewStyle({
+        flexDirection: "row",
+        padding: 15
+    })
+};
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+;
+var SingleDigitDivisionProblem = (function (_super) {
+    __extends(SingleDigitDivisionProblem, _super);
+    function SingleDigitDivisionProblem(props) {
+        return _super.call(this, props) || this;
+    }
+    SingleDigitDivisionProblem.getProps = function () {
+        return {
+            a: getRandomInt(0, 10),
+            b: getRandomInt(1, 10),
+            onanswer: null
+        };
+    };
+    SingleDigitDivisionProblem.prototype.init = function () {
+        this.startTime = moment();
+        this.attempts = 0;
+    };
+    SingleDigitDivisionProblem.prototype.componentDidMount = function () {
+        this.init();
+    };
+    SingleDigitDivisionProblem.prototype.componentDidUpdate = function () {
+        this.init();
+    };
+    SingleDigitDivisionProblem.prototype.render = function () {
+        var _a = this.props, a = _a.a, b = _a.b;
+        return (RX.createElement(RX.View, null,
+            RX.createElement(RX.View, { style: styles.form },
+                RX.createElement("div", { id: "question" },
+                    a * b,
+                    " \u00F7 ",
+                    b,
+                    " =\u00A0"),
+                RX.createElement("form", { onSubmit: this.submit.bind(this) },
+                    RX.createElement("input", { className: "mousetrap", autoFocus: true, id: "answer", type: "number", autoComplete: false }))),
+            RX.createElement(numpad_1.default, { num: this.props.b })));
+    };
+    SingleDigitDivisionProblem.prototype.submit = function (e) {
+        e.preventDefault();
+        this.attempts++;
+        var input = document.getElementById('answer');
+        var userans = parseInt(input.value);
+        var userTime = moment().diff(this.startTime) / 1000;
+        var isCorrect = (this.props.a === userans);
+        console.log("This question was answered in: " + userTime);
+        Recorder_1.default.addRecord({
+            q: 'division',
+            a: this.props.a,
+            b: this.props.b,
+            answer: userans,
+            correct: isCorrect,
+            attempts: this.attempts,
+            time: userTime
+        });
+        input.value = "";
+        this.animate(isCorrect);
+        if (isCorrect) {
+            this.props.onanswer();
+        }
+        console.log(Recorder_1.default.getRecord());
+    };
+    SingleDigitDivisionProblem.prototype.animate = function (correct) {
+        var questionDiv = document.getElementById("question");
+        questionDiv.classList.add("correct-" + correct); // see /src/styles/answerStyles.css
+        setTimeout(function () {
+            questionDiv.classList.remove("correct-true", "correct-false");
+        }, 1000);
+    };
+    return SingleDigitDivisionProblem;
+}(RX.Component));
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = SingleDigitDivisionProblem;
 
 
 /***/ })

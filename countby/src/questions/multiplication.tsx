@@ -16,10 +16,22 @@ const styles = {
     })
 }
 
-class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplicationProblemProps, MultState> {
+function getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+
+class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplicationProblemProps, null> {
     startTime: moment.Moment;
     attempts: number;
 
+    static getProps(): SingleDigitMultiplicationProblemProps {
+        return {
+            a: getRandomInt(0,10),
+            b :getRandomInt(1,10),
+            onanswer: null
+        };
+    }
 
     constructor(props: SingleDigitMultiplicationProblemProps) {
         super(props);

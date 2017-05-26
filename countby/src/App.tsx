@@ -6,10 +6,16 @@ import * as RX from 'reactxp'
 import * as mt from 'mousetrap'
 import Recorder from './Recorder'
 
-
 import ToggleSwitch from './ToggleSwitch';
+
 import AdditionProblem from './questions/addition';
 import Multiplication from './questions/multiplication';
+import Division from './questions/division';
+
+const qTypes = [
+    Multiplication,
+    Division
+]
 
 const styles = {
     container: RX.Styles.createViewStyle({
@@ -45,7 +51,6 @@ const styles = {
 
 interface AppState {
     record: Array<object>
-    currentQ: any
     sessionQcount: number
 }
 
@@ -65,15 +70,11 @@ class App extends RX.Component<null, AppState> {
 
         this.setState({
             record: this.state ? this.state.record : Recorder.getRecord(),
-            currentQ: [randDigit(), randDigit()],
             sessionQcount: this.state ? (this.state.sessionQcount + 1) : 0
         });
 
-        console.log("a new question is being generated. " + this.state.sessionQcount + " questions completed.");
-
-
         if (this.state.sessionQcount >= 25){
-            window.alert("You've done 25 questions! Great! Have some free time!");
+            window.alert("You've done " + this.state.sessionQcount + " questions! Great! Have some free time!");
         }
     }
 
@@ -90,7 +91,6 @@ class App extends RX.Component<null, AppState> {
         });
 
         this.state = {
-            currentQ: [randDigit(), randDigit()],
             record: Recorder.getRecord(),
             sessionQcount: 0
         };
@@ -136,14 +136,11 @@ class App extends RX.Component<null, AppState> {
 
     renderCurrentQ(): JSX.Element | null {
         console.log("Trying to render");
-        let nums: Array<number>;
-        if (this.state) {
-            nums = this.state.currentQ;
-        } else {
-            nums = [randDigit(), randDigit()];
-        }
+        
+        const Question = qTypes[getRandomInt(0,1)];        
+        const questionProps = Question.getProps();
 
-        return <Multiplication a={nums[0]} b={nums[1]} onanswer={this.newQuestion.bind(this)} />
+        return <Question {...questionProps} onanswer={this.newQuestion.bind(this)} />
     }
 
     // Note that we define this as a variable rather than a normal method. Using this

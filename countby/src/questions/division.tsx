@@ -16,12 +16,21 @@ const styles = {
     })
 }
 
-class SingleDigitDivisionProblem extends RX.Component<SingleDigitDivisionProblemProps, MultState> {
+function getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+class SingleDigitDivisionProblem extends RX.Component<SingleDigitDivisionProblemProps, null> {
     startTime: moment.Moment;
     attempts: number;
 
-    static PropsGenerator() {
-        //todo
+    static getProps() : SingleDigitDivisionProblemProps {
+        return {
+            a: getRandomInt(0,10),
+            b :getRandomInt(1,10),
+            onanswer: null
+        };
+        
     }
 
 
@@ -76,7 +85,7 @@ class SingleDigitDivisionProblem extends RX.Component<SingleDigitDivisionProblem
 
         console.log("This question was answered in: " + userTime);
         Recorder.addRecord({
-            q: 'multiplication',
+            q: 'division',
             a: this.props.a,
             b: this.props.b,
             answer: userans,
