@@ -3,6 +3,7 @@
 */
 
 import * as RX from 'reactxp'
+import * as mt from 'mousetrap'
 import Recorder from './Recorder'
 
 
@@ -57,9 +58,6 @@ function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-
-
-
 class App extends RX.Component<null, AppState> {
     private _translationValue: RX.Animated.Value;
     private _animatedStyle: RX.Types.AnimatedTextStyleRuleSet;
@@ -79,8 +77,6 @@ class App extends RX.Component<null, AppState> {
             window.alert("You've done 25 questions! Great! Have some free time!");
         }
     }
-
-
 
     constructor() {
         super();
@@ -111,6 +107,12 @@ class App extends RX.Component<null, AppState> {
         );
 
         animation.start();
+
+        mt.bind('q', () => {
+            console.log("mousetrap!");
+            
+            // alert(this.state.sessionQcount + " questions completed!");
+        })
     }
 
     render(): JSX.Element | null {
