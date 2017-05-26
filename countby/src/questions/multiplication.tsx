@@ -28,23 +28,23 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
     constructor(props: SingleDigitMultiplicationProblemProps) {
         super(props);
     
-        this.attempts = 0;
         this.state = {
             count: 0
         }
     }
-
+    
+    init(){
+        this.startTime = moment();
+        this.attempts = 0;
+    }
     
     componentDidMount(){
-        this.startTimer();
+        this.init();
     }
     componentDidUpdate(){
-        this.startTimer();
+        this.init();
     }
 
-    startTimer(){
-        this.startTime = moment();
-    }
 
     render() {
         return (
