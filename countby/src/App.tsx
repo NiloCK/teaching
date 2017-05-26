@@ -10,7 +10,6 @@ import Recorder from './Recorder'
 import ToggleSwitch from './ToggleSwitch';
 import AdditionProblem from './questions/addition';
 import Multiplication from './questions/multiplication';
-import Numpad from './components/numpad';
 
 const styles = {
     container: RX.Styles.createViewStyle({
