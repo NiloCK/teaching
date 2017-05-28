@@ -1,5 +1,5 @@
 import * as RX from 'reactxp';
-import * as mt from 'mousetrap';
+import Keybinder from '../appUtilities/Keybinder'
 import FingerCounter from './fingerCounter/fingerCounter'
 
 export interface NumpadProps extends RX.CommonProps {
@@ -39,11 +39,29 @@ const highlights: Array<Array<number>> = [
 ]
 
 class Numpad extends RX.Component<NumpadProps, NumpadState> {
-
-
+    private UIbindings: Keybinder;
 
     constructor(props: NumpadProps) {
         super();
+
+        this.UIbindings = new Keybinder([
+            {
+                binding: 'left',
+                callback: (e: ExtendedKeyboardEvent) => {
+                    this.setState({
+                        counted: Math.max(0, (this.state.counted - 1))
+                    })
+                }
+            },
+            {
+                binding: 'right',
+                callback: (e: ExtendedKeyboardEvent) => {
+                    this.setState({
+                        counted: Math.min(10, (this.state.counted + 1))
+                    });
+                }
+            }
+        ])
 
         this.state = {
             counted: 0
@@ -60,25 +78,11 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
     }
 
     componentDidMount() {
-        mt.bind('right',
-            () => {
-                this.setState({
-                    counted: Math.min(10, (this.state.counted + 1))
-                });
-            });
-
-        mt.bind('left',
-            () => {
-                this.setState({
-                    counted: Math.max(0, (this.state.counted - 1))
-                });
-            })
-
-        console.log("mousetrap should have bound here...");
+        this.UIbindings.bind();
     }
 
     componentWillUnmount() {
-
+        this.UIbindings.unbind();
     }
 
     render() {
@@ -104,9 +108,9 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
         })
 
         return (
-            <RX.View style={style}>
+            <RX.View style={style} >
                 {keys.map((key => { return this.renderKey(key); }))}
-            </RX.View>
+            </RX.View >
         )
     }
 
