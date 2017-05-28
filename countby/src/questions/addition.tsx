@@ -1,5 +1,5 @@
 import * as RX from 'reactxp';
-import Recorder from '../Recorder'
+import Recorder from '../appUtilities/Recorder'
 
 interface SingleDigitAdditionProblemProps extends RX.CommonProps {
     a: number;

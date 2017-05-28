@@ -1,5 +1,5 @@
 import * as RX from 'reactxp';
-import Recorder from '../Recorder';
+import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
 import * as moment from 'moment'
 
@@ -27,8 +27,8 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
 
     static getProps(): SingleDigitMultiplicationProblemProps {
         return {
-            a: getRandomInt(0,10),
-            b :getRandomInt(1,10),
+            a: getRandomInt(0, 10),
+            b: getRandomInt(1, 10),
             onanswer: null
         };
     }
@@ -36,16 +36,16 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
     constructor(props: SingleDigitMultiplicationProblemProps) {
         super(props);
     }
-    
-    init(){
+
+    init() {
         this.startTime = moment();
         this.attempts = 0;
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.init();
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.init();
     }
 
@@ -95,23 +95,23 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
 
         this.animate(isCorrect);
 
-        if (isCorrect){ // only give a new question if this one was right
+        if (isCorrect) { // only give a new question if this one was right
             this.props.onanswer();
         }
 
         // console.log(Recorder.getRecord());
     }
 
-    animate(correct : boolean){//todo do this in a react-way
+    animate(correct: boolean) {//todo do this in a react-way
         let questionDiv = document.getElementById("question");
 
-        questionDiv.classList.add("correct-"+correct); // see /src/styles/answerStyles.css
+        questionDiv.classList.add("correct-" + correct); // see /src/styles/answerStyles.css
 
-        setTimeout(function() { // remove the class so that it can be reapplied
+        setTimeout(function () { // remove the class so that it can be reapplied
             questionDiv.classList.remove("correct-true", "correct-false")
         }, 1000);
     }
-    
+
 }
 
 export default SingleDigitMultiplicationProblem;

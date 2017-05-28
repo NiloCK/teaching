@@ -1,7 +1,7 @@
 import * as RX from 'reactxp';
-import Recorder from '../Recorder';
+import Recorder from '../appUtilities/Recorder';
 
-interface SessionReportProps{
+interface SessionReportProps {
     records: Array<any>
 }
 
@@ -24,10 +24,10 @@ class SessionReport extends RX.Component<SessionReportProps, null> {
                         }
                     )}
                 </ul>
-                
+
             </RX.View>
         )
-    }    
+    }
 }
 
 export default SessionReport;

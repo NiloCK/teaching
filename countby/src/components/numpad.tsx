@@ -77,6 +77,10 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
         console.log("mousetrap should have bound here...");
     }
 
+    componentWillUnmount() {
+
+    }
+
     render() {
         const num = this.props.num;
         const counted = this.state.counted;
@@ -111,7 +115,7 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
             <RX.Text style={this.getKeyStyle(key)}> {key} </RX.Text>
         );
     }
-    getKeyStyle(key) {
+    getKeyStyle(key: number) {
         return RX.Styles.createTextStyle({
             borderStyle: "solid",
             borderColor: "black",
