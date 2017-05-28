@@ -20,28 +20,33 @@ class SessionReport extends RX.Component<SessionReportProps, null> {
         super(props);
     }
 
-    truncatedRecords() {
-        return this.props.records.slice(
-            Math.max(0, this.props.records.length - 25),
-            this.props.records.length
-        );
-    }
-    truncateRecords(records: Array<any>) {
+    getSessionQuestions(records: Array<any>) {
+        let sessionRecords = new Array<any>();
+        let correctCount: number = 0;
+        let index: number = records.length - 1;
+
+        while (correctCount < 25) {
+            if (records[index].correct) {
+                correctCount++;
+            }
+            index--;
+        }
+
         return records.slice(
-            Math.max(0, records.length - 25),
-            records.length
-        );
-    }
-
-    componentWillReceiveProps() {
-        console.log("New props incoming");
-
+            Math.max(0, index),
+            records.length);
     }
 
     render() {
         const records = Recorder.getRecord();
-        const truncatedRecords = this.truncateRecords(records);
+        const truncatedRecords = this.getSessionQuestions(records);
         console.log("Rendering a session report...");
+        let time: number = 0;
+
+        truncatedRecords.forEach((record) => {
+            time += record.time;
+        });
+        time = parseInt(time.toFixed(0));
 
 
         return (
@@ -53,7 +58,10 @@ class SessionReport extends RX.Component<SessionReportProps, null> {
                         }
                     )}
                 </ul>
-
+                <RX.Text>
+                    It took {time} seconds to do these! Can you beat this?
+                </RX.Text>
+                <button onClick={() => { window.location.reload(); }}>Try again!</button>
             </RX.View>
         )
     }

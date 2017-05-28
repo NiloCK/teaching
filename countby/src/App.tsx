@@ -81,7 +81,10 @@ class App extends RX.Component<null, AppState> {
         });
 
         if (this.state.sessionQcount >= 25) {
-            window.alert("You've done " + this.state.sessionQcount + " questions! Great! Have some free time!");
+            //window.alert("You've done " + this.state.sessionQcount + " questions! Great! Have some free time!");
+            this.setState({
+                viewState: ViewState.REPORT
+            })
         }
     }
 
@@ -111,7 +114,6 @@ class App extends RX.Component<null, AppState> {
                             viewState: ViewState.QUESTIONS
                         })
                     }
-
                 }
             }
         ])
