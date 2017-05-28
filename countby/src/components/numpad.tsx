@@ -14,7 +14,7 @@ const styles = {
     row: RX.Styles.createViewStyle({
         flexDirection: 'row',
         backgroundColor: "white",
-    })
+    }, false)
 }
 
 const keys = [
@@ -92,8 +92,8 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
         return (
             <RX.View>
                 <div>
-                    {keys.map((keyrow) => {
-                        return this.renderKeyRow(keyrow);
+                    {keys.map((keyrow, index) => {
+                        return this.renderKeyRow(keyrow, index);
                     })}
                 </div>
                 <FingerCounter counted={counted} />
@@ -101,22 +101,25 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
         )
     }
 
-    renderKeyRow(keys: Array<number>) {
+    renderKeyRow(keys: Array<number>, index: number) {
         const style = RX.Styles.createViewStyle({
             flexDirection: "row",
 
-        })
+        }, false)
 
         return (
-            <RX.View style={style} >
-                {keys.map((key => { return this.renderKey(key); }))}
+            <RX.View style={style} key={index} >
+                {keys.map((key, index) => {
+                    return this.renderKey(key, index);
+                })
+                }
             </RX.View >
         )
     }
 
-    renderKey(key: number) {
+    renderKey(key: number, index: number) {
         return (
-            <RX.Text style={this.getKeyStyle(key)}> {key} </RX.Text>
+            <RX.Text style={this.getKeyStyle(key)} key={index}> {key} </RX.Text>
         );
     }
     getKeyStyle(key: number) {
@@ -127,8 +130,8 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
             borderRadius: 4,
             padding: 4,
             margin: 3,
-            backgroundColor: this.getBackgroundColor(key)
-        });
+            backgroundColor: this.getBackgroundColor(key),
+        }, false);
     }
 
     getBackgroundColor(key: number): string {

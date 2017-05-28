@@ -3,7 +3,6 @@
 */
 
 import * as RX from 'reactxp'
-import * as mt from 'mousetrap'
 import Keybinder from './appUtilities/Keybinder'
 import Recorder from './appUtilities/Recorder'
 
@@ -140,8 +139,6 @@ class App extends RX.Component<null, AppState> {
     }
 
     render(): JSX.Element | null {
-        // switch (this.state.viewState) {
-        // case ViewState.QUESTIONS:
         return (
 
             <RX.View style={styles.container}>
@@ -164,11 +161,6 @@ class App extends RX.Component<null, AppState> {
 
             </RX.View>
         );
-        // case ViewState.REPORT:
-        //     return (
-        //         <SessionReport records={this.state.record} />
-        //     );
-        // }
     }
 
     renderCurrentQ(): JSX.Element | null {
