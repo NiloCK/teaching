@@ -32769,6 +32769,7 @@ var RX = __webpack_require__(29);
 var Keybinder_1 = __webpack_require__(618);
 var Recorder_1 = __webpack_require__(617);
 var sessionReport_1 = __webpack_require__(325);
+var ProgressChart_1 = __webpack_require__(620);
 var multiplication_1 = __webpack_require__(327);
 var division_1 = __webpack_require__(326);
 var qTypes = [
@@ -32810,6 +32811,7 @@ var ViewState;
 (function (ViewState) {
     ViewState[ViewState["QUESTIONS"] = 0] = "QUESTIONS";
     ViewState[ViewState["REPORT"] = 1] = "REPORT";
+    ViewState[ViewState["PROGRESS"] = 2] = "PROGRESS";
 })(ViewState || (ViewState = {}));
 function randDigit() {
     return getRandomInt(0, 10);
@@ -32846,6 +32848,15 @@ var App = (function (_super) {
                             viewState: ViewState.QUESTIONS
                         });
                     }
+                }
+            },
+            {
+                binding: "?",
+                callback: function (e) {
+                    console.log("Toggling progress state");
+                    _this.setState({
+                        viewState: ViewState.PROGRESS
+                    });
                 }
             }
         ]);
@@ -32887,7 +32898,10 @@ var App = (function (_super) {
             (this.state.viewState === ViewState.QUESTIONS) ?
                 (RX.createElement(RX.Text, { style: styles.toggleTitle }, "Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!")) : null,
             (this.state.viewState === ViewState.QUESTIONS) ?
-                this.renderCurrentQ() : null));
+                this.renderCurrentQ() : null,
+            (this.state.viewState === ViewState.PROGRESS) ?
+                (RX.createElement(ProgressChart_1.default, { questionType: "multiplication" })) :
+                null));
     };
     App.prototype.renderCurrentQ = function () {
         console.log("Trying to render");
@@ -59841,6 +59855,71 @@ var Keybinder = (function () {
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Keybinder;
+
+
+/***/ }),
+/* 619 */,
+/* 620 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var RX = __webpack_require__(29);
+var styles = {};
+var rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var ProgressChart = (function (_super) {
+    __extends(ProgressChart, _super);
+    function ProgressChart() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ProgressChart.prototype.render = function () {
+        return (RX.createElement(RX.View, null,
+            RX.createElement(RX.Text, null,
+                "Progress Report for ",
+                this.props.questionType),
+            RX.createElement("table", null, this.renderTableBody())));
+    };
+    ProgressChart.prototype.renderTableBody = function () {
+        var _this = this;
+        return (RX.createElement("tbody", null,
+            RX.createElement("tr", null,
+                RX.createElement("td", null),
+                RX.createElement("td", null, "1"),
+                RX.createElement("td", null, "2"),
+                RX.createElement("td", null, "3"),
+                RX.createElement("td", null, "4"),
+                RX.createElement("td", null, "5"),
+                RX.createElement("td", null, "6"),
+                RX.createElement("td", null, "7"),
+                RX.createElement("td", null, "8"),
+                RX.createElement("td", null, "9"),
+                RX.createElement("td", null, "10")),
+            rows.map(function (row, index) {
+                _this.renderRow(row, index);
+            })));
+    };
+    ProgressChart.prototype.renderRow = function (b, index) {
+        var _this = this;
+        console.log("Rendering row " + b);
+        return (RX.createElement("tr", null,
+            RX.createElement("td", null, b),
+            rows.map(function (row, rowIndex) {
+                _this.renderGrade(row, b, rowIndex);
+            })));
+    };
+    ProgressChart.prototype.renderGrade = function (a, b, index) {
+        console.log("\tRendering grade " + a + ", " + b);
+        return (RX.createElement("td", null));
+    };
+    return ProgressChart;
+}(RX.Component));
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ProgressChart;
 
 
 /***/ })

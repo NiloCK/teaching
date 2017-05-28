@@ -7,6 +7,7 @@ import Keybinder from './appUtilities/Keybinder'
 import Recorder from './appUtilities/Recorder'
 
 import SessionReport from './components/sessionReport';
+import ProgressChart from './components/ProgressChart';
 
 import AdditionProblem from './questions/addition';
 import Multiplication from './questions/multiplication';
@@ -51,7 +52,8 @@ const styles = {
 
 enum ViewState {
     QUESTIONS,
-    REPORT
+    REPORT,
+    PROGRESS
 }
 
 interface AppState {
@@ -115,6 +117,16 @@ class App extends RX.Component<null, AppState> {
                         })
                     }
                 }
+            },
+            {
+                binding: "?",
+                callback: (e: ExtendedKeyboardEvent) => {
+                    console.log("Toggling progress state");
+
+                    this.setState({
+                        viewState: ViewState.PROGRESS
+                    })
+                }
             }
         ])
 
@@ -163,6 +175,11 @@ class App extends RX.Component<null, AppState> {
 
                 {(this.state.viewState === ViewState.QUESTIONS) ?
                     this.renderCurrentQ() : null
+                }
+
+                {(this.state.viewState === ViewState.PROGRESS) ?
+                    (<ProgressChart questionType="multiplication" />) :
+                    null
                 }
 
 
