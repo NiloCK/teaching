@@ -34,7 +34,8 @@ const highlights: Array<Array<number>> = [
     [6, 2, 8, 4, 0, 6, 2, 8, 4, 0],
     [7, 4, 1, 8, 5, 2, 9, 6, 3, 0],
     [8, 6, 4, 2, 0, 8, 6, 4, 2, 0],
-    [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    [9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
 class Numpad extends RX.Component<NumpadProps, NumpadState> {
@@ -62,14 +63,14 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
         mt.bind('right',
             () => {
                 this.setState({
-                    counted: Math.min(10, (this.state.counted + 1) )
+                    counted: Math.min(10, (this.state.counted + 1))
                 });
             });
 
         mt.bind('left',
             () => {
                 this.setState({
-                    counted: Math.max(0, (this.state.counted - 1) )
+                    counted: Math.max(0, (this.state.counted - 1))
                 });
             })
 
@@ -110,8 +111,8 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
             <RX.Text style={this.getKeyStyle(key)}> {key} </RX.Text>
         );
     }
-    getKeyStyle(key){
-        return  RX.Styles.createTextStyle({
+    getKeyStyle(key) {
+        return RX.Styles.createTextStyle({
             borderStyle: "solid",
             borderColor: "black",
             borderWidth: 1,
