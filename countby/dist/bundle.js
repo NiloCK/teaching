@@ -32862,7 +32862,10 @@ var App = (function (_super) {
             sessionQcount: this.state ? (this.state.sessionQcount + 1) : 0
         });
         if (this.state.sessionQcount >= 25) {
-            window.alert("You've done " + this.state.sessionQcount + " questions! Great! Have some free time!");
+            //window.alert("You've done " + this.state.sessionQcount + " questions! Great! Have some free time!");
+            this.setState({
+                viewState: ViewState.REPORT
+            });
         }
     };
     App.prototype.componentDidMount = function () {
@@ -32881,8 +32884,10 @@ var App = (function (_super) {
             (this.state.viewState === ViewState.REPORT) ?
                 RX.createElement(sessionReport_1.default, { records: this.state.record }) :
                 null,
-            RX.createElement(RX.Text, { style: styles.toggleTitle }, "Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!"),
-            this.renderCurrentQ()));
+            (this.state.viewState === ViewState.QUESTIONS) ?
+                (RX.createElement(RX.Text, { style: styles.toggleTitle }, "Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!")) : null,
+            (this.state.viewState === ViewState.QUESTIONS) ?
+                this.renderCurrentQ() : null));
     };
     App.prototype.renderCurrentQ = function () {
         console.log("Trying to render");
@@ -32954,22 +32959,37 @@ var SessionReport = (function (_super) {
     function SessionReport(props) {
         return _super.call(this, props) || this;
     }
-    SessionReport.prototype.truncatedRecords = function () {
-        return this.props.records.slice(Math.max(0, this.props.records.length - 24), this.props.records.length - 1);
-    };
-    SessionReport.prototype.truncateRecords = function (records) {
-        return records.slice(Math.max(0, records.length - 24), records.length - 1);
-    };
-    SessionReport.prototype.componentWillReceiveProps = function () {
-        console.log("New props incoming");
+    SessionReport.prototype.getSessionQuestions = function (records) {
+        var sessionRecords = new Array();
+        var correctCount = 0;
+        var index = records.length - 1;
+        while (correctCount < 25) {
+            if (records[index].correct) {
+                correctCount++;
+            }
+            index--;
+        }
+        return records.slice(Math.max(0, index), records.length);
     };
     SessionReport.prototype.render = function () {
         var _this = this;
-        var records = this.truncatedRecords(Recorder_1.default.getRecord());
+        var records = Recorder_1.default.getRecord();
+        var truncatedRecords = this.getSessionQuestions(records);
+        console.log("Rendering a session report...");
+        var time = 0;
+        truncatedRecords.forEach(function (record) {
+            time += record.time;
+        });
+        time = parseInt(time.toFixed(0));
         return (RX.createElement(RX.View, null,
-            RX.createElement("ul", null, records.map(function (record, index) {
+            RX.createElement("ul", null, truncatedRecords.map(function (record, index) {
                 return (RX.createElement("li", { key: index }, _this.renderRecord(record)));
-            }))));
+            })),
+            RX.createElement(RX.Text, null,
+                "It took ",
+                time,
+                " seconds to do these! Can you beat this?"),
+            RX.createElement("button", { autoFocus: true, onClick: function () { window.location.reload(); } }, "Try again!")));
     };
     SessionReport.prototype.renderRecord = function (record) {
         if (record.q === 'multiplication') {
