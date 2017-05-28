@@ -4,7 +4,7 @@
 
 import * as RX from 'reactxp'
 import * as mt from 'mousetrap'
-import Recorder from './Recorder'
+import Recorder from './appUtilities/Recorder'
 
 import SessionReport from './components/sessionReport';
 
