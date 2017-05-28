@@ -155,11 +155,16 @@ class App extends RX.Component<null, AppState> {
                     <SessionReport records={this.state.record} /> :
                     null}
 
-                <RX.Text style={styles.toggleTitle}>
-                    Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!
-                        </RX.Text>
+                {(this.state.viewState === ViewState.QUESTIONS) ?
+                    (<RX.Text style={styles.toggleTitle}>
+                        Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!
+                    </RX.Text>) : null
+                }
 
-                {this.renderCurrentQ()}
+                {(this.state.viewState === ViewState.QUESTIONS) ?
+                    this.renderCurrentQ() : null
+                }
+
 
             </RX.View>
         );

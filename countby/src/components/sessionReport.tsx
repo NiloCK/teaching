@@ -61,7 +61,7 @@ class SessionReport extends RX.Component<SessionReportProps, null> {
                 <RX.Text>
                     It took {time} seconds to do these! Can you beat this?
                 </RX.Text>
-                <button onClick={() => { window.location.reload(); }}>Try again!</button>
+                <button autoFocus onClick={() => { window.location.reload(); }}>Try again!</button>
             </RX.View>
         )
     }
