@@ -13,7 +13,7 @@ export default class Recorder {
         }
     }
 
-    static addRecord(record: object) {
+    static addRecord(record: Object) {
         let records = Recorder.getRecord();
         // console.log('Records: ' + records.toString());
 

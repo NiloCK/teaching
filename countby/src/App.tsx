@@ -56,7 +56,7 @@ enum ViewState {
 }
 
 interface AppState {
-    record?: Array<object>
+    record?: Array<Object>
     sessionQcount?: number
     viewState?: ViewState
 }
@@ -80,7 +80,7 @@ class App extends RX.Component<null, AppState> {
             sessionQcount: this.state ? (this.state.sessionQcount + 1) : 0
         });
 
-        if (this.state.sessionQcount >= 25){
+        if (this.state.sessionQcount >= 25) {
             window.alert("You've done " + this.state.sessionQcount + " questions! Great! Have some free time!");
         }
     }
@@ -117,14 +117,14 @@ class App extends RX.Component<null, AppState> {
 
         // mt.bind('r', () => {
         //     console.log("Toggling state...");
-            
+
         //     this.setState({
         //         viewState: ViewState.REPORT
         //     })
         // })
         // mt.bind('q', () => {
         //     console.log("Toggling state...");
-            
+
         //     this.setState({
         //         viewState: ViewState.QUESTIONS
         //     })
@@ -132,10 +132,10 @@ class App extends RX.Component<null, AppState> {
     }
 
     render(): JSX.Element | null {
-        switch (this.state.viewState){
+        switch (this.state.viewState) {
             case ViewState.QUESTIONS:
                 return (
-                    
+
                     <RX.View style={styles.container}>
                         <RX.Animated.Text style={[styles.helloWorld, this._animatedStyle]}>
                             AHHHHHH!
@@ -161,8 +161,8 @@ class App extends RX.Component<null, AppState> {
 
     renderCurrentQ(): JSX.Element | null {
         console.log("Trying to render");
-        
-        const Question = qTypes[getRandomInt(0,1)];        
+
+        const Question = qTypes[getRandomInt(0, 1)];
         const questionProps = Question.getProps();
 
         return <Question {...questionProps} onanswer={this.newQuestion.bind(this)} />
