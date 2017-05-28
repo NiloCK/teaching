@@ -22,14 +22,14 @@ class SessionReport extends RX.Component<SessionReportProps, null> {
 
     truncatedRecords() {
         return this.props.records.slice(
-            Math.max(0, this.props.records.length - 24),
-            this.props.records.length - 1
+            Math.max(0, this.props.records.length - 25),
+            this.props.records.length
         );
     }
     truncateRecords(records: Array<any>) {
         return records.slice(
-            Math.max(0, records.length - 24),
-            records.length - 1
+            Math.max(0, records.length - 25),
+            records.length
         );
     }
 
@@ -39,12 +39,15 @@ class SessionReport extends RX.Component<SessionReportProps, null> {
     }
 
     render() {
-        const records = this.truncatedRecords(Recorder.getRecord());
+        const records = Recorder.getRecord();
+        const truncatedRecords = this.truncateRecords(records);
+        console.log("Rendering a session report...");
+
 
         return (
             <RX.View>
                 <ul>
-                    {records.map(
+                    {truncatedRecords.map(
                         (record, index) => {
                             return (<li key={index}>{this.renderRecord(record)}</li>)
                         }
