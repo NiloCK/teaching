@@ -6,7 +6,6 @@ import * as RX from 'reactxp'
 import * as mt from 'mousetrap'
 import Recorder from './Recorder'
 
-import ToggleSwitch from './ToggleSwitch';
 import SessionReport from './components/sessionReport';
 
 import AdditionProblem from './questions/addition';
