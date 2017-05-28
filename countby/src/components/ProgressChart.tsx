@@ -41,7 +41,7 @@ class ProgressChart extends RX.Component<ComponentChartProps, null> {
                     <td>10</td>
                 </tr>
                 {rows.map((row, index) => {
-                    this.renderRow(row, index);
+                    return this.renderRow(row, index);
                 })}
             </tbody>
         )
@@ -50,10 +50,10 @@ class ProgressChart extends RX.Component<ComponentChartProps, null> {
         console.log("Rendering row " + b);
 
         return (
-            <tr>
+            <tr key={index}>
                 <td>{b}</td>
                 {rows.map((row, rowIndex) => {
-                    this.renderGrade(row, b, rowIndex);
+                    return this.renderGrade(row, b, rowIndex);
                 })}
             </tr>
         )
@@ -62,8 +62,8 @@ class ProgressChart extends RX.Component<ComponentChartProps, null> {
         console.log("\tRendering grade " + a + ", " + b);
 
         return (
-            <td>
-                {/*{(Grader.Grade(this.props.questionType, a, b).toString())}?*/}
+            <td key={index}>
+                {(Grader.Grade(this.props.questionType, a, b).toString())}
             </td>
         )
     }
