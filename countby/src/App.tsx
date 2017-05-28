@@ -4,6 +4,7 @@
 
 import * as RX from 'reactxp'
 import * as mt from 'mousetrap'
+import Keybinder from './appUtilities/Keybinder'
 import Recorder from './appUtilities/Recorder'
 
 import SessionReport from './components/sessionReport';
@@ -71,6 +72,7 @@ function getRandomInt(min: number, max: number) {
 class App extends RX.Component<null, AppState> {
     private _translationValue: RX.Animated.Value;
     private _animatedStyle: RX.Types.AnimatedTextStyleRuleSet;
+    private UIBindings: Keybinder;
 
     newQuestion() {
 
@@ -95,6 +97,26 @@ class App extends RX.Component<null, AppState> {
                 }
             ]
         });
+        this.UIBindings = new Keybinder([
+            {
+                binding: "/",
+                callback: (e: ExtendedKeyboardEvent) => {
+                    console.log("Toggling report state");
+
+                    if (this.state.viewState === ViewState.QUESTIONS) {
+                        this.setState({
+                            viewState: ViewState.REPORT
+                        })
+                    } else {
+                        this.setState({
+                            viewState: ViewState.QUESTIONS
+                        })
+                    }
+
+                }
+            }
+        ])
+
 
         this.state = {
             record: Recorder.getRecord(),
@@ -105,6 +127,8 @@ class App extends RX.Component<null, AppState> {
     }
 
     componentDidMount() {
+        this.UIBindings.bind();
+
         let animation = RX.Animated.timing(this._translationValue, {
             toValue: 0,
             easing: RX.Animated.Easing.OutBack(),
@@ -113,49 +137,38 @@ class App extends RX.Component<null, AppState> {
         );
 
         animation.start();
-
-        // mt.bind('r', () => {
-        //     console.log("Toggling state...");
-
-        //     this.setState({
-        //         viewState: ViewState.REPORT
-        //     })
-        // })
-        // mt.bind('q', () => {
-        //     console.log("Toggling state...");
-
-        //     this.setState({
-        //         viewState: ViewState.QUESTIONS
-        //     })
-        // })
     }
 
     render(): JSX.Element | null {
-        switch (this.state.viewState) {
-            case ViewState.QUESTIONS:
-                return (
+        // switch (this.state.viewState) {
+        // case ViewState.QUESTIONS:
+        return (
 
-                    <RX.View style={styles.container}>
-                        <RX.Animated.Text style={[styles.helloWorld, this._animatedStyle]}>
-                            AHHHHHH!
+            <RX.View style={styles.container}>
+                <RX.Animated.Text style={[styles.helloWorld, this._animatedStyle]}>
+                    AHHHHHH!
                         </RX.Animated.Text>
-                        <RX.Text style={styles.welcome}>
-                            Let's get a little practice with our multiplication and division facts.
+                <RX.Text style={styles.welcome}>
+                    Let's get a little practice with our multiplication and division facts.
                         </RX.Text>
 
-                        <RX.Text style={styles.toggleTitle}>
-                            Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!
+                {(this.state.viewState === ViewState.REPORT) ?
+                    <SessionReport records={this.state.record} /> :
+                    null}
+
+                <RX.Text style={styles.toggleTitle}>
+                    Use the RIGHT and LEFT Arrow Keys to move on the numberpad and help with counting-by!
                         </RX.Text>
 
-                        {this.renderCurrentQ()}
+                {this.renderCurrentQ()}
 
-                    </RX.View>
-                );
-            case ViewState.REPORT:
-                return (
-                    <SessionReport records={this.state.record} />
-                );
-        }
+            </RX.View>
+        );
+        // case ViewState.REPORT:
+        //     return (
+        //         <SessionReport records={this.state.record} />
+        //     );
+        // }
     }
 
     renderCurrentQ(): JSX.Element | null {
