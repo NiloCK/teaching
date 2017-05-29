@@ -59795,7 +59795,7 @@ function hasOwnProperty(obj, prop) {
 
 var RX = __webpack_require__(29);
 var App = __webpack_require__(323);
-RX.App.initialize(true, true);
+RX.App.initialize(false, false);
 RX.UserInterface.setMainView(RX.createElement(App, null));
 
 
