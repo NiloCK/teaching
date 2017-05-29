@@ -130,7 +130,7 @@ class Numpad extends RX.Component<NumpadProps, NumpadState> {
             borderRadius: 4,
             padding: 4,
             margin: 3,
-            backgroundColor: this.getBackgroundColor(key),
+            backgroundColor: this.getBackgroundColor(key)
         }, false);
     }
 
