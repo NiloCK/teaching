@@ -21,12 +21,18 @@ class FingerCounter extends RX.Component<FingerCounterProps, null> {
 
 
     render() {
-        return (
-            <RX.View style={styles.img}>
-                <img className="finger" src={"img/fingerCounter/" + this.props.counted + ".PNG"} alt=""/>
-            </RX.View>
-        )
-    }    
+        if (this.props.counted === 0) {
+            return (
+                <RX.View style={styles.img}></RX.View>
+            )
+        } else {
+            return (
+                <RX.View style={styles.img}>
+                    <img className="finger" src={"img/fingerCounter/" + this.props.counted + ".PNG"} alt="" />
+                </RX.View>
+            )
+        }
+    }
 }
 
 export default FingerCounter;
