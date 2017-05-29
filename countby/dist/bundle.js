@@ -15715,7 +15715,7 @@ var Numpad = (function (_super) {
             borderRadius: 4,
             padding: 4,
             margin: 3,
-            backgroundColor: this.getBackgroundColor(key),
+            backgroundColor: this.getBackgroundColor(key)
         }, false);
     };
     Numpad.prototype.getBackgroundColor = function (key) {
@@ -59858,7 +59858,77 @@ exports.default = Keybinder;
 
 
 /***/ }),
-/* 619 */,
+/* 619 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Recorder_1 = __webpack_require__(617);
+var Grader = (function () {
+    function Grader() {
+    }
+    Grader.Grade = function (qType, a, b) {
+        var records = Recorder_1.default.getRecord();
+        var qCount = 0;
+        var index = records.length - 1;
+        var scorables = new Array();
+        while (qCount < 6 && index >= 0) {
+            if (records[index].q === qType &&
+                records[index].a === a &&
+                records[index].b === b &&
+                records[index].correct) {
+                scorables.push(records[index]);
+            }
+            index--;
+        }
+        var totalAttempts = 0;
+        var totalTime = 0;
+        scorables.forEach(function (answer) {
+            totalAttempts += answer.attempts;
+            totalTime += answer.time;
+        });
+        return new Grade((scorables.length / totalAttempts), (totalTime / scorables.length));
+    };
+    return Grader;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Grader;
+var Grade = (function () {
+    function Grade(score, time) {
+        this.score = score;
+        this.averageTime = time;
+        if (isNaN(score) || isNaN(time)) {
+            this.isValid = false;
+        }
+        else {
+            this.isValid = true;
+        }
+    }
+    Grade.prototype.toString = function () {
+        if (this.isValid) {
+            return this.score.toFixed(2).toString();
+        }
+        else {
+            return "";
+        }
+    };
+    Grade.prototype.getRGB = function () {
+        if (this.isValid) {
+            return "rgb(" +
+                Math.floor(255 * Math.min(1, 2 - 2 * this.score)) + "," +
+                Math.floor(255 * Math.min(1, 2 * this.score)) +
+                ", 0)"; // blue
+        }
+        else {
+            return "white";
+        }
+    };
+    return Grade;
+}());
+exports.Grade = Grade;
+
+
+/***/ }),
 /* 620 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -59870,7 +59940,23 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var RX = __webpack_require__(29);
-var styles = {};
+var Grader_1 = __webpack_require__(619);
+var styles = {
+    row: RX.Styles.createViewStyle({
+        flexDirection: 'row'
+    }),
+    entry: RX.Styles.createTextStyle({
+        width: 20,
+        height: 20,
+        margin: 10,
+        borderColor: 'black',
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderRadius: 3,
+        textAlign: 'center',
+        textAlignVertical: 'center'
+    })
+};
 var rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var ProgressChart = (function (_super) {
     __extends(ProgressChart, _super);
@@ -59882,7 +59968,58 @@ var ProgressChart = (function (_super) {
             RX.createElement(RX.Text, null,
                 "Progress Report for ",
                 this.props.questionType),
-            RX.createElement("table", null, this.renderTableBody())));
+            RX.createElement(RX.View, null, this.renderBody())));
+    };
+    ProgressChart.prototype.getSign = function () {
+        if (this.props.questionType === 'multiplication') {
+            return (RX.createElement(RX.Text, null, " \u00D7 "));
+        }
+        else {
+            return (RX.createElement(RX.Text, null, " \u00F7 "));
+        }
+    };
+    ProgressChart.prototype.renderBody = function () {
+        var _this = this;
+        return (RX.createElement(RX.View, null,
+            RX.createElement(RX.View, { style: styles.row },
+                RX.createElement(RX.Text, { style: styles.entry }, this.getSign()),
+                RX.createElement(RX.Text, { style: styles.entry }, "1"),
+                RX.createElement(RX.Text, { style: styles.entry }, "2"),
+                RX.createElement(RX.Text, { style: styles.entry }, "3"),
+                RX.createElement(RX.Text, { style: styles.entry }, "4"),
+                RX.createElement(RX.Text, { style: styles.entry }, "5"),
+                RX.createElement(RX.Text, { style: styles.entry }, "6"),
+                RX.createElement(RX.Text, { style: styles.entry }, "7"),
+                RX.createElement(RX.Text, { style: styles.entry }, "8"),
+                RX.createElement(RX.Text, { style: styles.entry }, "9"),
+                RX.createElement(RX.Text, { style: styles.entry }, "10")),
+            rows.map(function (row, index) {
+                return _this.renderViewRow(row, index);
+            })));
+    };
+    ProgressChart.prototype.renderViewRow = function (b, index) {
+        var _this = this;
+        return (RX.createElement(RX.View, { style: styles.row },
+            RX.createElement(RX.Text, { style: styles.entry }, b),
+            rows.map(function (row, rowIndex) {
+                return _this.renderViewGrade(row, b, rowIndex);
+            })));
+    };
+    ProgressChart.prototype.renderViewGrade = function (a, b, index) {
+        var grade = Grader_1.default.Grade(this.props.questionType, a, b);
+        return (RX.createElement(RX.Text, { style: this.getStyle(grade) }));
+    };
+    ProgressChart.prototype.getStyle = function (grade) {
+        return RX.Styles.createTextStyle({
+            backgroundColor: grade.getRGB(),
+            width: 20,
+            height: 20,
+            margin: 10,
+            borderColor: 'black',
+            borderStyle: "solid",
+            borderWidth: 1,
+            borderRadius: Math.floor(grade.averageTime)
+        }, false);
     };
     ProgressChart.prototype.renderTableBody = function () {
         var _this = this;
@@ -59900,21 +60037,22 @@ var ProgressChart = (function (_super) {
                 RX.createElement("td", null, "9"),
                 RX.createElement("td", null, "10")),
             rows.map(function (row, index) {
-                _this.renderRow(row, index);
+                return _this.renderRow(row, index);
             })));
     };
     ProgressChart.prototype.renderRow = function (b, index) {
         var _this = this;
         console.log("Rendering row " + b);
-        return (RX.createElement("tr", null,
+        return (RX.createElement("tr", { key: index },
             RX.createElement("td", null, b),
             rows.map(function (row, rowIndex) {
-                _this.renderGrade(row, b, rowIndex);
+                return _this.renderGrade(row, b, rowIndex);
             })));
     };
     ProgressChart.prototype.renderGrade = function (a, b, index) {
         console.log("\tRendering grade " + a + ", " + b);
-        return (RX.createElement("td", null));
+        var grade = Grader_1.default.Grade(this.props.questionType, a, b);
+        return (RX.createElement("td", { key: index, style: grade.color() }));
     };
     return ProgressChart;
 }(RX.Component));
