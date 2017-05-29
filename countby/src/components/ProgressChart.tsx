@@ -3,7 +3,20 @@ import Grader from '../appUtilities/Grader'
 
 
 const styles = {
-
+    row: RX.Styles.createViewStyle({
+        flexDirection: 'row'
+    }),
+    entry: RX.Styles.createTextStyle({
+        width: 20,
+        height: 20,
+        margin: 10,
+        borderColor: 'black',
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderRadius: 3,
+        textAlign: 'center',
+        textAlignVertical: 'center'
+    })
 }
 const rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -17,11 +30,75 @@ class ProgressChart extends RX.Component<ComponentChartProps, null> {
         return (
             <RX.View>
                 <RX.Text>Progress Report for {this.props.questionType}</RX.Text>
-                <table>
+                {/*<table>
                     {this.renderTableBody()}
-                </table>
+                </table>*/}
+                <RX.View>
+                    {this.renderBody()}
+                </RX.View>
             </RX.View>
         )
+    }
+    getSign() {
+        if (this.props.questionType === 'multiplication') {
+            return (<RX.Text> &times; </RX.Text>);
+        } else {
+            return (<RX.Text> &#247; </RX.Text>);
+        }
+    }
+    renderBody(): JSX.Element {
+        return (
+            <RX.View>
+                <RX.View style={styles.row}>
+                    <RX.Text style={styles.entry}>{this.getSign()}</RX.Text>
+                    <RX.Text style={styles.entry}>1</RX.Text>
+                    <RX.Text style={styles.entry}>2</RX.Text>
+                    <RX.Text style={styles.entry}>3</RX.Text>
+                    <RX.Text style={styles.entry}>4</RX.Text>
+                    <RX.Text style={styles.entry}>5</RX.Text>
+                    <RX.Text style={styles.entry}>6</RX.Text>
+                    <RX.Text style={styles.entry}>7</RX.Text>
+                    <RX.Text style={styles.entry}>8</RX.Text>
+                    <RX.Text style={styles.entry}>9</RX.Text>
+                    <RX.Text style={styles.entry}>10</RX.Text>
+                </RX.View>
+                {rows.map((row, index) => {
+                    return this.renderViewRow(row, index);
+                })}
+            </RX.View>
+        )
+    }
+    renderViewRow(b: number, index: number): JSX.Element {
+        return (
+            <RX.View style={styles.row}>
+                <RX.Text style={styles.entry}>{b}</RX.Text>
+                {rows.map((row, rowIndex) => {
+                    return this.renderViewGrade(row, b, rowIndex);
+                })}
+            </RX.View>
+        )
+    }
+
+    renderViewGrade(a: number, b: number, index: number): JSX.Element {
+        const grade = Grader.Grade(this.props.questionType, a, b);
+
+        return (
+            <RX.Text style={this.getStyle(grade)}></RX.Text>
+        )
+    }
+    getStyle(grade: Grade) {
+
+        return RX.Styles.createTextStyle({
+            backgroundColor: grade.getRGB(),
+            width: 20,
+            height: 20,
+            margin: 10,
+            borderColor: 'black',
+            borderStyle: "solid",
+            borderWidth: 1,
+            borderRadius: Math.floor(grade.averageTime)
+        }, false);
+
     }
 
     renderTableBody(): JSX.Element {
@@ -60,13 +137,17 @@ class ProgressChart extends RX.Component<ComponentChartProps, null> {
     }
     renderGrade(a: number, b: number, index: number): JSX.Element {
         console.log("\tRendering grade " + a + ", " + b);
+        const grade = Grader.Grade(this.props.questionType, a, b);
 
         return (
-            <td key={index}>
-                {(Grader.Grade(this.props.questionType, a, b).toString())}
+            <td key={index} style={grade.color()}>
+
             </td>
         )
     }
+
+
+
 }
 
 
