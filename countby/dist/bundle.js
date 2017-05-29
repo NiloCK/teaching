@@ -32938,8 +32938,13 @@ var FingerCounter = (function (_super) {
         return _super.call(this, props) || this;
     }
     FingerCounter.prototype.render = function () {
-        return (RX.createElement(RX.View, { style: styles.img },
-            RX.createElement("img", { className: "finger", src: "img/fingerCounter/" + this.props.counted + ".PNG", alt: "" })));
+        if (this.props.counted === 0) {
+            return (RX.createElement(RX.View, { style: styles.img }));
+        }
+        else {
+            return (RX.createElement(RX.View, { style: styles.img },
+                RX.createElement("img", { className: "finger", src: "img/fingerCounter/" + this.props.counted + ".PNG", alt: "" })));
+        }
     };
     return FingerCounter;
 }(RX.Component));
@@ -59913,10 +59918,11 @@ var Grade = (function () {
         }
     };
     Grade.prototype.getRGB = function () {
+        var score = this.score * this.score;
         if (this.isValid) {
             return "rgb(" +
-                Math.floor(255 * Math.min(1, 2 - 2 * this.score)) + "," +
-                Math.floor(255 * Math.min(1, 2 * this.score)) +
+                Math.floor(255 * Math.min(1, 2 - 2 * score)) + "," +
+                Math.floor(255 * Math.min(1, 2 * score)) +
                 ", 0)"; // blue
         }
         else {

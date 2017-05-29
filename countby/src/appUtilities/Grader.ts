@@ -58,10 +58,12 @@ export class Grade {
         }
     }
     getRGB(): string {
+        const score = this.score * this.score;
+
         if (this.isValid) {
             return "rgb(" +
-                Math.floor(255 * Math.min(1, 2 - 2 * this.score)) + "," +   // red
-                Math.floor(255 * Math.min(1, 2 * this.score)) +             // green
+                Math.floor(255 * Math.min(1, 2 - 2 * score)) + "," +   // red
+                Math.floor(255 * Math.min(1, 2 * score)) +             // green
                 ", 0)"; // blue
         } else {
             return "white";
