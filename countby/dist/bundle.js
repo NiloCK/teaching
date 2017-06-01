@@ -33004,10 +33004,12 @@ var SessionReport = (function (_super) {
             RX.createElement("ul", null, truncatedRecords.map(function (record, index) {
                 return (RX.createElement("li", { key: index }, _this.renderRecord(record)));
             })),
-            RX.createElement(RX.Text, null,
-                "It took ",
-                time,
-                " seconds to do these! Can you beat this?"),
+            (truncatedRecords.length <= 28) ?
+                RX.createElement(RX.Text, null,
+                    "It took ",
+                    time,
+                    " seconds to do these! Can you beat this?") :
+                null,
             RX.createElement("button", { autoFocus: true, onClick: function () { window.location.reload(); } }, "Try again!")));
     };
     SessionReport.prototype.renderRecord = function (record) {

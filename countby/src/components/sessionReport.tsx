@@ -58,9 +58,11 @@ class SessionReport extends RX.Component<SessionReportProps, null> {
                         }
                     )}
                 </ul>
-                <RX.Text>
-                    It took {time} seconds to do these! Can you beat this?
-                </RX.Text>
+                {(truncatedRecords.length <= 28) ?
+                    <RX.Text>
+                        It took {time} seconds to do these! Can you beat this?
+                    </RX.Text> :
+                    null}
                 <button autoFocus onClick={() => { window.location.reload(); }}>Try again!</button>
             </RX.View>
         )
