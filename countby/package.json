@@ -30,6 +30,7 @@
   "dependencies": {
     "moment": "^2.18.1",
     "mousetrap": "^1.6.1",
+    "pouchdb-authentication": "^0.5.5",
     "pouchdb-browser": "^6.2.0",
     "react": "^15.4.1",
     "react-addons-perf": "^15.4.1",
