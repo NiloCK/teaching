@@ -34507,7 +34507,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var RX = __webpack_require__(24);
 var Recorder_1 = __webpack_require__(36);
 var numpad_1 = __webpack_require__(128);
-var moment = __webpack_require__(0);
+var Displayable_1 = __webpack_require__(645);
 var styles = {
     form: RX.Styles.createViewStyle({
         flexDirection: "row",
@@ -34530,16 +34530,6 @@ var SingleDigitDivisionProblem = (function (_super) {
             onanswer: null
         };
     };
-    SingleDigitDivisionProblem.prototype.init = function () {
-        this.startTime = moment();
-        this.attempts = 0;
-    };
-    SingleDigitDivisionProblem.prototype.componentDidMount = function () {
-        this.init();
-    };
-    SingleDigitDivisionProblem.prototype.componentDidUpdate = function () {
-        this.init();
-    };
     SingleDigitDivisionProblem.prototype.render = function () {
         var _a = this.props, a = _a.a, b = _a.b;
         return (RX.createElement(RX.View, null,
@@ -34558,9 +34548,7 @@ var SingleDigitDivisionProblem = (function (_super) {
         this.attempts++;
         var input = document.getElementById('answer');
         var userans = parseInt(input.value);
-        var userTime = moment().diff(this.startTime) / 1000;
-        var isCorrect = (this.props.a === userans);
-        console.log("This question was answered in: " + userTime);
+        var isCorrect = this.isCorrect();
         Recorder_1.default.addRecord({
             q: 'division',
             a: this.props.a,
@@ -34568,7 +34556,7 @@ var SingleDigitDivisionProblem = (function (_super) {
             answer: userans,
             correct: isCorrect,
             attempts: this.attempts,
-            time: userTime
+            time: this.timeSinceStart()
         });
         input.value = "";
         this.animate(isCorrect);
@@ -34576,6 +34564,11 @@ var SingleDigitDivisionProblem = (function (_super) {
             this.props.onanswer();
         }
         // console.log(Recorder.getRecord());
+    };
+    SingleDigitDivisionProblem.prototype.isCorrect = function () {
+        var input = document.getElementById('answer');
+        var userans = parseInt(input.value);
+        return (this.props.a === userans);
     };
     SingleDigitDivisionProblem.prototype.animate = function (correct) {
         var questionDiv = document.getElementById("question");
@@ -34585,7 +34578,7 @@ var SingleDigitDivisionProblem = (function (_super) {
         }, 1000);
     };
     return SingleDigitDivisionProblem;
-}(RX.Component));
+}(Displayable_1.Question));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SingleDigitDivisionProblem;
 
@@ -77884,7 +77877,8 @@ var Displayable = (function (_super) {
     };
     Displayable.prototype.timeSinceStart = function () {
         var now = Moment();
-        return now.diff(this.startTime);
+        var milliseconds = now.diff(this.startTime);
+        return milliseconds / 1000;
     };
     return Displayable;
 }(RX.Component));
