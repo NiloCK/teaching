@@ -10,8 +10,9 @@ abstract class Displayable<Props, State> extends RX.Component<RX.CommonProps, nu
         this.startTime = Moment();
     }
     timeSinceStart(): number {
-        let now = Moment();
-        return now.diff(this.startTime);
+        const now = Moment();
+        const milliseconds = now.diff(this.startTime)
+        return milliseconds / 1000;
     }
 
     constructor(props: RX.CommonProps) {
