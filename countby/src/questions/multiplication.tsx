@@ -1,12 +1,11 @@
 import * as RX from 'reactxp';
 import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import * as moment from 'moment'
+import { Question, QuestionProps } from '../skuilder-base/Displayable'
 
-interface SingleDigitMultiplicationProblemProps extends RX.CommonProps {
+interface SingleDigitMultiplicationProblemProps extends QuestionProps {
     a: number;
     b: number;
-    onanswer: Function;
 }
 
 const styles = {
@@ -21,9 +20,7 @@ function getRandomInt(min: number, max: number) {
 };
 
 
-class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplicationProblemProps, null> {
-    startTime: moment.Moment;
-    attempts: number;
+class SingleDigitMultiplicationProblem extends Question<SingleDigitMultiplicationProblemProps, null> {
 
     static getProps(): SingleDigitMultiplicationProblemProps {
         return {
@@ -36,19 +33,6 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
     constructor(props: SingleDigitMultiplicationProblemProps) {
         super(props);
     }
-
-    init() {
-        this.startTime = moment();
-        this.attempts = 0;
-    }
-
-    componentDidMount() {
-        this.init();
-    }
-    componentDidUpdate() {
-        this.init();
-    }
-
 
     render() {
         return (
@@ -63,6 +47,7 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
                         <input className="mousetrap"
                             autoFocus
                             id="answer" type="number" autoComplete={false} />
+                        {/*<RX.TextInput autoFocus keyboardType="numeric" autoCorrect={false} ></RX.TextInput>*/}
                     </form>
                 </RX.View>
                 <Numpad num={this.props.b} />
@@ -74,13 +59,10 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
         e.preventDefault();
         this.attempts++;
 
-        let input = document.getElementById('answer');
-        let userans = parseInt(input.value);
-        let userTime = moment().diff(this.startTime) / 1000;
-        let isCorrect = (this.props.a * this.props.b === userans);
+        const input = document.getElementById('answer');
+        const userans = parseInt(input.value);
+        const isCorrect = this.isCorrect();
 
-
-        console.log("This question was answered in: " + userTime);
         Recorder.addRecord({
             q: 'multiplication',
             a: this.props.a,
@@ -88,7 +70,7 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
             answer: userans,
             correct: isCorrect,
             attempts: this.attempts,
-            time: userTime
+            time: this.timeSinceStart()
         });
 
         input.value = "";
@@ -100,6 +82,13 @@ class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplic
         }
 
         // console.log(Recorder.getRecord());
+    }
+
+    isCorrect() {
+        let input = document.getElementById('answer');
+        let userans = parseInt(input.value);
+
+        return (this.props.a * this.props.b === userans);
     }
 
     animate(correct: boolean) {//todo do this in a react-way
