@@ -34304,7 +34304,7 @@ var ProgressChart = (function (_super) {
     };
     ProgressChart.prototype.renderViewRow = function (b, index) {
         var _this = this;
-        return (RX.createElement(RX.View, { style: styles.row },
+        return (RX.createElement(RX.View, { key: index.toString(), style: styles.row },
             RX.createElement(RX.Text, { style: styles.entry }, b),
             rows.map(function (row, rowIndex) {
                 return _this.renderViewGrade(row, b, rowIndex);
@@ -34312,7 +34312,7 @@ var ProgressChart = (function (_super) {
     };
     ProgressChart.prototype.renderViewGrade = function (a, b, index) {
         var grade = Grader_1.default.Grade(this.props.questionType, a, b);
-        return (RX.createElement(RX.Text, { style: this.getStyle(grade) }));
+        return (RX.createElement(RX.Text, { key: index.toString(), style: this.getStyle(grade) }));
     };
     ProgressChart.prototype.getStyle = function (grade) {
         return RX.Styles.createTextStyle({
