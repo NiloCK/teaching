@@ -1,7 +1,7 @@
 import * as RX from 'reactxp';
 import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { QuestionView, QuestionProps } from '../skuilder-base/Displayable'
+import { QuestionView, QuestionProps } from '../skuilder-base/BaseClasses'
 
 interface SingleDigitMultiplicationProblemProps extends QuestionProps {
     a: number;

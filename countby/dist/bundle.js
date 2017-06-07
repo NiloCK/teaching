@@ -34507,7 +34507,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var RX = __webpack_require__(24);
 var Recorder_1 = __webpack_require__(36);
 var numpad_1 = __webpack_require__(128);
-var Displayable_1 = __webpack_require__(645);
+var BaseClasses_1 = __webpack_require__(646);
 var styles = {
     form: RX.Styles.createViewStyle({
         flexDirection: "row",
@@ -34578,7 +34578,7 @@ var SingleDigitDivisionProblem = (function (_super) {
         }, 1000);
     };
     return SingleDigitDivisionProblem;
-}(Displayable_1.QuestionView));
+}(BaseClasses_1.QuestionView));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SingleDigitDivisionProblem;
 
@@ -34597,7 +34597,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var RX = __webpack_require__(24);
 var Recorder_1 = __webpack_require__(36);
 var numpad_1 = __webpack_require__(128);
-var Displayable_1 = __webpack_require__(645);
+var BaseClasses_1 = __webpack_require__(646);
 var styles = {
     form: RX.Styles.createViewStyle({
         flexDirection: "row",
@@ -34667,7 +34667,7 @@ var SingleDigitMultiplicationProblem = (function (_super) {
         }, 1000);
     };
     return SingleDigitMultiplicationProblem;
-}(Displayable_1.QuestionView));
+}(BaseClasses_1.QuestionView));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SingleDigitMultiplicationProblem;
 
@@ -77855,7 +77855,8 @@ RX.UserInterface.setMainView(RX.createElement(App, null));
 
 
 /***/ }),
-/* 645 */
+/* 645 */,
+/* 646 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
