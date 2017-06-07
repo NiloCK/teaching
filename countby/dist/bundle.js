@@ -34578,7 +34578,7 @@ var SingleDigitDivisionProblem = (function (_super) {
         }, 1000);
     };
     return SingleDigitDivisionProblem;
-}(Displayable_1.Question));
+}(Displayable_1.QuestionView));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SingleDigitDivisionProblem;
 
@@ -34667,7 +34667,7 @@ var SingleDigitMultiplicationProblem = (function (_super) {
         }, 1000);
     };
     return SingleDigitMultiplicationProblem;
-}(Displayable_1.Question));
+}(Displayable_1.QuestionView));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = SingleDigitMultiplicationProblem;
 
@@ -77867,49 +77867,57 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var RX = __webpack_require__(24);
 var Moment = __webpack_require__(0);
-var Displayable = (function (_super) {
-    __extends(Displayable, _super);
-    function Displayable(props) {
+var Viewable = (function (_super) {
+    __extends(Viewable, _super);
+    function Viewable(props) {
         return _super.call(this, props) || this;
     }
-    Displayable.prototype.init = function () {
+    Viewable.prototype.init = function () {
         this.startTime = Moment();
     };
-    Displayable.prototype.timeSinceStart = function () {
+    Viewable.prototype.timeSinceStart = function () {
         var now = Moment();
         var milliseconds = now.diff(this.startTime);
         return milliseconds / 1000;
     };
-    return Displayable;
+    return Viewable;
 }(RX.Component));
-var Question = (function (_super) {
-    __extends(Question, _super);
-    function Question(props) {
+var Question = (function () {
+    function Question() {
+    }
+    return Question;
+}());
+// spitballing....
+var Subtraction = (function (_super) {
+    __extends(Subtraction, _super);
+    function Subtraction() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Subtraction;
+}(Question));
+Subtraction.PropDefinition = {
+    props: [
+        { name: 'minuend', max: 18, min: 0 },
+        { name: 'subtrahend', min: '0', max: 'minuend' }
+    ]
+};
+var QuestionView = (function (_super) {
+    __extends(QuestionView, _super);
+    function QuestionView(props) {
         var _this = _super.call(this, props) || this;
         _this.componentDidMount = function () {
             _this.init();
         };
         return _this;
     }
-    Question.prototype.init = function () {
+    QuestionView.prototype.init = function () {
         _super.prototype.init.call(this);
         this.attempts = 0;
     };
-    return Question;
-}(Displayable));
-Question.staticThing = 5; //?
-exports.Question = Question;
-var SubtractionProb = (function (_super) {
-    __extends(SubtractionProb, _super);
-    /**
-     *
-     */
-    function SubtractionProb() {
-        return _super.call(this) || this;
-    }
-    SubtractionProb.prototype.render = function () { return (RX.createElement("div", null)); };
-    return SubtractionProb;
-}(Question));
+    return QuestionView;
+}(Viewable));
+QuestionView.staticThing = 5; //?
+exports.QuestionView = QuestionView;
 
 
 /***/ })

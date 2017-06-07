@@ -1,7 +1,7 @@
 import * as RX from 'reactxp';
 import * as Moment from 'moment';
 
-abstract class Displayable<Props, State> extends RX.Component<RX.CommonProps, null> {
+abstract class Viewable<Props> extends RX.Component<RX.CommonProps, null> {
     startTime: Moment.Moment;
 
     abstract render(): JSX.Element;
@@ -20,7 +20,38 @@ abstract class Displayable<Props, State> extends RX.Component<RX.CommonProps, nu
     }
 }
 
-export abstract class Question<P, S> extends Displayable<QuestionProps, null> {
+interface PropsDefinition {
+    props: Array<PropDefinition<any>>;
+}
+
+interface NumberPropDefinition extends PropDefinition<number> {
+    min: number;
+    max: number;
+
+    int?: boolean;
+}
+
+interface PropDefinition<T> {
+    name: string; // the name of the property
+}
+
+abstract class Question {
+    static PropsDefinition: PropsDefinition;
+}
+
+
+// spitballing....
+class Subtraction extends Question {
+    static PropDefinition = {
+        props: [
+            { name: 'minuend', max: 18, min: 0 },
+            { name: 'subtrahend', min: '0', max: 'minuend' }
+        ]
+    }
+}
+
+
+export abstract class QuestionView<P, S> extends Viewable<QuestionProps> {
     attempts: number;
     static readonly staticThing: number = 5; //?
 
@@ -38,21 +69,14 @@ export abstract class Question<P, S> extends Displayable<QuestionProps, null> {
     constructor(props: RX.CommonProps) {
         super(props);
     }
+
+    // submit():void {
+
+    // }
 }
 
 export interface QuestionProps extends RX.CommonProps {
     onanswer: Function
-}
-
-class SubtractionProb extends Question<RX.CommonProps, null> {
-    /**
-     *
-     */
-    constructor() {
-        super();
-
-    }
-    render() { return (<div></div>); }
 }
 
 // interface QuestionProps {

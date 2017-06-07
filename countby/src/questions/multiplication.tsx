@@ -1,7 +1,7 @@
 import * as RX from 'reactxp';
 import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { Question, QuestionProps } from '../skuilder-base/Displayable'
+import { QuestionView, QuestionProps } from '../skuilder-base/Displayable'
 
 interface SingleDigitMultiplicationProblemProps extends QuestionProps {
     a: number;
@@ -20,7 +20,7 @@ function getRandomInt(min: number, max: number) {
 };
 
 
-class SingleDigitMultiplicationProblem extends Question<SingleDigitMultiplicationProblemProps, null> {
+class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplicationProblemProps, null> {
 
     static getProps(): SingleDigitMultiplicationProblemProps {
         return {
@@ -47,8 +47,14 @@ class SingleDigitMultiplicationProblem extends Question<SingleDigitMultiplicatio
                         <input className="mousetrap"
                             autoFocus
                             id="answer" type="number" autoComplete={false} />
-                        {/*<RX.TextInput autoFocus keyboardType="numeric" autoCorrect={false} ></RX.TextInput>*/}
                     </form>
+                    {/*<RX.TextInput ref="answer2"
+                        onSubmitEditing={() => console.log("I'm being submitted")}
+                        autoFocus
+                        keyboardType="numeric"
+                        autoCorrect={false} >
+                    </RX.TextInput>*/}
+
                 </RX.View>
                 <Numpad num={this.props.b} />
             </RX.View>

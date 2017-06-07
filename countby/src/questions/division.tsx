@@ -1,7 +1,7 @@
 import * as RX from 'reactxp';
 import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { Question, QuestionProps } from '../skuilder-base/Displayable'
+import { QuestionView, QuestionProps } from '../skuilder-base/Displayable'
 
 interface SingleDigitDivisionProblemProps extends QuestionProps {
     a: number;
@@ -19,7 +19,7 @@ function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-class SingleDigitDivisionProblem extends Question<SingleDigitDivisionProblemProps, null> {
+class SingleDigitDivisionProblem extends QuestionView<SingleDigitDivisionProblemProps, null> {
 
     static getProps(): SingleDigitDivisionProblemProps {
         return {
