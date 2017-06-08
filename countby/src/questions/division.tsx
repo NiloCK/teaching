@@ -20,9 +20,7 @@ function getRandomInt(min: number, max: number) {
 };
 
 class SingleDigitDivisionProblem extends QuestionView<SingleDigitDivisionProblemProps> {
-    getName(): string {
-        return "SingleDigitDivisionProblem";
-    }
+
     static getProps(): SingleDigitDivisionProblemProps {
         return {
             a: getRandomInt(0, 10),

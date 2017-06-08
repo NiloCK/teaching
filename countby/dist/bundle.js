@@ -16560,8 +16560,9 @@ var QuestionView = (function (_super) {
         var input = document.getElementById('answer');
         var userans = parseInt(input.value);
         var isCorrect = this.isCorrect();
+        var a = this;
         Recorder_1.default.addRecord({
-            q: this.getName(),
+            q: this.constructor.name,
             props: this.strippedProps(),
             answer: this.userAnswer(),
             isCorrect: isCorrect,
@@ -34645,9 +34646,6 @@ var SingleDigitDivisionProblem = (function (_super) {
     function SingleDigitDivisionProblem(props) {
         return _super.call(this, props) || this;
     }
-    SingleDigitDivisionProblem.prototype.getName = function () {
-        return "SingleDigitDivisionProblem";
-    };
     SingleDigitDivisionProblem.getProps = function () {
         return {
             a: getRandomInt(0, 10),
@@ -34715,9 +34713,6 @@ var SingleDigitMultiplicationProblem = (function (_super) {
     function SingleDigitMultiplicationProblem(props) {
         return _super.call(this, props) || this;
     }
-    SingleDigitMultiplicationProblem.prototype.getName = function () {
-        return "SingleDigitMultiplicationProblem";
-    };
     SingleDigitMultiplicationProblem.getProps = function () {
         return {
             a: getRandomInt(0, 10),

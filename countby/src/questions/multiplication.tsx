@@ -21,9 +21,7 @@ function getRandomInt(min: number, max: number) {
 
 
 class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplicationProblemProps> {
-    getName(): string {
-        return "SingleDigitMultiplicationProblem";
-    }
+
     static getProps(): SingleDigitMultiplicationProblemProps {
         return {
             a: getRandomInt(0, 10),

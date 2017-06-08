@@ -75,7 +75,6 @@ export abstract class QuestionView<QuestionProps> extends Viewable<QuestionProps
         return parseInt(input.value);
     };
     abstract isCorrect(): boolean;
-    abstract getName(): string;
 
     constructor(props: RX.CommonProps) {
         super(props);
@@ -89,8 +88,10 @@ export abstract class QuestionView<QuestionProps> extends Viewable<QuestionProps
         const userans = parseInt(input.value);
         const isCorrect = this.isCorrect();
 
+        let a = this;
+
         Recorder.addRecord({
-            q: this.getName(),
+            q: this.constructor.name,
             props: this.strippedProps(),
             answer: this.userAnswer(),
             isCorrect: isCorrect,
