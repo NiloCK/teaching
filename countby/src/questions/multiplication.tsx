@@ -1,7 +1,7 @@
 import * as RX from 'reactxp';
 import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { QuestionView, QuestionProps } from '../skuilder-base/BaseClasses'
+import { QuestionView, QuestionProps, TextInput } from '../skuilder-base/BaseClasses'
 
 interface SingleDigitMultiplicationProblemProps extends QuestionProps {
     a: number;
@@ -20,8 +20,10 @@ function getRandomInt(min: number, max: number) {
 };
 
 
-class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplicationProblemProps, null> {
-
+class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplicationProblemProps> {
+    getName(): string {
+        return "SingleDigitMultiplicationProblem";
+    }
     static getProps(): SingleDigitMultiplicationProblemProps {
         return {
             a: getRandomInt(0, 10),
@@ -52,42 +54,15 @@ class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplic
                         onSubmitEditing={() => console.log("I'm being submitted")}
                         autoFocus
                         keyboardType="numeric"
-                        autoCorrect={false} >
-                    </RX.TextInput>*/}
+                        autoCorrect={false}
+                        onKeyPress={null}>
+                    </RX.TextInput>
+                    <TextInput > </TextInput>*/}
 
                 </RX.View>
                 <Numpad num={this.props.b} />
             </RX.View>
         );
-    }
-
-    submit(e) {
-        e.preventDefault();
-        this.attempts++;
-
-        const input = document.getElementById('answer');
-        const userans = parseInt(input.value);
-        const isCorrect = this.isCorrect();
-
-        Recorder.addRecord({
-            q: 'multiplication',
-            a: this.props.a,
-            b: this.props.b,
-            answer: userans,
-            correct: isCorrect,
-            attempts: this.attempts,
-            time: this.timeSinceStart()
-        });
-
-        input.value = "";
-
-        this.animate(isCorrect);
-
-        if (isCorrect) { // only give a new question if this one was right
-            this.props.onanswer();
-        }
-
-        // console.log(Recorder.getRecord());
     }
 
     isCorrect() {
@@ -97,15 +72,7 @@ class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplic
         return (this.props.a * this.props.b === userans);
     }
 
-    animate(correct: boolean) {//todo do this in a react-way
-        let questionDiv = document.getElementById("question");
 
-        questionDiv.classList.add("correct-" + correct); // see /src/styles/answerStyles.css
-
-        setTimeout(function () { // remove the class so that it can be reapplied
-            questionDiv.classList.remove("correct-true", "correct-false")
-        }, 1000);
-    }
 
 }
 

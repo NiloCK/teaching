@@ -19,8 +19,10 @@ function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-class SingleDigitDivisionProblem extends QuestionView<SingleDigitDivisionProblemProps, null> {
-
+class SingleDigitDivisionProblem extends QuestionView<SingleDigitDivisionProblemProps> {
+    getName(): string {
+        return "SingleDigitDivisionProblem";
+    }
     static getProps(): SingleDigitDivisionProblemProps {
         return {
             a: getRandomInt(0, 10),
@@ -53,35 +55,6 @@ class SingleDigitDivisionProblem extends QuestionView<SingleDigitDivisionProblem
                 <Numpad num={this.props.b} />
             </RX.View>
         );
-    }
-
-    submit(e) {
-        e.preventDefault();
-        this.attempts++;
-
-        let input = document.getElementById('answer');
-        let userans = parseInt(input.value);
-        let isCorrect = this.isCorrect();
-
-        Recorder.addRecord({
-            q: 'division',
-            a: this.props.a,
-            b: this.props.b,
-            answer: userans,
-            correct: isCorrect,
-            attempts: this.attempts,
-            time: this.timeSinceStart()
-        });
-
-        input.value = "";
-
-        this.animate(isCorrect);
-
-        if (isCorrect) { // only give a new question if this one was right
-            this.props.onanswer();
-        }
-
-        // console.log(Recorder.getRecord());
     }
 
     isCorrect() {

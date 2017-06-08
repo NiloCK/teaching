@@ -1,5 +1,6 @@
 import * as RX from 'reactxp';
 import * as Moment from 'moment';
+import Recorder from '../appUtilities/Recorder'
 
 abstract class Viewable<Props> extends RX.Component<RX.CommonProps, null> {
     startTime: Moment.Moment;
@@ -32,6 +33,7 @@ interface NumberPropDefinition extends PropDefinition<number> {
 }
 
 interface PropDefinition<T> {
+    type: keyof T;
     name: string; // the name of the property
 }
 
@@ -39,21 +41,25 @@ abstract class Question {
     static PropsDefinition: PropsDefinition;
 }
 
-
 // spitballing....
-class Subtraction extends Question {
-    static PropDefinition = {
-        props: [
-            { name: 'minuend', max: 18, min: 0 },
-            { name: 'subtrahend', min: '0', max: 'minuend' }
-        ]
-    }
-}
+// class Subtraction extends Question<{
+//     props: [
+//         { type: keyof number, name: 'minuend', max: 10 }
+//     ]
+// }>
+// {
+//     listProps() {
+//         let c = (typeof this);
+
+//     }
+
+// }
 
 
-export abstract class QuestionView<P, S> extends Viewable<QuestionProps> {
+export abstract class QuestionView<QuestionProps> extends Viewable<QuestionProps> {
     attempts: number;
     static readonly staticThing: number = 5; //?
+    question: Question;
 
     init(): void {
         super.init();
@@ -64,15 +70,67 @@ export abstract class QuestionView<P, S> extends Viewable<QuestionProps> {
         this.init();
     }
 
+    userAnswer(): any {
+        let input = document.getElementById('answer');
+        return parseInt(input.value);
+    };
     abstract isCorrect(): boolean;
+    abstract getName(): string;
 
     constructor(props: RX.CommonProps) {
         super(props);
     }
 
-    // submit():void {
+    submit(e): void {
+        e.preventDefault();
+        this.attempts++;
 
-    // }
+        const input = document.getElementById('answer');
+        const userans = parseInt(input.value);
+        const isCorrect = this.isCorrect();
+
+        Recorder.addRecord({
+            q: this.getName(),
+            props: this.strippedProps(),
+            answer: this.userAnswer(),
+            isCorrect: isCorrect,
+            attempts: this.attempts,
+            time: this.timeSinceStart()
+        })
+
+        input.value = "";
+        this.animate(isCorrect);
+
+        if (isCorrect) {
+            this.props.onanswer();
+        }
+    }
+
+
+    /**
+     * Removes functions from the components props, so that the props can be pouched
+     */
+    strippedProps(): Object {
+        let ret = {};
+
+        Object.keys(this.props).forEach((key) => {
+            if (typeof (this.props[key]) != 'function') {
+                ret[key] = this.props[key];
+            }
+        })
+
+        return ret;
+    }
+
+    animate(correct: boolean) {//todo do this in a react-way
+        let questionDiv = document.getElementById("question");
+
+        questionDiv.classList.add("correct-" + correct); // see /src/styles/answerStyles.css
+
+        setTimeout(function () { // remove the class so that it can be reapplied
+            questionDiv.classList.remove("correct-true", "correct-false")
+        }, 1000);
+    }
 }
 
 export interface QuestionProps extends RX.CommonProps {
@@ -97,4 +155,21 @@ interface QuestionRecord {
     isCorrect: boolean,
     attempts: number,
     time: number // milliseconds
+}
+
+
+interface TextBoxProps extends RX.Types.TextInputProps {
+    onsubmit: Function;
+}
+
+export class TextInput extends RX.TextInput {
+
+    constructor(props: TextBoxProps) {
+        super(props);
+        this.props.onKeyPress = (e: RX.Types.KeyboardEvent) => {
+            if (e.keyCode === 13) { // 'enter'
+                console.log("TextInput is being entered!");
+            }
+        }
+    }
 }
