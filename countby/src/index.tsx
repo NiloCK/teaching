@@ -4,5 +4,5 @@ import Recorder from './appUtilities/Recorder'
 
 Recorder.init();
 
-RX.App.initialize(false, false);
+RX.App.initialize(true, true);
 RX.UserInterface.setMainView(<App />);
