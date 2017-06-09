@@ -145,39 +145,14 @@ export interface QuestionProps extends RX.CommonProps {
     onanswer: Function
 }
 
-// interface QuestionProps {
-//     props: Array<Property>
-// }
-
-interface Property {
-
-}
-
 /**
  * The record of a completed question.
  */
 interface QuestionRecord {
-    q: string, // the ClassName of the question (?)
+    q: string, // the ClassName of the question
     props: QuestionProps,
     answer: any,
     isCorrect: boolean,
     attempts: number,
     time: number // milliseconds
-}
-
-
-interface TextBoxProps extends RX.Types.TextInputProps {
-    onsubmit: Function;
-}
-
-export class TextInput extends RX.TextInput {
-
-    constructor(props: TextBoxProps) {
-        super(props);
-        this.props.onKeyPress = (e: RX.Types.KeyboardEvent) => {
-            if (e.keyCode === 13) { // 'enter'
-                console.log("TextInput is being entered!");
-            }
-        }
-    }
 }

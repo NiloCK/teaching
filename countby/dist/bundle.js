@@ -16599,20 +16599,6 @@ var QuestionView = (function (_super) {
 }(Viewable));
 QuestionView.staticThing = 5; //?
 exports.QuestionView = QuestionView;
-var TextInput = (function (_super) {
-    __extends(TextInput, _super);
-    function TextInput(props) {
-        var _this = _super.call(this, props) || this;
-        _this.props.onKeyPress = function (e) {
-            if (e.keyCode === 13) {
-                console.log("TextInput is being entered!");
-            }
-        };
-        return _this;
-    }
-    return TextInput;
-}(RX.TextInput));
-exports.TextInput = TextInput;
 
 
 /***/ }),
