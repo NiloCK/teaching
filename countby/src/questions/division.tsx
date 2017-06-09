@@ -1,11 +1,18 @@
 import * as RX from 'reactxp';
-import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { QuestionView, QuestionViewProps } from '../skuilder-base/BaseClasses'
+import { Question, QuestionView, QuestionViewProps } from '../skuilder-base/BaseClasses'
 
 interface SingleDigitDivisionProblemProps extends QuestionViewProps {
-    a: number;
-    b: number;
+    question: SingleDigitDivisionQuestion
+}
+
+class SingleDigitDivisionQuestion extends Question {
+    a: number = getRandomInt(0, 10);
+    b: number = getRandomInt(1, 10);
+
+    isCorrect(answer: number) {
+        return answer == this.a;
+    }
 }
 
 const styles = {
@@ -19,22 +26,17 @@ function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-class SingleDigitDivisionProblem extends QuestionView<SingleDigitDivisionProblemProps> {
+class SingleDigitDivisionProblemView extends QuestionView<SingleDigitDivisionProblemProps> {
 
     static getProps(): SingleDigitDivisionProblemProps {
         return {
-            a: getRandomInt(0, 10),
-            b: getRandomInt(1, 10),
+            question: new SingleDigitDivisionQuestion(),
             onanswer: null
         };
     }
 
-    constructor(props: SingleDigitDivisionProblemProps) {
-        super(props);
-    }
-
     render() {
-        let { a, b } = this.props;
+        let { a, b } = this.props.question;
 
         return (
             <RX.View>
@@ -50,28 +52,11 @@ class SingleDigitDivisionProblem extends QuestionView<SingleDigitDivisionProblem
                             id="answer" type="number" autoComplete={false} />
                     </form>
                 </RX.View>
-                <Numpad num={this.props.b} />
+                <Numpad num={b} />
             </RX.View>
         );
     }
 
-    isCorrect() {
-        let input = document.getElementById('answer');
-        let userans = parseInt(input.value);
-
-        return (this.props.a === userans);
-    }
-
-    animate(correct: boolean) {//todo do this in a react-way
-        let questionDiv = document.getElementById("question");
-
-        questionDiv.classList.add("correct-" + correct); // see /src/styles/answerStyles.css
-
-        setTimeout(function () { // remove the class so that it can be reapplied
-            questionDiv.classList.remove("correct-true", "correct-false")
-        }, 1000);
-    }
-
 }
 
-export default SingleDigitDivisionProblem;
+export default SingleDigitDivisionProblemView;

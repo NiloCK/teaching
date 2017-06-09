@@ -16525,6 +16525,7 @@ var Question = (function () {
     }
     return Question;
 }());
+exports.Question = Question;
 // spitballing....
 // class Subtraction extends Question<{
 //     props: [
@@ -16554,6 +16555,9 @@ var QuestionView = (function (_super) {
         return parseInt(input.value);
     };
     ;
+    QuestionView.prototype.isCorrect = function () {
+        return this.props.question.isCorrect(this.userAnswer());
+    };
     QuestionView.prototype.submit = function (e) {
         e.preventDefault();
         this.attempts++;
@@ -34619,6 +34623,19 @@ var __extends = (this && this.__extends) || function (d, b) {
 var RX = __webpack_require__(22);
 var numpad_1 = __webpack_require__(128);
 var BaseClasses_1 = __webpack_require__(129);
+var SingleDigitDivisionQuestion = (function (_super) {
+    __extends(SingleDigitDivisionQuestion, _super);
+    function SingleDigitDivisionQuestion() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.a = getRandomInt(0, 10);
+        _this.b = getRandomInt(1, 10);
+        return _this;
+    }
+    SingleDigitDivisionQuestion.prototype.isCorrect = function (answer) {
+        return answer == this.a;
+    };
+    return SingleDigitDivisionQuestion;
+}(BaseClasses_1.Question));
 var styles = {
     form: RX.Styles.createViewStyle({
         flexDirection: "row",
@@ -34629,20 +34646,19 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 ;
-var SingleDigitDivisionProblem = (function (_super) {
-    __extends(SingleDigitDivisionProblem, _super);
-    function SingleDigitDivisionProblem(props) {
-        return _super.call(this, props) || this;
+var SingleDigitDivisionProblemView = (function (_super) {
+    __extends(SingleDigitDivisionProblemView, _super);
+    function SingleDigitDivisionProblemView() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    SingleDigitDivisionProblem.getProps = function () {
+    SingleDigitDivisionProblemView.getProps = function () {
         return {
-            a: getRandomInt(0, 10),
-            b: getRandomInt(1, 10),
+            question: new SingleDigitDivisionQuestion(),
             onanswer: null
         };
     };
-    SingleDigitDivisionProblem.prototype.render = function () {
-        var _a = this.props, a = _a.a, b = _a.b;
+    SingleDigitDivisionProblemView.prototype.render = function () {
+        var _a = this.props.question, a = _a.a, b = _a.b;
         return (RX.createElement(RX.View, null,
             RX.createElement(RX.View, { style: styles.form },
                 RX.createElement("div", { id: "question" },
@@ -34652,24 +34668,12 @@ var SingleDigitDivisionProblem = (function (_super) {
                     " =\u00A0"),
                 RX.createElement("form", { onSubmit: this.submit.bind(this) },
                     RX.createElement("input", { className: "mousetrap", autoFocus: true, id: "answer", type: "number", autoComplete: false }))),
-            RX.createElement(numpad_1.default, { num: this.props.b })));
+            RX.createElement(numpad_1.default, { num: b })));
     };
-    SingleDigitDivisionProblem.prototype.isCorrect = function () {
-        var input = document.getElementById('answer');
-        var userans = parseInt(input.value);
-        return (this.props.a === userans);
-    };
-    SingleDigitDivisionProblem.prototype.animate = function (correct) {
-        var questionDiv = document.getElementById("question");
-        questionDiv.classList.add("correct-" + correct); // see /src/styles/answerStyles.css
-        setTimeout(function () {
-            questionDiv.classList.remove("correct-true", "correct-false");
-        }, 1000);
-    };
-    return SingleDigitDivisionProblem;
+    return SingleDigitDivisionProblemView;
 }(BaseClasses_1.QuestionView));
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = SingleDigitDivisionProblem;
+exports.default = SingleDigitDivisionProblemView;
 
 
 /***/ }),
@@ -34695,40 +34699,48 @@ var styles = {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-;
-var SingleDigitMultiplicationProblem = (function (_super) {
-    __extends(SingleDigitMultiplicationProblem, _super);
-    function SingleDigitMultiplicationProblem(props) {
-        return _super.call(this, props) || this;
+; //todo move this somewhere sensible (or find a lib?)
+var SingleDigitMultiplicationQuestion = (function (_super) {
+    __extends(SingleDigitMultiplicationQuestion, _super);
+    function SingleDigitMultiplicationQuestion() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.a = getRandomInt(0, 10);
+        _this.b = getRandomInt(0, 10);
+        return _this;
     }
-    SingleDigitMultiplicationProblem.getProps = function () {
+    SingleDigitMultiplicationQuestion.prototype.isCorrect = function (answer) {
+        return (this.a * this.b == answer);
+    };
+    return SingleDigitMultiplicationQuestion;
+}(BaseClasses_1.Question));
+var SingleDigitMultiplicationProblemView = (function (_super) {
+    __extends(SingleDigitMultiplicationProblemView, _super);
+    function SingleDigitMultiplicationProblemView() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SingleDigitMultiplicationProblemView.getProps = function () {
         return {
-            a: getRandomInt(0, 10),
-            b: getRandomInt(1, 10),
-            onanswer: null
+            onanswer: null,
+            question: new SingleDigitMultiplicationQuestion()
         };
     };
-    SingleDigitMultiplicationProblem.prototype.render = function () {
+    SingleDigitMultiplicationProblemView.prototype.render = function () {
+        var question = this.props.question;
         return (RX.createElement(RX.View, null,
             RX.createElement(RX.View, { style: styles.form },
                 RX.createElement("div", { id: "question" },
-                    this.props.a,
+                    question.a,
                     " \u00D7 ",
-                    this.props.b,
+                    question.b,
                     " =\u00A0"),
                 RX.createElement("form", { onSubmit: this.submit.bind(this) },
                     RX.createElement("input", { className: "mousetrap", autoFocus: true, id: "answer", type: "number", autoComplete: false }))),
-            RX.createElement(numpad_1.default, { num: this.props.b })));
+            RX.createElement(numpad_1.default, { num: question.b })));
     };
-    SingleDigitMultiplicationProblem.prototype.isCorrect = function () {
-        var input = document.getElementById('answer');
-        var userans = parseInt(input.value);
-        return (this.props.a * this.props.b === userans);
-    };
-    return SingleDigitMultiplicationProblem;
+    return SingleDigitMultiplicationProblemView;
 }(BaseClasses_1.QuestionView));
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = SingleDigitMultiplicationProblem;
+exports.default = SingleDigitMultiplicationProblemView;
 
 
 /***/ }),
@@ -77909,7 +77921,7 @@ var RX = __webpack_require__(22);
 var App = __webpack_require__(332);
 var Recorder_1 = __webpack_require__(36);
 Recorder_1.default.init();
-RX.App.initialize(false, false);
+RX.App.initialize(true, true);
 RX.UserInterface.setMainView(RX.createElement(App, null));
 
 

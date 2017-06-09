@@ -1,12 +1,6 @@
 import * as RX from 'reactxp';
-import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { QuestionView, QuestionViewProps, TextInput } from '../skuilder-base/BaseClasses'
-
-interface SingleDigitMultiplicationProblemProps extends QuestionViewProps {
-    a: number;
-    b: number;
-}
+import { QuestionView, QuestionViewProps, Question } from '../skuilder-base/BaseClasses'
 
 const styles = {
     form: RX.Styles.createViewStyle({
@@ -17,31 +11,41 @@ const styles = {
 
 function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+}; //todo move this somewhere sensible (or find a lib?)
+
+class SingleDigitMultiplicationQuestion extends Question {
+    a: number = getRandomInt(0, 10);
+    b: number = getRandomInt(0, 10);
+
+    isCorrect(answer: number) {
+        return (this.a * this.b == answer);
+    }
+}
+
+interface SingleDigitMultiplicationQuestionProps extends QuestionViewProps {
+    question: SingleDigitMultiplicationQuestion
+}
 
 
-class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplicationProblemProps> {
+class SingleDigitMultiplicationProblemView extends QuestionView<SingleDigitMultiplicationQuestionProps> {
 
-    static getProps(): SingleDigitMultiplicationProblemProps {
+    static getProps(): SingleDigitMultiplicationQuestionProps {
         return {
-            a: getRandomInt(0, 10),
-            b: getRandomInt(1, 10),
-            onanswer: null
+            onanswer: null,
+            question: new SingleDigitMultiplicationQuestion()
         };
     }
 
-    constructor(props: SingleDigitMultiplicationProblemProps) {
-        super(props);
-    }
-
     render() {
+        let { question } = this.props;
+
         return (
             <RX.View>
 
                 <RX.View style={styles.form}>
 
                     <div id="question">
-                        {this.props.a} &times; {this.props.b} =&nbsp;
+                        {question.a} &times; {question.b} =&nbsp;
                     </div>
                     <form onSubmit={this.submit.bind(this)}>
                         <input className="mousetrap"
@@ -58,20 +62,10 @@ class SingleDigitMultiplicationProblem extends QuestionView<SingleDigitMultiplic
                     <TextInput > </TextInput>*/}
 
                 </RX.View>
-                <Numpad num={this.props.b} />
+                <Numpad num={question.b} />
             </RX.View>
         );
     }
-
-    isCorrect() {
-        let input = document.getElementById('answer');
-        let userans = parseInt(input.value);
-
-        return (this.props.a * this.props.b === userans);
-    }
-
-
-
 }
 
-export default SingleDigitMultiplicationProblem;
+export default SingleDigitMultiplicationProblemView;

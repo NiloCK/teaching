@@ -43,8 +43,10 @@ interface QProps<Q> extends RX.CommonProps {
 
 }
 
-abstract class Question {
+export abstract class Question {
     static PropsDefinition: PropsDefinition;
+
+    abstract isCorrect(answer: any): boolean;
 }
 
 // spitballing....
@@ -65,7 +67,6 @@ abstract class Question {
 export abstract class QuestionView<P extends QuestionViewProps> extends Viewable<QuestionViewProps> {
     attempts: number;
     static readonly staticThing: number = 5; //?
-    question: Question;
     props: P;
 
     init(): void {
@@ -81,7 +82,12 @@ export abstract class QuestionView<P extends QuestionViewProps> extends Viewable
         let input = document.getElementById('answer') as HTMLInputElement;
         return parseInt(input.value);
     };
-    abstract isCorrect(): boolean;
+    isCorrect(): boolean {
+        return this.props.question.isCorrect(
+            this.userAnswer()
+        );
+    }
+
 
     constructor(props: RX.CommonProps) {
         super(props);
@@ -145,7 +151,8 @@ export abstract class QuestionView<P extends QuestionViewProps> extends Viewable
 }
 
 export interface QuestionViewProps extends RX.CommonProps {
-    onanswer: Function
+    onanswer: Function,
+    question: Question
 }
 
 /**
