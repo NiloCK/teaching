@@ -16582,6 +16582,8 @@ var QuestionView = (function (_super) {
         var _this = this;
         var ret = {};
         Object.keys(this.props).forEach(function (key) {
+            var a;
+            a = _this.props[key];
             if (typeof (_this.props[key]) != 'function') {
                 ret[key] = _this.props[key];
             }

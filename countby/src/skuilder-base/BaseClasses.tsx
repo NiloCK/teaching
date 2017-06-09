@@ -62,7 +62,7 @@ abstract class Question {
 // }
 
 
-export abstract class QuestionView<P extends QuestionProps> extends Viewable<QuestionProps> {
+export abstract class QuestionView<P extends QuestionViewProps> extends Viewable<QuestionViewProps> {
     attempts: number;
     static readonly staticThing: number = 5; //?
     question: Question;
@@ -78,7 +78,7 @@ export abstract class QuestionView<P extends QuestionProps> extends Viewable<Que
     }
 
     userAnswer(): any {
-        let input = document.getElementById('answer');
+        let input = document.getElementById('answer') as HTMLInputElement;
         return parseInt(input.value);
     };
     abstract isCorrect(): boolean;
@@ -91,7 +91,7 @@ export abstract class QuestionView<P extends QuestionProps> extends Viewable<Que
         e.preventDefault();
         this.attempts++;
 
-        const input = document.getElementById('answer');
+        const input = document.getElementById('answer') as HTMLInputElement;
         const userans = parseInt(input.value);
         const isCorrect = this.isCorrect();
 
@@ -122,6 +122,9 @@ export abstract class QuestionView<P extends QuestionProps> extends Viewable<Que
         let ret = {};
 
         Object.keys(this.props).forEach((key) => {
+            let a: any;
+            a = this.props[key];
+
             if (typeof (this.props[key]) != 'function') {
                 ret[key] = this.props[key];
             }
@@ -141,16 +144,16 @@ export abstract class QuestionView<P extends QuestionProps> extends Viewable<Que
     }
 }
 
-export interface QuestionProps extends RX.CommonProps {
+export interface QuestionViewProps extends RX.CommonProps {
     onanswer: Function
 }
 
 /**
  * The record of a completed question.
  */
-interface QuestionRecord {
+export interface QuestionRecord {
     q: string, // the ClassName of the question
-    props: QuestionProps,
+    props: any,
     answer: any,
     isCorrect: boolean,
     attempts: number,

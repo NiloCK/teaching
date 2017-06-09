@@ -1,3 +1,4 @@
+import { QuestionRecord } from '../skuilder-base/BaseClasses'
 import * as pouch from 'pouchdb-browser'
 // import * as auth from 'pouchdb-authentication'
 
@@ -56,7 +57,7 @@ export default class Recorder {
         return Recorder.record;
     }
 
-    static addRecord(record: Object) {
+    static addRecord(record: QuestionRecord) {
         console.log("Adding a record...");
 
         record._id = new Date().toJSON();

@@ -1,9 +1,9 @@
 import * as RX from 'reactxp';
 import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { QuestionView, QuestionProps, TextInput } from '../skuilder-base/BaseClasses'
+import { QuestionView, QuestionViewProps, TextInput } from '../skuilder-base/BaseClasses'
 
-interface SingleDigitMultiplicationProblemProps extends QuestionProps {
+interface SingleDigitMultiplicationProblemProps extends QuestionViewProps {
     a: number;
     b: number;
 }
