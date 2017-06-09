@@ -16526,17 +16526,6 @@ var Question = (function () {
     return Question;
 }());
 exports.Question = Question;
-// spitballing....
-// class Subtraction extends Question<{
-//     props: [
-//         { type: keyof number, name: 'minuend', max: 10 }
-//     ]
-// }>
-// {
-//     listProps() {
-//         let c = (typeof this);
-//     }
-// }
 var QuestionView = (function (_super) {
     __extends(QuestionView, _super);
     function QuestionView(props) {

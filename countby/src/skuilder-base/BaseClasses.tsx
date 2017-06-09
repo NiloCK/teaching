@@ -63,6 +63,9 @@ export abstract class Question {
 
 // }
 
+interface ClassConstructor extends Function {
+    name: string
+}
 
 export abstract class QuestionView<P extends QuestionViewProps> extends Viewable<QuestionViewProps> {
     attempts: number;
@@ -104,7 +107,7 @@ export abstract class QuestionView<P extends QuestionViewProps> extends Viewable
         let a = this;
 
         Recorder.addRecord({
-            q: this.constructor.name,
+            q: (this.constructor as ClassConstructor).name,
             props: this.strippedProps(),
             answer: this.userAnswer(),
             isCorrect: isCorrect,
