@@ -2,8 +2,9 @@ import * as RX from 'reactxp';
 import * as Moment from 'moment';
 import Recorder from '../appUtilities/Recorder'
 
-abstract class Viewable<Props> extends RX.Component<RX.CommonProps, null> {
+abstract class Viewable<P extends RX.CommonProps> extends RX.Component<RX.CommonProps, null> {
     startTime: Moment.Moment;
+    props: P;
 
     abstract render(): JSX.Element;
 
@@ -37,6 +38,11 @@ interface PropDefinition<T> {
     name: string; // the name of the property
 }
 
+interface QProps<Q> extends RX.CommonProps {
+    onanswer: Function,
+
+}
+
 abstract class Question {
     static PropsDefinition: PropsDefinition;
 }
@@ -56,10 +62,11 @@ abstract class Question {
 // }
 
 
-export abstract class QuestionView<QuestionProps> extends Viewable<QuestionProps> {
+export abstract class QuestionView<P extends QuestionProps> extends Viewable<QuestionProps> {
     attempts: number;
     static readonly staticThing: number = 5; //?
     question: Question;
+    props: P;
 
     init(): void {
         super.init();
