@@ -128,18 +128,17 @@ export abstract class QuestionView<P extends QuestionViewProps> extends Viewable
      * Removes functions from the components props, so that the props can be pouched
      */
     strippedProps(): Object {
-        let ret = {};
+        let strippedProps: KeyedObject = {};
 
         Object.keys(this.props).forEach((key) => {
-            let a: any;
-            a = this.props[key];
+            let prop: any = this.props[key];
 
-            if (typeof (this.props[key]) != 'function') {
-                ret[key] = this.props[key];
+            if (typeof (prop) != 'function') {
+                strippedProps[key] = prop;
             }
-        })
+        });
 
-        return ret;
+        return strippedProps;
     }
 
     animate(correct: boolean) {//todo do this in a react-way
@@ -153,9 +152,14 @@ export abstract class QuestionView<P extends QuestionViewProps> extends Viewable
     }
 }
 
+interface KeyedObject extends Object {
+    [key: string]: any
+}
+
 export interface QuestionViewProps extends RX.CommonProps {
     onanswer: Function,
-    question: Question
+    question: Question,
+    [key: string]: any
 }
 
 /**
@@ -168,4 +172,5 @@ export interface QuestionRecord {
     isCorrect: boolean,
     attempts: number,
     time: number // milliseconds
+    [key: string]: any
 }

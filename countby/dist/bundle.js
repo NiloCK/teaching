@@ -16573,15 +16573,14 @@ var QuestionView = (function (_super) {
      */
     QuestionView.prototype.strippedProps = function () {
         var _this = this;
-        var ret = {};
+        var strippedProps = {};
         Object.keys(this.props).forEach(function (key) {
-            var a;
-            a = _this.props[key];
-            if (typeof (_this.props[key]) != 'function') {
-                ret[key] = _this.props[key];
+            var prop = _this.props[key];
+            if (typeof (prop) != 'function') {
+                strippedProps[key] = prop;
             }
         });
-        return ret;
+        return strippedProps;
     };
     QuestionView.prototype.animate = function (correct) {
         var questionDiv = document.getElementById("question");
