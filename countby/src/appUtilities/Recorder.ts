@@ -1,35 +1,17 @@
-import { QuestionRecord } from '../skuilder-base/BaseClasses'
 import * as pouch from 'pouchdb-browser'
-// import * as auth from 'pouchdb-authentication'
-
-pouch.plugin(require('pouchdb-authentication'))
-
-const auth = require('pouchdb-authentication');
 
 const key = 'record';
 const localDB: PouchDB.Database<PouchDB.Core.Encodable> = new pouch(key);
 const remoteDB: PouchDB.Database<PouchDB.Core.Encodable> = new pouch(
     'https://' +
     'nilock.cloudant.com/' +
-    key, {
-        skip_setup: true
-    }
+    key
 );
 
 localDB.sync(remoteDB, {
     live: true,
     retry: true
 })
-
-
-// works - need a login/register page. Still waiting on per-user dbs
-// remoteDB.signup('newUser', 'password', function (err, resp) {
-//     if (err) {
-//         console.log("Signup error:" + err.name);
-//     } else {
-//         console.log("Signup success!" + resp.name);
-//     }
-// })
 
 export default class Recorder {
     private static localDB: PouchDB.Database<PouchDB.Core.Encodable> = localDB;
@@ -57,7 +39,7 @@ export default class Recorder {
         return Recorder.record;
     }
 
-    static addRecord(record: QuestionRecord) {
+    static addRecord(record: Object) {
         console.log("Adding a record...");
 
         record._id = new Date().toJSON();

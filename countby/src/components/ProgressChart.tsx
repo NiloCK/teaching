@@ -70,7 +70,7 @@ class ProgressChart extends RX.Component<ComponentChartProps, null> {
     }
     renderViewRow(b: number, index: number): JSX.Element {
         return (
-            <RX.View key={index.toString()} style={styles.row}>
+            <RX.View style={styles.row}>
                 <RX.Text style={styles.entry}>{b}</RX.Text>
                 {rows.map((row, rowIndex) => {
                     return this.renderViewGrade(row, b, rowIndex);
@@ -83,7 +83,7 @@ class ProgressChart extends RX.Component<ComponentChartProps, null> {
         const grade = Grader.Grade(this.props.questionType, a, b);
 
         return (
-            <RX.Text key={index.toString()} style={this.getStyle(grade)}></RX.Text>
+            <RX.Text style={this.getStyle(grade)}></RX.Text>
         )
     }
     getStyle(grade: Grade) {

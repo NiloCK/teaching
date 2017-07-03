@@ -1,6 +1,13 @@
 import * as RX from 'reactxp';
+import Recorder from '../appUtilities/Recorder';
 import Numpad from '../components/numpad';
-import { QuestionView, QuestionViewProps, Question } from '../skuilder-base/BaseClasses'
+import * as moment from 'moment'
+
+interface SingleDigitMultiplicationProblemProps extends RX.CommonProps {
+    a: number;
+    b: number;
+    onanswer: Function;
+}
 
 const styles = {
     form: RX.Styles.createViewStyle({
@@ -11,61 +18,100 @@ const styles = {
 
 function getRandomInt(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}; //todo move this somewhere sensible (or find a lib?)
-
-class SingleDigitMultiplicationQuestion extends Question {
-    a: number = getRandomInt(0, 10);
-    b: number = getRandomInt(0, 10);
-
-    isCorrect(answer: number) {
-        return (this.a * this.b == answer);
-    }
-}
-
-interface SingleDigitMultiplicationQuestionProps extends QuestionViewProps {
-    question: SingleDigitMultiplicationQuestion
-}
+};
 
 
-class SingleDigitMultiplicationProblemView extends QuestionView<SingleDigitMultiplicationQuestionProps> {
+class SingleDigitMultiplicationProblem extends RX.Component<SingleDigitMultiplicationProblemProps, null> {
+    startTime: moment.Moment;
+    attempts: number;
 
-    static getProps(): SingleDigitMultiplicationQuestionProps {
+    static getProps(): SingleDigitMultiplicationProblemProps {
         return {
-            onanswer: null,
-            question: new SingleDigitMultiplicationQuestion()
+            a: getRandomInt(0, 10),
+            b: getRandomInt(1, 10),
+            onanswer: null
         };
     }
 
-    render() {
-        let { question } = this.props;
+    constructor(props: SingleDigitMultiplicationProblemProps) {
+        super(props);
+    }
 
+    init() {
+        this.startTime = moment();
+        this.attempts = 0;
+    }
+
+    componentDidMount() {
+        this.init();
+    }
+    componentDidUpdate() {
+        this.init();
+    }
+
+
+    render() {
         return (
             <RX.View>
 
                 <RX.View style={styles.form}>
 
                     <div id="question">
-                        {question.a} &times; {question.b} =&nbsp;
+                        {this.props.a} &times; {this.props.b} =&nbsp;
                     </div>
                     <form onSubmit={this.submit.bind(this)}>
                         <input className="mousetrap"
                             autoFocus
                             id="answer" type="number" autoComplete={false} />
                     </form>
-                    {/*<RX.TextInput ref="answer2"
-                        onSubmitEditing={() => console.log("I'm being submitted")}
-                        autoFocus
-                        keyboardType="numeric"
-                        autoCorrect={false}
-                        onKeyPress={null}>
-                    </RX.TextInput>
-                    <TextInput > </TextInput>*/}
-
                 </RX.View>
-                <Numpad num={question.b} />
+                <Numpad num={this.props.b} />
             </RX.View>
         );
     }
+
+    submit(e) {
+        e.preventDefault();
+        this.attempts++;
+
+        let input = document.getElementById('answer');
+        let userans = parseInt(input.value);
+        let userTime = moment().diff(this.startTime) / 1000;
+        let isCorrect = (this.props.a * this.props.b === userans);
+
+
+        console.log("This question was answered in: " + userTime);
+        Recorder.addRecord({
+            q: 'multiplication',
+            a: this.props.a,
+            b: this.props.b,
+            answer: userans,
+            correct: isCorrect,
+            attempts: this.attempts,
+            time: userTime
+        });
+
+        input.value = "";
+
+        this.animate(isCorrect);
+
+        if (isCorrect) { // only give a new question if this one was right
+            this.props.onanswer();
+        }
+
+        // console.log(Recorder.getRecord());
+    }
+
+    animate(correct: boolean) {//todo do this in a react-way
+        let questionDiv = document.getElementById("question");
+
+        questionDiv.classList.add("correct-" + correct); // see /src/styles/answerStyles.css
+
+        setTimeout(function () { // remove the class so that it can be reapplied
+            questionDiv.classList.remove("correct-true", "correct-false")
+        }, 1000);
+    }
+
 }
 
-export default SingleDigitMultiplicationProblemView;
+export default SingleDigitMultiplicationProblem;
