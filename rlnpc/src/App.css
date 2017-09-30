@@ -4,7 +4,14 @@
 
 .react-monaco-editor-container {
   text-align: left;
+  /* flex-direction: row; */
 }
+#EditorAndCanvas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
