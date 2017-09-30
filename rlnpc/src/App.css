@@ -4,7 +4,6 @@
 
 .react-monaco-editor-container {
   text-align: left;
-  /* flex-direction: row; */
 }
 #EditorAndCanvas {
   display: flex;
