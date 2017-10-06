@@ -1,21 +1,15 @@
 import * as React from 'react';
 import './App.css';
 import MonacoEditor from 'react-monaco-editor';
-import { Play } from './components/Buttons'
-import Turtle from './turtle/turtle';
+import { Play } from './components/Buttons';
 
 const logo = require('./logo.svg');
 
 class App extends React.Component {
   editor: monaco.editor.ICodeEditor;
 
-  handleEditorDidMount = (editor: any) => {
-    // for providing type info to monaco editor
-    // https://stackoverflow.com/questions/43037243/provide-type-hints-to-monaco-editor
-    monaco.languages.typescript.typescriptDefaults.addExtraLib(``
-      , './turtle/turtle.ts');
-
-    this.editor = editor;
+  handleEditorDidMount = (editor: {}) => {
+    this.editor = editor as monaco.editor.ICodeEditor;
   }
 
   runEditorCode = () => {
@@ -50,9 +44,8 @@ class App extends React.Component {
             width={editorWidth}
             height={editorHeight}
             language="typescript"
-            //onChange={this.runEditorCode}
             theme="vs-dark"
-            value="// Type your code in here."
+            value="// Type your code in here.\n\n"
             options={{
               codeLens: false,
               lineNumbersMinChars: 3,
