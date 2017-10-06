@@ -22,3 +22,8 @@ yarn-error.log*
 
 # ignoring debug artifacts
 /.vscode/chrome
+
+# ignoring built turtle files
+public/turtle/turtle.d.ts
+public/turtle/turtle.js
+public/turtle/turtle.js.map
