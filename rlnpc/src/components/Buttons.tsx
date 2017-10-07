@@ -1,22 +1,28 @@
 import * as React from 'react';
 
 class Controls extends React.Component {
+    props: {
+        playFunction: () => void;
+        toggleGridFunction: () => void;
+    };
 
     render() {
         return (
-            <Play click={() => { }} />
+            <div>
+                <Play click={this.props.playFunction} />
+                <ToggleGrid click={this.props.toggleGridFunction} />
+            </div>
         );
     }
 }
 
 class Button extends React.Component {
-
-}
-
-class Play extends Button {
     props: {
         click: () => void;
     };
+}
+
+class Play extends Button {
 
     handleClick = () => {
         alert('Hi again');
@@ -34,4 +40,17 @@ class Play extends Button {
     }
 }
 
-export { Play, Button };
+class ToggleGrid extends Button {
+    constructor(props: { click: Function }) {
+        super(props);
+    }
+    render() {
+        return (
+            <div onClick={this.props.click}>
+                Show Grid
+            </div>
+        );
+    }
+}
+
+export { Play, Button, Controls };

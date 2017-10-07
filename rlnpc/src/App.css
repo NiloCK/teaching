@@ -11,6 +11,22 @@
   justify-content: center;
   height: 100%;
 }
+#canvasLayers {
+  position: relative;
+  flex: 0px
+}
+#turtleCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+#gridCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

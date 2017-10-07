@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './App.css';
 import MonacoEditor from 'react-monaco-editor';
-import { Play } from './components/Buttons';
+import { Play, Controls } from './components/Buttons';
+import TurtleCanvas from './components/turtleCanvas';
 
 const logo = require('./logo.svg');
 
@@ -37,7 +38,10 @@ class App extends React.Component {
           <h2>Welcome to the RLNPC</h2>
         </div>
         <div className="App-intro">
-          <Play click={this.runEditorCode} />
+          <Controls
+            playFunction={this.runEditorCode}
+            toggleGridFunction={TurtleCanvas.toggleVisibility}
+          />
         </div>
         <div id="EditorAndCanvas">
           <MonacoEditor
@@ -57,8 +61,7 @@ class App extends React.Component {
             text-align="left"
             editorDidMount={this.handleEditorDidMount}
           />
-          <canvas
-            id="turtleCanvas"
+          <TurtleCanvas
             width={editorWidth}
             height={editorHeight}
           />
