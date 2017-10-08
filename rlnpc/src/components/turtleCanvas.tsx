@@ -14,6 +14,7 @@ class TurtleCanvas extends React.Component {
         console.log('toggling the grid...');
         let gridCanvas = TurtleCanvas.getCanvas();
 
+        //todo rewrite this to use css animation for a fade in/out
         if (gridCanvas.style.getPropertyValue('opacity') !== '0') {
             gridCanvas.style.setProperty('opacity', '0');
         } else {
@@ -24,7 +25,7 @@ class TurtleCanvas extends React.Component {
     componentDidMount() {
         let gridCanvas: HTMLCanvasElement = TurtleCanvas.getCanvas();
         let ctx: CanvasRenderingContext2D = gridCanvas.getContext('2d') as CanvasRenderingContext2D;
-        ctx.strokeStyle = 'lightgrey';
+        ctx.strokeStyle = "rgb(200,200,200)";
         ctx.fillStyle = 'grey';
         ctx.font = '15px sans-serif';
 
