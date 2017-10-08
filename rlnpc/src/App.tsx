@@ -3,6 +3,7 @@ import './App.css';
 import MonacoEditor from 'react-monaco-editor';
 import { Play, Controls } from './components/Buttons';
 import TurtleCanvas from './components/turtleCanvas';
+import ProgramRunner from './ProgramExecution';
 
 const logo = require('./logo.svg');
 
@@ -16,6 +17,7 @@ class App extends React.Component {
   runEditorCode = () => {
     this.clearTurtleCanvas();
     eval(this.editor.getValue());
+    // new ProgramRunner(this.getEditorCode());
   }
   clearTurtleCanvas = () => {
     let cvs = document.getElementById('turtleCanvas') as HTMLCanvasElement;
@@ -49,7 +51,19 @@ class App extends React.Component {
             height={editorHeight}
             language="typescript"
             theme="vs-dark"
-            value="// Type your code in here.\n\n"
+            value={
+              `// Type your code in here.
+
+let t = new Turtle();
+              
+let count = 0;
+while (count < 300) {
+  t.move(3);
+  t.turnRight(1 / 100);
+  count++;
+}
+              
+`}
             options={{
               codeLens: false,
               lineNumbersMinChars: 3,
