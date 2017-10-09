@@ -22,7 +22,7 @@ class App extends React.Component {
   clearTurtleCanvas = () => {
     let cvs = document.getElementById('turtleCanvas') as HTMLCanvasElement;
     let ctx = cvs.getContext('2d') as CanvasRenderingContext2D;
-    ctx.clearRect(0, 0, cvs.height, cvs.width);
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
   }
 
   getEditorCode = () => {
