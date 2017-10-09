@@ -33,38 +33,72 @@ class CanvasStroke {
     pen: Pen;
 }
 
-class AnimationManager {
-    frames: Queue<Array<CanvasStroke>>
-    ctx: CanvasRenderingContext2D
+class Animator {
+    private static instance: Animator;
+    private animationQueues: Array<Queue<CanvasStroke>>;
+    private ctx: CanvasRenderingContext2D;
 
-    constructor() {
-        this.frames = new Queue<Array<CanvasStroke>>();
-    }
-
-    setContext(ctx: CanvasRenderingContext2D): void {
+    private constructor(ctx: CanvasRenderingContext2D) {
         this.ctx = ctx;
+        this.animationQueues = new Array<Queue<CanvasStroke>>();
+        this.animate(); // always be animating!
     }
 
-    animate = () => {
-        let strokes = this.frames.dequeue();
-        if (strokes != null) {
-            strokes.forEach(stroke => {
-                this.ctx.strokeStyle = stroke.pen.color;
-                this.ctx.lineWidth = stroke.pen.width;
-                this.ctx.lineCap = "square";
+    private animate = () => {
+        console.log(`Animating ${this.animationQueues.length} turtles...`);
 
-                this.ctx.beginPath();
-                this.ctx.moveTo(stroke.initX, stroke.initY);
-                this.ctx.lineTo(stroke.finalX, stroke.finalY);
-                this.ctx.stroke();
-            });
-        }
+        let strokes = this.getFrameStrokes();
+
+        strokes.forEach(stroke => {
+            this.ctx.strokeStyle = stroke.pen.color;
+            this.ctx.lineWidth = stroke.pen.width;
+            this.ctx.lineCap = "square";
+
+            this.ctx.beginPath();
+            this.ctx.moveTo(stroke.initX, stroke.initY);
+            this.ctx.lineTo(stroke.finalX, stroke.finalY);
+            this.ctx.stroke();
+        });
+
         requestAnimationFrame(this.animate);
     }
+
+    addTurtleAnimationQueue(queue: Queue<CanvasStroke>): void {
+        this.animationQueues.push(queue);
+    }
+
+    private getFrameStrokes(): Array<CanvasStroke> {
+        let ret = new Array<CanvasStroke>();
+        // console.log(`Attempting to get frames from Turtles...`);
+
+        for (let i = 0; i < this.animationQueues.length; i++) {
+            let stroke = this.animationQueues[i].dequeue();
+            if (stroke) {
+                ret.push(stroke);
+            }
+        }
+
+        return ret;
+    }
+
+    public static isIntialized(): boolean {
+        return this.instance ? true : false;
+    }
+    public static Instance(ctx?: CanvasRenderingContext2D): Animator {
+        if (this.instance) {
+            return this.instance;
+        } else if (ctx) {
+            this.instance = new this(ctx);
+            return this.instance;
+        } else {
+            throw new Error("Animator must be initialized with a CanvasRenderingContext2D");
+        }
+    }
+
 }
 
 class Turtle {
-    private static AnimationManager: AnimationManager = new AnimationManager();
+    // private static AnimationManager: AnimationManager = new AnimationManager();
     private static drawTurtles: boolean = true;
     static hide = () => {
         Turtle.drawTurtles = false;
@@ -72,6 +106,8 @@ class Turtle {
     static show = () => {
         Turtle.drawTurtles = true;
     }
+
+    private strokeQueue: Queue<CanvasStroke>;
 
     /**
      * The x coordinate of the Turtle
@@ -94,6 +130,7 @@ class Turtle {
     ctx: CanvasRenderingContext2D;
 
     constructor(x?: number, y?: number, canvas?: HTMLCanvasElement, ) {
+        this.strokeQueue = new Queue<CanvasStroke>();
 
         if (canvas) {
             this.ctx = <CanvasRenderingContext2D>canvas.getContext("2d");
@@ -102,12 +139,15 @@ class Turtle {
             this.ctx = <CanvasRenderingContext2D>canvas.getContext("2d");
         }
 
-        if (Turtle.AnimationManager.ctx == null) {
-            Turtle.AnimationManager.setContext(this.ctx);
-        }
+        // if (Turtle.AnimationManager.ctx == null) {
+        //     Turtle.AnimationManager.setContext(this.ctx);
+        // }
 
         this.x = (x != undefined) ? x : Math.round(canvas.width / 2);
         this.y = (y != undefined) ? y : Math.round(canvas.height / 2);
+
+        // register the turtle with the Animator
+        Animator.Instance(this.ctx).addTurtleAnimationQueue(this.strokeQueue);
     }
 
 
@@ -174,10 +214,13 @@ class Turtle {
                 this.y + dy,
                 this.moveAnimationFrameCount(distance));
             strokes.forEach(stroke => {
-                Turtle.AnimationManager.frames.enqueue([stroke]);
+                // Turtle.AnimationManager.frames.enqueue([stroke]);
+                console.log(`Enqueuing a stroke.`);
+                this.strokeQueue.enqueue(stroke);
             });
 
-            Turtle.AnimationManager.animate();
+
+            // Turtle.AnimationManager.animate();
         }
 
         this.x += dx;
