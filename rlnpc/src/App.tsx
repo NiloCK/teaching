@@ -11,6 +11,8 @@ class App extends React.Component {
   editor: monaco.editor.ICodeEditor;
 
   handleEditorDidMount = (editor: {}) => {
+
+
     this.editor = editor as monaco.editor.ICodeEditor;
   }
 
@@ -42,7 +44,7 @@ class App extends React.Component {
         <div className="App-intro">
           <Controls
             playFunction={this.runEditorCode}
-            toggleGridFunction={TurtleCanvas.toggleVisibility}
+            toggleGridFunction={TurtleCanvas.toggleGridVisibility}
           />
         </div>
         <div id="EditorAndCanvas">
@@ -55,14 +57,14 @@ class App extends React.Component {
               `// Type your code in here.
 
 let t = new Turtle();
-              
+
 let count = 0;
 while (count < 300) {
   t.move(3);
   t.turnRight(1 / 100);
   count++;
 }
-              
+
 `}
             options={{
               codeLens: false,
