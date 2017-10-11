@@ -20,7 +20,6 @@ class Queue<T>{
             return null;
         }
     }
-
 }
 
 class CanvasStroke {
@@ -123,11 +122,15 @@ class Turtle {
     private angle: number = (Math.PI / 2); // radians
 
     private drawing: boolean = true;
+    private pen: Pen = {
+        color: "black",
+        width: 2
+    }
     /**
      * The speed of the turtle. Set to 0 for the turtle to draw instantly.
      */
     speed: number = 10; // *10 px/second? 0 == inf
-    ctx: CanvasRenderingContext2D;
+    private ctx: CanvasRenderingContext2D;
 
     constructor(x?: number, y?: number, canvas?: HTMLCanvasElement, ) {
         this.strokeQueue = new Queue<CanvasStroke>();
@@ -197,6 +200,13 @@ class Turtle {
     penDown() {
         this.drawing = true;
     }
+
+    penColor(color: string) {
+        this.pen.color = color;
+    }
+    penWidth(width: number) {
+        this.pen.width = width;
+    }
     /**
      * @param distance The distance, in pixels, to move.
      */
@@ -251,10 +261,7 @@ class Turtle {
                 initY: runningY,
                 finalX: runningX + dx,
                 finalY: runningY + dy,
-                pen: {
-                    color: 'black',
-                    width: 2
-                }
+                pen: this.pen
             });
 
             count++;
