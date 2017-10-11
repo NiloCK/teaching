@@ -40,6 +40,11 @@
       let turtleDefinitionFileText;
       client.onreadystatechange = function () {
         turtleDefinitionFileText = client.responseText;
+
+        // monaco.languages.typescript.typescriptDefaults.addExtraLib(
+        // turtleDefinitionFileText);
+        monaco.languages.typescript.javascriptDefaults.addExtraLib(
+          turtleDefinitionFileText);
         monaco.languages.typescript.typescriptDefaults.addExtraLib(
           turtleDefinitionFileText);
       };
