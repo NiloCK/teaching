@@ -6,13 +6,28 @@ class TurtleCanvas extends React.Component {
         height: number;
         width: number;
     };
-    static getCanvas(): HTMLCanvasElement {
+    static getGridCanvas(): HTMLCanvasElement {
+        return document.getElementById('gridCanvas') as HTMLCanvasElement;
+    }
+    static getTurtleDrawingCanvas(): HTMLCanvasElement {
         return document.getElementById('gridCanvas') as HTMLCanvasElement;
     }
 
-    static toggleVisibility() {
+    static toggleTurtleVisibility() {
         console.log('toggling the grid...');
-        let gridCanvas = TurtleCanvas.getCanvas();
+        let gridCanvas = TurtleCanvas.getGridCanvas();
+
+        // todo rewrite this to use css animation for a fade in/out
+        if (gridCanvas.style.getPropertyValue('opacity') !== '0') {
+            gridCanvas.style.setProperty('opacity', '0');
+        } else {
+            gridCanvas.style.setProperty('opacity', '1');
+        }
+    }
+
+    static toggleGridVisibility() {
+        console.log('toggling the grid...');
+        let gridCanvas = TurtleCanvas.getGridCanvas();
 
         // todo rewrite this to use css animation for a fade in/out
         if (gridCanvas.style.getPropertyValue('opacity') !== '0') {
@@ -23,7 +38,7 @@ class TurtleCanvas extends React.Component {
     }
 
     componentDidMount() {
-        let gridCanvas: HTMLCanvasElement = TurtleCanvas.getCanvas();
+        let gridCanvas: HTMLCanvasElement = TurtleCanvas.getGridCanvas();
         let ctx: CanvasRenderingContext2D = gridCanvas.getContext('2d') as CanvasRenderingContext2D;
         ctx.strokeStyle = 'rgb(200,200,200)';
         ctx.fillStyle = 'grey';
@@ -71,6 +86,11 @@ class TurtleCanvas extends React.Component {
             <div id="canvasLayers">
                 <canvas
                     id="turtleCanvas"
+                    width={this.props.width}
+                    height={this.props.height}
+                />
+                <canvas
+                    id="turtleDrawingCanvas"
                     width={this.props.width}
                     height={this.props.height}
                 />

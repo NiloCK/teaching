@@ -21,11 +21,17 @@
   top: 0;
   z-index: 0;
 }
-#gridCanvas {
+#turtleDrawingCanvas {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
+}
+#gridCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 
 .App-logo {
