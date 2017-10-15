@@ -1,10 +1,10 @@
 // class Animation {}
-var Pen = (function () {
+var Pen = /** @class */ (function () {
     function Pen() {
     }
     return Pen;
 }());
-var Queue = (function () {
+var Queue = /** @class */ (function () {
     function Queue() {
         this.queue = new Array();
     }
@@ -22,16 +22,16 @@ var Queue = (function () {
     };
     return Queue;
 }());
-var CanvasStroke = (function () {
+var CanvasStroke = /** @class */ (function () {
     function CanvasStroke() {
     }
     return CanvasStroke;
 }());
-var Animator = (function () {
+var Animator = /** @class */ (function () {
     function Animator(ctx) {
         var _this = this;
         this.animate = function () {
-            console.log("Animating " + _this.animationQueues.length + " turtles...");
+            // console.log(`Animating ${this.animationQueues.length} turtles...`);
             var strokes = _this.getFrameStrokes();
             strokes.forEach(function (stroke) {
                 _this.ctx.strokeStyle = stroke.pen.color;
@@ -79,7 +79,7 @@ var Animator = (function () {
     };
     return Animator;
 }());
-var Turtle = (function () {
+var Turtle = /** @class */ (function () {
     function Turtle(x, y, canvas) {
         /**
          * Angle, in radians, that the turtle is facing
@@ -166,7 +166,7 @@ var Turtle = (function () {
             var strokes = this.getStrokes(this.x, this.y, this.x + dx, this.y + dy, this.moveAnimationFrameCount(distance));
             strokes.forEach(function (stroke) {
                 // Turtle.AnimationManager.frames.enqueue([stroke]);
-                console.log("Enqueuing a stroke.");
+                // console.log(`Enqueuing a stroke.`);
                 _this.strokeQueue.enqueue(stroke);
             });
             // Turtle.AnimationManager.animate();
@@ -233,7 +233,7 @@ var Turtle = (function () {
         }
         else {
             var ret = distance / (10 * this.speed);
-            console.log("This line will take: " + ret + " seconds");
+            // console.log(`This line will take: ${ret} seconds`);
             return ret;
         }
     };
@@ -260,16 +260,16 @@ var Turtle = (function () {
             this.angle += 2 * Math.PI;
         }
     };
+    // private static AnimationManager: AnimationManager = new AnimationManager();
+    Turtle.drawTurtles = true;
+    Turtle.hide = function () {
+        Turtle.drawTurtles = false;
+    };
+    Turtle.show = function () {
+        Turtle.drawTurtles = true;
+    };
     return Turtle;
 }());
-// private static AnimationManager: AnimationManager = new AnimationManager();
-Turtle.drawTurtles = true;
-Turtle.hide = function () {
-    Turtle.drawTurtles = false;
-};
-Turtle.show = function () {
-    Turtle.drawTurtles = true;
-};
 function degreesToRadians(degrees) {
     return degrees * Math.PI / 180;
 }

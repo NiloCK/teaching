@@ -18,7 +18,7 @@ declare class Animator {
     private static instance;
     private animationQueues;
     private ctx;
-    private constructor(ctx);
+    private constructor();
     private animate;
     addTurtleAnimationQueue(queue: Queue<CanvasStroke>): void;
     private getFrameStrokes();
