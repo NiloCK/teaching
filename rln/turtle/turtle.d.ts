@@ -49,7 +49,7 @@ declare class Turtle {
      */
     speed: number;
     private ctx;
-    constructor(x?: number, y?: number, canvas?: HTMLCanvasElement);
+    constructor(x?: number | Turtle, y?: number, angle?: number, canvas?: HTMLCanvasElement);
     /**
      * Creates a new turtle at the specified coordinates, or with the same
      * location / orientation of the parent if no coordinates are given.
@@ -57,13 +57,11 @@ declare class Turtle {
      * @param y
      * @param angle
      */
-    newTurtle(x?: number, y?: number, speed?: number, angle?: number): Turtle;
     /**
      * Creates a 'family' of new turtles at the same location and angle
      * of the parent turtle.
      * @param n The number of turtles to produce
      */
-    newTurtles(n: number): Array<Turtle>;
     /**
      * Lifts the turtle's drawing pen.
      */

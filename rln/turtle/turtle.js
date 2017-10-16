@@ -80,7 +80,7 @@ var Animator = /** @class */ (function () {
     return Animator;
 }());
 var Turtle = /** @class */ (function () {
-    function Turtle(x, y, canvas) {
+    function Turtle(x, y, angle, canvas) {
         /**
          * Angle, in radians, that the turtle is facing
          */
@@ -94,21 +94,35 @@ var Turtle = /** @class */ (function () {
          * The speed of the turtle. Set to 0 for the turtle to draw instantly.
          */
         this.speed = 10; // *10 px/second? 0 == inf
-        this.strokeQueue = new Queue();
-        if (canvas) {
-            this.ctx = canvas.getContext("2d");
+        if (x) {
+            if (typeof (x) != "number") {
+                this.strokeQueue = x.strokeQueue;
+                this.ctx = x.ctx;
+                this.x = x.x;
+                this.y = x.y;
+                this.angle = x.angle;
+                this.speed = x.speed;
+                this.pen = x.pen;
+                // the strokeQueue is already registered w/ the animator
+            }
         }
         else {
-            canvas = document.getElementById('turtleCanvas');
-            this.ctx = canvas.getContext("2d");
+            this.strokeQueue = new Queue();
+            if (canvas) {
+                this.ctx = canvas.getContext("2d");
+            }
+            else {
+                canvas = document.getElementById('turtleCanvas');
+                this.ctx = canvas.getContext("2d");
+            }
+            // if (Turtle.AnimationManager.ctx == null) {
+            //     Turtle.AnimationManager.setContext(this.ctx);
+            // }
+            this.x = (x != undefined) ? x : Math.round(canvas.width / 2);
+            this.y = (y != undefined) ? y : Math.round(canvas.height / 2);
+            // register the turtle with the Animator
+            Animator.Instance(this.ctx).addTurtleAnimationQueue(this.strokeQueue);
         }
-        // if (Turtle.AnimationManager.ctx == null) {
-        //     Turtle.AnimationManager.setContext(this.ctx);
-        // }
-        this.x = (x != undefined) ? x : Math.round(canvas.width / 2);
-        this.y = (y != undefined) ? y : Math.round(canvas.height / 2);
-        // register the turtle with the Animator
-        Animator.Instance(this.ctx).addTurtleAnimationQueue(this.strokeQueue);
     }
     /**
      * Creates a new turtle at the specified coordinates, or with the same
@@ -117,24 +131,28 @@ var Turtle = /** @class */ (function () {
      * @param y
      * @param angle
      */
-    Turtle.prototype.newTurtle = function (x, y, speed, angle) {
-        var babyTurtle = new Turtle(x ? x : this.x, y ? y : this.y, this.ctx.canvas);
-        babyTurtle.speed = speed ? speed : this.speed;
-        babyTurtle.angle = angle ? angle : this.angle;
-        return babyTurtle;
-    };
+    // protected newTurtle(x?: number, y?: number, speed?: number, angle?: number): Turtle {
+    //     let babyTurtle = new Turtle(
+    //         x ? x : this.x,
+    //         y ? y : this.y,
+    //         angle ? angle : this.angle,
+    //         this.ctx.canvas);
+    //     babyTurtle.speed = speed ? speed : this.speed;
+    //     babyTurtle.angle = angle ? angle : this.angle;
+    //     return babyTurtle;
+    // }
     /**
      * Creates a 'family' of new turtles at the same location and angle
      * of the parent turtle.
      * @param n The number of turtles to produce
      */
-    Turtle.prototype.newTurtles = function (n) {
-        var ret = [];
-        for (var i = 0; i < n; i++) {
-            ret.push(this.newTurtle());
-        }
-        return ret;
-    };
+    // newTurtles(n: number): Array<this> {
+    //     let ret: Array<this> = [];
+    //     for (let i = 0; i < n; i++) {
+    //         ret.push(this.newTurtle());
+    //     }
+    //     return ret;
+    // }
     /**
      * Lifts the turtle's drawing pen.
      */
@@ -187,7 +205,10 @@ var Turtle = /** @class */ (function () {
                 initY: runningY,
                 finalX: runningX + dx,
                 finalY: runningY + dy,
-                pen: this.pen
+                pen: {
+                    width: this.pen.width,
+                    color: this.pen.color
+                }
             });
             count++;
             runningX += dx;
@@ -199,8 +220,8 @@ var Turtle = /** @class */ (function () {
             finalX: finalX,
             finalY: finalY,
             pen: {
-                color: 'black',
-                width: 2
+                width: this.pen.width,
+                color: this.pen.color
             }
         });
         return ret;
