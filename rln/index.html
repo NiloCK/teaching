@@ -1,21 +1,32 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/rln/manifest.json"><link rel="shortcut icon" href="/rln/favicon.ico"><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js"></script><script>require.config({paths:{vs:"./vs"}})</script><script src="/rln/turtle/turtle.js"></script><script>// see this link for info on adding definition files to monaco
     // https://stackoverflow.com/questions/43037243/provide-type-hints-to-monaco-editor
 
-    setTimeout(function () {
-      console.log("Timeout Fcn is running...");
+    function attachTS() {
+      setTimeout(function () {
+        if (window.monaco) {
 
-      var client = new XMLHttpRequest();
-      client.open('GET', './turtle/turtle.d.ts');
-      let turtleDefinitionFileText;
-      client.onreadystatechange = function () {
-        turtleDefinitionFileText = client.responseText;
+          console.log("Timeout Fcn is running...");
 
-        // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-        // turtleDefinitionFileText);
-        // monaco.languages.typescript.javascriptDefaults.addExtraLib(
-        //   turtleDefinitionFileText);
-        monaco.languages.typescript.typescriptDefaults.addExtraLib(
-          turtleDefinitionFileText);
-      };
-      client.send();
-    }, 5000);</script><title>React App</title><link href="/rln/static/css/main.d659edfa.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/rln/static/js/main.01ee79e2.js"></script></body></html>
+          var client = new XMLHttpRequest();
+          client.open('GET', './turtle/turtle.d.ts');
+          let turtleDefinitionFileText;
+          client.onreadystatechange = function () {
+            turtleDefinitionFileText = client.responseText;
+
+            // monaco.languages.typescript.typescriptDefaults.addExtraLib(
+            // turtleDefinitionFileText);
+            // monaco.languages.typescript.javascriptDefaults.addExtraLib(
+            //   turtleDefinitionFileText);
+            monaco.languages.typescript.typescriptDefaults.addExtraLib(
+              turtleDefinitionFileText);
+          };
+          client.send();
+        }
+        else {
+          console.log("No monaco yet...");
+          attachTS();
+        }
+      }, 1000);
+
+    }
+    window.onload = attachTS;</script><title>Range Lake North Programming Club</title><link href="/rln/static/css/main.238fc2be.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/rln/static/js/main.72acfb07.js"></script></body></html>

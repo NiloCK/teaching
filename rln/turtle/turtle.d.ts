@@ -2,26 +2,34 @@ declare class Pen {
     color: string;
     width: number;
 }
-declare class Queue<T> {
+declare class QueueTree<T> {
     private queue;
+    private children;
     enqueue(element: T): void;
     dequeue(): T | null;
+    yieldChildren(): Array<QueueTree<T>>;
+    addChild(child: QueueTree<T>): void;
 }
 declare class CanvasStroke {
     initX: number;
     initY: number;
     finalX: number;
     finalY: number;
+    angle: number;
     pen: Pen;
 }
 declare class Animator {
     private static instance;
     private animationQueues;
-    private ctx;
+    private lineDrawingCtx;
+    private turtleOverlayCtx;
+    private turtleImg;
     private constructor();
+    private drawTurtle(x, y, angle);
     private animate;
-    addTurtleAnimationQueue(queue: Queue<CanvasStroke>): void;
+    addTurtleAnimationQueue(queue: QueueTree<CanvasStroke>): void;
     private getFrameStrokes();
+    private queueSuccession(q);
     static isIntialized(): boolean;
     static Instance(ctx?: CanvasRenderingContext2D): Animator;
 }

@@ -4,14 +4,15 @@ var Pen = /** @class */ (function () {
     }
     return Pen;
 }());
-var Queue = /** @class */ (function () {
-    function Queue() {
+var QueueTree = /** @class */ (function () {
+    function QueueTree() {
         this.queue = new Array();
+        this.children = new Array();
     }
-    Queue.prototype.enqueue = function (element) {
+    QueueTree.prototype.enqueue = function (element) {
         this.queue.push(element);
     };
-    Queue.prototype.dequeue = function () {
+    QueueTree.prototype.dequeue = function () {
         var ret = this.queue.shift();
         if (ret) {
             return ret;
@@ -20,7 +21,13 @@ var Queue = /** @class */ (function () {
             return null;
         }
     };
-    return Queue;
+    QueueTree.prototype.yieldChildren = function () {
+        return this.children;
+    };
+    QueueTree.prototype.addChild = function (child) {
+        this.children.push(child);
+    };
+    return QueueTree;
 }());
 var CanvasStroke = /** @class */ (function () {
     function CanvasStroke() {
@@ -33,34 +40,82 @@ var Animator = /** @class */ (function () {
         this.animate = function () {
             // console.log(`Animating ${this.animationQueues.length} turtles...`);
             var strokes = _this.getFrameStrokes();
+            _this.turtleOverlayCtx.clearRect(0, 0, 10000, 10000);
             strokes.forEach(function (stroke) {
-                _this.ctx.strokeStyle = stroke.pen.color;
-                _this.ctx.lineWidth = stroke.pen.width;
-                _this.ctx.lineCap = "square";
-                _this.ctx.beginPath();
-                _this.ctx.moveTo(stroke.initX, stroke.initY);
-                _this.ctx.lineTo(stroke.finalX, stroke.finalY);
-                _this.ctx.stroke();
+                _this.lineDrawingCtx.strokeStyle = stroke.pen.color;
+                _this.lineDrawingCtx.lineWidth = stroke.pen.width;
+                _this.lineDrawingCtx.lineCap = "square";
+                _this.lineDrawingCtx.beginPath();
+                _this.lineDrawingCtx.moveTo(stroke.initX, stroke.initY);
+                _this.lineDrawingCtx.lineTo(stroke.finalX, stroke.finalY);
+                _this.lineDrawingCtx.stroke();
+                // this.turtleOverlayCtx.fillRect(stroke.finalX, stroke.finalY, 5, 5);
+                // this.turtleOverlayCtx.drawImage(
+                //     this.turtleImg,
+                //     stroke.finalX,
+                //     stroke.finalY,
+                //     20, 20);
+                _this.drawTurtle(stroke.finalX, stroke.finalY, stroke.angle);
             });
             requestAnimationFrame(_this.animate);
         };
-        this.ctx = ctx;
+        this.lineDrawingCtx = ctx;
+        var overlayCtx = document.getElementById('turtleOverlayCanvas');
+        this.turtleOverlayCtx = overlayCtx.getContext('2d');
+        // this.turtleImg = new HTMLImageElement();
         this.animationQueues = new Array();
+        // this.turtleImg = document.createElement('img');
+        // this.turtleImg.onload = () => {
+        //     this.animate(); // always be animating!
+        // }
+        // this.turtleImg.src = './turtle/turtle.PNG';
         this.animate(); // always be animating!
     }
+    Animator.prototype.drawTurtle = function (x, y, angle) {
+        angle = angle + Math.PI;
+        this.turtleOverlayCtx.fillStyle = 'green';
+        this.turtleOverlayCtx.beginPath();
+        this.turtleOverlayCtx.moveTo(x, y);
+        this.turtleOverlayCtx.arc(x, y, 25, angle + (Math.PI / 8), angle - (Math.PI / 8), true);
+        this.turtleOverlayCtx.fill();
+    };
     Animator.prototype.addTurtleAnimationQueue = function (queue) {
         this.animationQueues.push(queue);
     };
     Animator.prototype.getFrameStrokes = function () {
+        var _this = this;
         var ret = new Array();
         // console.log(`Attempting to get frames from Turtles...`);
+        // let newQueues: Array<QueueTree<CanvasStroke>> = new Array<QueueTree<CanvasStroke>>();
+        var deadTurtles = new Array();
         for (var i = 0; i < this.animationQueues.length; i++) {
             var stroke = this.animationQueues[i].dequeue();
             if (stroke) {
                 ret.push(stroke);
             }
+            else {
+                // this.queueSuccession(this.animationQueues[i]);
+                deadTurtles.push(this.animationQueues[i]);
+            }
         }
+        // this.queueSuccession(t);
+        deadTurtles.forEach(function (deadTurtle) {
+            _this.queueSuccession(deadTurtle);
+        });
+        // this.animationQueues.concat(newQueues);
         return ret;
+    };
+    Animator.prototype.queueSuccession = function (q) {
+        var _this = this;
+        var index = this.animationQueues.indexOf(q);
+        // console.log(`${this.animationQueues.length} Turtles now...`);
+        this.animationQueues.splice(index, 1);
+        // delete this.animationQueues[index];
+        // console.log(`Removing a turtle... ${this.animationQueues.length} turtles now...`);
+        q.yieldChildren().forEach(function (queueTree) {
+            _this.animationQueues.push(queueTree);
+            // console.log(`adding a turtle... ${this.animationQueues.length}`);
+        });
     };
     Animator.isIntialized = function () {
         return this.instance ? true : false;
@@ -96,7 +151,8 @@ var Turtle = /** @class */ (function () {
         this.speed = 10; // *10 px/second? 0 == inf
         if (x) {
             if (typeof (x) != "number") {
-                this.strokeQueue = x.strokeQueue;
+                this.strokeQueue = new QueueTree();
+                x.strokeQueue.addChild(this.strokeQueue);
                 this.ctx = x.ctx;
                 this.x = x.x;
                 this.y = x.y;
@@ -107,7 +163,7 @@ var Turtle = /** @class */ (function () {
             }
         }
         else {
-            this.strokeQueue = new Queue();
+            this.strokeQueue = new QueueTree();
             if (canvas) {
                 this.ctx = canvas.getContext("2d");
             }
@@ -205,6 +261,7 @@ var Turtle = /** @class */ (function () {
                 initY: runningY,
                 finalX: runningX + dx,
                 finalY: runningY + dy,
+                angle: this.angle,
                 pen: {
                     width: this.pen.width,
                     color: this.pen.color
@@ -219,6 +276,7 @@ var Turtle = /** @class */ (function () {
             initY: runningY - dy,
             finalX: finalX,
             finalY: finalY,
+            angle: this.angle,
             pen: {
                 width: this.pen.width,
                 color: this.pen.color
