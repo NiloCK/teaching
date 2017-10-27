@@ -1,4 +1,3 @@
-// class Animation {}
 var Pen = /** @class */ (function () {
     function Pen() {
     }
@@ -49,7 +48,6 @@ var Animator = /** @class */ (function () {
                 _this.lineDrawingCtx.moveTo(stroke.initX, stroke.initY);
                 _this.lineDrawingCtx.lineTo(stroke.finalX, stroke.finalY);
                 _this.lineDrawingCtx.stroke();
-                // this.turtleOverlayCtx.fillRect(stroke.finalX, stroke.finalY, 5, 5);
                 // this.turtleOverlayCtx.drawImage(
                 //     this.turtleImg,
                 //     stroke.finalX,
@@ -62,15 +60,17 @@ var Animator = /** @class */ (function () {
         this.lineDrawingCtx = ctx;
         var overlayCtx = document.getElementById('turtleOverlayCanvas');
         this.turtleOverlayCtx = overlayCtx.getContext('2d');
-        // this.turtleImg = new HTMLImageElement();
         this.animationQueues = new Array();
-        // this.turtleImg = document.createElement('img');
+        // this.turtleImg = new Image();
         // this.turtleImg.onload = () => {
         //     this.animate(); // always be animating!
         // }
         // this.turtleImg.src = './turtle/turtle.PNG';
         this.animate(); // always be animating!
     }
+    /**
+     * Draws a 'pizza slice' turtle
+     */
     Animator.prototype.drawTurtle = function (x, y, angle) {
         angle = angle + Math.PI;
         this.turtleOverlayCtx.fillStyle = 'green';
@@ -86,7 +86,6 @@ var Animator = /** @class */ (function () {
         var _this = this;
         var ret = new Array();
         // console.log(`Attempting to get frames from Turtles...`);
-        // let newQueues: Array<QueueTree<CanvasStroke>> = new Array<QueueTree<CanvasStroke>>();
         var deadTurtles = new Array();
         for (var i = 0; i < this.animationQueues.length; i++) {
             var stroke = this.animationQueues[i].dequeue();
@@ -94,15 +93,13 @@ var Animator = /** @class */ (function () {
                 ret.push(stroke);
             }
             else {
-                // this.queueSuccession(this.animationQueues[i]);
                 deadTurtles.push(this.animationQueues[i]);
             }
         }
-        // this.queueSuccession(t);
+        // shake all dead turtles to see if they have children
         deadTurtles.forEach(function (deadTurtle) {
             _this.queueSuccession(deadTurtle);
         });
-        // this.animationQueues.concat(newQueues);
         return ret;
     };
     Animator.prototype.queueSuccession = function (q) {
@@ -116,9 +113,6 @@ var Animator = /** @class */ (function () {
             _this.animationQueues.push(queueTree);
             // console.log(`adding a turtle... ${this.animationQueues.length}`);
         });
-    };
-    Animator.isIntialized = function () {
-        return this.instance ? true : false;
     };
     Animator.Instance = function (ctx) {
         if (this.instance) {
@@ -149,18 +143,16 @@ var Turtle = /** @class */ (function () {
          * The speed of the turtle. Set to 0 for the turtle to draw instantly.
          */
         this.speed = 10; // *10 px/second? 0 == inf
-        if (x) {
-            if (typeof (x) != "number") {
-                this.strokeQueue = new QueueTree();
-                x.strokeQueue.addChild(this.strokeQueue);
-                this.ctx = x.ctx;
-                this.x = x.x;
-                this.y = x.y;
-                this.angle = x.angle;
-                this.speed = x.speed;
-                this.pen = x.pen;
-                // the strokeQueue is already registered w/ the animator
-            }
+        if (x && typeof (x) != "number") {
+            var parentTurtle = x;
+            this.strokeQueue = new QueueTree();
+            parentTurtle.strokeQueue.addChild(this.strokeQueue);
+            this.ctx = parentTurtle.ctx;
+            this.x = parentTurtle.x;
+            this.y = parentTurtle.y;
+            this.angle = parentTurtle.angle;
+            this.speed = parentTurtle.speed;
+            this.pen = parentTurtle.pen;
         }
         else {
             this.strokeQueue = new QueueTree();
@@ -171,44 +163,12 @@ var Turtle = /** @class */ (function () {
                 canvas = document.getElementById('turtleCanvas');
                 this.ctx = canvas.getContext("2d");
             }
-            // if (Turtle.AnimationManager.ctx == null) {
-            //     Turtle.AnimationManager.setContext(this.ctx);
-            // }
             this.x = (x != undefined) ? x : Math.round(canvas.width / 2);
             this.y = (y != undefined) ? y : Math.round(canvas.height / 2);
             // register the turtle with the Animator
             Animator.Instance(this.ctx).addTurtleAnimationQueue(this.strokeQueue);
         }
     }
-    /**
-     * Creates a new turtle at the specified coordinates, or with the same
-     * location / orientation of the parent if no coordinates are given.
-     * @param x
-     * @param y
-     * @param angle
-     */
-    // protected newTurtle(x?: number, y?: number, speed?: number, angle?: number): Turtle {
-    //     let babyTurtle = new Turtle(
-    //         x ? x : this.x,
-    //         y ? y : this.y,
-    //         angle ? angle : this.angle,
-    //         this.ctx.canvas);
-    //     babyTurtle.speed = speed ? speed : this.speed;
-    //     babyTurtle.angle = angle ? angle : this.angle;
-    //     return babyTurtle;
-    // }
-    /**
-     * Creates a 'family' of new turtles at the same location and angle
-     * of the parent turtle.
-     * @param n The number of turtles to produce
-     */
-    // newTurtles(n: number): Array<this> {
-    //     let ret: Array<this> = [];
-    //     for (let i = 0; i < n; i++) {
-    //         ret.push(this.newTurtle());
-    //     }
-    //     return ret;
-    // }
     /**
      * Lifts the turtle's drawing pen.
      */
@@ -236,14 +196,12 @@ var Turtle = /** @class */ (function () {
         var dx = Math.cos(this.angle) * distance;
         var dy = Math.sin(this.angle) * distance;
         if (this.drawing) {
-            // this.draw(dx, dy, this.moveTime(distance));
             var strokes = this.getStrokes(this.x, this.y, this.x + dx, this.y + dy, this.moveAnimationFrameCount(distance));
             strokes.forEach(function (stroke) {
                 // Turtle.AnimationManager.frames.enqueue([stroke]);
                 // console.log(`Enqueuing a stroke.`);
                 _this.strokeQueue.enqueue(stroke);
             });
-            // Turtle.AnimationManager.animate();
         }
         this.x += dx;
         this.y += dy;
@@ -331,7 +289,7 @@ var Turtle = /** @class */ (function () {
         }
     };
     Turtle.prototype.normalizeAngle = function () {
-        //this.moveAnimationFrameCount(0); // should I animate the turning Turtle?
+        // should I animate the turning Turtle?
         while (this.angle >= 2 * Math.PI) {
             this.angle -= 2 * Math.PI;
         }
@@ -339,7 +297,6 @@ var Turtle = /** @class */ (function () {
             this.angle += 2 * Math.PI;
         }
     };
-    // private static AnimationManager: AnimationManager = new AnimationManager();
     Turtle.drawTurtles = true;
     Turtle.hide = function () {
         Turtle.drawTurtles = false;

@@ -25,12 +25,14 @@ declare class Animator {
     private turtleOverlayCtx;
     private turtleImg;
     private constructor();
+    /**
+     * Draws a 'pizza slice' turtle
+     */
     private drawTurtle(x, y, angle);
     private animate;
     addTurtleAnimationQueue(queue: QueueTree<CanvasStroke>): void;
     private getFrameStrokes();
     private queueSuccession(q);
-    static isIntialized(): boolean;
     static Instance(ctx?: CanvasRenderingContext2D): Animator;
 }
 declare class Turtle {
@@ -58,18 +60,6 @@ declare class Turtle {
     speed: number;
     private ctx;
     constructor(x?: number | Turtle, y?: number, angle?: number, canvas?: HTMLCanvasElement);
-    /**
-     * Creates a new turtle at the specified coordinates, or with the same
-     * location / orientation of the parent if no coordinates are given.
-     * @param x
-     * @param y
-     * @param angle
-     */
-    /**
-     * Creates a 'family' of new turtles at the same location and angle
-     * of the parent turtle.
-     * @param n The number of turtles to produce
-     */
     /**
      * Lifts the turtle's drawing pen.
      */

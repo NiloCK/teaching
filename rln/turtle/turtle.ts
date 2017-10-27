@@ -1,4 +1,3 @@
-// class Animation {}
 class Pen {
     color: string;
     width: number;
@@ -111,7 +110,6 @@ class Animator {
     private getFrameStrokes(): Array<CanvasStroke> {
         let ret = new Array<CanvasStroke>();
         // console.log(`Attempting to get frames from Turtles...`);
-        // let newQueues: Array<QueueTree<CanvasStroke>> = new Array<QueueTree<CanvasStroke>>();
         let deadTurtles = new Array<QueueTree<CanvasStroke>>();
 
         for (let i = 0; i < this.animationQueues.length; i++) {
@@ -119,16 +117,15 @@ class Animator {
             if (stroke) {
                 ret.push(stroke);
             } else {
-                // this.queueSuccession(this.animationQueues[i]);
                 deadTurtles.push(this.animationQueues[i]);
             }
         }
 
-        // this.queueSuccession(t);
+        // shake all dead turtles to see if they have children
         deadTurtles.forEach((deadTurtle) => {
             this.queueSuccession(deadTurtle);
         })
-        // this.animationQueues.concat(newQueues);
+
         return ret;
     }
     private queueSuccession(q: QueueTree<CanvasStroke>) {
@@ -145,9 +142,6 @@ class Animator {
         });
     }
 
-    public static isIntialized(): boolean {
-        return this.instance ? true : false;
-    }
     public static Instance(ctx?: CanvasRenderingContext2D): Animator {
         if (this.instance) {
             return this.instance;
@@ -162,7 +156,6 @@ class Animator {
 }
 
 class Turtle {
-    // private static AnimationManager: AnimationManager = new AnimationManager();
     private static drawTurtles: boolean = true;
     static hide = () => {
         Turtle.drawTurtles = false;
@@ -198,20 +191,17 @@ class Turtle {
     private ctx: CanvasRenderingContext2D;
 
     constructor(x?: number | Turtle, y?: number, angle?: number, canvas?: HTMLCanvasElement, ) {
-        if (x) {
-            if (typeof (x) != "number") {
-                this.strokeQueue = new QueueTree<CanvasStroke>();
-                x.strokeQueue.addChild(this.strokeQueue);
+        if (x && typeof (x) != "number") {
+            let parentTurtle = x;
+            this.strokeQueue = new QueueTree<CanvasStroke>();
+            parentTurtle.strokeQueue.addChild(this.strokeQueue);
 
-                this.ctx = x.ctx;
-                this.x = x.x;
-                this.y = x.y;
-                this.angle = x.angle;
-                this.speed = x.speed;
-                this.pen = x.pen;
-
-                // the strokeQueue is already registered w/ the animator
-            }
+            this.ctx = parentTurtle.ctx;
+            this.x = parentTurtle.x;
+            this.y = parentTurtle.y;
+            this.angle = parentTurtle.angle;
+            this.speed = parentTurtle.speed;
+            this.pen = parentTurtle.pen;
         } else {
             this.strokeQueue = new QueueTree<CanvasStroke>();
 
@@ -222,10 +212,6 @@ class Turtle {
                 this.ctx = <CanvasRenderingContext2D>canvas.getContext("2d");
             }
 
-            // if (Turtle.AnimationManager.ctx == null) {
-            //     Turtle.AnimationManager.setContext(this.ctx);
-            // }
-
             this.x = (x != undefined) ? x : Math.round(canvas.width / 2);
             this.y = (y != undefined) ? y : Math.round(canvas.height / 2);
 
@@ -234,42 +220,6 @@ class Turtle {
         }
 
     }
-
-
-    /**
-     * Creates a new turtle at the specified coordinates, or with the same
-     * location / orientation of the parent if no coordinates are given.
-     * @param x 
-     * @param y 
-     * @param angle 
-     */
-    // protected newTurtle(x?: number, y?: number, speed?: number, angle?: number): Turtle {
-    //     let babyTurtle = new Turtle(
-    //         x ? x : this.x,
-    //         y ? y : this.y,
-    //         angle ? angle : this.angle,
-    //         this.ctx.canvas);
-
-    //     babyTurtle.speed = speed ? speed : this.speed;
-    //     babyTurtle.angle = angle ? angle : this.angle;
-
-    //     return babyTurtle;
-    // }
-
-    /**
-     * Creates a 'family' of new turtles at the same location and angle
-     * of the parent turtle.
-     * @param n The number of turtles to produce
-     */
-    // newTurtles(n: number): Array<this> {
-    //     let ret: Array<this> = [];
-
-    //     for (let i = 0; i < n; i++) {
-    //         ret.push(this.newTurtle());
-    //     }
-
-    //     return ret;
-    // }
 
     /**
      * Lifts the turtle's drawing pen.
@@ -299,7 +249,6 @@ class Turtle {
         let dy = Math.sin(this.angle) * distance;
 
         if (this.drawing) {
-            // this.draw(dx, dy, this.moveTime(distance));
             let strokes = this.getStrokes(
                 this.x,
                 this.y,
@@ -311,14 +260,10 @@ class Turtle {
                 // console.log(`Enqueuing a stroke.`);
                 this.strokeQueue.enqueue(stroke);
             });
-
-
-            // Turtle.AnimationManager.animate();
         }
 
         this.x += dx;
         this.y += dy;
-
     }
 
     private getStrokes(
@@ -349,7 +294,6 @@ class Turtle {
                     width: this.pen.width,
                     color: this.pen.color
                 }
-
             });
 
             count++;
@@ -420,7 +364,7 @@ class Turtle {
     }
 
     private normalizeAngle(): void {
-        //this.moveAnimationFrameCount(0); // should I animate the turning Turtle?
+        // should I animate the turning Turtle?
 
         while (this.angle >= 2 * Math.PI) {
             this.angle -= 2 * Math.PI;
