@@ -5,7 +5,7 @@
       setTimeout(function () {
         if (window.monaco) {
 
-          console.log("Timeout Fcn is running...");
+          console.log("Attempting to attatch Turtle Definitions to Monaco Editor...");
 
           var client = new XMLHttpRequest();
           client.open('GET', './turtle/turtle.d.ts');
@@ -13,10 +13,12 @@
           client.onreadystatechange = function () {
             turtleDefinitionFileText = client.responseText;
 
-            // monaco.languages.typescript.typescriptDefaults.addExtraLib(
-            // turtleDefinitionFileText);
-            // monaco.languages.typescript.javascriptDefaults.addExtraLib(
-            //   turtleDefinitionFileText);
+            monaco.languages.typescript.typescriptDefaults.setCompilerOptions(
+              {
+                noLib: true,
+                allowNonTsExtensions: true
+              }
+            );
             monaco.languages.typescript.typescriptDefaults.addExtraLib(
               turtleDefinitionFileText);
           };
@@ -29,4 +31,4 @@
       }, 1000);
 
     }
-    window.onload = attachTS;</script><title>Range Lake North Programming Club</title><link href="/rln/static/css/main.238fc2be.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/rln/static/js/main.658f6490.js"></script></body></html>
+    window.onload = attachTS;</script><title>Range Lake North Programming Club</title><link href="/rln/static/css/main.871e3b35.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/rln/static/js/main.95d7e122.js"></script></body></html>
