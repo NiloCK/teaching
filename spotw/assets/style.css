@@ -1,0 +1,60 @@
+@media print, screen{
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #header {
+        text-align: center;
+    }
+    td {
+        padding: 5px;
+    }
+
+    @page {
+        /* margin: 1in; */
+    }
+    ol {
+        margin: .5in;
+    }
+    li.question{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 1cm;
+    }
+    /* li.question::before{
+        content: url('./pepper.png');
+        left: -55px;
+    } */
+    li.question > div {
+        display: inline;
+    }
+    
+    li.question.hot{
+        left: -82px;
+    }
+    img.pepper{
+        height: 1em;
+        width: 1em;
+        position: relative;
+    }
+    
+    img.medium{
+        left: -3em;
+    }
+    img.hot {
+        left: -4em;
+    }
+    /* img.spicy{
+        left: -100px;
+    } */
+    div.spicy{
+        position: relative;
+        /* display: inline; */
+        left: -5em;
+    }
+    
+    
+    li > span {
+        display: inline;
+    }
+    
+}
