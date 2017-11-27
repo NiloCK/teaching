@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/style.css">
+    <title>Spicy Problems of the Week</title>
+    <script>
+        window.setTimeout(function () {
+            // window.location = window.location;
+        }, 5000)
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config( { tex2jax: { inlineMath: [ ['$','$'], ['\\(','\\)'] ] } });
+    </script>
+    <script type="text/javascript" async src="path-to-mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+</head>
+
+<body>
+    <table style="border-width: 1px; border-color: black; border:thin;">
+        <thead>
+            <th>Question</th>
+            <th>Guidance / Solution</th>
+            <th>Skills / Ideas used</th>
+        </thead>
+        <tr>
+            <td>1.</td>
+            <td>
+                <p>The idea here is to identify some feature(s) of the folded-up house that can be tested against the available
+                    answers. Since there are only a few feaures to the house, we can concentrate on them:</p>
+                <p>
+                    The door is on a wall with a triangular top. This can eliminate house 5.
+                </p>
+                <p>
+                    Turning your head (or the piece of paper) upside-down and imagining the walls folding together, we see that the black dot
+                    is to the left of the door when we are looking at the door.
+                </p>
+                <p>
+                    Houses 2 and 3 can be eliminated because the dot isn't where it should be relative to the door. House 4 can be eliminated
+                    because the door isn't where it must be relative to the dot.
+                </p>
+                <p>This leaves <b>house 1</b>.</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Visualization / Spacial Reasoning</li>
+                    <li>Identifying an observable property</li>
+                    <li>Process of elimination</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>
+                <p>Using place-value knowledge, first attemps to find the closest future year with this property fail: 2018
+                    and 2019 will have sums that are too large, because the 7 has been increased while the other digits stayed
+                    the same.</p>
+                <p>
+                    Next, incrementing the tens place by one (2027) we have a sum of 11. To balance out this change, we remove one from the ones
+                    place, giving $2026$.
+                </p>
+            </td>
+            <td>
+                <ul>
+                    <li>Trial and Error</li>
+                    <li>Trying an extreme case</li>
+                    <li>Place-value knowledge</li>
+                    <li>Inverse operations / algebraic symmetry</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>
+                <p>
+                    Finding the 'lone' digit directly is more difficult than first learning about the repeated digit. Eg, if we guess that the
+                    lone digit might be $5$, then we're left with the $4$ repeated digits totaling $43 - 5 = 38$, which is
+                    difficult to parse because $4$ doesn't divide $38$ evenly.
+                </p>
+                <p>
+                    Instead, trying to guess the repeated digit will give more information. Maybe it's $5$ - then the sum of these repeated digits
+                    is $20$, which means the last digit must be ... $23$.
+                </p>
+                <p>
+                    Since $23$ is not a digit, we can tell that the repeated digits must account for more of the sum. Adjusting this guess upward,
+                    we find that the repeated digit can only be $9$, and the lone digit is $43 - 4*9 = 43 - 36 = 7$.
+            </td>
+            <td>
+                <ul>
+                    <li>Substituting an alternate question / taking an alternate route</li>
+                    <li>Trial, Error, and Adjustment</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>
+                <p>
+                    This question is daunting until you put pencil to paper in an organized way, and commit to building an answer one step at
+                    a time:
+                </p>
+
+                <table>
+                    <thead>
+                        <th>Flower</th>
+                        <th># of this Flower</th>
+                        <th>Total # of Flowers</th>
+                    </thead>
+                    <tr>
+                        <td>Rose</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Tulip</td>
+                        <td>4 (one for each space)</td>
+                        <td>9 (previous total plus the new flowers)</td>
+                    </tr>
+                    <tr>
+                        <td>Daffodil</td>
+                        <td>8 (same)</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>Dasies</td>
+                        <td>16</td>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>Marigolds</td>
+                        <td>32</td>
+                        <td>65</td>
+                    </tr>
+                    <tr>
+                        <td>Lilies</td>
+                        <td>64</td>
+                        <td>129</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <ul>
+                    <li>Making a Table to store Data</li>
+                    <li>Developing and follewing a procedure</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
