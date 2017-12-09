@@ -2,6 +2,10 @@
     ol {
         margin: .5in;
     }
+
+    #link {
+        display: none;
+    }
 }
 @media screen {
     ol {
