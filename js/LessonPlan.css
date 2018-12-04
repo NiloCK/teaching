@@ -1,0 +1,67 @@
+#editor {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+	padding: 0px;
+}
+#TopRight{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 50%;
+	width: 50%;
+}
+#Instructions{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 80%;
+	background: #fff;
+	padding-left: 1em;
+	padding-right: 1em;
+	overflow: auto;
+}
+#Grades{
+	position: absolute;
+	left: 80%;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	/* width: 20%; */
+	padding-left: 1em;
+	padding-right: 1em;
+	background: #cce;
+}
+#Grades li {
+	font-size: larger;
+}
+#Output{
+	overflow-y: auto;
+	text-align: left;
+	position: absolute;
+	width: 50%;
+	top: 50%;
+	right: 0;
+	bottom: 25px;
+	max-height: 100%;
+	background: #ddd;
+	display: flex;
+	flex-direction: column-reverse;
+}
+#CommandLine {
+	position: absolute;
+	background-color: #fff;
+	width: 50%;
+	bottom: 0;
+	left: 50%;
+	height: 25px;
+}
+.ace_function{
+	cursor: pointer;
+}
+button{
+	cursor: pointer;
+}
