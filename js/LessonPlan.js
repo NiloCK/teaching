@@ -1,65 +1,65 @@
-/// <reference path="src/ace.js"/>
+/// <reference path="lib/ace.js"/>
 
 let WorkSheet = {
   title: 'A title',
-  text: 'This is the intro text (in markdown?)',
+  text: '*This* is the intro text (in markdown?)',
   editorText: 
   `//////////////////////////////////////////////
-// Section One - Introduction to JavaScript //
-//////////////////////////////////////////////
-
-/*
+  // Section One - Introduction to JavaScript //
+  //////////////////////////////////////////////
+  
+  /*
   Text between the slash-star above and the star-slash below is ignored by
   the computer. Text that follows // on a line is also ignored by the computer.
-
+  
   Text like this is used to communicate the intent and design goals of a
   piece of code and is called 'comments'.
-
+  
   Comments are usually displayed in a muted colour.
-*/
-
-/* Question 1:
-
-    Computer programs are made of functions. Sometimes a user
-    calls a function, and sometimes functions call each other.
-
-    To call a function in Javascript, use the function's name
-    followed by parenthesis. Type callMeMaybe() into the white
-    input bar on the lower right of the page and hit 'enter' to
-    call this function and complete question one.
-
-    (That input on the lower right is called a command line.)
-*/
+  */
+ 
+ /* Question 1:
+ 
+ Computer programs are made of functions. Sometimes a user
+ calls a function, and sometimes functions call each other.
+ 
+ To call a function in Javascript, use the function's name
+ followed by parenthesis. Type callMeMaybe() into the white
+ input bar on the lower right of the page and hit 'enter' to
+ call this function and complete question one.
+ 
+ (That input on the lower right is called a command line.)
+ */
 function callMeMaybe(){
-    calledMe = true;
-    updateGrades();
-    return "This is crazy!";
+  calledMe = true;
+  updateGrades();
+  return "This is crazy!";
 }
 
 /* A few things happened there. updateGrades() was called, and
-    you've earned your first checkmark on the top right!
+you've earned your first checkmark on the top right!
 
-    Also, note that "This is crazy!" was printed to the console,
-    and that this is what the function 'returned'. When you
-    enter a command on the command line, the thing that gets
-    returned from your command gets printed along with a '>>'.
+Also, note that "This is crazy!" was printed to the console,
+and that this is what the function 'returned'. When you
+enter a command on the command line, the thing that gets
+returned from your command gets printed along with a '>>'.
 */
 
 /* Question 2:
 
-    callMeMaybe() is a function that called for no arguments.
-    This means that you didn't have to pass anything into it -
-    it just worked on its own. Some functions need an input,
-    like the examples below. Try them in the console like this:
+callMeMaybe() is a function that called for no arguments.
+This means that you didn't have to pass anything into it -
+it just worked on its own. Some functions need an input,
+like the examples below. Try them in the console like this:
 
-    twoTimes(4)
-    halfOf(7)
+twoTimes(4)
+halfOf(7)
 
-    And so on. Try them with whatever inputs you like.
+And so on. Try them with whatever inputs you like.
 
-    twoMoreThan(x) and oneThirdOf(x) have not been completed.
-    Write these functions and make a call to updateGrades()
-    to see if they are correct!
+twoMoreThan(x) and oneThirdOf(x) have not been completed.
+Write these functions and make a call to updateGrades()
+to see if they are correct!
 */
 function twoTimes(x){
   print("Two times " + x + " is:");
@@ -77,29 +77,29 @@ function oneThirdOf(x){
 }
 
 /* The functions twoTimes(x) and halfOf(x) above each called
-    the print() function - this can be handy when trying to
-    figure out how some code is working. If your code is doing
-    something unexpected, try using the print() function to
-    find out where things get off track.
+the print() function - this can be handy when trying to
+figure out how some code is working. If your code is doing
+something unexpected, try using the print() function to
+find out where things get off track.
 
-    Javascript uses +, -, *, and / to do addition, subtraction,
-    multiplication, and division, respectively. You can do
-    combined operations as well, such as x + y * 2. Javascript
-    uses the same order of operations that you're familiar with
-    from math class, including parenthesis. x + y * 2 will be
-    different than (x + y) * 2.
+Javascript uses +, -, *, and / to do addition, subtraction,
+multiplication, and division, respectively. You can do
+combined operations as well, such as x + y * 2. Javascript
+uses the same order of operations that you're familiar with
+from math class, including parenthesis. x + y * 2 will be
+different than (x + y) * 2.
 */
 
 /* Question 3:
 
-    Functions can take any number of arguments - they just
-    need to be defined that way. The sum(a,b) function below
-    is an example.
+Functions can take any number of arguments - they just
+need to be defined that way. The sum(a,b) function below
+is an example.
 
-    Using the functions on the page as a reference, define a
-    new function called 'average' which takes two arguments
-    and returns their average. Remember that the average of
-    two numbers is their sum divided by two.
+Using the functions on the page as a reference, define a
+new function called 'average' which takes two arguments
+and returns their average. Remember that the average of
+two numbers is their sum divided by two.
 */
 function sum(a, b){
   print("The sum of " + a + " and " + b + " is:");
@@ -109,17 +109,17 @@ function sum(a, b){
 
 /* Question 4:
 
-    Besides arithmetic, Javascript can also do comparisons
-    between values. Try calling biggerThanTen() with different
-    inputs. This is useful when a program needs to make
-    decisions. Try running biggest() with some different inputs
-    to get a feel for how the if/else and comparison syntax work.
+Besides arithmetic, Javascript can also do comparisons
+between values. Try calling biggerThanTen() with different
+inputs. This is useful when a program needs to make
+decisions. Try running biggest() with some different inputs
+to get a feel for how the if/else and comparison syntax work.
 
-    When you get the hang of it, complete the function tooSmall,
-    which checks to see if the input 'a' is too small to be the
-    square root of 'x'. EG, tooSmall(3,16) should return true because
-    3 is smaller than the square root of 16. tooSmall(4,16) should
-    return false, because 4 is not smaller than the square root of 16.
+When you get the hang of it, complete the function tooSmall,
+which checks to see if the input 'a' is too small to be the
+square root of 'x'. EG, tooSmall(3,16) should return true because
+3 is smaller than the square root of 16. tooSmall(4,16) should
+return false, because 4 is not smaller than the square root of 16.
 */
 function biggerThanTen(x){
   return x > 10;
@@ -130,33 +130,33 @@ function biggest(a, b){
   } else {
     print(b + " is bigger than " + a);
   }
-
+  
   if ( a + b > 5 ){
     print(a + " + " + b + " is bigger than five!");
   }
-
+  
   return "There is a bug in this function. Can you make it say something silly?";
 }
 function tooSmall(a, x){
-    // YOUR CODE HERE
+  // YOUR CODE HERE
 }
 
 /* Question 5:
 
-  Sometimes we want a function to repeat a series of steps
-  many times. To do this, we use a loop structure. One type of
-  loop structure is the while() loop, which repeats as long as
-  the condition it is evaluating is true. Read countdown(x) and
-  try to figure out what it does. Try calling it with some
-  different inputs.
+Sometimes we want a function to repeat a series of steps
+many times. To do this, we use a loop structure. One type of
+loop structure is the while() loop, which repeats as long as
+the condition it is evaluating is true. Read countdown(x) and
+try to figure out what it does. Try calling it with some
+different inputs.
 
-  
+
 */
 function countdown(x){
   if (biggerThanTen(x)){
     return "That's too much! I won't count it!";
   }
-
+  
   while (x >= 0){
     print("X is now " + x);
     x = x - 1;
@@ -166,26 +166,26 @@ function countdown(x){
 
 /* Question 6:
 
-    All of the functions we have used so far have worked
-    with input values to produce the output directly, but
-    sometimes it is useful to create variables to store
-    extra information. This is done with the var keyword.
+All of the functions we have used so far have worked
+with input values to produce the output directly, but
+sometimes it is useful to create variables to store
+extra information. This is done with the var keyword.
 
-    Using the countdown() function as a guide, complete the
-    sumFromOneTo(x) function so that it adds all the numbers
-    from one to x. Eg, sumFromOneTo(4) should return 10,
-    since 1 + 2 + 3 + 4 = 10.
+Using the countdown() function as a guide, complete the
+sumFromOneTo(x) function so that it adds all the numbers
+from one to x. Eg, sumFromOneTo(4) should return 10,
+since 1 + 2 + 3 + 4 = 10.
 */
 function sumFromOneTo(x){
   if (biggerThanTen(x)){
     return "It's too much! I won't add it!";
   }
   var sum = 0;
-
+  
   while(x > 0){
     // YOUR CODE HERE
   }
-
+  
   return sum;
 }
 
@@ -212,21 +212,21 @@ function newGuess(lowBound, highBound){
 function squareRoot(x){
   // YOUR CODE HERE
 }`,
-  questions: [
-    {
-      text: 'asdf',
-      tests: [
-        
-      ]
-    },
-    {
-      text: 'hi',
-      tests: []
-    }
-  ],
-  // for storing sheet-specific data / variables
-  // that are to be accessed by the questions
-  globals: {}
+questions: [
+  {
+    text: 'asdf',
+    tests: [
+      
+    ]
+  },
+  {
+    text: 'hi',
+    tests: []
+  }
+],
+// for storing sheet-specific data / variables
+// that are to be accessed by the questions
+globals: {}
 }
 
 var editor = ace.edit("editor");
@@ -237,7 +237,9 @@ editor.setTheme("ace/theme/twilight");
 var jsMode = ace.require("ace/mode/javascript").Mode;
 editor.getSession().setMode(new jsMode());
 
-editor.setValue(WorkSheet.editorText);
+setEditorText();
+setInstructionText();
+initProgressReport();
 
 
 $('#CommandLine').keyup(function(event){
@@ -245,6 +247,12 @@ $('#CommandLine').keyup(function(event){
     repl();
   }
 });
+
+function setEditorText() {
+  editor.setValue(WorkSheet.editorText);
+  // deselects the 'pasted' text
+  editor.moveCursorTo(0, 0);
+}
 
 function repl(){
   var input = $('#CommandLine').val();
@@ -281,8 +289,12 @@ $('.ace_function').click(function(){
 var calledMe = false;
 
 function setInstructionText() {
-  $('#Instructions')[0].textContent =
-  WorkSheet.title + ': ' + WorkSheet.text;
+  // $('#Instructions')[0].textContent =
+  // WorkSheet.title + ': ' + WorkSheet.text;
+  
+  $('#Instructions')[0].innerHTML = markdown.toHTML(
+    WorkSheet.text
+  );
 }
 
 function updateGrades(){
@@ -401,10 +413,11 @@ var unitTests = {
   }
 }
 
-setInstructionText();
-for (let i=0;i<WorkSheet.questions.length; i++){
-  let li = document.createElement('li');
-  li.id = 'grade' + (i-1);
-  
-  $('#GradesList')[0].appendChild(li);
+
+function initProgressReport() {
+  for (let i = 0; i < WorkSheet.questions.length; i++) {
+    let li = document.createElement('li');
+    li.id = 'grade' + (i - 1);
+    $('#GradesList')[0].appendChild(li);
+  }
 }
