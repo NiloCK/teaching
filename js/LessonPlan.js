@@ -1,8 +1,10 @@
 /// <reference path="lib/ace.js"/>
 
 let WorkSheet = {
-  title: 'A title',
-  text: '*This* is the intro text (in markdown?)',
+  instructions: 
+
+  `## Title
+*This* is the intro text (in markdown?)`,
   editorText: 
   `//////////////////////////////////////////////
   // Section One - Introduction to JavaScript //
@@ -293,7 +295,7 @@ function setInstructionText() {
   // WorkSheet.title + ': ' + WorkSheet.text;
   
   $('#Instructions')[0].innerHTML = markdown.toHTML(
-    WorkSheet.text
+    WorkSheet.instructions
   );
 }
 
