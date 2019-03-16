@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
 
 importScripts(
-  "/skuilder/precache-manifest.8c5a260b6ad132879bb31736968e67aa.js"
+  "/skuilder/precache-manifest.b11248e9c49e19405a339484c1c5a7ba.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "new-skuilder"});
