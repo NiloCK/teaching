@@ -1,0 +1,291 @@
+<html>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	text-align:center;
+	vertical-align:middle;
+	overflow-x:hidden; 
+	overflow-y:auto;
+}
+
+pre {
+white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+
+
+-->
+</style>
+<body id="body" onload="loadXML()">
+<link rel="stylesheet" type="text/css" href="resources/css/print.css" media="print" /> 
+<link rel="stylesheet" type="text/css" href="resources/css/report.css" media="screen" />
+<script type="text/javascript">
+var xmlDoc; 
+var labName = null;
+
+function getQueryVariable(variable) 
+{ 
+	//var query = "?labId=45";
+    var query = window.location.search.substring(1); 
+	//var query = query.substring(1);
+    var vars = query.split("&"); 
+    for (var i=0;i<vars.length;i++) 
+    { 
+        var pair = vars[i].split("="); 
+        if (pair[0] == variable) 
+        { 
+            return pair[1]; 
+			//alert(pair[1])
+        } 
+    } 
+    alert('Query Variable ' + variable + ' not found'); 
+	return;
+} 
+
+function loadXML()
+{
+	var labId = getQueryVariable("labId");
+	
+	
+	// code for IE
+	if (window.ActiveXObject)
+	{
+		xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+		xmlDoc.async=false;
+		
+
+	}
+	// code for Mozilla, Firefox, Opera, etc.
+	else if (document.implementation && document.implementation.createDocument)
+	{
+		xmlDoc=document.implementation.createDocument("","",null);
+		xmlDoc.onload=createReport;
+		
+	}
+	else
+	{
+		alert('Your browser cannot handle this script');
+	}
+
+	xmlDoc.load("../xml/"+labId+".xml");
+	createReport();
+}
+
+function createReport()
+{
+	
+	labName = xmlDoc.getElementsByTagName("name")[0].firstChild.nodeValue;
+	
+	var tools = new Array();
+	var labTools = xmlDoc.getElementsByTagName("tool");
+	for (var i = 0 ; i < labTools.length ; i++)
+	{
+		var toolLabel = labTools[i].childNodes[1].firstChild.nodeValue;
+		tools.push(toolLabel);
+	}
+	
+	var chemicals = new Array();
+	var labChemicals = xmlDoc.getElementsByTagName("chemical");
+	for (var i = 0 ; i < labChemicals.length ; i++)
+	{
+		var checmicalLabel = labChemicals[i].childNodes[1].firstChild.nodeValue;
+		for (var y = 0 ; y < labChemicals[i].childNodes.length ; y++)
+		{
+			if (labChemicals[i].childNodes[y].nodeName == "showchemical")
+			{
+				if (labChemicals[i].childNodes[y].firstChild.nodeValue == "true")
+				{
+					chemicals.push(checmicalLabel);
+				}
+			}
+		}
+	}
+	
+	var containers = new Array();
+	var labContainers = xmlDoc.getElementsByTagName("container");
+	for (var i = 0 ; i < labContainers.length ; i++)
+	{
+		var containerLabel = labContainers[i].childNodes[1].firstChild.nodeValue;
+		containers.push(containerLabel);
+	}
+	
+	var labBackground = xmlDoc.getElementsByTagName("background")[0].firstChild.nodeValue;
+	
+	var labProcedure = xmlDoc.getElementsByTagName("procedure")[0].firstChild.nodeValue;
+	
+	var labAssignment = xmlDoc.getElementsByTagName("assignment")[0].firstChild.nodeValue;
+	
+	//CREATE REPORT
+	document.getElementById("labNameSpan").innerHTML = labName;
+	
+	if (!window.ActiveXObject)
+	{
+		var labContent = document.getElementById("labContent");
+		var temp = labContent.innerHTML;
+		labContent.innerHTML = "<br><br><br>"+temp;
+	}
+	
+	var tbody = document.getElementById("tBody");
+	
+	createSection(tbody, "Lab Glassware", containers);
+	
+	createSection(tbody, "Lab Chemicals", chemicals);
+	
+	createSection(tbody, "Lab Tools", tools);
+	
+	createSection(tbody, "Lab Background", labBackground);
+	
+	createSection(tbody, "Lab Procedures", labProcedure);
+	
+	createSection(tbody, "Lab Assignments", labAssignment);
+	
+}
+
+function createSection(tBody, title, content)
+{
+	var breakRow = document.createElement("tr");
+	var breakCell = null;
+	breakCell = document.createElement("td");
+	breakCell.align = "left";
+	breakCell.innerHTML  = "<br>";
+	breakRow.appendChild(breakCell);
+
+
+	var titleRow = document.createElement("tr");
+	var titleCell = null;
+	titleCell = document.createElement("td");
+	titleCell.align = "left";
+	titleCell.textAlign = "justify";
+	titleCell.innerHTML  = "<span style='color:#393f46 ; font:bold 15px Arial'>"+title+"</span><a name='"+title+"' id='"+title+"'/>";
+	titleRow.appendChild(titleCell);
+	
+	var contentRow = document.createElement("tr");
+	var contentCell = null;
+	contentCell = document.createElement("td");
+	contentCell.align = "left";
+	
+	content = new String(content);
+	var formattedContent = "";
+	for (var x=0;x<=content.length-1;x++)
+	{
+		
+		if (content.charCodeAt(x) == 10)
+		{
+			formattedContent += "<BR>";
+		}
+		else
+		{
+			formattedContent += content.charAt(x);
+		}
+		
+	}
+	contentCell.innerHTML  = "<span style='color:#393f46 ; font:normal 12px Arial'>"+formattedContent+"</span>";
+	
+	contentRow.appendChild(contentCell);
+	
+	tBody.appendChild(breakRow);
+	tBody.appendChild(titleRow);
+	tBody.appendChild(contentRow);
+}
+
+function savePage()
+{
+	try
+	{
+		document.execCommand('SaveAs',null,labName+' Report.html');
+	}
+	catch(err)
+	{
+		alert('Save-feature available only in Internet Exlorer 5.x.');
+	}
+}
+
+</script>
+<table style="width:100% ; height:100%" border="0" cellpadding="0" cellspacing="0">
+	<tr id="bannerTop">
+		<td>
+			<div style="top:0 ; left:0 ; position:fixed ; background-color:#FFFFFF;">
+				<table style="width:100%" border="0" cellpadding="0" cellspacing="0">
+					<tr style="background: URL(resources/images/topBanner.jpg) repeat-x">
+						<td valign="top" style="padding-top: 13px">
+							<table width="600px" border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td style="padding-left: 13px"  align="left" width="116px">
+										<span style="color:#393f46 ; font:bold 18px Arial">Lab Report :&nbsp;</span> 
+									</td>
+									<td  align="left">
+										<span id="labNameSpan" style="color:#393f46 ; font:normal 18px Arial"></span> 
+									</td>
+								<tr>
+							</table>	
+						</td>
+						<td align="right">
+							<table  border="0" cellpadding="0" cellspacing="0" >
+								<tr>
+									<td>
+										<table  border="0" cellpadding="0" cellspacing="0" >
+											<tr onclick="savePage();">
+												<td>
+													<img style="cursor:pointer" src="resources/images/saveIcon.jpg">
+												</td>
+												<td valign="top" style="padding-top: 14px ; padding-right: 14px">
+													<span style="cursor:pointer ; color:#393f46 ; font:normal 12px Arial">Save Report</span>
+												</td>
+											<tr>
+										</table>			
+									</td>
+									<td>
+										<table  border="0" cellpadding="0" cellspacing="0" >
+											<tr onclick="window.print();">
+												<td>
+													<img style="cursor:pointer" src="resources/images/printIcon.jpg">
+												</td>
+												<td  valign="top" style="padding-top: 14px ; padding-right: 14px">
+													<span style="cursor:pointer ; color:#393f46 ; font:normal 12px Arial">Print Report</span>
+												</td>
+											<tr>
+										</table>			
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<table style="width:100%" border="0" cellpadding="0" cellspacing="0">
+					<tr align="center">
+						<td style="padding-bottom:10px">
+							<span style="cursor:pointer ; color:#393f46 ; font:normal 12px Arial"><a href="#Lab Glassware">Lab Glassware</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#Lab Chemicals">Lab Chemicals</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#Lab Tools">Lab Tools</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#Lab Background">Lab Background</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#Lab Assignments">Lab Assignments</a></span>
+						</td>
+					</tr>
+					<tr style="background: URL(resources/images/deviderLine.jpg) repeat-x">
+						<td>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</table>
+			<div>
+		</td>
+	</tr>
+	<tr height="100%">
+		<td>
+			<div id="labContent" class="labContent">
+				<table width="100%" cellpadding="0" cellspacing="0" style="padding-left:14px ; padding-right:14px">
+					<tbody id="tBody"> 
+					</tbody>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

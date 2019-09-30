@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Alberta Distance Learning Centre</title>
+		
+		<script type="text/javascript" src="js/adlc-1.2.2.min.js"></script>
+		<script type="text/javascript">
+			function siteroot( fn )
+			{
+				var href = location.href;
+				var i = href.lastIndexOf(fn);
+				return href.substring(0,i).replace(/\|/g,":");
+			}
+			
+			function toggleTOC( cols )
+			{
+				document.getElementById("sidebar_fs").cols = cols;
+			}
+			
+			function toggleToolbar( rows )
+			{
+				document.getElementById("toolbar_fs").rows = rows;
+			}
+			
+			var courseId = adlcJS.getURLQueryParam("cid");
+			var root = siteroot('loader.htm');
+		</script>
+	</head>
+	
+	
+	<frameset rows="108,*">
+		<frame src="titlebar.htm" name="ocv_titlebar" scrolling="no" frameborder="0" noresize="noresize" />
+		<frameset cols="250,*" id="sidebar_fs">
+			<frame src="menubar.htm" name="ocv_menubar" frameborder="0" noresize="noresize" />
+			<frameset rows="0,*" id="toolbar_fs" style="border-left:2px solid #014c73">
+				<frame src="toolbar.htm" name="ocv_toolbar" scrolling="no" frameborder="0" noresize="noresize" />
+				<frame src="content.htm" name="ocv_content" frameborder="0" noresize="noresize" />
+			</frameset>
+		</frameset>
+		
+		<noframes>
+			<body>This browser does not support frames.</body>
+		</noframes>
+	</frameset>
+</html>

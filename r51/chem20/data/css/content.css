@@ -1,0 +1,18 @@
+body {
+	margin: 0px 25px;
+	font-family: Verdana, Arial, sans-serif;
+}
+
+.course {
+	font-weight: bold;
+	font-size: 1.6em;
+}
+.module { font-weight: bold; }
+.topic { font-weight: normal; }
+.disabled {
+	font-style: italic;
+	color: #999;
+}
+
+a { text-decoration: none; }
+a:hover { color: red; }

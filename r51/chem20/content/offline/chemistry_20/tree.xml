@@ -1,0 +1,732 @@
+<?xml version='1.0' ?>
+<tree id="0">
+	<item text="Chemistry 20" id="root" open="1" im0="home.gif" im1="home.gif" im2="home.gif" call="1" select="0">
+		<userdata name="myurl">splash.html</userdata>
+		<item text="Introduction" id="Introduction" im0="book_brown.gif" im1="books_open.gif" im2="books_close.gif">
+			<userdata name="myurl">introduction.html</userdata>
+				<item text="Copyright" id="copyright" im0="book_brown.gif" im1="books_open.gif" im2="books_close.gif">
+					<userdata name="myurl">c20_copyright.html</userdata>
+				</item>	
+		</item>			
+		<item text="Unit A Intro" id="ua" open="0" im0="book_red.gif" im1="books_open_red.gif" im2="book_title_red.gif">
+			<userdata name="myurl">Unit_A/introduction.html</userdata>
+				<item text="Concept Organizer" id="uaco" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+					<userdata name="myurl">Unit_A/c20_ua_organizer.html</userdata>
+				</item>
+				<item text="Module 1 Intro" id="m1" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+					<userdata name="myurl">Unit_A/M_1/introduction.html</userdata>
+						<item text="Big Picture" id="m1bp" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_picture.html</userdata>
+						</item>
+						<item text="In This Module" id="m1itm" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_inthis.html</userdata>
+						</item>
+						<item text="Lesson 1 Intro" id="m1_le1" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_l01.html</userdata>
+								<item text="Page 2" id="m1_le1_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l01_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m1_le1_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l01_p3.html</userdata>
+								</item> 
+								<item text="Page 4" id="m1_le1_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l01_p4.html</userdata>
+								</item>						
+						</item>
+						<item text="Lesson 2 Intro" id="m1_le2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_l02.html</userdata>
+								<item text="Page 2" id="m1_le2_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l02_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m1_le2_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l02_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m1_le2_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l02_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m1_le2_p5" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l02_p5.html</userdata>
+								</item>	
+						</item>
+						<item text="Lesson 3 Intro" id="m1_le3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_l03.html</userdata>
+								<item text="Page 2" id="m1_le3_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l03_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m1_le3_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l03_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m1_le3_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l03_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m1_le3_p5" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l03_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m1_le3_p6" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l03_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m1_le3_p7" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l03_p7.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 4 Intro" id="m1_le4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_l04.html</userdata>
+								<item text="Page 2" id="m1_le4_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l04_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m1_le4_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l04_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m1_le4_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l04_p4.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 5 Intro" id="m1_le5" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_l05.html</userdata>
+								<item text="Page 2" id="m1_le5_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l05_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m1_le5_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l05_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m1_le5_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l05_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m1_le5_p5" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_1/c20_m1_l05_p5.html</userdata>
+								</item>	
+						</item>				
+						<item text="Module Summary and Assessment" id="uam1ms" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_summary.html</userdata>
+						</item>
+						<item text="Module Glossary" id="uam1gl" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_1/c20_m1_glossary.html</userdata>
+						</item>
+				</item>
+				<item text="Module 2 Intro" id="m2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+					<userdata name="myurl">Unit_A/M_2/introduction.html</userdata>
+						<item text="Big Picture" id="m2bp" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_picture.html</userdata>
+						</item>
+						<item text="In This Module" id="m2itm" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_inthis.html</userdata>
+						</item>
+						<item text="Lesson 1 Intro" id="m2_le1" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_l01.html</userdata>
+								<item text="Page 2" id="m2_le1_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l01_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m2_le1_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l01_p3.html</userdata>
+								</item> 
+								<item text="Page 4" id="m2_le1_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l01_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m2_le1_p5" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l01_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m2_le1_p6" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l01_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 2 Intro" id="m2_le2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_l02.html</userdata>
+								<item text="Page 2" id="m2_le2_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l02_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m2_le2_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l02_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m2_le2_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l02_p4.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 3 Intro" id="m2_le3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_l03.html</userdata>
+								<item text="Page 2" id="m2_le3_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l03_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m2_le3_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l03_p3.html</userdata>
+								</item>	
+								<item text="Lab" id="m2_le3_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l03_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m2_le3_p5" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l03_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m2_le3_p6" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l03_p6.html</userdata>
+								</item>
+						</item>	
+						<item text="Lesson 4 Intro" id="m2_le4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_l04.html</userdata>
+								<item text="Page 2" id="m2_le4_p2" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l04_p2.html</userdata>
+								</item>
+								<item text="Lab" id="m2_le4_p3" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l04_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m2_le4_p4" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l04_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m2_le4_p5" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l04_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m2_le4_p6" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l04_p6.html</userdata>
+								</item>	
+								<item text="Page 7" id="m2_le4_p7" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+									<userdata name="myurl">Unit_A/M_2/c20_m2_l04_p7.html</userdata>
+								</item>	
+						</item>					
+						<item text="Module Summary and Assessment" id="uam2ms" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_summary.html</userdata>
+						</item>
+						<item text="Module Glossary" id="uam2gl" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+							<userdata name="myurl">Unit_A/M_2/c20_m2_glossary.html</userdata>
+						</item>
+				</item>
+				<item text="Unit A Conclusion" id="uasum" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+					<userdata name="myurl">Unit_A/c20_ua_conclusion.html</userdata>
+				</item>
+				<item text="Unit A Assessment" id="uaass" im0="book_red.gif" im1="books_open_red.gif" im2="book_red.gif">
+					<userdata name="myurl">Unit_A/c20_ua_assessment.html</userdata>
+				</item>
+		</item>
+		<item text="Unit B Intro" id="ub" open="0" im0="book.gif" im1="books_open.gif" im2="book_title.gif">
+			<userdata name="myurl">Unit_B/introduction.html</userdata>
+				<item text="Concept Organizer" id="ubco" im0="book.gif" im1="books_open.gif" im2="book.gif">
+					<userdata name="myurl">Unit_B/c20_ub_organizer.html</userdata>
+				</item>
+				<item text="Module 3 Intro" id="m3" im0="book.gif" im1="books_open.gif" im2="book.gif">
+					<userdata name="myurl">Unit_B/M_3/introduction.html</userdata>
+						<item text="Big Picture" id="m3bp" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_picture.html</userdata>
+						</item>
+						<item text="In This Module" id="m3itm" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_inthis.html</userdata>
+						</item>
+						<item text="Lesson 1 Intro" id="m3_le1" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_l01.html</userdata>
+								<item text="Page 2" id="m3_le1_p2" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l01_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m3_le1_p3" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l01_p3.html</userdata>
+								</item> 
+								<item text="Page 4" id="m3_le1_p4" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l01_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m3_le1_p5" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l01_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m3_le1_p6" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l01_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 2 Intro" id="m3_le2" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_l02.html</userdata>
+								<item text="Page 2" id="m3_le2_p2" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l02_p2.html</userdata>
+								</item>
+								<item text="Lab" id="m3_le2_p3" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l02_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m3_le2_p4" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l02_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m3_le2_p5" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l02_p5.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 3 Intro" id="m3_le3" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_l03.html</userdata>
+								<item text="Page 2" id="m3_le3_p2" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l03_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m3_le3_p3" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l03_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m3_le3_p4" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l03_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m3_le3_p5" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l03_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m3_le3_p6" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l03_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 4 Intro" id="m3_le4" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_l04.html</userdata>
+								<item text="Page 2" id="m3_le4_p2" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l04_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m3_le4_p3" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l04_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m3_le4_p4" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l04_p4.html</userdata>
+								</item>
+								<item text="Lab" id="m3_le4_p5" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l04_p5.html</userdata>
+								</item>	
+								<item text="Page 6" id="m3_le4_p6" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l04_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m3_le4_p7" im0="book.gif" im1="books_open.gif" im2="book.gif">
+									<userdata name="myurl">Unit_B/M_3/c20_m3_l04_p7.html</userdata>
+								</item>
+						</item>
+						<item text="Module Summary and Assessment" id="m3ms" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_summary.html</userdata>
+						</item>
+						<item text="Module Glossary" id="m3gl" im0="book.gif" im1="books_open.gif" im2="book.gif">
+							<userdata name="myurl">Unit_B/M_3/c20_m3_glossary.html</userdata>
+						</item>
+				</item>
+				<item text="Unit B Conclusion" id="ubsum" im0="book.gif" im1="books_open.gif" im2="book.gif">
+					<userdata name="myurl">Unit_B/c20_ub_conclusion.html</userdata>
+				</item>
+				<item text="Unit B Assessment" id="ubass" im0="book.gif" im1="books_open.gif" im2="book.gif">
+					<userdata name="myurl">Unit_B/c20_ub_assessment.html</userdata>
+				</item>
+		</item>
+		<item text="Unit C Intro" id="uc" open="0" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_title_orange.gif">
+			<userdata name="myurl">Unit_C/introduction.html</userdata>
+				<item text="Concept Organizer" id="ucco" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+					<userdata name="myurl">Unit_C/c20_uc_organizer.html</userdata>
+				</item>
+				<item text="Module 4 Intro" id="m4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+					<userdata name="myurl">Unit_C/M_4/introduction.html</userdata>
+						<item text="Big Picture" id="m4bp" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_picture.html</userdata>
+						</item>
+						<item text="In This Module" id="m4itm" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_inthis.html</userdata>
+						</item>
+						<item text="Lesson 1 Intro" id="m4_le1" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_l01.html</userdata>
+								<item text="Page 2" id="m4_le1_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m4_le1_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m4_le1_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m4_le1_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m4_le1_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p6.html</userdata>
+								</item>
+								<item text="Lab" id="m4_le1_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p7.html</userdata>
+								</item>	
+								<item text="Page 8" id="m4_le1_p8" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p8.html</userdata>
+								</item>	
+								<item text="Page 9" id="m4_le1_p9" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l01_p9.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 2 Intro" id="m4_le2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_l02.html</userdata>
+								<item text="Page 2" id="m4_le2_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l02_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m4_le2_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l02_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m4_le2_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l02_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m4_le2_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l02_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m4_le2_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l02_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 3 Intro" id="m4_le3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_l03.html</userdata>
+								<item text="Page 2" id="m4_le3_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m4_le3_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m4_le3_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m4_le3_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m4_le3_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m4_le3_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p7.html</userdata>
+								</item>
+								<item text="Lab" id="m4_le3_p8" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p8.html</userdata>
+								</item>
+								<item text="Page 9" id="m4_le3_p9" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p9.html</userdata>
+								</item>
+								<item text="Page 10" id="m4_le3_p10" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l03_p10.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 4 Intro" id="m4_le4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_l04.html</userdata>
+								<item text="Page 2" id="m4_le4_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l04_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m4_le4_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l04_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m4_le4_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l04_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m4_le4_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l04_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m4_le4_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l04_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m4_le4_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l04_p7.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 5 Intro" id="m4_le5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_l05.html</userdata>
+								<item text="Page 2" id="m4_le5_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m4_le5_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m4_le5_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m4_le5_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m4_le5_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m4_le5_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p7.html</userdata>
+								</item>
+								<item text="Page 8" id="m4_le5_p8" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p8.html</userdata>
+								</item>
+								<item text="Page 9" id="m4_le5_p9" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_4/c20_m4_l05_p9.html</userdata>
+								</item>
+						</item>
+						<item text="Module Summary and Assessment" id="m4ms" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_summary.html</userdata>
+						</item>
+						<item text="Module Glossary" id="m4gl" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_4/c20_m4_glossary.html</userdata>
+						</item>
+				</item>
+				<item text="Module 5 Intro" id="m5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+					<userdata name="myurl">Unit_C/M_5/introduction.html</userdata>
+						<item text="Big Picture" id="m5bp" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_picture.html</userdata>
+						</item>
+						<item text="In This Module" id="m5itm" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_inthis.html</userdata>
+						</item>
+						<item text="Lesson 1 Intro" id="m5_le1" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_l01.html</userdata>
+								<item text="Page 2" id="m5_le1_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l01_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m5_le1_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l01_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m5_le1_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l01_p4.html</userdata>
+								</item>
+								<item text="Lab" id="m5_le1_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l01_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m5_le1_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l01_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m5_le1_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l01_p7.html</userdata>
+								</item>
+								<item text="Page 8" id="m5_le1_p8" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l01_p8.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 2 Intro" id="m5_le2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_l02.html</userdata>
+								<item text="Page 2" id="m5_le2_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l02_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m5_le2_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l02_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m5_le2_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l02_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m5_le2_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l02_p5.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 3 Intro" id="m5_le3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_l03.html</userdata>
+								<item text="Page 2" id="m5_le3_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l03_p2.html</userdata>
+								</item>
+								<item text="Lab" id="m5_le3_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l03_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m5_le3_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l03_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m5_le3_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l03_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m5_le3_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l03_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m5_le3_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l03_p7.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 4 Intro" id="m5_le4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_l04.html</userdata>
+								<item text="Page 2" id="m5_le4_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l04_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m5_le4_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l04_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m5_le4_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l04_p4.html</userdata>
+								</item>
+								<item text="Lab" id="m5_le4_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l04_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m5_le4_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l04_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m5_le4_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l04_p7.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 5 Intro" id="m5_le5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_l05.html</userdata>
+								<item text="Page 2" id="m5_le5_p2" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l05_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m5_le5_p3" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l05_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m5_le5_p4" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l05_p4.html</userdata>
+								</item>
+								<item text="Lab" id="m5_le5_p5" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l05_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m5_le5_p6" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l05_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m5_le5_p7" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+									<userdata name="myurl">Unit_C/M_5/c20_m5_l05_p7.html</userdata>
+								</item>
+						</item>
+						<item text="Module Summary and Assessment" id="m5ms" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_summary.html</userdata>
+						</item>
+						<item text="Module Glossary" id="m5gl" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+							<userdata name="myurl">Unit_C/M_5/c20_m5_glossary.html</userdata>
+						</item>
+				</item>
+				<item text="Unit C Conclusion" id="ucsum" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+					<userdata name="myurl">Unit_C/c20_uc_conclusion.html</userdata>
+				</item>
+				<item text="Unit C Assessment" id="ucass" im0="book_orange.gif" im1="books_open_orange.gif" im2="book_orange.gif">
+					<userdata name="myurl">Unit_C/c20_uc_assessment.html</userdata>
+				</item>
+		</item>
+		<item text="Unit D Intro" id="ud" open="0" im0="book_green.gif" im1="books_open_green.gif" im2="book_title_green.gif">
+			<userdata name="myurl">Unit_D/introduction.html</userdata>
+				<item text="Concept Organizer" id="udco" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+					<userdata name="myurl">Unit_D/c20_ud_organizer.html</userdata>
+				</item>
+				<item text="Module 6 Intro" id="m6" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+					<userdata name="myurl">Unit_D/M_6/introduction.html</userdata>
+						<item text="Big Picture" id="m6bp" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_picture.html</userdata>
+						</item>
+						<item text="In This Module" id="m6itm" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_inthis.html</userdata>
+						</item>
+						<item text="Lesson 1 Intro" id="m6_le1" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_l01.html</userdata>
+								<item text="Page 2" id="m6_le1_p2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l01_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m6_le1_p3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l01_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m6_le1_p4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l01_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m6_le1_p5" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l01_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m6_le1_p6" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l01_p6.html</userdata>
+								</item>
+								<item text="Page 7" id="m6_le1_p7" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l01_p7.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 2 Intro" id="m6_le2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_l02.html</userdata>
+								<item text="Page 2" id="m6_le2_p2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l02_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m6_le2_p3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l02_p3.html</userdata>
+								</item>	
+								<item text="Lab" id="m6_le2_p4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l02_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m6_le2_p5" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l02_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m6_le2_p6" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l02_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 3 Intro" id="m6_le3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_l03.html</userdata>
+								<item text="Page 2" id="m6_le3_p2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l03_p2.html</userdata>
+								</item>
+								<item text="Lab" id="m6_le3_lab" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l03_lab.html</userdata>
+								</item>	
+								<item text="Page 4" id="m6_le3_p4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l03_p4.html</userdata>
+								</item>	
+								<item text="Page 5" id="m6_le3_p5" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l03_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m6_le3_p6" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l03_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 4 Intro" id="m6_le4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_l04.html</userdata>
+								<item text="Page 2" id="m6_le4_p2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l04_p2.html</userdata>
+								</item>
+								<item text="Lab" id="m6_le4_p3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l04_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m6_le4_p4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l04_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m6_le4_p5" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_6/c20_m6_l04_p5.html</userdata>
+								</item>
+						</item>
+						<item text="Module Summary and Assessment" id="m6ms" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_summary.html</userdata>
+						</item>
+						<item text="Module Glossary" id="m6gl" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_6/c20_m6_glossary.html</userdata>
+						</item>
+				</item>
+				<item text="Module 7 Intro" id="m7" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+					<userdata name="myurl">Unit_D/M_7/introduction.html</userdata>
+						<item text="Big Picture" id="m7bp" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_7/c20_m7_picture.html</userdata>
+						</item>
+						<item text="In This Module" id="m7itm" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_7/c20_m7_inthis.html</userdata>
+						</item>
+						<item text="Lesson 1 Intro" id="m7_le1" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_7/c20_m7_l01.html</userdata>
+								<item text="Page 2" id="m7_le1_p2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l01_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m7_le1_p3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l01_p3.html</userdata>
+								</item>	
+								<item text="Lab" id="m7_le1_p4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l01_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m7_le1_p5" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l01_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m7_le1_p6" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l01_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 2 Intro" id="m7_le2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_7/c20_m7_l02.html</userdata>
+								<item text="Page 2" id="m7_le2_p2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l02_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m7_le2_p3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l02_p3.html</userdata>
+								</item>	
+								<item text="Lab 1" id="m7_le2_p4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l02_p4.html</userdata>
+								</item>
+								<item text="Lab 2" id="m7_le2_p5" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l02_p5.html</userdata>
+								</item>
+								<item text="Page 6" id="m7_le2_p6" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l02_p6.html</userdata>
+								</item>
+						</item>
+						<item text="Lesson 3 Intro" id="m7_le3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_7/c20_m7_l03.html</userdata>
+								<item text="Page 2" id="m7_le3_p2" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l03_p2.html</userdata>
+								</item>
+								<item text="Page 3" id="m7_le3_p3" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l03_p3.html</userdata>
+								</item>	
+								<item text="Page 4" id="m7_le3_p4" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l03_p4.html</userdata>
+								</item>
+								<item text="Page 5" id="m7_le3_p5" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+									<userdata name="myurl">Unit_D/M_7/c20_m7_l03_p5.html</userdata>
+								</item>
+						</item>
+						<item text="Module Summary and Assessment" id="m7ms" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_7/c20_m7_summary.html</userdata>
+						</item>
+						<item text="Module Glossary" id="m7gl" im0="book_green.gif" im1="books_open_green.gif" im2="book_green.gif">
+							<userdata name="myurl">Unit_D/M_7/c20_m7_glossary.html</userdata>
+						</item>
+				</item>
+				<item text="Unit D Conclusion" id="udsum" im0="book_green.gif" im1="books_open._greengif" im2="book_green.gif">
+					<userdata name="myurl">Unit_D/c20_ud_conclusion.html</userdata>
+				</item>
+				<item text="Unit D Assessment" id="udass" im0="book_green.gif" im1="books_open.gif" im2="book_green.gif">
+					<userdata name="myurl">Unit_D/c20_ud_assessment.html</userdata>
+				</item>
+		</item>
+		<item text="Course Conclusion" id="csummary" im0="book_brown.gif" im1="books_open.gif" im2="books_close.gif">
+			<userdata name="myurl">c20_summary.html</userdata>
+		</item>	
+	</item>
+</tree> 

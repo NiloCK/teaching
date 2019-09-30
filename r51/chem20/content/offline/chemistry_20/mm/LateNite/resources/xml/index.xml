@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<index>
+	<indexItem>
+		<labid>melting_and_boiling_points</labid>
+		<labname><![CDATA[Characteristic Properties - Melting and Boiling Points]]></labname>
+		<labbackground><![CDATA[One important task in the study of chemistry is to isolate and identify a pure substance. Just as you can be identified by your fingerprints, which are unique to you, so too can a liquid be identified through its physical properties. 
+In this experiment you will examine two physical properties -- the melting and boiling points -- of four unknown liquids. The liquids are clear and could be mistaken for water, but they can be identified as one of four organic solvents by their melting and boiling temperatures. Your job is to identify the unknowns by measuring the melting and boiling points of each liquid and comparing the results to known values from the literature (such as your textbook or handbook of chemistry).
+A liquid can "supercool", that is, it can cool below its freezing point yet remain liquid. Once it freezes, however, the temperature of the liquid/solid mixture must stabilize at the actual freezing-point temperature. The current simulation does not include supercooling.
+]]></labbackground>
+		<labimagename>characteristics_properties_melting_and_boiling.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>boyles_law</labid>
+		<labname><![CDATA[Boyle's Law]]></labname>
+		<labbackground><![CDATA[In the 1700's a number of people investigated gas behavior in the laboratory. Robert Boyle investigated the relationship between the volume of a dry ideal gas and its pressure. Since there are four variables that can be altered in a gas sample, in order to investigate how one variable will affect another, all other variables must be held constant or fixed.
+Boyle fixed the amount of gas and its temperature during his investigation. He found that when he manipulated the pressure that the volume responded in the opposite direction. For example, when Boyle increased the pressure on a gas sample the volume would decrease. Mathematically, P is proportional to (1/V) if the gas is behaving as an ideal gas. A practical mathematical expression of Boyle's findings is:
+PV = constant
+In this experiment, you will vary the volume of a sample of gas and measure the change in pressure to study this relationship. In the real lab, reducing the volume available to a gas, would initially increase both the pressure and temperature, and then only once the temperature cooled back down to its initial value could the pressure be measured. However, in this simulated lab, the temperature remains constant at room temperature and the pressure values can be read immediately.
+]]></labbackground>
+		<labimagename>boyles_law.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>charles_law</labid>
+		<labname><![CDATA[Charles' Law]]></labname>
+		<labbackground><![CDATA[Charles' Law states that under conditions of constant pressure and quantity, there is a direct relationship between the volume and absolute temperature for an ideal gas. 
+The mathematical statement is that the V/T = a constant. For two sets of conditions the following is a math statement of Charles's Law:
+V<sub>1</sub>/T<sub>1</sub> = V<sub>2</sub>/T<sub>2</sub>
+In this experiment you will vary the temperature of a sample of gas and measure the change in volume to study this relationship. Having the Gas Piston makes your work easier because the gas inside is always at atmospheric pressure.
+]]></labbackground>
+		<labimagename>charles_law.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>molar_volume</labid>
+		<labname><![CDATA[Molar Volume of an Ideal Gas]]></labname>
+		<labbackground><![CDATA[Robert Boyle found that under isothermal conditions (constant temperature), the pressure of a gas is inversely proportional to its volume. 
+This also means that the product of the pressure and volume is a constant. The equations that describe this relationship are:
+PV = constant
+and
+P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub>
+Jacques Charles found that the volume of a gas under isobaric conditions (constant pressure) is directly proportional to its temperature. As the temperature increases, so does the volume that the gas occupies.
+The equations that describe this relationship are:
+V/T = constant
+and
+V<sub>1</sub>/T<sub>1</sub> = V<sub>2</sub>/T<sub>2</sub>
+It is possible to combine Boyle's law and Charles' law into a combined gas law:
+P<sub>1</sub>V<sub>1</sub>/T<sub>1</sub>  = P<sub>2</sub>V<sub>2</sub>/T<sub>2</sub>
+The Ideal Gas Law includes the dependence of the volume on the number of gas moles, and an experimentally determined Universal Gas Constant, R. 
+This law is written as follows:
+(PV) / (nT) = R (the ideal gas constant)
+or
+PV = nRT
+The accepted value for R is 8.314 kPa*L/mol*K. 
+One important result of the Ideal Gas Law is that under constant conditions of pressure and temperature, one mole of any gas will always occupy the same volume. For example, at STP, the molar volume of a gas is 22.4 L/mol; and at SATP, the molar volume of a gas is 24.8 L/mol. In this lab, at a typical room temperature of 21C (294 K), the molar volume of an ideal gas is 24.5 L/mol.
+The volume that one mole of an ideal gas occupies when held at a specific temperature and pressure is referred to as a "molar volume." Most gases follow the Ideal Gas Law closely at atmospheric pressure and room temperature. 
+In this experiment you will determine the molar volume of hydrogen and compare it with the expected ideal gas law value. Hydrogen gas is produced in the reaction
+Zn(s) + 2HCl(aq)  ->  ZnCl<sub>2</sub>(aq) + H<sub>2</sub>(g)
+It is easy to calculate the number of moles of H<sub>2</sub>(g) produced since it is the same as the number of moles of zinc used in the reaction. Knowing the number of moles of H<sub>2</sub>(g) produced and measuring the volume that it occupies, one can calculate the molar volume of the gas at room temperature and pressure according to the equation
+Molar volume = measured volume / number of moles (L/mol)
+]]></labbackground>
+		<labimagename>molar_volume_of_an_ideal_gas.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>salt_solubility</labid>
+		<labname><![CDATA[The Temperature Dependence of Salt Solubility]]></labname>
+		<labbackground><![CDATA[In performing chemical experiments, substances are often dissolved in water or other liquids. The substance that is being dissolved is called the "solute", and the water (or other liquid) in which the substance is dissolved is called the "solvent". Not all substances will dissolve in a solvent, and some will only dissolve partially. The amount of solute that can be dissolved in a solvent is called its solubility. 
+An important factor in determining the solubility of a substance is the temperature of the solvent in which it is dissolved. In most cases, the solubility of a substance increases as the temperature of the solvent goes up and decreases as the temperature of the solvent goes down. Because the solubility of a substance is so affected by temperature, all measurements of solubility must also specify the temperature of the solvent. 
+Solubility is measured in units of grams of solute per 100 mL of a solvent at a specific temperature. For example, the solubility of ordinary table salt, NaCl, varies only slightly temperature, increasing from 36g / 100 mL water at 0C to 41g / 100 mL water at 100C. On the other hand, the solubility of potassium nitrate, KNO<sub>3</sub>, varies strongly with temperature, increasing from 14g / 100 mL water at 0C to 245g / 100 mL water at 100C.
+In this experiment, we will determine the solubility of the salt potassium chloride (KCl) in water at various temperatures. We will heat solutions containing different amounts of KCl to 80C, and allow each sample to cool slowly. The temperature at which crystallization of solid KCl just begins is the temperature at which the solubility of potassium chloride is exactly equal to the amount originally dissolved in the sample's volume of water. 
+This experiment will then be repeated for several samples of ammonium chloride, NH<sub>4</sub>Cl, dissolved in the same volume of water. The results will allow us to construct a solubility curve for NH<sub>4</sub>Cl in water as a function of temperature.
+]]></labbackground>
+		<labimagename>the_temprature_dependence_of_salt.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>ph_indicators</labid>
+		<labname><![CDATA[pH indicators]]></labname>
+		<labbackground><![CDATA[A solution that contains H<sub>3</sub>O<sup>+</sup> ions is considered to be acidic and a solution that contains OH- ions is considered to be basic. The pH is a logarithmic measurement scale used to describe the acidity of a solution, and it is calculated from the equation: 
+pH= -log [H<sub>3</sub>O<sup>+</sup>]
+For example, a solution that is 1M in H<sub>3</sub>O<sup>+</sup> has a pH of 0, while a solution that is .001M in H<sub>3</sub>O+ has a pH of 3. A pOH scale is defined in the similar way, based on the OH<sup>-</sup> concentration. The equation to calculate pOH is: 
+pOH = -log [OH<sup>-</sup>]
+Pure water exhibits autoionization of the H<sub>2</sub>O molecules into H<sub>3</sub>O<sup>+</sup> and OH<sup>-</sup> ions at a concentration that is equivalent to a pH of 7. Therefore, for any aqueous solution the sum of the values pH + pOH is always 14.
+pH indicators are organic acids that change color depending on the acidity (pH) of the solution. They are selected for their intense colors even when only a few drops are added to a solution. These indicators have a particular pH range over which they make a transition from one color to another (and some indicators have multiple ranges).
+In this experiment you will investigate different indicators with solutions of varying pH. Solutions of HCl and NaOH will be diluted with water to obtain a range of pH values.
+Your job is to identify the pH range for which each given pH indicator is most effective.
+You will be asked to set up sets of test tubes containing dilute acid or base at various concentrations in order to test the pH indicators. A sample of what you are looking for as well as a convenient way to arrange the sets of test tube on the workbench is shown in the following link: 
+m-cresol sample
+]]></labbackground>
+		<labimagename>ph_indicators.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>chemical_reaction_types</labid>
+		<labname><![CDATA[Chemical Reaction Types and Their Equations]]></labname>
+		<labbackground><![CDATA[Every chemical equation represents a specific chemical reaction. Equations identify the "reactants", the substances that interact together, and the new substances that are formed as a result of that interaction, which are called the "products". Reactants appear on the left side of an equation, and the products appear on the right. They are separated by an arrow ( --> ), which indicates that a reaction has taken place. 
+For an equation to be correct, it must be balanced, meaning that the same number of each kind of atom must appear on both sides of the equation. For example, when iron rusts, it combines with oxygen to form a new compound, iron oxide(III) (Fe<sub>2</sub>O<sub>3</sub>). The balanced chemical equation for this reaction is: 
+4Fe(s) + 3O<sub>2</sub>(g) --> 2Fe<sub>2</sub>O<sub>3</sub>(s)
+This equation indicates that 4 iron atoms combine with 3 molecules of diatomic oxygen (for a total of 6 oxygen atoms) to produce the 2 molecules of iron oxide(III), each with 2 atoms of iron and 3 atoms of oxygen. The symbols in parentheses, "s" and "g", indicate the state of each atom or molecule, s for solid and g for gas.
+In this experiment you will perform four classes of chemical reactions: synthesis, decomposition, single displacement, and double displacement. A synthesis reaction combines two or more substances to create a new one, such as with the rusting iron above. In a decomposition reaction, a substance breaks apart into simpler constituents. In a single displacement reaction, one substance in a molecule is replaced by another, and in a double displacement reaction, two molecules swap atoms to form new substances.
+After performing these reactions, you will identify the products that result and write a balanced chemical equation to represent each of those reactions.
+]]></labbackground>
+		<labimagename>sample_lab.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>decomposition_of_malachite</labid>
+		<labname><![CDATA[Decomposition of Malachite]]></labname>
+		<labbackground><![CDATA[Malachite is a famous and very popular semi-precious stone. Its banded light and dark green bands are one-of-a-kind that give it a unique, ornamental quality unlike that of any other stone. The light and dark green bands are so distinctive that malachite may be one of the most easily recognized minerals by the general public. 
+Malachite is popular in jewelry. The stones inlayed in silver make a nice alternative to traditional turquoise jewelry. 
+Malachite is a form of copper carbonate, with the molecular formula Cu(OH)<sub>2</sub>CuCO<sub>3</sub>(s). When heated to around 200C, malachite decomposes into solid copper(II) oxide, carbon dioxide gas, and water vapour.
+In this experiment, you will heat a known mass of malachite to produce copper(II) oxide. You will also predict the amount of copper(II) oxide expected to be produced based on the balanced equation for the decomposition reaction. You will then compare your predicted results to those actually obtained in the experiment.
+]]></labbackground>
+		<labimagename>decomposition_of_malachite.png</labimagename>
+	</indexItem>
+	<indexItem>
+		<labid>titration_of_an_acid</labid>
+		<labname><![CDATA[Titration of an Acid]]></labname>
+		<labbackground><![CDATA[Titration is one of the most useful techniques for determining the concentration of an unknown solution, and it is often used with acidic and basic solutions. The end point is reached when a stoichiometric number of moles are added to the unknown solution to neutralize the acid or base.
+PLEASE NOTE: The technique of titrating an acid with a base involves several steps in order to obtain exact results. It is strongly advised that you work through the TITRATION TUTORIAL first before doing any titration lab.
+The determination of the end point can be detected by several methods:
+* An indicator - a change in the color an indicator added to the solution.
+* pH meter - a potentiometric titration, with a sudden change in the pH of the solution as it transitions from being acidic to basic or vice versa.
+* A spectrophotometer - a change in the amount of light absorbed by the solution.
+* A conductivity meter - a change in the conductivity of the solution.
+In this lab you will use both an indicator and a pH meter. 
+A graph called a "titration curve" is obtained by plotting the change in the pH of the solution vs. the number of moles added. One can determine the precise endpoint from this graph. The number of milliliters of base added to an acid in order to reach the end point is called the equivalence volume and the end point is the called the equivalence point.
+When titrating a monoprotic acid with NaOH, the molar ratio for the reaction is 1:1 and all of the following are true at the equivalence point:
+(a) Moles of acid in flask = moles of base added from the buret
+(b) (molarity of acid) x (volume of acid) = (molarity of the base) x (volume of added base)
+(c) Molarity of the acid = (molarity of the base) x (added volume of the base) / (volume of the acid)
+You may be familiar with equation (b) in the form M<sub>1</sub>*V<sub>1</sub> = M<sub>2</sub>*V<sub>2</sub>.
+A weak acid, such as CH<sub>3</sub>COOH (acetic acid), exists in equilibrium with water, and only some of the acid donates the protons to form hydronium ions: 
+CH<sub>3</sub>COOH + H<sub>2</sub>O <-> CH<sub>3</sub>COO- + H<sub>3</sub>O+
+The equilibrium expression for acetic acid is:
+Ka= [H<sub>3</sub>O<sup>+</sup>][CH<sub>3</sub>COO<sup>-</sup>] / [CH<sub>3</sub>COOH]
+While titrating the acid with NaOH, the reaction is:
+NaOH(aq) + CH<sub>3</sub>COOH(aq) -> H<sub>2</sub>O(l) + Na+(aq) + CH<sub>3</sub>COO<sup>-</sup>(aq) 
+During the titration there is a point where EXACTLY HALF of the acid has reacted with NaOH. The concentration of the acetate ion is exactly the concentration of the unreacted acid at this point and it is at the HALF EQUIVALENCE point. From the equilibrium expression above, we have:
+Ka = [H<sub>3</sub>O<sup>+</sup>] (at the half equivalence point, where [CH<sub>3</sub>COO<sup>-</sup>] = [CH<sub>3</sub>COOH])
+Taking the log of both sides at this point, we have:
+pKa = pH, with pKa defined as pKa = -log(Ka). 
+The acid's dissociation constant, Ka, then, can be found from the pH of the solution at the half equivalence point. On the titration curve, this is the point where the number of moles of added NaOH is equal to half of the number of moles added to reach the equivalence point. You will be asked to find Ka values for the strong and weak acid.
+]]></labbackground>
+<labimagename>titration_of_strong_and_weak_acids.png</labimagename>
+	</indexItem>
+		<indexItem>
+		<labid>strong_and_weak_acids</labid>
+		<labname><![CDATA[Titration of Strong and Weak Acids]]></labname>
+		<labbackground><![CDATA[Titration is one of the most useful techniques for determining the concentration of an unknown solution, and it is often used with acidic and basic solutions. The end point is reached when a stoichiometric number of moles are added to the unknown solution to neutralize the acid or base.
+PLEASE NOTE: The technique of titrating an acid with a base involves several steps in order to obtain exact results. It is strongly advised that you work through the TITRATION TUTORIAL first before doing any titration lab.
+The determination of the end point can be detected by several methods:
+* An indicator - a change in the color an indicator added to the solution.
+* pH meter - a potentiometric titration, with a sudden change in the pH of the solution as it transitions from being acidic to basic or vice versa.
+* A spectrophotometer - a change in the amount of light absorbed by the solution.
+* A conductivity meter - a change in the conductivity of the solution.
+In this lab you will use both an indicator and a pH meter. 
+A graph called a "titration curve" is obtained by plotting the change in the pH of the solution vs. the number of moles added. One can determine the precise endpoint from this graph. The number of milliliters of base added to an acid in order to reach the end point is called the equivalence volume and the end point is the called the equivalence point.
+When titrating a monoprotic acid with NaOH, the molar ratio for the reaction is 1:1 and all of the following are true at the equivalence point:
+(a) Moles of acid in flask = moles of base added from the buret
+(b) (molarity of acid) x (volume of acid) = (molarity of the base) x (volume of added base)
+(c) Molarity of the acid = (molarity of the base) x (added volume of the base) / (volume of the acid)
+You may be familiar with equation (b) in the form M<sub>1</sub>*V<sub>1</sub> = M<sub>2</sub>*V<sub>2</sub>.
+A weak acid, such as CH<sub>3</sub>COOH (acetic acid), exists in equilibrium with water, and only some of the acid donates the protons to form hydronium ions: 
+CH<sub>3</sub>COOH + H<sub>2</sub>O <-> CH<sub>3</sub>COO- + H<sub>3</sub>O+
+The equilibrium expression for acetic acid is:
+Ka= [H<sub>3</sub>O<sup>+</sup>][CH<sub>3</sub>COO<sup>-</sup>] / [CH<sub>3</sub>COOH]
+While titrating the acid with NaOH, the reaction is:
+NaOH(aq) + CH<sub>3</sub>COOH(aq) -> H<sub>2</sub>O(l) + Na+(aq) + CH<sub>3</sub>COO<sup>-</sup>(aq) 
+During the titration there is a point where EXACTLY HALF of the acid has reacted with NaOH. The concentration of the acetate ion is exactly the concentration of the unreacted acid at this point and it is at the HALF EQUIVALENCE point. From the equilibrium expression above, we have:
+Ka = [H<sub>3</sub>O<sup>+</sup>] (at the half equivalence point, where [CH<sub>3</sub>COO<sup>-</sup>] = [CH<sub>3</sub>COOH])
+Taking the log of both sides at this point, we have:
+pKa = pH, with pKa defined as pKa = -log(Ka). 
+The acid's dissociation constant, Ka, then, can be found from the pH of the solution at the half equivalence point. On the titration curve, this is the point where the number of moles of added NaOH is equal to half of the number of moles added to reach the equivalence point. You will be asked to find Ka values for the strong and weak acid.
+]]></labbackground>
+		<labimagename>titration_of_strong_and_weak_acids.png</labimagename>
+	</indexItem>
+
+</index>

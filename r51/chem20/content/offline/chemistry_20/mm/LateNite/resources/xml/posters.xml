@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<posters>
+	<leftposters>
+		 <poster>LeftPoster1.jpg</poster>
+		 <poster>LeftPoster2.jpg</poster>
+		 <poster>LeftPoster3.jpg</poster>
+	</leftposters>
+	<rightposters>
+		 <poster>RightPoster1.jpg</poster>
+		 <poster>RightPoster2.jpg</poster>
+		 <poster>RightPoster3.jpg</poster>
+	</rightposters>
+</posters>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<lab>
+<name><![CDATA[The Temperature Dependence of Salt Solubility]]></name>
+<background><![CDATA[
+In performing chemical experiments, substances are often dissolved in water or other liquids. The substance being dissolved is called the <i>solute</i>, and the water (or other liquid) in which the substance is dissolved is called the <i>solvent</i>. Not all substances will dissolve in a solvent, and some will only partially dissolve. Solubility refers to the amount of solute that can be dissolved in a solvent.<br>
+An important factor in determining the solubility of a substance is the temperature of the solvent in which it is dissolved. In most cases, the solubility of a substance increases as the temperature of the solvent goes up and decreases as the temperature of the solvent goes down. Because the solubility of a substance is so affected by temperature, all measurements of solubility must also specify the temperature of the solvent.<br>
+Solubility is measured in units of grams of solute per 100 mL of a solvent at a specific temperature. For example, the solubility of ordinary table salt, NaCl, varies only slightly with the temperature. It increases from 36 g/100 mL water at 0°C to 41 g/100 mL water at 100°C. On the other hand, the solubility of potassium nitrate, KNO<sub>3</sub>, varies greatly with the temperature, increasing from 14 g/100 mL water at 0°C to 245 g/100 mL water at 100°C.<br>
+In this experiment you will determine the solubility of salt potassium chloride (KCl) in water at various temperatures. You will heat solutions containing different amounts of KCl to 80°C and allow each sample to cool slowly. The temperature at which the crystallization of solid KCl just begins is the temperature at which the solubility of potassium chloride is exactly equal to the amount originally dissolved in the sample's volume of water.<br>
+This experiment will then be repeated for several samples of ammonium chloride, NH<sub>4</sub>Cl. The results will allow you to construct a solubility curve for NH<sub>4</sub>Cl in water as a function of temperature.
+]]></background>
+<assignment><![CDATA[<b>Assignment 1 of Procedure 1</b><br>
+1.	Record your results for the four solubility temperatures of KCl as follows.<br>
+	a.	The temperature at which the solubility is 3.5 g/10 mL is<br>
+	b.	The temperature at which the solubility is 4.0 g/10 mL is<br>
+	c.	The temperature at which the solubility is 4.5 g/10 mL is<br>
+	d.	The temperature at which the solubility is 5.0 g/10 mL is<br><br>
+2.	Convert your g/10-mL values to g/100-mL values, and plot a solubility curve for potassium chloride. The horizontal axis is the temperature scale from 20°C to 100°C using 10°C intervals, and the vertical scale is the solubility in g/100 mL.<br>
+Draw a small circle around each dot, and construct a smooth curve for the observed data. Extrapolate this curve to the temperature limits of your graph by using a dashed line to indicate extrapolation.<br><br>
+3.	Here is the official solubility data for KCl in g/100 mL H<sub>2</sub>O:<br>
+	At 30°C: 37.1 g/100 mL H<sub>2</sub>O<br>
+	At 50°C: 42.9 g/100 mL H<sub>2</sub>O<br>
+	At 70°C: 48.5 g/100 mL H<sub>2</sub>O<br>
+	At 90°C: 53.8 g/100 mL H<sub>2</sub>O<br>
+Plot these points on your graph using a different colour or symbol for each example, and draw a smooth line through them. Identify the two lines as "experimental" and "official".<br><br>
+4.	Obtain the solubility of potassium chloride in g/100 mL of H<sub>2</sub>O at 60°C from both the official and experimental solubility curves. Record these numbers here.<br>
+Calculate the percent difference between the two values using the following formula:<br>
+% difference = |official value – experimental value| º official value ª 100%<br><br>
+5.	Answer the following questions.<br>
+	a.	Why is it important to not allow the test solutions to boil?<br>
+	b.	Why is it better to determine the initial crystallization temperature during cool down rather than the temperature at which all of the salt dissolves?<br>
+<br>
+<b>Assignment 1 of Procedure 2</b><br>
+1.	Record your results for the four solubility temperatures of the second salt, NH<sub>4</sub>Cl, as follows:<br>
+	a.	The temperature at which the solubility is 4.0 g/10 mL is<br>
+	b.	The temperature at which the solubility is 4.5 g/10 mL is<br>
+	c.	The temperature at which the solubility is 5.0 g/10 mL is<br>
+	d.	The temperature at which the solubility is 6.0 g/10 mL is<br><br>
+2.	Convert your g/10-mL values to g/100-mL values, and plot a solubility curve for ammonium chloride. The horizontal axis is the temperature scale from 20°C to 100°C using 10°C intervals, and the vertical scale is the solubility in g/100 mL.<br>
+Draw a small circle around each dot, and construct a smooth curve for the observed data. Extrapolate this curve to the temperature limits of your graph by using a dashed line to indicate extrapolation.<br><br>
+3.	Here is the official solubility data for NH<sub>4</sub>Cl in grams/100 mL H<sub>2</sub>O:<br>
+	At 30°C: 41.6 g/100 mL H<sub>2</sub>O<br>
+	At 50°C: 50.4 g/100 mL H<sub>2</sub>O<br>
+	At 70°C: 59.9 g/100 mL H<sub>2</sub>O<br>
+	At 90°C: 70.4 g/100 mL H<sub>2</sub>O<br>
+Plot these points on your graph using a different color or symbol, and draw a smooth line through them. Identify the two lines as "experimental" and "official".<br><br>
+4.	Obtain the solubility of ammonium chloride in g/100 mL of H<sub>2</sub>O at 60°C from both the official and experimental solubility curves, and record them here.<br>
+Calculate the percent difference between the two values using the following formula:<br>
+% difference = |official value – experimental value| º official value ª 100%<br><br>
+]]></assignment>
+<procedure><![CDATA[<b>Procedure #1</b><br>
+1.	Take a test-tube rack from the Tools shelf, and place it on the workbench.<br><br>
+2.	Take four clean test tubes from the Glassware shelf. Place them in the test-tube rack.<br><br>
+3.	Add 3.5 g of potassium chloride, KCl, to test tube 1; 4.0 g to test tube 2; 4.5 g to test tube 3; and 5.0 g to test tube 4.<br><br>
+4.	Add 10 mL of water to each test tube.<br><br>
+5.	Take a constant temperature bath from the Tools shelf, and place it on the workbench.<br><br>
+6.	Set the temperature bath to 80°C by using the arrows on the front of the bath.<br><br>
+7.	Remove the first test tube from the rack. Place the test tube on the workbench.<br><br>
+8.	Take a thermometer from the Tools shelf, and attach it to the first test tube.<br><br>
+9.	Drag the test-tube stand over to the constant temperature bath. Observe that the test tube is lowered into the bath.<br><br>
+10.	Open the Data Window, and click on "test tube." You will see that some of the potassium chloride has dissolved and some of it remains solid. 
+Immediately after you drop the test tube on the constant temperature bath, click directly on the test tube to bring up the solute information in the Data Window.<br><br>
+11.	Watch the Data Window as the solution heats up. Once all of the potassium chloride has dissolved, allow the solution to continue heating up for several more degrees. Then remove the solution from the bath.<br><br>
+It is not necessary to heat the test tube all the way to 80°C—this will only make it take longer for the test tube to cool down. You should remove the test tube when it is about 5°C warmer than the temperature at which the solute dissolved.<br><br>
+12.	Continue watching the Data Window and the thermometer while the test tube cools down. Record the temperature at which solid potassium chloride just begins to crystallize. This is actually the temperature at which the solubility of potassium chloride is equal to the mass of potassium chloride in the test tube per 10 mL of water.
+The key information you are after in this lab is the temperature at which the solute dissolves. It is difficult to measure this temperature accurately as the solution warms up, since the temperature is rising quite rapidly. If the temperature is measured as the solution cools down (a much slower process), you will have more time to carefully observe and record the temperature at which recrystallization occurs.<br><br>
+13.	Repeat the procedure for the other three test tubes. Record the initial crystallization temperature for each one.
+You may need to click on the "Data Window" button again to get it to appear for the remaining trials. Also, you may wish to recycle the equipment from the first trial by dragging the equipment to the Recycle door on the right side of the screen. If you have difficulty completing the remaining trials, you can try resetting the lab and performing each trial using only one test tube at a time.<br><br>
+<b>Procedure #2</b><br>
+14.	Repeat the entire procedure for the second salt, NH<sub>4</sub>Cl. Add the quantities of 4.0 g, 4.5 g, 5.0 g, and 6.0 g of this salt to four clean test tubes.
+]]></procedure>
+<entities>
+<chemicals>
+<chemical>
+<label>Water</label>
+<displayname>Water</displayname>
+<formula>H2O</formula>
+<type>2</type>
+<solubility>0</solubility>
+<boilingpoint>373</boilingpoint>
+<meltingpoint>273</meltingpoint>
+<dissolvedcolor>0x9cb9da</dissolvedcolor>
+<gascolor>0x9cb9da</gascolor>
+<liquidcolor>0x9cb9da</liquidcolor>
+<solidcolor>0x9cb9da</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-285.8</enthalpyofdissolved>
+<enthalpyofgas>-241.8</enthalpyofgas>
+<enthalpyofliquid>-285.8</enthalpyofliquid>
+<enthalpyofsolid>-291.8</enthalpyofsolid>
+<entropyofdissolved>70</entropyofdissolved>
+<entropyofgas>188.8</entropyofgas>
+<entropyofliquid>70</entropyofliquid>
+<entropyofsolid>41</entropyofsolid>
+<gmw>18.01528</gmw>
+<gasdensity>.006</gasdensity>
+<liquiddensity>1</liquiddensity>
+<soliddensity>.92</soliddensity>
+<gasheatcapacity>33.6</gasheatcapacity>
+<liquidheatcapacity>75.3</liquidheatcapacity>
+<solidheatcapacity>75</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Liquid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Ammonium Chloride</label>
+<displayname>Ammonium Chloride</displayname>
+<formula>NH4Cl</formula>
+<type>1</type>
+<solubility>39.55</solubility>
+<boilingpoint>611.5</boilingpoint>
+<meltingpoint>611</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>5.5791</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>CA</chemicaltype>
+<enthalpyofdissolved>-299.7</enthalpyofdissolved>
+<enthalpyofgas>-300</enthalpyofgas>
+<enthalpyofliquid>-314</enthalpyofliquid>
+<enthalpyofsolid>-314.4</enthalpyofsolid>
+<entropyofdissolved>169.9</entropyofdissolved>
+<entropyofgas>400</entropyofgas>
+<entropyofliquid>299</entropyofliquid>
+<entropyofsolid>94.6</entropyofsolid>
+<gmw>53.49116</gmw>
+<gasdensity>.5</gasdensity>
+<liquiddensity>1.55</liquiddensity>
+<soliddensity>1.52</soliddensity>
+<gasheatcapacity>50</gasheatcapacity>
+<liquidheatcapacity>85</liquidheatcapacity>
+<solidheatcapacity>84.1</solidheatcapacity>
+<vanthoffnumber>1.83</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Solid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>-0.000166507</a>
+<b>0.219337782</b>
+<c>22.94295</c>
+</chemical>
+<chemical>
+<label>Potassium Chloride</label>
+<displayname>Potassium Chloride</displayname>
+<formula>KCl</formula>
+<type>1</type>
+<solubility>34</solubility>
+<boilingpoint>2000</boilingpoint>
+<meltingpoint>1044</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>3.758</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-419.5</enthalpyofdissolved>
+<enthalpyofgas>256.5</enthalpyofgas>
+<enthalpyofliquid>-406.5</enthalpyofliquid>
+<enthalpyofsolid>-436.5</enthalpyofsolid>
+<entropyofdissolved>159</entropyofdissolved>
+<entropyofgas>239.1</entropyofgas>
+<entropyofliquid>112.6</entropyofliquid>
+<entropyofsolid>82.6</entropyofsolid>
+<gmw>74.551</gmw>
+<gasdensity>.2</gasdensity>
+<liquiddensity>2</liquiddensity>
+<soliddensity>1.99</soliddensity>
+<gasheatcapacity>50</gasheatcapacity>
+<liquidheatcapacity>51</liquidheatcapacity>
+<solidheatcapacity>51.3</solidheatcapacity>
+<vanthoffnumber>1.74</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Solid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>-0.000459157</a>
+<b>0.188163787</b>
+<c>21.78003</c>
+</chemical>
+<chemical>
+<label>Nitrogen</label>
+<displayname>Nitrogen</displayname>
+<formula>N2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>78</boilingpoint>
+<meltingpoint>63</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype></chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-2.79</enthalpyofliquid>
+<enthalpyofsolid>-3.13</enthalpyofsolid>
+<entropyofdissolved>191.6</entropyofdissolved>
+<entropyofgas>191.6</entropyofgas>
+<entropyofliquid>79.5</entropyofliquid>
+<entropyofsolid>75</entropyofsolid>
+<gmw>28.0134</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.9</liquiddensity>
+<soliddensity>.9</soliddensity>
+<gasheatcapacity>29.1</gasheatcapacity>
+<liquidheatcapacity>57.8</liquidheatcapacity>
+<solidheatcapacity>60</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Oxygen Gas</label>
+<displayname>Oxygen Gas</displayname>
+<formula>O2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>90.05</boilingpoint>
+<meltingpoint>54.21</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>N</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-213</enthalpyofliquid>
+<enthalpyofsolid>-220</enthalpyofsolid>
+<entropyofdissolved>205.2</entropyofdissolved>
+<entropyofgas>205.2</entropyofgas>
+<entropyofliquid>85.2</entropyofliquid>
+<entropyofsolid>75.2</entropyofsolid>
+<gmw>31.9988</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.8</liquiddensity>
+<soliddensity>.8</soliddensity>
+<gasheatcapacity>29.4</gasheatcapacity>
+<liquidheatcapacity>50</liquidheatcapacity>
+<solidheatcapacity>50</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+</chemicals>
+<containers>
+<container>
+<type>Test Tube</type>
+<label>Test Tube</label>
+<capacity>15</capacity>
+<weight>18.2</weight>
+<heattransferinner>1</heattransferinner>
+<maxpressure>4</maxpressure>
+</container>
+</containers>
+<tools>
+<tool>
+<type>Cooling</type>
+<label>Constant Temperature Bath</label>
+<weight>18.2</weight>
+</tool>
+<tool>
+<type>Measure</type>
+<label>Thermometer</label>
+<weight>40</weight>
+</tool>
+<tool>
+<type>Holding</type>
+<label>Test Tube Rack</label>
+<weight>0</weight>
+</tool>
+</tools>
+<reactions>
+</reactions>
+</entities>
+</lab>

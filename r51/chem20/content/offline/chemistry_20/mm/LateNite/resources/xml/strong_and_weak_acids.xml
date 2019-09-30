@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<lab>
+	<name><![CDATA[CHEM 30: Titration of Strong and Weak Acids]]></name>
+	<background><![CDATA[Titration is one of the most useful techniques for determining the concentration of an unknown solution, and it is often used with acidic solutions and basic solutions.<br>
+The determination of the endpoint can be detected by several methods:<br><br>
+*	an indicator-a change in the colour of an indicator added to the solution<br><br>
+*	a pH meter-a potentiometric titration, with a sudden change in the pH of the solution as it changes from being acidic to basic or vice versa<br><br>
+*	a spectrophotometer-a change in the amount of light absorbed by the solution<br><br>
+*	a conductivity meter-a change in the conductivity of the solution<br><br>
+In this lab you will use both an indicator and a pH meter.<br>
+A graph called a "titration curve" is obtained by plotting the change in the pH of the solution versus the number of moles added. You can determine the precise endpoint and equivalence point from this graph.<br>
+When titrating a monoprotic acid with NaOH, the molar ratio for the reaction is 1:1 and, therefore, the number of moles of acid in the flask is equal to the number of moles of base added from the burette.<br>
+A weak acid, such as ethanoic (acetic) acid, which is CH<sub>3</sub>COOH(aq), exists in equilibrium with water. Only some of the acid reacts with water to form hydronium ions: <br>
+CH<sub>3</sub>COOH(aq) + H<sub>2</sub>O(l) -> + H<sub>3</sub>O<sup>+</sup>(aq)   CH<sub>3</sub>COO<sup>-</sup>(aq)<br>
+The equilibrium expression for ethanoic (acetic) acid is<br>
+K<sub>a</sub>= [H<sub>3</sub>O<sup>+</sup>(aq)][CH<sub>3</sub>COO<sup>-</sup>(aq)] / [CH<sub>3</sub>COOH(aq)]<br>
+While titrating the acid with NaOH(aq), the reaction occurs between the hydroxide ion and the ethanoic (acetic) acid:<br>
+OH<sup>-</sup>(aq) + CH<sub>3</sub>COOH(aq) -> H<sub>2</sub>O(l) + CH<sub>3</sub>COO<sup>-</sup> aq) <br>
+During the titration, there is a point where EXACTLY HALF of the acid has reacted with NaOH(aq). The concentration of the ethanoate (acetate) ion has the same numerical value as the concentration of the unreacted acid at this point. This point can be referred to as the HALF-EQUIVALENCE point. Referring back to the equilibrium expression shown above:<br>
+At the half-equivalence point, where [CH<sub>3</sub>COO<sup>-</sup>(aq)] = [CH<sub>3</sub>COOH(aq)], the part of the equation [CH<sub>3</sub>COO<sup>-</sup>(aq)] / [CH3COOH(aq)] will equal 1, and the expression simplifies to:
+K<sub>a</sub>= [H<sub>3</sub>O<sup>+</sup>(aq)]
+
+Taking the logarithm of both sides at this point, you have<br>
+
+pK<sub>a</sub> = pH, with pK<sub>a</sub> defined as pK<sub>a</sub> = -log(K<sub>a</sub>).<br>
+
+The acid's dissociation constant, K<sub>a</sub>, can then be found from the pH of the solution at the half- equivalence point. <br>
+
+On the titration curve, the pK<sub>a</sub> is the point where half of the volume of NaOH(aq) required to reach the equivalence point has been added. In this investigation you will be asked to find K<sub>a</sub> values for both the strong and the weak acid solutions.<br>
+
+	]]></background>
+	<assignment><![CDATA[<b>Assignment</b><br>
+<b>Assignment 1 of Procedure 1</b><br>
+1.	Create a graph of pH versus volume of added NaOH(aq) from the first trial. Add in the data near the endpoint from the second trial.<br>
+2.	Find the equivalence point from the graph.<br>
+3.	At what point did your solution turn pink?<br>
+4.	What is the pH at the equivalence point?<br>
+5.	What volume of NaOH(aq) is required to reach the equivalence point?<br>
+6.	Calculate the concentration of the HCl(aq) from the volumes of acid and base at the equivalence point and at the concentration of the NaOH(aq).<br>
+7.	Use the information contained on the titration curve you have drawn to determine the K<sub>a</sub> of HCl(aq).<br>
+<b>Assignment 1 of Procedure 2</b><br>
+1.	Create a graph of pH versus volume of NaOH(aq) delivered from the burette. Add in the data from the second trial near the endpoint.<br>
+2.	Find the equivalence point from the graph.<br>
+3.	At what pH did your solution turn pink?<br>
+4.	What is the pH at the equivalence point?<br>
+5.	What volume of NaOH(aq) is required to reach the equivalence?<br>
+6.	Calculate the concentration of the ethanoic (acetic) acid solution from the volumes of acid and base at the equivalence point and at the concentration of the NaOH(aq).<br>
+7.	Use the information contained on the titration curve you have drawn to determine the K<sub>a</sub> of ethanoic (acetic ) acid.<br>
+	]]></assignment>
+	<procedure>
+		<![CDATA[<b>Procedure</b><br>
+	
+<b>Procedure #1</b><br>
+
+1.	Take a clean Erlenmeyer flask from the Glassware shelf, and place it on the workbench.<br>
+2.	Add 25 mL of HCl(aq) (of unknown concentration) to the flask.<br>
+3.	Add 2 drops of phenolphthalein to the flask.<br>
+4.	Take a burrette from the Glassware shelf. Place it on the workbench.<br>
+5.	Fill the burette with 50 mL of 1.00 mol/L NaOH(aq) solution. Record this initial volume.<br>
+6.	Drag the flask to the lower half of the burette so that the two will be connected.<br>
+7.	Take a pH meter from the Tools shelf, and drop it on the flask. Record the initial pH of the solution.<br>
+8.	Double click on the burette and enter "1" in the field for the Drip Rate. This will add 1 drop (0.05mL) when you click once on the stopcock of the burette or 1 mL when you click-and-hold on the stopcock. Click "Ok" to close the window.<br>
+9.	Click-and-hold once on the stopcock of the burette to drip 1 mL of NaOH(aq) into the flask. Record the pH of the solution in the flask.<br>
+10.	Continue to add NaOH(aq) in 1-mL increments. Record the pH for each mL added.<br>
+11.	Observe the colour of the solution in the flask after the addition of each 1-mL increment of NaOH(aq). A colour change to pink signifies that the endpoint is either reached or crossed. Record the burette volume and pH when you first detect a persistent pink colour. On your data table, record the colour of the solution in the flask at this point and for the remainder of the titration.<br>
+12.	Continue to add increments of 1 mL, and record the pH at each point until the solution in the burette is depleted.<br>
+13.	Detach the flask from the burette. Drag it to the Recycling bin.<br>
+14.	Take a new flask from the Glassware shelf, and place it on the workbench.<br>
+15.	Add 25 mL of HCl(aq) and 2 drops of phenolphthalein to the flask.<br>
+16.	Refill the burette to 50 mL of NaOH(aq).<br>
+17.	Based on the results of the previous titration, add enough NaOH(aq) solution all at once to get to 1 mL BEFORE the endpoint.<br>
+18.	Enter "1" as the amount to add and add NaOH(aq) DROP-WISE into the flask. Record the pH and volume until the endpoint is reached and also several drops after it is reached.<br>
+
+<b>Procedure #2</b><br>
+In this procedure you will titrate a weak acid, CH<sub>3</sub>COOH(aq), to see the difference between the titration curve of a weak acid as opposed to the titration curve of a strong acid.<br>
+1.	Detach the flask from the burette, and drag it to the Recycling chute.<br>
+2.	Take a clean flask from the Glassware shelf, and place it on the workbench.<br>
+3.	Add 5.00 mL of CH<sub>3</sub>COOH(aq) (of unknown concentration) to the flask.<br>
+4.	Add 20 mL of water and 2 drops of phenolphthalein to the flask.<br>
+5.	Refill the burette with the NaOH(aq) solution, and record the initial volume.<br>
+6.	Drag the flask and place it on the lower half of the burette to connect them.<br>
+7.	Take a pH meter from the Tools shelf, and place it on the flask. Record the initial pH of the solution.<br>
+8.	Add NaOH(aq) in 1-mL increments, and record the pH of the solution in the flask for each millilitre added.<br>
+9.	The pink colour will appear once the endpoint is either reached or crossed. Note the burette volume and pH at which this occurs.<br>
+10.	Continue to add 1-mL increments of NaOH(aq) into the flask. Record the pH after each increment until the solution in the burette is depleted.<br>
+11.	Detach the flask from the burette, and drag the flask to the Recycling chute.<br>
+12.	Take a new flask from the Glassware shelf. Place it on the workbench.<br>
+13.	Add 5 mL of CH<sub>3</sub>COOH(aq) (of unknown concentration), 20 mL of water, and 2 drops of phenolphthalein to the flask.<br>
+14.	Refill the burette to 50 mL of NaOH(aq).<br>
+15.	Drag the flask and place it on the lower half of the burette to connect them.<br>
+16.	Take a pH meter from the Tools shelf, and place the meter on the flask.<br>
+17.	Based on the results of the previous titration, add enough NaOH(aq) all at once to get to 1 mL BEFORE the endpoint.<br>
+18.	Enter "1" as the amount to add, and add NaOH(aq) DROP-WISE into the flask. Record the pH and volume until the endpoint is reached and several drops after it is reached.<br>
+
+	]]></procedure>
+	<entities>
+		<chemicals>
+			<chemical>
+				<label>Water</label>
+				<displayname>Water</displayname>
+				<formula>H2O</formula>
+				<type>2</type>
+				<solubility>0</solubility>
+				<boilingpoint>373</boilingpoint>
+				<meltingpoint>273</meltingpoint>
+				<dissolvedcolor>0x9cb9da</dissolvedcolor>
+				<gascolor>0x9cb9da</gascolor>
+				<liquidcolor>0x9cb9da</liquidcolor>
+				<solidcolor>0x9cb9da</solidcolor>
+				<maxmolarity>0</maxmolarity>
+				<molarity>N/A</molarity>
+				<chemicaltype>O</chemicaltype>
+				<enthalpyofdissolved>-285.8</enthalpyofdissolved>
+				<enthalpyofgas>-241.8</enthalpyofgas>
+				<enthalpyofliquid>-285.8</enthalpyofliquid>
+				<enthalpyofsolid>-291.8</enthalpyofsolid>
+				<entropyofdissolved>70</entropyofdissolved>
+				<entropyofgas>188.8</entropyofgas>
+				<entropyofliquid>70</entropyofliquid>
+				<entropyofsolid>41</entropyofsolid>
+				<gmw>18.01528</gmw>
+				<gasdensity>.006</gasdensity>
+				<liquiddensity>1</liquiddensity>
+				<soliddensity>.92</soliddensity>
+				<gasheatcapacity>33.6</gasheatcapacity>
+				<liquidheatcapacity>75.3</liquidheatcapacity>
+				<solidheatcapacity>75</solidheatcapacity>
+				<vanthoffnumber>1</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>true</showchemical>
+				<standardstate>Liquid</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>1000</ionizationconstant>
+				<a>0</a>
+				<b>0</b>
+				<c>0</c>
+			</chemical>
+			<chemical>
+				<label>Acetic acid</label>
+				<displayname>Acetic acid</displayname>
+				<formula>C2H4O2</formula>
+				<type>4</type>
+				<solubility>1000</solubility>
+				<boilingpoint>390.9</boilingpoint>
+				<meltingpoint>289.64</meltingpoint>
+				<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+				<gascolor/>
+				<liquidcolor>0xFFFFFF</liquidcolor>
+				<solidcolor>0xFFFFFF</solidcolor>
+				<maxmolarity>15.8234</maxmolarity>
+				<molarity>0.8</molarity>
+				<chemicaltype>A</chemicaltype>
+				<enthalpyofdissolved>-486</enthalpyofdissolved>
+				<enthalpyofgas>-432.2</enthalpyofgas>
+				<enthalpyofliquid>-484.3</enthalpyofliquid>
+				<enthalpyofsolid>-472.6</enthalpyofsolid>
+				<entropyofdissolved>86.6</entropyofdissolved>
+				<entropyofgas>282.8</entropyofgas>
+				<entropyofliquid>159.8</entropyofliquid>
+				<entropyofsolid>40</entropyofsolid>
+				<gmw>60.05196</gmw>
+				<gasdensity>.21</gasdensity>
+				<liquiddensity>1.05</liquiddensity>
+				<soliddensity>1.02</soliddensity>
+				<gasheatcapacity>63.4</gasheatcapacity>
+				<liquidheatcapacity>123.3</liquidheatcapacity>
+				<solidheatcapacity>100</solidheatcapacity>
+				<vanthoffnumber>1</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>true</showchemical>
+				<standardstate>Liquid</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>0.0000175</ionizationconstant>
+				<a>0</a>
+				<b>0</b>
+				<c>90.90</c>
+				<showcon>false</showcon>
+				<absorbance>
+					<E0>7000</E0>
+					<data waveLength="350" percentage="0.093" />
+					<data waveLength="400" percentage="0.721" />
+					<data waveLength="430" percentage="0.837" />
+					<data waveLength="475" percentage="1.000" />
+					<data waveLength="505" percentage="0.698" />
+					<data waveLength="525" percentage="0.326" />
+					<data waveLength="568" percentage="0.005" />
+					<data waveLength="590" percentage="0.072" />
+					<data waveLength="605" percentage="0.047" />
+					<data waveLength="700" percentage="0.000" />
+				</absorbance>
+			</chemical>
+			<chemical>
+				<label>Hydrochloric Acid</label>
+				<displayname>Hydrochloric Acid</displayname>
+				<formula>HCl</formula>
+				<type>4</type>
+				<solubility>1000</solubility>
+				<boilingpoint>188</boilingpoint>
+				<meltingpoint>158.8</meltingpoint>
+				<dissolvedcolor>0x9cb9da</dissolvedcolor>
+				<gascolor>0x9cb9da</gascolor>
+				<liquidcolor>0x9cb9da</liquidcolor>
+				<solidcolor>0x9cb9da</solidcolor>
+				<maxmolarity>22.8766</maxmolarity>
+				<molarity>0.615</molarity>
+				<chemicaltype>A</chemicaltype>
+				<enthalpyofdissolved>-167.2</enthalpyofdissolved>
+				<enthalpyofgas>-92.3</enthalpyofgas>
+				<enthalpyofliquid>-105.3</enthalpyofliquid>
+				<enthalpyofsolid>-107.3</enthalpyofsolid>
+				<entropyofdissolved>56.5</entropyofdissolved>
+				<entropyofgas>186.9</entropyofgas>
+				<entropyofliquid>66.9</entropyofliquid>
+				<entropyofsolid>56.9</entropyofsolid>
+				<gmw>36.46064</gmw>
+				<gasdensity>.1</gasdensity>
+				<liquiddensity>.91</liquiddensity>
+				<soliddensity>.9</soliddensity>
+				<gasheatcapacity>29.1</gasheatcapacity>
+				<liquidheatcapacity>29.1</liquidheatcapacity>
+				<solidheatcapacity>29</solidheatcapacity>
+				<vanthoffnumber>1.9</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>true</showchemical>
+				<standardstate>Gas</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>1000</ionizationconstant>
+				<a>0</a>
+				<b>0</b>
+				<c>90.9</c>
+				<showcon>false</showcon>
+			</chemical>
+			<chemical>
+				<label>Phenolphthalein</label>
+				<displayname>Phenolphthalein</displayname>
+				<formula>C20H14O4</formula>
+				<type>2</type>
+				<solubility>1000</solubility>
+				<boilingpoint>373</boilingpoint>
+				<meltingpoint>273</meltingpoint>
+				<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+				<gascolor>0xFFFFFF</gascolor>
+				<liquidcolor>0xFFFFFF</liquidcolor>
+				<solidcolor>0xFFFFFF</solidcolor>
+				<maxmolarity>2.8559</maxmolarity>
+				<molarity>N/A</molarity>
+				<chemicaltype>I</chemicaltype>
+				<enthalpyofdissolved>-285.8</enthalpyofdissolved>
+				<enthalpyofgas>-241.8</enthalpyofgas>
+				<enthalpyofliquid>-285.8</enthalpyofliquid>
+				<enthalpyofsolid>-291.8</enthalpyofsolid>
+				<entropyofdissolved>70</entropyofdissolved>
+				<entropyofgas>188.8</entropyofgas>
+				<entropyofliquid>70</entropyofliquid>
+				<entropyofsolid>40</entropyofsolid>
+				<gmw>318.32276</gmw>
+				<gasdensity>.4</gasdensity>
+				<liquiddensity>1</liquiddensity>
+				<soliddensity>.92</soliddensity>
+				<gasheatcapacity>33.6</gasheatcapacity>
+				<liquidheatcapacity>75.3</liquidheatcapacity>
+				<solidheatcapacity>75</solidheatcapacity>
+				<vanthoffnumber>1</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>true</showchemical>
+				<standardstate>Liquid</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+					<phcolor>
+						<colorcode>0xFFFFFF</colorcode>
+						<phrange>
+							<start>0</start>
+							<end>8</end>
+						</phrange>
+					</phcolor>
+					<phcolor>
+						<colorcode>0xFAB4D9</colorcode>
+						<phrange>
+							<start>8</start>
+							<end>9</end>
+						</phrange>
+					</phcolor>
+					<phcolor>
+						<colorcode>0xFF48A5</colorcode>
+						<phrange>
+							<start>9</start>
+							<end>10</end>
+						</phrange>
+					</phcolor>
+					<phcolor>
+						<colorcode>0xD71B72</colorcode>
+						<phrange>
+							<start>10</start>
+							<end>14</end>
+						</phrange>
+					</phcolor>
+				</phcolors>
+				<ionizationconstant>1000</ionizationconstant>
+				<a>0</a>
+				<b>0</b>
+				<c>90.9</c>
+			</chemical>
+			<chemical>
+				<label>Sodium Hydroxide</label>
+				<displayname>Sodium Hydroxide</displayname>
+				<formula>NaOH</formula>
+				<type>4</type>
+				<solubility>100</solubility>
+				<boilingpoint>1660</boilingpoint>
+				<meltingpoint>596</meltingpoint>
+				<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+				<gascolor>0xFFFFFF</gascolor>
+				<liquidcolor>0xFFFFFF</liquidcolor>
+				<solidcolor>0xFFFFFF</solidcolor>
+				<maxmolarity>15.7556</maxmolarity>
+				<molarity>1</molarity>
+				<chemicaltype>B</chemicaltype>
+				<enthalpyofdissolved>-470.1</enthalpyofdissolved>
+				<enthalpyofgas>-285.6</enthalpyofgas>
+				<enthalpyofliquid>-435.6</enthalpyofliquid>
+				<enthalpyofsolid>-465.6</enthalpyofsolid>
+				<entropyofdissolved>48.2</entropyofdissolved>
+				<entropyofgas>214.5</entropyofgas>
+				<entropyofliquid>94.5</entropyofliquid>
+				<entropyofsolid>64.5</entropyofsolid>
+				<gmw>39.99714</gmw>
+				<gasdensity>.8</gasdensity>
+				<liquiddensity>2.2</liquiddensity>
+				<soliddensity>2.13</soliddensity>
+				<gasheatcapacity>40</gasheatcapacity>
+				<liquidheatcapacity>59.5</liquidheatcapacity>
+				<solidheatcapacity>59.5</solidheatcapacity>
+				<vanthoffnumber>1</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>true</showchemical>
+				<standardstate>Solid</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>1000</ionizationconstant>
+				<a>0</a>
+				<b>0</b>
+				<c>60</c>
+			</chemical>
+			<chemical>
+				<label>Sodium Acetate</label>
+				<displayname>Sodium Acetate</displayname>
+				<formula>NaC2H3O2</formula>
+				<type>1</type>
+				<solubility>50.4</solubility>
+				<boilingpoint>1500</boilingpoint>
+				<meltingpoint>601</meltingpoint>
+				<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+				<gascolor>0xFFFFFF</gascolor>
+				<liquidcolor>0xFFFFFF</liquidcolor>
+				<solidcolor>0xFFFFFF</solidcolor>
+				<maxmolarity>4.3519</maxmolarity>
+				<molarity>N/A</molarity>
+				<chemicaltype>CB</chemicaltype>
+				<enthalpyofdissolved>-726.1</enthalpyofdissolved>
+				<enthalpyofgas>-528.8</enthalpyofgas>
+				<enthalpyofliquid>-678.8</enthalpyofliquid>
+				<enthalpyofsolid>-708.8</enthalpyofsolid>
+				<entropyofdissolved>145.6</entropyofdissolved>
+				<entropyofgas>273</entropyofgas>
+				<entropyofliquid>153</entropyofliquid>
+				<entropyofsolid>123</entropyofsolid>
+				<gmw>82.03382</gmw>
+				<gasdensity>.6</gasdensity>
+				<liquiddensity>1.55</liquiddensity>
+				<soliddensity>1.53</soliddensity>
+				<gasheatcapacity>50</gasheatcapacity>
+				<liquidheatcapacity>80</liquidheatcapacity>
+				<solidheatcapacity>79.9</solidheatcapacity>
+				<vanthoffnumber>1</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>false</showchemical>
+				<standardstate>Liquid</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>0.000000000571</ionizationconstant>
+				<a>-0.001199225</a>
+				<b>0.548744629</b>
+				<c>22.93263</c>
+			</chemical>
+			<chemical>
+				<label>Sodium Chloride</label>
+				<displayname>Sodium Chloride</displayname>
+				<formula>NaCl</formula>
+				<type>1</type>
+				<solubility>35.96</solubility>
+				<boilingpoint>1738</boilingpoint>
+				<meltingpoint>1074</meltingpoint>
+				<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+				<gascolor>0xFFFFFF</gascolor>
+				<liquidcolor>0xFFFFFF</liquidcolor>
+				<solidcolor>0xFFFFFF</solidcolor>
+				<maxmolarity>5.0972</maxmolarity>
+				<molarity>N/A</molarity>
+				<chemicaltype>N</chemicaltype>
+				<enthalpyofdissolved>-407.3</enthalpyofdissolved>
+				<enthalpyofgas>-200</enthalpyofgas>
+				<enthalpyofliquid>-385</enthalpyofliquid>
+				<enthalpyofsolid>-411.2</enthalpyofsolid>
+				<entropyofdissolved>115.5</entropyofdissolved>
+				<entropyofgas>300</entropyofgas>
+				<entropyofliquid>100</entropyofliquid>
+				<entropyofsolid>72</entropyofsolid>
+				<gmw>58.4425</gmw>
+				<gasdensity>.8</gasdensity>
+				<liquiddensity>2.2</liquiddensity>
+				<soliddensity>2.17</soliddensity>
+				<gasheatcapacity>35</gasheatcapacity>
+				<liquidheatcapacity>50</liquidheatcapacity>
+				<solidheatcapacity>50.5</solidheatcapacity>
+				<vanthoffnumber>1.85</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>false</showchemical>
+				<standardstate>Liquid</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>1000</ionizationconstant>
+				<a>0.000132654</a>
+				<b>0.004753814</b>
+				<c>26.26471</c>
+			</chemical>
+			<chemical>
+				<label>Nitrogen</label>
+				<displayname>Nitrogen</displayname>
+				<formula>N2</formula>
+				<type>3</type>
+				<solubility>0</solubility>
+				<boilingpoint>78</boilingpoint>
+				<meltingpoint>63</meltingpoint>
+				<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+				<gascolor>0xFFFFFF</gascolor>
+				<liquidcolor>0xFFFFFF</liquidcolor>
+				<solidcolor>0xFFFFFF</solidcolor>
+				<maxmolarity>0</maxmolarity>
+				<molarity>N/A</molarity>
+				<chemicaltype/>
+				<enthalpyofdissolved>0</enthalpyofdissolved>
+				<enthalpyofgas>0</enthalpyofgas>
+				<enthalpyofliquid>-2.79</enthalpyofliquid>
+				<enthalpyofsolid>-3.13</enthalpyofsolid>
+				<entropyofdissolved>191.6</entropyofdissolved>
+				<entropyofgas>191.6</entropyofgas>
+				<entropyofliquid>79.5</entropyofliquid>
+				<entropyofsolid>75</entropyofsolid>
+				<gmw>28.0134</gmw>
+				<gasdensity>0</gasdensity>
+				<liquiddensity>.9</liquiddensity>
+				<soliddensity>.9</soliddensity>
+				<gasheatcapacity>29.1</gasheatcapacity>
+				<liquidheatcapacity>57.8</liquidheatcapacity>
+				<solidheatcapacity>60</solidheatcapacity>
+				<vanthoffnumber>1</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>false</showchemical>
+				<standardstate>Gas</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>1000</ionizationconstant>
+				<a>0</a>
+				<b>0</b>
+				<c>0</c>
+			</chemical>
+			<chemical>
+				<label>Oxygen Gas</label>
+				<displayname>Oxygen Gas</displayname>
+				<formula>O2</formula>
+				<type>3</type>
+				<solubility>0</solubility>
+				<boilingpoint>90.05</boilingpoint>
+				<meltingpoint>54.21</meltingpoint>
+				<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+				<gascolor>0xFFFFFF</gascolor>
+				<liquidcolor>0xFFFFFF</liquidcolor>
+				<solidcolor>0xFFFFFF</solidcolor>
+				<maxmolarity>0</maxmolarity>
+				<molarity>N/A</molarity>
+				<chemicaltype>N</chemicaltype>
+				<enthalpyofdissolved>0</enthalpyofdissolved>
+				<enthalpyofgas>0</enthalpyofgas>
+				<enthalpyofliquid>-213</enthalpyofliquid>
+				<enthalpyofsolid>-220</enthalpyofsolid>
+				<entropyofdissolved>205.2</entropyofdissolved>
+				<entropyofgas>205.2</entropyofgas>
+				<entropyofliquid>85.2</entropyofliquid>
+				<entropyofsolid>75.2</entropyofsolid>
+				<gmw>31.9988</gmw>
+				<gasdensity>0</gasdensity>
+				<liquiddensity>.8</liquiddensity>
+				<soliddensity>.8</soliddensity>
+				<gasheatcapacity>29.4</gasheatcapacity>
+				<liquidheatcapacity>50</liquidheatcapacity>
+				<solidheatcapacity>50</solidheatcapacity>
+				<vanthoffnumber>1</vanthoffnumber>
+				<solutiontype>HSD</solutiontype>
+				<showchemical>false</showchemical>
+				<standardstate>Gas</standardstate>
+				<showmoles>true</showmoles>
+				<showmw>false</showmw>
+				<phcolors>
+				</phcolors>
+				<ionizationconstant>1000</ionizationconstant>
+				<a>0</a>
+				<b>0</b>
+				<c>0</c>
+			</chemical>
+		</chemicals>
+		<containers>
+			<container>
+				<type>Burette</type>
+				<label>Burette</label>
+				<capacity>50</capacity>
+				<weight>349.88</weight>
+			</container>
+			<container>
+				<type>Erlenmeyer Flask</type>
+				<label>Erlenmeyer Flask</label>
+				<capacity>150</capacity>
+				<weight>91.78</weight>
+			</container>
+		</containers>
+		<tools>
+			<tool>
+				<type>Measure</type>
+				<label>pH Meter</label>
+				<weight>0</weight>
+			</tool>
+		</tools>
+		<reactions>
+			<reaction>
+				<name>acetic acid + NaOH</name>
+				<reactants>
+					<reactant>1||C2H4O2</reactant>
+					<reactant>1||NaOH</reactant>
+				</reactants>
+				<products>
+					<product>1||NaC2H3O2</product>
+					<product>1||H2O</product>
+				</products>
+				<insolution>true</insolution> 
+				<insolutiondeltah>-55.8</insolutiondeltah> 
+				<insolutiondeltas>80.8</insolutiondeltas> 
+				<notinsolution>false</notinsolution>
+				<notinsolutiondeltah>-44.7</notinsolutiondeltah> 
+				<notinsolutiondeltas>-29.3</notinsolutiondeltas>
+				<mintemp>0</mintemp>
+				<maxtemp>0</maxtemp>
+			</reaction>
+			<reaction>
+				<name>HCl+NaOH</name>
+				<reactants>
+					<reactant>1||HCl</reactant>
+					<reactant>1||NaOH</reactant>
+				</reactants>
+				<products>
+					<product>1||NaCl</product>
+					<product>1||H2O</product>
+				</products>
+				<insolution>true</insolution> 
+				<insolutiondeltah>-55.8</insolutiondeltah> 
+				<insolutiondeltas>80.8</insolutiondeltas> 
+				<notinsolution>false</notinsolution>
+				<notinsolutiondeltah>-139.1</notinsolutiondeltah> 
+				<notinsolutiondeltas>-107.4</notinsolutiondeltas>
+				<mintemp>0</mintemp>
+				<maxtemp>0</maxtemp>
+			</reaction>
+		</reactions>
+	</entities>
+</lab>

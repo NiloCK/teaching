@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=8;FF=3;OtherUA=4" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>ADLC</title>
+		
+		<link href="css/menubar.css" rel="stylesheet" type="text/css" />
+		<link href="css/jquery.treeview.css" rel="stylesheet" type="text/css" />
+		
+		<script type="text/javascript" src="js/jquery-1.6.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.transform.js"></script>
+		<script type="text/javascript" src="js/jquery.treeview.js"></script>
+		
+		<script type="text/javascript">
+			var active;
+			var clicking = false;
+			var toolbarVisible = false;
+			var topicId = null;
+			
+			function collapseMenu()
+			{
+				if (active)
+				{
+					active.removeClass("active");
+					active = null;
+				}
+				$("#collapser").click();
+			}
+			
+			function toggleToolbar( show )
+			{
+				var rows = "74,*";
+				parent.toggleToolbar( show ? rows : "0,*" );
+			}
+			
+			function showTableOfContents()
+			{
+				collapseMenu();
+				topicId = null;
+				toggleToolbar(false);
+				toolbarVisible = false;
+			}
+			
+			function updateTopic( id )
+			{
+				if (clicking) return;
+				clicking = true;
+				
+				if (active) active.removeClass("active");
+				active = $("#"+id);
+				
+				active.addClass("active").click().parents("ul[id!='toc']:hidden").each(function(){
+					$(this).parent().find("span:first").click();
+				});
+				
+				var a = active.find("a");
+				
+				parent.ocv_content.location.href = a.attr("href");
+				if (!toolbarVisible) toggleToolbar(true);
+				topicId = id;
+				
+				parent.ocv_toolbar.updateNavControls()
+				parent.ocv_toolbar.updateTitle( a.html() );
+				toolbarVisible = true;
+				
+				clicking = false;
+			}
+			
+			function applyTreeview( html, xsl, xml, obj )
+			{
+				$("#toc").treeview({
+					animated: "normal",
+					unique: true,
+					collapsed: true,
+					control: "#treecontrol"
+				});
+				$("#treecontrol").css("display","none");
+			}
+			
+			$(function()
+			{
+				$("#toc").transform({
+					xml: "xml/" + parent.courseId + ".xml",
+					xsl: "xsl/menubar.xsl",
+					xslParams: {root: parent.root},
+					success: applyTreeview
+				});
+				
+				collapseMenu();
+				toggleToolbar(false);
+				parent.ocv_content.location.href = parent.root + "content.htm";
+			});
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="treecontrol">
+			<a id="collapser" title="Collapse the entire tree below" href="#"><img src="img/treeview/minus.gif" border="0" /> Collapse All</a>
+			<a title="Expand the entire tree below" href="#"><img src="img/treeview/plus.gif" border="0" /> Expand All</a>
+			<a title="Toggle the tree below, opening closed branches, closing open branches" href="#">Toggle All</a>
+		</div>
+		<ul id="toc"></ul>
+	</body>
+</html>

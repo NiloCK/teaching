@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<lab>
+<name><![CDATA[Charles' Law]]></name>
+<background><![CDATA[Charles' Law states that under conditions of constant pressure and quantity, there is a direct relationship between the volume and absolute temperature for an ideal gas. 
+
+The mathematical statement is that the <i>V/T</i>= a constant. For two sets of conditions the following is a math statement of Charles's Law:
+
+<i>V<sub>1</sub>/T<sub>1</sub> = V<sub>2</sub>/T<sub>2</sub></i>
+
+In this experiment you will vary the temperature of a sample of gas and measure the change in volume to study this relationship. Having the Gas Syringe makes your work easier because the gas inside is always at atmospheric pressure.
+]]></background>
+<assignment><![CDATA[<b>Assignment 1 of Procedure 1</b>
+
+1. Prepare a graph of the data for methane with temperature (in Kelvin) on the X-axis and volume (mL) on the Y-axis.
+
+2. Draw a straight line through the data points.
+
+3. Does your experimental data verify Charles' Law? 
+
+4. What volume would the gas sample occupy at 50°C, and at 120°C?
+
+5. List two sources of possible error if you had done the activity in a real lab.
+
+<b>Procedure 2</b>
+
+1. Prepare a graph of the data for butane with temperature (in Kelvin) on the X-axis and volume (mL) on the Y-axis.
+
+2. Draw a straight line through the data points.
+
+3. Does your experimental data verify Charles' Law?
+
+4. What volume would the gas sample occupy at 0°C, and at 70°C?
+
+5. List two sources of possible error if you had done the activity in a real lab. 
+]]></assignment>
+<procedure><![CDATA[<b>Procedure #1</b>
+
+Butane and methane are combustible materials that can explode if ignited. In this vitual investigation, assume that all experimental work occurs within a fume hood in which there are no open flames.
+
+1. Take a gas syringe from the Glassware shelf and place it on the workbench.
+
+2. Fill the gas syringe with 100 mL of methane gas (CH<sub>4</sub>) from the Chemicals shelf. 
+
+3. Open the Data window, and click on the gas syringe to view the volume of the gas sample.
+
+4. Take a thermometer from the Tools shelf and drag it to the gas syringe to connect them. Double click on the thermometer, and set the temperature units to "K".
+
+5. Record the temperature (in Kelvin) and the volume of the gas sample.
+
+6. Take a Constant Temperature Bath from the Tools shelf and place it on the workbench. 
+
+7. Use the arrows on the front of the bath to adjust the bath setting to "ice".
+
+8. Drag the gas syringe and drop it on the constant temperature bath.
+
+9. Let the temperature of the gas sample stabilize; then record the temperature and volume of the gas sample.
+
+10. Adjust the temperature of the bath to 40°C and record the temperature and volume of the gas once it stabilizes. Click on the syringe to refresh the Data Window and see information.
+
+11. Repeat the measurements for bath settings of 60°C, 80°C and 100°C.
+
+<b>Procedure #2</b>
+
+Optional: Repeat the steps of Procedure 1 for butane gas (C<sub>4</sub>H<sub>10</sub>). 
+
+Note: The boiling point of butane gas is just below 0°C, so, skip the step of setting the bath to "ice".
+]]></procedure>
+<entities>
+<chemicals>
+<chemical>
+<label>Water</label>
+<displayname>Water</displayname>
+<formula>H2O</formula>
+<type>2</type>
+<solubility>0</solubility>
+<boilingpoint>373</boilingpoint>
+<meltingpoint>273</meltingpoint>
+<dissolvedcolor>0x9cb9da</dissolvedcolor>
+<gascolor>0x9cb9da</gascolor>
+<liquidcolor>0x9cb9da</liquidcolor>
+<solidcolor>0x9cb9da</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-285.8</enthalpyofdissolved>
+<enthalpyofgas>-241.8</enthalpyofgas>
+<enthalpyofliquid>-285.8</enthalpyofliquid>
+<enthalpyofsolid>-291.8</enthalpyofsolid>
+<entropyofdissolved>70</entropyofdissolved>
+<entropyofgas>188.8</entropyofgas>
+<entropyofliquid>70</entropyofliquid>
+<entropyofsolid>41</entropyofsolid>
+<gmw>18.01528</gmw>
+<gasdensity>.006</gasdensity>
+<liquiddensity>1</liquiddensity>
+<soliddensity>.92</soliddensity>
+<gasheatcapacity>33.6</gasheatcapacity>
+<liquidheatcapacity>75.3</liquidheatcapacity>
+<solidheatcapacity>75</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Liquid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Butane</label>
+<displayname>Butane</displayname>
+<formula>C4H10</formula>
+<type>3</type>
+<solubility>.01</solubility>
+<boilingpoint>272.5</boilingpoint>
+<meltingpoint>134.7</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0.0017</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-125.6</enthalpyofdissolved>
+<enthalpyofgas>-125.6</enthalpyofgas>
+<enthalpyofliquid>-112.6</enthalpyofliquid>
+<enthalpyofsolid>-110.6</enthalpyofsolid>
+<entropyofdissolved>310</entropyofdissolved>
+<entropyofgas>310</entropyofgas>
+<entropyofliquid>190</entropyofliquid>
+<entropyofsolid>180</entropyofsolid>
+<gmw>58.1222</gmw>
+<gasdensity>.57</gasdensity>
+<liquiddensity>1.2</liquiddensity>
+<soliddensity>1.2</soliddensity>
+<gasheatcapacity>97.5</gasheatcapacity>
+<liquidheatcapacity>100</liquidheatcapacity>
+<solidheatcapacity>100</solidheatcapacity>
+<vanthoffnumber>2</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Methane</label>
+<displayname>Methane</displayname>
+<formula>CH4</formula>
+<type>3</type>
+<solubility>1.63</solubility>
+<boilingpoint>111.52</boilingpoint>
+<meltingpoint>90.53</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0.9998</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-75</enthalpyofdissolved>
+<enthalpyofgas>-74.6</enthalpyofgas>
+<enthalpyofliquid>-87.6</enthalpyofliquid>
+<enthalpyofsolid>-89.6</enthalpyofsolid>
+<entropyofdissolved>186</entropyofdissolved>
+<entropyofgas>186.3</entropyofgas>
+<entropyofliquid>66.3</entropyofliquid>
+<entropyofsolid>56.3</entropyofsolid>
+<gmw>16.04246</gmw>
+<gasdensity>.42</gasdensity>
+<liquiddensity>1</liquiddensity>
+<soliddensity>1</soliddensity>
+<gasheatcapacity>35.7</gasheatcapacity>
+<liquidheatcapacity>80</liquidheatcapacity>
+<solidheatcapacity>80</solidheatcapacity>
+<vanthoffnumber>2</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Oxygen Gas</label>
+<displayname>Oxygen Gas</displayname>
+<formula>O2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>90.05</boilingpoint>
+<meltingpoint>54.21</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>N</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-213</enthalpyofliquid>
+<enthalpyofsolid>-220</enthalpyofsolid>
+<entropyofdissolved>205.2</entropyofdissolved>
+<entropyofgas>205.2</entropyofgas>
+<entropyofliquid>85.2</entropyofliquid>
+<entropyofsolid>75.2</entropyofsolid>
+<gmw>31.9988</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.8</liquiddensity>
+<soliddensity>.8</soliddensity>
+<gasheatcapacity>29.4</gasheatcapacity>
+<liquidheatcapacity>50</liquidheatcapacity>
+<solidheatcapacity>50</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Nitrogen</label>
+<displayname>Nitrogen</displayname>
+<formula>N2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>78</boilingpoint>
+<meltingpoint>63</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype></chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-2.79</enthalpyofliquid>
+<enthalpyofsolid>-3.13</enthalpyofsolid>
+<entropyofdissolved>191.6</entropyofdissolved>
+<entropyofgas>191.6</entropyofgas>
+<entropyofliquid>79.5</entropyofliquid>
+<entropyofsolid>75</entropyofsolid>
+<gmw>28.0134</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.9</liquiddensity>
+<soliddensity>.9</soliddensity>
+<gasheatcapacity>29.1</gasheatcapacity>
+<liquidheatcapacity>57.8</liquidheatcapacity>
+<solidheatcapacity>60</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+</chemicals>
+<containers>
+<container>
+<type>Gas Piston</type>
+<label>Gas Piston</label>
+<capacity>250</capacity>
+<weight>111.42</weight>
+<heattransferinner>6</heattransferinner>
+<maxpressure>4</maxpressure>
+</container>
+</containers>
+<tools>
+<tool>
+<type>Cooling</type>
+<label>Constant Temperature Bath</label>
+<weight>0</weight>
+</tool>
+<tool>
+<type>Measure</type>
+<label>Pressure Gauge</label>
+<weight>0</weight>
+</tool>
+<tool>
+<type>Measure</type>
+<label>Thermometer</label>
+<weight>0</weight>
+</tool>
+</tools>
+<reactions>
+</reactions>
+</entities>
+</lab>

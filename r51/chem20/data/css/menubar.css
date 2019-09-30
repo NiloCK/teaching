@@ -1,0 +1,38 @@
+body {
+	margin: 0em .5em;
+	font: normal 0.8em Arial, Verdana, sans-serif;
+}
+
+.course {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.module { font-weight: bold; }
+.topic { font-weight: normal; }
+
+.disabled {
+	font-style: italic;
+	color: #BBB;
+}
+.hidden { display: none; }
+
+.over {
+	background-color: yellow;
+	color: red;
+	cursor: pointer;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+a:hover { color: red; }
+.active {
+	padding-left: 5px;
+	border: dashed 2px #fc6;
+	font-weight: bold;
+}
+
+a.course:visited { color: #000; }
+a.course:link { color: #000; }
+a.course:hover { color: #F00; }

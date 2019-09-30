@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<example>
+
+<control name ="Please select one" neg="" pos = "" />
+
+<control name ="Conductivity Test" neg="images/conductivity_neg.jpg" pos ="images/conductivity_pos.jpg" />
+	
+<control name ="Red Litmus" neg="images/litmus_test_red_neg.jpg" pos ="images/litmus_test_red_pos.jpg" />
+	
+<control name ="Blue Litmus" neg="images/litmus_test_blue_neg.jpg" pos ="images/litmus_test_blue_pos.jpg" />
+	
+<control name ="Magnesium Turnings" neg="images/magnesium_test_neg_2.jpg" pos ="images/magnesium_test_pos_2.jpg" />
+
+</example>

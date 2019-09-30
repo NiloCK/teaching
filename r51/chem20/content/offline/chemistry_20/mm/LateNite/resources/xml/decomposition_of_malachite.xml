@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<lab>
+<name><![CDATA[Decomposition of Malachite]]></name>
+<background><![CDATA[Malachite is a famous and very popular semi-precious stone. Its banded light and dark green bands are one-of-a-kind that give it a unique, ornamental quality unlike that of any other stone. The light and dark green bands are so distinctive that malachite may be one of the most easily recognized minerals by the general public. 
+
+Malachite is popular in jewelry. The stones inlayed in silver make a nice alternative to traditional turquoise jewelry. 
+
+Malachite is a form of copper carbonate, with the molecular formula Cu(OH)<sub>2</sub>CuCO<sub>3</sub>(s). When heated to around 200C, malachite decomposes into solid copper(II) oxide, carbon dioxide gas, and water vapour.
+
+In this experiment, you will heat a known mass of malachite to produce copper(II) oxide. You will also predict the amount of copper(II) oxide expected to be produced based on the balanced equation for the decomposition reaction. You will then compare your predicted results to those actually obtained in the experiment.
+]]></background>
+<assignment><![CDATA[<b>Assignment 1 of Procedure 1</b>
+
+1. Record the following:
+
+   (a) mass of an empty Erlenmeyer flask (g)
+
+   (b) mass of the Erlenmeyer flask with malachite (g)	
+
+   (c) Subtract (a) from (b) to obtain the mass of malachite (g).
+
+   (c) mass of Erlenmeyer flask with CuO (g)	
+
+   (d) Subtract (a) from (c) to obtain the mass of CuO produced (g).
+
+2. Predict the mass of CuO expected to result from the decomposition of the malachite, based on the balanced equation.
+
+3. Compare the mass obtained from the mass predicted using the percent error formula.  Is this an acceptable percent error?  Discuss reasons for any discrepancy.
+
+4. Suggest a way to demonstrate that carbon dioxide gas is a product of the reaction. 
+
+]]></assignment>
+<procedure><![CDATA[
+
+1. Take an Erlenmeyer flask from the Glassware shelf and place it on the workbench.
+
+2. Take a balance from the Tools shelf and place it on the workbench.
+
+3. Drag the flask and drop it onto the balance. Record the mass of the empty flask to the nearest 0.01 g.
+
+4. Add 2.00 g of malachite to the flask.
+
+5. Record the mass of the flask and malachite to the nearest 0.01 g. When you're done, remove the flask from the balance.
+
+6. Take a Bunsen burner from the Tools shelf and place it on the workbench.
+
+7. Drag the flask and place it directly on the burner.
+
+8. Click on the gas valve located on the front of the Bunsen burner to set the burner to a low flame.
+
+9. Watch the flask until the green malachite decomposes, leaving black copper(II) oxide.
+
+10. Remove the flask from the Bunsen burner.
+
+11. Weigh the flask with its contents, and record its mass to the nearest 0.01 g.
+]]></procedure>
+<entities>
+<chemicals>
+<chemical>
+<label>Water</label>
+<displayname>Water</displayname>
+<formula>H2O</formula>
+<type>2</type>
+<solubility>0</solubility>
+<boilingpoint>373</boilingpoint>
+<meltingpoint>273</meltingpoint>
+<dissolvedcolor>0x9cb9da</dissolvedcolor>
+<gascolor>0x9cb9da</gascolor>
+<liquidcolor>0x9cb9da</liquidcolor>
+<solidcolor>0x9cb9da</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-285.8</enthalpyofdissolved>
+<enthalpyofgas>-241.8</enthalpyofgas>
+<enthalpyofliquid>-285.8</enthalpyofliquid>
+<enthalpyofsolid>-291.8</enthalpyofsolid>
+<entropyofdissolved>70</entropyofdissolved>
+<entropyofgas>188.8</entropyofgas>
+<entropyofliquid>70</entropyofliquid>
+<entropyofsolid>41</entropyofsolid>
+<gmw>18.01528</gmw>
+<gasdensity>.006</gasdensity>
+<liquiddensity>1</liquiddensity>
+<soliddensity>.92</soliddensity>
+<gasheatcapacity>33.6</gasheatcapacity>
+<liquidheatcapacity>75.3</liquidheatcapacity>
+<solidheatcapacity>75</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Liquid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Copper (II) Carbonate Hydroxide</label>
+<displayname>Copper (II) Carbonate Hydroxide</displayname>
+<formula>CuCO3CuO2H2</formula>
+<type>1</type>
+<solubility>0</solubility>
+<boilingpoint>4000</boilingpoint>
+<meltingpoint>3000</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0x00FF00</gascolor>
+<liquidcolor>0x00FF00</liquidcolor>
+<solidcolor>0x00FF00</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>-730</enthalpyofgas>
+<enthalpyofliquid>-750</enthalpyofliquid>
+<enthalpyofsolid>-765.2</enthalpyofsolid>
+<entropyofdissolved>0</entropyofdissolved>
+<entropyofgas>200</entropyofgas>
+<entropyofliquid>190</entropyofliquid>
+<entropyofsolid>186.2</entropyofsolid>
+<gmw>221.11558</gmw>
+<gasdensity>1</gasdensity>
+<liquiddensity>4</liquiddensity>
+<soliddensity>4</soliddensity>
+<gasheatcapacity>60</gasheatcapacity>
+<liquidheatcapacity>100</liquidheatcapacity>
+<solidheatcapacity>100</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Solid</standardstate>
+<showmoles>false</showmoles>
+<showmw>true</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Copper (II) Oxide</label>
+<displayname>Copper (II) Oxide</displayname>
+<formula>CuO</formula>
+<type>1</type>
+<solubility>0</solubility>
+<boilingpoint>5000</boilingpoint>
+<meltingpoint>4000</meltingpoint>
+<dissolvedcolor>0x000000</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0x000000</liquidcolor>
+<solidcolor>0x000000</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>-150</enthalpyofgas>
+<enthalpyofliquid>-155</enthalpyofliquid>
+<enthalpyofsolid>-157.3</enthalpyofsolid>
+<entropyofdissolved>0</entropyofdissolved>
+<entropyofgas>80</entropyofgas>
+<entropyofliquid>45</entropyofliquid>
+<entropyofsolid>42.6</entropyofsolid>
+<gmw>79.5454</gmw>
+<gasdensity>1.5</gasdensity>
+<liquiddensity>6.35</liquiddensity>
+<soliddensity>6.31</soliddensity>
+<gasheatcapacity>20</gasheatcapacity>
+<liquidheatcapacity>42</liquidheatcapacity>
+<solidheatcapacity>42.3</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Solid</standardstate>
+<showmoles>false</showmoles>
+<showmw>true</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Carbon Dioxide</label>
+<displayname>Carbon Dioxide</displayname>
+<formula>CO2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>194.6</boilingpoint>
+<meltingpoint>195</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>N</chemicaltype>
+<enthalpyofdissolved>393</enthalpyofdissolved>
+<enthalpyofgas>-393.5</enthalpyofgas>
+<enthalpyofliquid>-377</enthalpyofliquid>
+<enthalpyofsolid>-377.5</enthalpyofsolid>
+<entropyofdissolved>213.8</entropyofdissolved>
+<entropyofgas>213.8</entropyofgas>
+<entropyofliquid>213.8</entropyofliquid>
+<entropyofsolid>213.8</entropyofsolid>
+<gmw>44.0095</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>1</liquiddensity>
+<soliddensity>1</soliddensity>
+<gasheatcapacity>37.1</gasheatcapacity>
+<liquidheatcapacity>100</liquidheatcapacity>
+<solidheatcapacity>100</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>false</showmoles>
+<showmw>true</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Oxygen Gas</label>
+<displayname>Oxygen Gas</displayname>
+<formula>O2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>90.05</boilingpoint>
+<meltingpoint>54.21</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>N</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-213</enthalpyofliquid>
+<enthalpyofsolid>-220</enthalpyofsolid>
+<entropyofdissolved>205.2</entropyofdissolved>
+<entropyofgas>205.2</entropyofgas>
+<entropyofliquid>85.2</entropyofliquid>
+<entropyofsolid>75.2</entropyofsolid>
+<gmw>31.9988</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.8</liquiddensity>
+<soliddensity>.8</soliddensity>
+<gasheatcapacity>29.4</gasheatcapacity>
+<liquidheatcapacity>50</liquidheatcapacity>
+<solidheatcapacity>50</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Nitrogen</label>
+<displayname>Nitrogen</displayname>
+<formula>N2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>78</boilingpoint>
+<meltingpoint>63</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype></chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-2.79</enthalpyofliquid>
+<enthalpyofsolid>-3.13</enthalpyofsolid>
+<entropyofdissolved>191.6</entropyofdissolved>
+<entropyofgas>191.6</entropyofgas>
+<entropyofliquid>79.5</entropyofliquid>
+<entropyofsolid>75</entropyofsolid>
+<gmw>28.0134</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.9</liquiddensity>
+<soliddensity>.9</soliddensity>
+<gasheatcapacity>29.1</gasheatcapacity>
+<liquidheatcapacity>57.8</liquidheatcapacity>
+<solidheatcapacity>60</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+</chemicals>
+<containers>
+<container>
+<type>Erlenmeyer Flask</type>
+<label>Erlenmeyer Flask</label>
+<capacity>150</capacity>
+<weight>91.78</weight>
+<heattransferinner>10</heattransferinner>
+<maxpressure>4</maxpressure>
+</container>
+</containers>
+<tools>
+<tool>
+<type>Measure</type>
+<label>Balance</label>
+<weight>0</weight>
+</tool>
+<tool>
+<type>Heat</type>
+<label>Bunsen Burner</label>
+<weight>0</weight>
+</tool>
+<tool>
+<type>Measure</type>
+<label>Thermometer</label>
+<weight>40</weight>
+</tool>
+</tools>
+<reactions>
+<reaction>
+<name>CuCO3Cu(OH)2+heat</name>
+<reactants>
+<reactant>1||CuCO3CuO2H2</reactant>
+</reactants>
+<products>
+<product>2||CuO</product>
+<product>1||CO2</product>
+<product>1||H2O</product>
+</products>
+<insolution>true</insolution> 
+<insolutiondeltah>-228.7</insolutiondeltah> 
+<insolutiondeltas>182.8</insolutiondeltas> 
+<notinsolution>true</notinsolution>
+<notinsolutiondeltah>-228.7</notinsolutiondeltah> 
+<notinsolutiondeltas>144.2</notinsolutiondeltas>
+<mintemp>473</mintemp>
+<maxtemp>0</maxtemp>
+</reaction>
+</reactions>
+</entities>
+</lab>

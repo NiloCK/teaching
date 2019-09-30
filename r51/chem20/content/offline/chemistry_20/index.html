@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Introduction</title>
+<link rel="stylesheet" type="text/css" href="css/course_default.css" title="Default" />
+<!--BREADCRUMB SCRIPT -->
+<script type="text/javascript" src="js/breadcrumb.js"></script>
+<script type="text/javascript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+<!--
+function silentErrorHandler() {return true;}
+window.onerror=silentErrorHandler;
+//-->
+</script>
+<script type="text/javascript">
+//Preload banner images 
+<!--
+if (document.images)
+{
+  banner= new Image(); 
+  banner.src="images/unit0_title.jpg"; 
+
+  banner1= new Image(); 
+  banner1.src="images/unit1_title.jpg"; 
+
+  banner2= new Image(); 
+  banner2.src="images/unit2_title.jpg"; 
+   
+  banner3= new Image(); 
+  banner3.src="images/unit3_title.jpg"; 
+   
+  banner4= new Image(); 
+  banner4.src="images/unit4_title.jpg";  
+}
+//-->
+//Re-writes the document title and updates the breadcrumbs
+onloadFrame = function(){
+	//
+	parent.document.title = mainFrame.document.title;
+	showpage = mainFrame.document.title;
+	var myUnit;
+	updateBreadcrumbs();
+}
+//-->
+</script>
+</head>
+<body onLoad="onloadFrame()">
+<div class="center" >
+  <!--backgroundwrapper-->
+  <div id="backgroundwrapper">
+    <!--Open Main Wrapper -->
+    <div id="mainwrapper">
+      <!-- Breadcrumb Trail -->
+      <div id="breadcrumb">
+        <script type="text/javascript">updateBreadcrumbs();</script>
+      </div>
+      <!-- Banner -->
+      <div id="banner"></div>
+      <div id="main">
+        <!--Left Link Bar/Main Menu-->
+        <div id="leftsidebar">
+          <!-- All you need to do is to edit the menu.xml file to add another menu link -->
+          <iframe name="leftFrame" id="leftFrame" src="menu.html" scrolling="no" frameborder="0"></iframe>
+        </div>
+        <!--Main Content Frame-->
+        <div id="content">
+            <iframe name="mainFrame" id="mainFrame" src="introduction.html" onLoad="onloadFrame()" scrolling="yes" frameborder="0" ></iframe>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div id="footer2">Chemistry 20 &#169; 2008 <a href="http://www.education.gov.ab.ca/" target="_blank">Alberta Education</a></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+/* CSS Document */
+@import "undohtml.css";
+
+/** { 
+	padding:0; 
+	margin:0; 
+}*/
+
+body {
+	position: relative;
+	margin:0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	min-width:800px; /*IE 6 will ignore this */
+	max-width:1024px;
+	padding: 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:100%;
+	color:#000000;
+	background-color:#FFFFFF;
+	background-position:center;
+	text-align:center; /*IE 6 Hack to Centre the nested elements*/
+}
+#backgroundwrapper{
+	width: auto;
+	padding: 0px;
+	text-align:center; /*Overrides the IE 6 Hack so the text isn't centred as well*/
+	height: 100%;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+
+#mainwrapper{
+	position: relative;
+	border: 1px solid #005b94;
+	padding: 0px;
+	margin: 0px;
+}
+#main{
+	position: relative;
+	display:inline;
+	width: auto;
+	height:auto;
+	margin: 0px;
+	padding: 0px;
+}
+#content{
+	display:inline;
+	position: relative;
+	height:800px;
+	min-height:800px;
+	margin: 0px;
+	padding: 0px;
+	overflow:visible;
+	overflow-Y:visible;
+	overflow-X:visible;
+}
+#mainFrame{ 
+	display:inline;
+	width: 70%;
+	height:800px;
+	min-height:800px;
+	margin: 0px;
+	padding: 0px;
+	overflow:visible;
+	overflow-Y:visible;
+	overflow-X:visible;
+	position:relative;
+}
+
+#breadcrumb {
+	display:none;
+	clear:both;
+	margin:0px;
+	padding: 10px 0px 15px 5px;
+	height:0px;
+	width:0px;
+	max-height:0px;
+	max-width:0px;
+	background-color:#005027;
+	background-image:url(../images/bg_green.jpg);
+	border-bottom:solid #005027 1px;
+	text-align:left;
+	color: #81BC3D;
+	font-size:8pt;
+}
+
+#breadcrumb a {
+	color: #81BC3D;
+}
+#breadcrumb a:hover {
+	background-color:#408339;
+}
+#banner {
+	background-color:#005b94;
+	background-image:url(../images/unit0_title.jpg);
+	overflow:visible;
+	border-bottom:solid #005b94 1px;
+	padding: 0px 0px 0px 0px;
+	height:81px;
+	width:inherit;
+	text-align:center;
+	background-repeat:no-repeat;
+}
+#banner2 {
+	background-color:#005b94;
+	background-image:url(../images/banner2.jpg);
+	overflow:visible;
+	border-bottom:solid #005b94 1px;
+	padding: 0px 0px 0px 0px;
+	height:81px;
+	width:inherit;
+	text-align:center;
+	background-repeat:no-repeat;
+}
+#leftsidebar {
+	display: inline;
+	float:left;
+	width:20%;
+	min-width:230px;
+	height:100%;
+	min-height:810px;
+	padding:0px;
+	margin:0px;
+	background-color:#005b94;
+	border:0px;
+	border-right:solid #FFFFFF 1px;
+	overflow-X:hidden;
+	overflow-Y:hidden;	
+} 
+#leftsidebar iframe {
+	min-width:20%;
+	height:800px;
+	min-height:800px;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	background-color:#005b94;
+	overflow:auto;
+	overflow-X:hidden;
+	overflow-Y:hidden; 
+}
+#box {
+	float:left;
+	font-style:italic;
+	border:0px solid #CCC;
+	width: 85px;
+	height:85px;
+	margin:6px;
+	padding:6px;
+	font-size:100%;
+	background-color:#FFFFFF;
+	text-align:center
+}
+#footer {
+	clear:both;
+	margin:0px;
+	padding: 5px 0px 0px 0px;
+	height:25px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#005b94;
+	text-align:center;
+	color: #FFFFFF;
+	font-size:80%;
+}
+#footer a {
+	text-decoration: underline;
+	color: #FFFFFF;
+	border-bottom: 0px;
+}
+#footer a:hover { 
+	text-decoration: none;
+}
+#footer2 {
+	clear:both;
+	margin:0px;
+	padding: 5px 0px 0px 0px;
+	height:25px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-color:#005b94;
+	text-align:center;
+	color: #FFFFFF;
+	font-size:80%;
+}
+#footer2 a {
+	text-decoration: underline;
+	color: #FFFFFF;
+	border-bottom: 0px;
+}
+#footer2 a:hover { 
+	text-decoration: none;
+}

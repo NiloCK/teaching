@@ -1,0 +1,583 @@
+import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Random;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.CompoundBorder;
+import java.awt.Color;
+import java.awt.Image;
+
+public class MonteCarlo extends JApplet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7021840749108990457L;
+
+	Container container = null;
+
+	GWAscreen gwas;
+
+	public JFormattedTextField pointField;
+
+	public JTextField countField;
+
+	public JTextField totalField;
+
+	public JTextField areaField;
+
+	public JTextField MCareaField;
+
+	public JLabel fracLabel;
+
+	public void init() {
+		setSize(600, 425);
+		container = this.getContentPane();
+		GWAscreen gwas = new GWAscreen();
+		JPanel p1 = new JPanel();
+		JPanel p2 = new JPanel();
+		JButton buttons[] = new JButton[5];
+		CompoundBorder cbd = new CompoundBorder(new EtchedBorder(),
+				new EmptyBorder(5, 5, 5, 5));
+		CompoundBorder mbd = new CompoundBorder(BorderFactory
+				.createTitledBorder(BorderFactory.createLoweredBevelBorder(),
+						"Monte Carlo Area", 2, 2), new EmptyBorder(5, 5, 5, 5));
+		CompoundBorder abd = new CompoundBorder(BorderFactory
+				.createTitledBorder(BorderFactory.createLoweredBevelBorder(),
+						"Theoretical Area", 2, 2), new EmptyBorder(5, 5, 5, 5));
+		CompoundBorder tbd = new CompoundBorder(BorderFactory
+				.createTitledBorder(BorderFactory.createLoweredBevelBorder(),
+						"Total Count", 2, 2), new EmptyBorder(5, 5, 5, 5));
+		CompoundBorder hbd = new CompoundBorder(BorderFactory
+				.createTitledBorder(BorderFactory.createLoweredBevelBorder(),
+						"Hit Count", 2, 2), new EmptyBorder(5, 5, 5, 5));
+		
+		
+		p1.setBorder(cbd);
+		p2.setBorder(cbd);
+		String[] goodincrements = { "10", "100", "1000",
+				"10000", "100000", "1000000" };
+		SpinnerModel model = new SpinnerListModel(goodincrements);
+		JSpinner spinner = new JSpinner(model);
+		spinner.setPreferredSize(new Dimension(85, 20));
+		model.addChangeListener(new mylistener(gwas));
+
+		fracLabel = new JLabel("    ");
+		fracLabel.setHorizontalAlignment(JLabel.CENTER);
+		p1.add(spinner);
+		countField = new JTextField();
+		countField.setColumns(6);
+		countField.setText("0");
+		countField.setEditable(false);
+		countField.setBorder(hbd);
+		totalField = new JTextField();
+		totalField.setColumns(6);
+		totalField.setText("0");
+		totalField.setEditable(false);
+		totalField.setBorder(tbd);
+		areaField = new JTextField();
+		areaField.setColumns(18);
+		areaField.setText("0");
+		areaField.setEditable(false);
+		areaField.setBorder(abd);
+		MCareaField = new JTextField();
+		MCareaField.setColumns(18);
+		MCareaField.setText("0");
+		MCareaField.setEditable(false);
+		MCareaField.setBorder(mbd);
+		gwas.setLabelsAndFields(fracLabel, countField, totalField, areaField, MCareaField);
+
+		p2.setLayout(new GridLayout(0, 1, 5, 5));
+		p2.add(countField);
+		p2.add(totalField);
+		p2.add(areaField);
+		p2.add(MCareaField);
+		p2.add(fracLabel);
+
+		Image but0 = createImage(20, 20);
+		Graphics g0 = but0.getGraphics();
+		fillImage(g0, 1);
+		ImageIcon buti0 = new ImageIcon(but0);
+		buttons[0] = new JButton("1", buti0);
+
+		Image but1 = createImage(20, 20);
+		Graphics g1 = but1.getGraphics();
+		fillImage(g1, 2);
+		ImageIcon buti1 = new ImageIcon(but1);
+		buttons[1] = new JButton("2", buti1);
+
+		Image but2 = createImage(20, 20);
+		Graphics g2 = but2.getGraphics();
+		fillImage(g2, 3);
+		ImageIcon buti2 = new ImageIcon(but2);
+		buttons[2] = new JButton("3", buti2);
+
+		Image but3 = createImage(20, 20);
+		Graphics g3 = but3.getGraphics();
+		fillImage(g3, 4);
+		ImageIcon buti3 = new ImageIcon(but3);
+		buttons[3] = new JButton("4", buti3);
+
+		buttons[0].addActionListener(new ButtonAction(gwas));
+		buttons[1].addActionListener(new ButtonAction(gwas));
+		buttons[2].addActionListener(new ButtonAction(gwas));
+		buttons[3].addActionListener(new ButtonAction(gwas));
+		buttons[4] = new JButton("Start");
+		buttons[4].addActionListener(new ButtonAction(gwas));
+		for (int ii = 1; ii <= 5; ii++)
+			p1.add(buttons[ii - 1]);
+
+		container.add("North", p1);
+		container.add("East", p2);
+		container.add("Center", gwas);
+	}
+
+	public void fillImage(Graphics g0, int tYPE) {
+		double x, y, tw, tx;
+		int yi;
+		// tx scales domain of 3 to 20 pixels
+		tx = 3.0 / 20.0;
+		switch (tYPE) {
+		case 1:
+			// tw scales box height of 2 into 20 pixels
+			tw = 10.0;
+			y = 1;
+			for (int i = 0; i < 20; i++) {
+				x = tx * i;
+				yi = 20 - (int) (tw * y);
+				g0.setColor(Color.RED);
+				g0.drawLine(i, yi, i, 19);
+				g0.setColor(Color.BLUE);
+				g0.drawLine(i, yi - 1, i, 0);
+			}
+			break;
+		case 2:
+			// tw scales box height of 4 into 20 pixels
+			tw = 5.0;
+			for (int i = 0; i < 20; i++) {
+				x = tx * i;
+				y = x;
+				yi = 20 - (int) (tw * y);
+				g0.setColor(Color.RED);
+				g0.drawLine(i, yi, i, 19);
+				g0.setColor(Color.BLUE);
+				g0.drawLine(i, yi - 1, i, 0);
+			}
+			break;
+		case 3:
+			// tw scales box height of 5 into 20 pixels
+			tw = 4.0;
+			for (int i = 0; i < 20; i++) {
+				x = tx * i;
+				y = 0.5 * x * x;
+				yi = 20 - (int) (tw * y);
+				g0.setColor(Color.RED);
+				g0.drawLine(i, yi, i, 19);
+				g0.setColor(Color.BLUE);
+				g0.drawLine(i, yi - 1, i, 0);
+			}
+			break;
+		case 4:
+			// tw scales box height of 4 into 20 pixels
+			tw = 5.0;
+			for (int i = 0; i < 20; i++) {
+				x = tx * i;
+				y = x * (10.5 + x * (-10.75 + x * (8.0 - x) / 2.0));
+				yi = 20 - (int) (tw * y);
+				g0.setColor(Color.RED);
+				g0.drawLine(i, yi, i, 19);
+				g0.setColor(Color.BLUE);
+				g0.drawLine(i, yi - 1, i, 0);
+			}
+			break;
+		}
+		g0.setColor(Color.BLACK);
+		g0.drawLine(0, 20, 20, 20);
+		g0.drawLine(0, 0, 0, 20);
+	}
+}
+
+/*
+ * ================================================================= 
+ * This class
+ * listens for action events associated with the buttons.
+ * =================================================================
+ */
+
+class ButtonAction implements ActionListener {
+	private GWAscreen gwas;
+
+	public ButtonAction(GWAscreen gwas) {
+		this.gwas = gwas;
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		int what, where;
+		what = gwas.wh;
+		String s = new String(e.getActionCommand());
+		if (s.compareTo("Start") == 0) {
+			where = 5;
+		} else {
+			what = 0;
+			where = 0;
+			if (s.compareTo("1") == 0) {
+				what = 1;
+			}
+			if (s.compareTo("2") == 0) {
+				what = 2;
+			}
+			if (s.compareTo("3") == 0) {
+				what = 3;
+			}
+			if (s.compareTo("4") == 0) {
+				what = 4;
+			}
+			gwas.setWhat(what);
+			gwas.cField.setText("0");
+			gwas.tField.setText("0");
+			gwas.mcField.setText("0");
+		}
+		gwas.setWhere(where);
+		switch (what) {
+		case 0:
+			gwas.aField.setText("  ");
+			break;
+		case 1:
+			gwas.aField.setText("3.0");
+			break;
+		case 2:
+			gwas.aField.setText("4.5");
+			break;
+		case 3:
+			gwas.aField.setText("4.5");
+			break;
+		case 4:
+			gwas.aField.setText("7.2");
+			break;
+		default:
+			break;
+		}
+		gwas.repaint();
+	}
+}
+
+/*
+ * ================================================================= 
+ * This class
+ * listens for state changes in the spinner.
+ * =================================================================
+ */
+
+class mylistener implements ChangeListener {
+	private GWAscreen gwas;
+
+	public mylistener(GWAscreen gwas) {
+		this.gwas = gwas;
+	}
+
+	public void stateChanged(ChangeEvent e) {
+		String s;
+		SpinnerModel source = (SpinnerModel) e.getSource();
+		s = (String) source.getValue();
+		gwas.numberp = Long.valueOf(s).longValue();
+	}
+};
+
+/*
+ * ================================================================= 
+ * This class does the heavy lifting.
+ *  It handles the double buffer, calculation of area, and display.
+ * =================================================================
+ */
+
+class GWAscreen extends Canvas {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7345452724774387243L;
+
+	private Dimension size;
+
+	private JLabel fractionLabel;
+
+	public JTextField cField, tField, aField, mcField;
+
+	private int GRAPH[] = new int[321];
+
+	private Image SavedPoints = null;
+
+	public int wh;
+
+	public int whe;
+
+	public long numberp = 10L;
+
+	public double scale;
+
+	private String ps;
+
+	public void setLabelsAndFields(JLabel frac, JTextField CField,
+			JTextField TField, JTextField AField, JTextField MCField) {
+		this.fractionLabel = frac;
+		this.cField = CField;
+		this.tField = TField;
+		this.aField = AField;
+		this.mcField = MCField;
+	}
+
+	public void setWhat(int what) {
+		this.wh = what;
+	}
+
+	public void setWhere(int where) {
+		this.whe = where;
+	}
+
+	public void fillBack(Graphics gg, Dimension s){
+		Graphics2D gBack = (Graphics2D)gg;
+		gBack.setColor(new Color(227, 255, 227));
+		gBack.fillRect(0, 0, s.width, s.height);
+		gwasDraw(gg);
+		gBack.dispose();
+	}
+	
+	public void paint(Graphics g) {
+		this.size = getSize();
+		if (SavedPoints == null) {
+			GraphicsConfiguration gc = getGraphicsConfiguration();
+			SavedPoints = gc.createCompatibleImage(size.width, size.height);
+			fillBack(SavedPoints.getGraphics(), size);
+		}
+		if ((wh != 0) && (whe < 5)) {
+			clear(g);
+			fillBack(SavedPoints.getGraphics(), size);
+			whe = 10;
+		}
+		g.drawImage(SavedPoints, 0, 0, null);
+		if (whe == 5) {
+			Graphics2D gImg = (Graphics2D) SavedPoints.getGraphics();
+			gwasPlot(g, gImg);
+			gImg.dispose();
+		}
+		whe = 10;
+		gwasDraw(g);
+	}
+
+/*
+ * ================================================================= 
+ * This function sets up GRAPH array with
+ * the function values. It sets the scales for the graphs.
+ * =================================================================
+ */
+
+
+	public void clear(Graphics gwas) {
+		double x, y, tx, ty;
+		int yi;
+		ps = " ";
+		fractionLabel.setText(ps);
+		tx = 3.0 / 320.0;
+		switch (wh) {
+		case 1:
+			ty = 160.0;
+			scale = 2.0;
+			for (int i = 0; i < 321; i++) {
+				yi = 340 - (int) ty;
+				GRAPH[i] = yi;
+			}
+			break;
+		case 2:
+			ty = 80.0;
+			scale = 4.0;
+			for (int i = 0; i < 321; i++) {
+				x = tx * i;
+				y = x;
+				yi = 340 - (int) (ty * y);
+				GRAPH[i] = yi;
+			}
+			break;
+		case 3:
+			ty = 64.0;
+			scale = 5.0;
+			for (int i = 0; i < 321; i++) {
+				x = tx * i;
+				y = 0.5 * x * x;
+				yi = 340 - (int) (ty * y);
+				GRAPH[i] = yi;
+			}
+			break;
+		case 4:
+			ty = 80.0;
+			scale = 4.0;
+			for (int i = 0; i < 321; i++) {
+				x = tx * i;
+				y = x * (10.5 + x * (-10.75 + x * (8.0 - x) / 2.0));
+				yi = 340 - (int) (ty * y);
+				GRAPH[i] = yi;
+			}
+			break;
+		}
+	}
+
+/*
+ * ================================================================= 
+ * This function handles placing
+ * the graph on the screen.
+ * =================================================================
+ */
+
+	public void gwasDraw(Graphics gwas) {
+		int sc;
+		Graphics2D g2D = (Graphics2D) gwas;
+		Font font = new Font("SansSerif", Font.BOLD, 14);
+		g2D.setFont(font);
+		if (wh != 0) {
+
+			for (int i = 0; i < 320; i++) {
+				g2D.drawLine(i + 24, GRAPH[i], i + 25, GRAPH[i + 1]);
+			}
+			g2D.setColor(Color.BLACK);
+			g2D.drawLine(0, 340, 360, 340);
+			g2D.drawLine(24, 0, 24, 370);
+
+			g2D.drawString("0", 8, 358);
+			sc = (int) scale;
+			for (int i = 1; i <= sc; i++) {
+				g2D.drawString(String.valueOf(i), 8, 342 - i * 320 / sc);
+			}
+
+			g2D.drawString("1", 21 + 106, 358);
+			g2D.drawString("2", 21 + 213, 358);
+			g2D.drawString("3", 21 + 320, 358);
+
+			g2D.setColor(Color.GREEN);
+			for (int i = 1; i <= sc; i++) {
+				g2D.drawLine(24, 340 - i * 320 / sc, 360, 340 - i * 320 / sc);
+			}
+			for (int i = 1; i <= 3; i++) {
+				g2D.drawLine(25 + (int) (320.0 * i / 3.0), 340,
+						25 + (int) (320.0 * i / 3.0), 0);
+			}
+			g2D.setColor(Color.RED);
+
+			for (int i = 0; i < 320; i++) {
+				g2D.drawLine(i + 24, GRAPH[i], i + 25, GRAPH[i + 1]);
+			}
+		} else {
+			g2D.setColor(Color.BLACK);
+			g2D.drawString("First choose how many random points to use.", 10,
+					30);
+			g2D.drawString("You use the spinner and have the choices", 10, 45);
+			g2D.drawString("10, 100, 1000, 10 000, 100 000, and 1 000 000.",
+					10, 60);
+			g2D.drawString("Next choose which of the curves to use.", 10, 100);
+			g2D.drawString("You have the four choices shown.", 10, 115);
+			g2D.drawString("Lastly press the 'Start' button.", 10, 145);
+			g2D.drawString("The points will be plotted and counted and", 10,
+					160);
+			g2D.drawString("the area calculated.", 10, 175);
+			g2D.drawString("Each time 'Start' is pressed, the", 10, 205);
+			g2D.drawString("chosen number of points are added to the plot.",
+					10, 220);
+
+		}
+	}
+
+/*
+ * ================================================================= 
+ * This function plots the random
+ * points and calculates the ratio of under/over the curve.
+ * It also draws the information in the text areas to the right.
+ * =================================================================
+ */
+
+	public void gwasPlot(Graphics gwas, Graphics2D gwaso) {
+		int x, y;
+// Initialize the generation of random numbers
+		Random generator = new Random();
+		Graphics2D g2D = (Graphics2D) gwas;
+		long counter, totaler;
+		double areaer;
+		String s, s1;
+// Find the current number of points plotted
+		s = cField.getText();
+		counter = Long.valueOf(s).longValue();
+		s1 = tField.getText();
+		totaler = Long.valueOf(s1).longValue();
+// Limit the number of new points to plot to between 10 and 1 000 000
+		if (numberp < 10L) {
+			numberp = 10L;
+		} else if (numberp > 1000000L) {
+			numberp = 1000000L;
+		}
+// Repeatedly pick pairs of random numbers to plot
+		for (long i = 0; i < numberp; i++) {
+// pick the x and y values to fit on the graphing area which 
+// runs from 0 to 320
+			x = generator.nextInt(321);
+			y = generator.nextInt(321);
+// the graph starts 20 pixels from the bottom of the graphing area
+// count the point as a hit if the value falls on or below the graph
+// remember that screen numbers increas as you go down i.e. the
+// opposite of the math convention
+			if (GRAPH[x] <= y + 20) {
+				g2D.setColor(Color.RED);
+				gwaso.setColor(Color.RED);
+				counter++;
+			}
+//plot the non-hit points
+			if (GRAPH[x] > y + 20) {
+				g2D.setColor(Color.BLUE);
+				gwaso.setColor(Color.BLUE);
+			}
+			g2D.drawLine(24 + x, y + 20, x + 25, y + 20);
+			gwaso.drawLine(24 + x, y + 20, x + 25, y + 20);
+		}
+// add to the total and and place the values in the right text areas
+		totaler += numberp;
+		tField.setText(Long.toString(totaler));
+		cField.setText(Long.toString(counter));
+		ps = " ";
+// prepare the area value and how it is calculated
+// notice the html coding to get the fraction
+		switch (wh) {
+		case 1:
+			areaer = 3.0 * 2.0 * counter / totaler;
+			ps = "<html><p align=\"center\"><u>3.0 &times; 2.0 &times; "
+					+ Long.toString(counter) + "</u><br>"
+					+ Long.toString(totaler) + "</p></html>";
+			break;
+		case 2:
+			areaer = 3.0 * 4.0 * counter / totaler;
+			ps = "<html><p align=\"center\"><u>3.0 &times; 4.0 &times; "
+					+ Long.toString(counter) + "</u><br>"
+					+ Long.toString(totaler) + "</p></html>";
+			break;
+		case 3:
+			areaer = 3.0 * 5.0 * counter / totaler;
+			ps = "<html><p align=\"center\"><u>3.0 &times; 5.0 &times; "
+					+ Long.toString(counter) + "</u><br>"
+					+ Long.toString(totaler) + "</p></html>";
+			break;
+		case 4:
+			areaer = 3.0 * 4.0 * counter / totaler;
+			ps = "<html><p align=\"center\"><u>3.0 &times; 4.0 &times; "
+					+ Long.toString(counter) + "</u><br>"
+					+ Long.toString(totaler) + "</p></html>";
+			break;
+		default:
+			areaer = 0.0;
+			break;
+		}
+		mcField.setText(Double.toString(areaer));
+		fractionLabel.setText(ps);
+
+	}
+}

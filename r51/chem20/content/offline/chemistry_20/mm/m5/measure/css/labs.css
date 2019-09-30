@@ -1,0 +1,35 @@
+BODY {
+	font-family: arial, helvetica;
+	color: black;
+	font-size: 10pt;
+	background: #FFFFFF;
+}
+
+P {
+font-family: arial, helvetica;
+font-size: 10pt;
+}
+
+.investTitle {
+font-size: 14pt;
+font-weight: bold;
+font-style: italic
+}
+
+.investCTR {
+	background-color: #006699;
+}
+
+.investTRFont {
+	color : White;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.skills_hdr{
+font-weight: bold; 
+color: white; 
+background-color: black; 
+font-size: 14pt;
+font-style : italic; 
+border-style: none; 
+ }

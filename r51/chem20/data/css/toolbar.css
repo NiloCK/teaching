@@ -1,0 +1,58 @@
+body {
+	margin:0; padding:0;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 0.7em;
+}
+
+img { padding: 4px; }
+.separator { padding-left: 0; }
+.imageButton {
+	/*filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#F6F6F6' ,endColorStr='#EEEEEE' ,gradientType='0' );*/
+}
+.imageButton:hover {
+	border: 1px solid #aaa;
+	/*filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#EEFFEE' ,endColorStr='#EEFFF6' ,gradientType='0' );*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#eaefec' ,endColorStr='#f0f6f3' ,gradientType='0' );
+	padding: 3px;
+}
+
+a + a { margin-left: 3px; }
+
+#topicDesc {
+	padding: 3px 4px;
+	background: #014c73 url(../img/gen_gradient.jpg) repeat-y right;
+	color: #fff;
+	height: 38px;
+}
+#ttl {
+	position: relative;
+	float: left;
+	font-weight: bold;
+}
+#toc {
+	position: relative;
+	margin-top: 35px;
+	top: -1em;
+	text-align: right;
+}
+#toc a { color: #fff; }
+#toc a:hover { color: #ff0; }
+
+#toolbar {
+	position: relative;
+	background: #ebebeb url(../img/toolbar-bg.gif) repeat-x;
+	height: 29px;
+	border-bottom: 1px solid #ccc;
+}
+#fscontrols {
+	position: relative;
+	float: left;
+	left: 7px;
+	top: 3px;
+}
+#navcontrols {
+	position: relative;
+	float: right;
+	right: 7px;
+	top: 3px;
+}

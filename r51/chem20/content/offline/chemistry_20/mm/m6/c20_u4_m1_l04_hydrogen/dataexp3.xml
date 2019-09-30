@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<example>
+
+<control> 
+	<name>Please choose one</name>
+	<descrp></descrp>
+</control>
+
+<control> 
+	<name>   Step 1</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN361.gif"></IMG><font size = "14"><b>Step 1<br></b></font><font size = "12">Measure and record the mass of the strip of magnesium.</font>]]> </descrp>
+</control>
+
+<control> 
+	<name>   Step 2</name>
+	<descrp><![CDATA[<font size = "14"><b>Step 2<br></b></font><font size = "12">Fold the magnesium ribbon to make a small compact bundle that can be held by a copper cage.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 3</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3652.JPG"></IMG><font size = "14"><b>Step 3<br></b></font><font size = "12">Wrap the fine copper wire all around the magnesium, making a cage to hold it, but leaving 30 mm to 50 mm at each end of the wire free for a handle.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 4</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3654.JPG"></IMG><font size = "14"><b>Step 4<br></b></font><font size = "12">Carefully pour 10 mL to 15 mL of the hydrochloric acid into the graduated cylinder.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 5</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3658.JPG"></IMG><font size = "14"><b>Step 5<br></b></font><font size = "12">Slowly fill the graduated cylinder to the brim with water from a beaker. As you fill the cylinder, pour slowly down the side of the cylinder to minimize mixing of the water with the acid at the bottom. In this way, the liquid at the top of the cylinder is relatively pure water and the acid remains at the bottom.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 6</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3661.JPG"></IMG><font size = "14"><b>Step 6<br></b></font><font size = "12">Half-fill the large beaker with water.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 7</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3651.JPG"></IMG><font size = "14"><b>Step 7<br></b></font><font size = "12">Bend the copper wire handle through the holes in the stopper so that the cage holding the magnesium is positioned about 10 mm below the bottom of the stopper.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 8</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN368.gif"></IMG><font size = "14"><b>Step 8<br></b></font><font size = "12">Insert the stopper into the graduated cylinder; the liquid in the cylinder will overflow a little. Cover the holes in the stopper with your finger. Working quickly, invert the cylinder, and immediately lower it into the large beaker so that the stopper is below the surface of the water before you remove your finger from the stopper holes.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 9</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN369.gif"></IMG><font size = "14"><b>Step 9<br></b></font><font size = "12">Observe the reaction, then wait about 5 minutes after the bubbling stops to allow the contents of the graduated cylinder to reach room tempertaure.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 10</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3671.JPG"></IMG><font size = "14"><b>Step 10<br></b></font><font size = "12">Raise or lower the graduated cylinder so that the level of liquid inside the beaker is the same as the level of liquid inside the graduated cylinder. (This equalizes the gas pressure in the cylinder with the pressure of the air in the room.)</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 11</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3676.JPG"></IMG><font size = "14"><b>Step 11<br></b></font><font size = "12">Measure and record the volume of gas in the graduated cylinder.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 12</name>
+	<descrp><![CDATA[<IMG SRC="images/DSCN3678.JPG"></IMG><font size = "14"><b>Step 12<br></b></font><font size = "12">Record the laboratory (ambient) temperature and pressure.</font> <br><br><font size = "14">The atmospheric pressure on the day the experiment was performed was 101.62 kPa.</font>]]></descrp>
+</control>
+
+<control> 
+	<name>   Step 13</name>
+	<descrp><![CDATA[<font size = "14"><b>Step 13<br></b></font><font size = "12">The liquids in this investigation may be poured down the sink, but rinse the sink with lots of water.</font>]]></descrp>
+</control>
+
+</example>

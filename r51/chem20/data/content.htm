@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=8;FF=3;OtherUA=4" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>ADLC</title>
+		
+		<link href="css/content.css" rel="stylesheet" type="text/css" />
+		<link href="css/jquery.treeview.css" rel="stylesheet" type="text/css" />
+		
+		<script type="text/javascript" src="js/jquery-1.6.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.transform.js"></script>
+		<script type="text/javascript" src="js/jquery.treeview.js"></script>
+		
+		<script type="text/javascript">
+			function applyTreeview( html, xsl, xml, obj )
+			{
+				$("#toc").treeview({
+					animated: "normal",
+					unique: false,
+					collapsed: false
+				});
+			}
+			
+			$(function()
+			{
+				$("#toc").transform({
+					xml: "xml/" + parent.courseId + ".xml",
+					xsl: "xsl/content.xsl",
+					xslParams: {root: parent.root},
+					success: applyTreeview
+				});
+			});
+		</script>
+	</head>
+	
+	
+	<body>
+		<ul id="toc"></ul>
+	</body>
+</html>

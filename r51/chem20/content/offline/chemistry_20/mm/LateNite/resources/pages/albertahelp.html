@@ -1,0 +1,378 @@
+<html>
+<head>
+<title>Lab Help</title>
+<link href="resources/css/Help.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="resources/css/print.css" media="print" /> 
+</head>
+<script type="text/javascript">
+function savePage()
+{
+	if (window.ActiveXObject)
+	{	
+		
+		document.execCommand('SaveAs',null,'LabHelp.html');
+	}
+	else
+	{
+		
+		alert('Save-feature available only in Internet Exlorer 5.x.');
+	}
+}
+
+function onloadCall()
+{
+	if (!window.ActiveXObject)
+	{
+		var content = document.getElementById("helpContent");
+		var temp = content.innerHTML;
+		content.innerHTML = "<br><br><br><br>"+temp;
+		
+	}
+	else
+	{
+		var body = document.getElementById("body");
+		body.style.overflow = "auto";
+	}
+}
+</script>
+
+
+<body id="body" onload="onloadCall();">
+<table style="width:100% ; height:100%" border="0" cellpadding="0" cellspacing="0">
+	<tr id="bannerTop">
+		<td>
+
+			<div id="bannerTop"  width="100%" class="header">
+				<table cellpadding="0" cellspacing="0" >
+					<tr style="background:url(resources/images/topBanner.jpg);repeat-x ;">
+						<td width="100%"><span style="font-color:#393f46; font:bold 18px Arial">&nbsp;&nbsp;Lab Help</span></td>
+						<td onclick="savePage()"><img style="cursor:pointer ; " src="resources/images/saveIcon.jpg" border="0" /></td>
+						<td nowrap="nowrap" onclick="savePage()"><span style="cursor:pointer ; color:#393f46 ; font:normal 12px Arial">Save Help</span></td>
+						<td onclick="window.print();"><img style="cursor:pointer ; " src="resources/images/printIcon.jpg" border="0" /></td>
+						<td nowrap="nowrap" onclick="window.print();"><span style="cursor:pointer ; color:#393f46 ; font:normal 12px Arial">Print Help&nbsp;&nbsp;</span></td>
+					</tr>
+					<tr >
+						<td style=" padding-left:5px; padding-right:5px; font-weight:Bold; text-align:center" colspan="5">
+							<span class="links"><a href="#ReactorLaboratory">Reactor Laboratory</a> / <a  href="#ReactorLaboratoryToolbar">Reactor Laboratory Toolbar</a> / <a href="#TheLabManual">The Lab Manual</a> / <a href="#LabManualBackground">Lab Manual - Background</a> / <a href="#LabManualProcedures">Lab Manual - Procedures</a> / <a href="#LabManualAssignments">Lab Manual - Assignments</a> / <a href="#TheLabwareShelf">The Labware Shelf</a> / <a href="#LabEquipment">Lab Equipment (Tool Shelf)</a> / <a href="#ChemicalsShelf">Chemicals Shelf</a> / <a href="#ChemicalsShelfIcons">Chemicals Shelf Icons</a> / <a href="#DataWindow">Data Window</a> </span>
+								<hr>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+	<tr height="100%">
+		<td>
+			<div id="helpContent" style="overflow:auto ; height:100% ; padding-left:14px ; padding-right:14px">
+			<a name="ReactorLaboratory" id="ReactorLaboratory"/>
+			<br/>
+			<span>Reactor Laboratory</span>
+			 <p> The Reactor Laboratory is the fully equipped,  state-of-the-art online simulated laboratory in which you will perform all of  your lab activities. <br />
+			  By default, the Reactor Laboratory opens  displaying the <strong>Lab  Manual</strong> for the selected lab. You can open the Lab Manual by  clicking at the bottom right corner of the manual. <br />
+			  The Reactor Laboratory includes <strong>Glassware, Tools, </strong>and <strong>Chemical</strong> shelves,  which contain all the materials that you will need for the selected lab  activity.<br />
+			  When you hover over an item in the toolbar or  an object on the Labware and Chemicals shelves, the cursor changes from an  arrow to a hand and a &ldquo;tooltip&rdquo; appears on the screen showing the name or  description of that item. <br />
+			  <strong>Window  Characteristics</strong><br />
+			  The 5 windows are:</p>
+			<ul type="disc">
+			  <li>The Lab Manual </li><a name="ReactorLaboratoryToolbar" id="ReactorLaboratoryToolbar"/>
+			  <li>The Labware Shelf </li>
+			  <li>The Chemicals       Shelf </li>
+			  <li>The Tools Shelf </li>
+			  <li>The Data Window </li>
+			</ul>
+			<p>Instructions for performing the lab are  contained in the Lab Manual. This is the place to begin.<br />
+			<br>
+			  <span>Reactor Laboratory Toolbar</span><br><br>
+			  At the top of the Reactor Laboratory is the  toolbar. The toolbar displays the name of the current lab activity and contains  all the tools for the lab: &nbsp;<br />
+			  The tools include: </p>
+			<table border="1" cellpadding="0" width="60%">
+			  <tr>
+			    <td width="10%">Icon</td>
+			    <td width="15%">Name</td>
+			    <td width="35%">Description</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image002.jpg" alt="1" width="37" height="43" border="0" /></td>
+			    <td>Report</td>
+			    <td>Displays the lab report, which shows the activity log and answers to assignments.</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img  src="resources/images/image004.jpg" alt="1" width="45" height="41" border="0" /></td>
+			    <td>Data Window</p></td>
+			    <td>Displays the lab report, which shows the materials and text covered in the lab manual. Data Window	Displays data pertaining to the selected item used in the current lab.</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image006.jpg" alt="1" width="43" height="40" border="0" /></td>
+			    <td>Lab Constants</td>
+			    <td>Outlines the constants as they are in the REACTOR environment</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image007.jpg" alt="1" width="45" height="35" border="0" /></td>
+			    <td>Help</p></td>
+			    <td>Accesses links to the Help files.</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image009.jpg" alt="1" width="43" height="42" border="0" /></td>
+			    <td>Timer/td>
+			    <td>Starts a new timer on the Workbench (similar to a stopwatch).    You can open and position timers as required.</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image011.jpg" alt="1" width="43" height="38" border="0" /></td>
+			    <td>Reset Lab</td>
+			    <td>Restarts the lab activity from the beginning.</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image013.jpg" alt="1" width="49" height="47" border="0" /></td>
+			    <td>&nbsp;Lab Manual</td>
+			    <td>Contains all the information necessary to complete the current  lab. This material includes the background, procedures, and assignments. </td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image015.jpg" alt="1" width="47" height="53" border="0" /></td>
+			    <td>Exit Lab</td>
+			    <td>Leaves the current lab and returns to the entry screen.</td>
+			  </tr>
+			</table>
+			<p><h4>Additional Tools include:</h4> </p>
+			<table border="1" cellpadding="0" width="60%">
+			  <tr>
+			    <td width="31%">Icon </td>
+			    <td width="23%">Name</td>
+			    <td width="46%">Description</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image016.jpg" alt="1" width="107" height="101" border="0" /></td>
+			    <td><p>Recycle Bin</p></td>
+			    <td><p>Used to remove labware and chemicals from the Workbench. This    will let you clear the Workbench and provide more space to perform your    procedures, if necessary.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image018.jpg" alt="1" width="52" height="46" border="0" /></td>
+			    <td><p>Clear Workbench</p></td>
+			    <td><p>Used to clear the entire contents of the workbench with one    click instead of having to drag each item to the recycle bin.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image019.jpg" alt="1" width="50" height="42" border="0" /></td>
+			    <td><p>Periodic Table</p></td><a name="TheLabManual" id="TheLabManual"/>
+			    <td><p>Brings up an interactive table of elements where the    properties of the various chemicals can be seen. </p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image020.jpg" alt="1" width="224" height="50" border="0" /></td>
+			    <td><p>Zooming</p></td>
+			    <td>Zooming is designed to allow students to have more room to    work. The Shaded area can be dragged from left to right to utilize more    desktop space while the slider can me moved up or down to zoom in or out.</td>
+			  </tr>
+			</table>
+			<br>
+			<span>The Lab Manual </span>
+			<br>
+			<br>
+			    <img src="resources/images/image022.jpg" alt="1" width="48" height="43" hspace="12" align="left" /><a name="LabManualBackground" id="LabManualBackground"/>The Reactor Laboratory opens displaying the Lab Manual for the  selected Lab.<br />
+			  <p>You can open the Lab Manual by clicking at  the bottom right corner of the manual cover.<br />
+			  The open Lab Manual will provide you with  information about the Background, Procedures and Assignments for the lab.<br />
+			 You should  read this information to understand the purpose of the lab.<br />
+			  After you have read the background  information, click the Procedures tab and perform the steps to complete the lab.<br />  <a name="LabManualProcedures" id="LabManualProcedures"/>
+			  <br>
+			<span>Lab Manual -  Background </span>
+			<br>
+			<br>
+			  When you open the Lab Manual for the first  time, information about the lab is displayed in the lab background. You should  read this information to understand the purpose of the lab. If the background  information is not displayed, click <strong>Background</strong> located at the bottom of the Lab Manual.<a name="LabManualAssignments" id="LabManualAssignments"/><br />
+			 <br>
+			<span>Lab Manual -  Procedures </span>
+			<br>
+			<br>
+			  The step by step procedures that you will be  performing in the current lab are outlined on the procedures page of the Lab Manual.  To display the procedures, click the <strong>Procedures</strong> tab at the bottom of the Lab Manual. <br />
+			  You can drag the slider on the side of the  page to scroll through the steps.<br />
+			  To complete the lab, simply follow the  instructions and complete the steps in order.<br />
+			  <br>
+			<span>Lab Manual -  Assignments </span>
+			<br>
+			<br>
+			  Assignments are defined for each procedure of  the lab. To view assignments:</p><a name="TheLabwareShelf" id="TheLabwareShelf"/>
+			<ul type="disc">
+			  <li>Click the Assignments tab on the top of       the Lab Manual to view all the assignments for the current lab. </li>
+			</ul>
+			<p><em>The  assignments page will be displayed.</em><br />
+			  To view the entire assignment again, click  the Assignment tab.<br />
+			  To view all of your assignments and the procedure for the lab, click the clipboard icon in the upper part of the screen. This will open the Lab Report.<br />
+			 <br>
+			<span>The Labware Shelf
+			</span>
+			<br>
+			<br>
+			  The Labware shelf contains all of the materials  that have been pre-defined as necessary to complete this lab.<br />
+			  The Labware Shelf contains three tabs: the  Tools tab, Glassware tab and Chemicals tab. <br />
+			  Click the Glassware tab to display the  containers for the selected lab, such as beakers and crucibles.<br />
+			  Click on the Chemicals tab to display all the  chemicals needed for this particular lab. <br />
+			  <strong>To  View Information about a tool:</strong><br />
+			  Point to any tool in the Labware menu and  information about that item will be displayed in the Data window.<br />
+			  <strong>Using  Labware on the Workbench</strong><br />
+			  To use any tool on the workbench:</p>
+			<ul type="disc">
+			  <li>Drag the tool to       the workbench and release the mouse button when you have placed it in the       desired location. </li>
+			</ul>
+			<p>To attach tools to glassware:</p>
+			<ul type="disc">
+			  <li>Place the       glassware on the workbench. </li>
+			  <li>Drag a tool from       either the shelf or the workbench to the center of the glassware and release       the mouse button. </li>
+			</ul>
+			<p><em>A  grouped symbol will appear next to the attached objects. </em><br />
+			    <em>For example, you can drag a balance to the workbench, and then take a beaker down from the labware shelf and place it on top of the balance. The grouped tools and glassware can be moved as a single unit by dragging the lowest object, for example the balance underneath a beaker.</em><br />
+			    <em>The  grouped tools and glassware can be moved as a single unit by dragging the highest  object, for example the beaker on top of a balance.</em><br />
+			  To Pour or Decant from one container to  another. </p>
+			<ul type="disc">
+			  <li>Click on the container       from which you would like to pour. </li>
+			  <li>Drag the       container so that your cursor appears in the middle of the target       container and then release the mouse button. </li>
+			</ul>
+			<p><em>A  dialog box will appear.</em></p><a name="LabEquipment" id="LabEquipment"/>
+			<ul type="disc">
+			  <li>Either click the       radio button to decant or pour all, or enter an amount to pour. </li>
+			  <li>Click the OK       button. </li>
+			</ul>
+			<p><em>The  contents will be poured or decanted.</em><br />
+			    <em>To  view explanations of the tools and glassware, see Lab  Equipment.</em><br />
+			   <br>
+			<span>Lab Equipment  (Tools Shelf)</span>
+			<br>
+			<br>
+			  The following tools can be found by clicking the Tools tab on  the Labware Shelf:</p>
+			<table border="1" cellpadding="0" width="60%">
+			  <tr>
+			    <td>Icon</td>
+			    <td>Tool</td>
+			    <td>Comments</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image024.jpg" alt="1" width="32" height="58" border="0" /></td>
+			    <td><p align="center"><strong>Bunsen Burner</strong> </p></td>
+			    <td><p>Bunsen burner with flame setting of    cool, medium, or hot.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image026.jpg" alt="1" width="104" height="42" border="0" /></td>
+			    <td><p align="center"><strong>Constant Temperature Bath</strong> </p></td>
+			    <td><p>Generic constant temperature bath,    selectable, pre-set temperature units and coolant material.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image028.jpg" alt="1" width="52" height="86" border="0" /></td>
+			    <td><p align="center"><strong>Thermometer</strong> </p></td>
+			    <td><p><br />
+			      Digital thermometer with 0.01 precision.&nbsp;Fahrenheit / Centigrade /    Kelvin selectable.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"> <img src="resources/images/image030.jpg" alt="1" width="57" height="86" border="0" /></td>
+			    <td><p align="center"><strong>pH Meter</strong> </p></td>
+			    <td><p>Digital pH meter with 0.01    precision.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image032.jpg" alt="1" width="76" height="50" border="0" /></td>
+			    <td><p align="center"><strong>Balance</strong> </p></td>
+			    <td><p>Digital balance with 0.001 g    precision. Gram and Milligram selectable. Can be set to Tare to weigh only    the contents of a container.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image034.jpg" alt="1" width="51" height="71" border="0" /></td>
+			    <td><p align="center"><strong>Pressure Gauge</strong> </p></td>
+			    <td><p>Can be set to psi, atm, bar, etc.</p></td>
+			  </tr>
+			</table>
+			<p>The following glassware can be found by clicking the Glassware  tab on the Labware Shelf:</p>
+			<table border="1" cellpadding="0" width="60%">
+			  <tr>
+			    <td width="27%">Icon </td>
+			    <td width="28%">Glassware</td>
+			    <td width="42%">Comments</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image036.jpg" alt="1" width="52" height="112" border="0" /></td>
+			    <td><p align="center">Burette</p></td>
+			    <td><p>50 mL capacity.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image038.jpg" alt="1" width="77" height="67" border="0" /></td>
+			    <td><p align="center">Crucible</p></td>
+			    <td><p>50 mL capacity.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image040.jpg" alt="1" width="56" height="71" border="0" /></td>
+			    <td><p align="center">Beaker</p></td>
+			    <td><p>Small beaker - 50 mL capacity.<br />
+			      Large beaker 250 mL capacity.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image042.jpg" alt="1" width="45" height="65" border="0" /></td>
+			    <td><p align="center">Erlenmeyer Flask</p></td>
+			    <td><p>Smal flask - 50 mL capacity. <br />
+			      Large flask - 150 mL capacity</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image044.jpg" alt="1" width="35" height="85" /></td>
+			    <td><p align="center"><strong>Gas Syringe</strong> </p><a name="ChemicalsShelf" id="ChemicalsShelf"/></td>
+			    <td><p>250 mL capacity.</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image046.jpg" alt="1" width="17" height="79" border="0" /></td>
+			    <td><p align="center">Test Tube</p></td>
+			    <td><p>15 mL capactiy.</p></td>
+			  </tr>
+			</table>
+			 <br>
+			<span>Chemicals Shelf</span>
+			<br>
+			<br>
+			  <p>The Chemicals Shelf contains the chemical  compounds and preparations for the current lab. They are displayed on the shelf  in the following order: solids, liquids, gases.<br />
+			  The chemicals are represented by the chemical  formula and a graphic icon. There are different graphic icons for liquids,  solids, indicators, and prepared solutions.<br />
+			  To use a chemical:</p>
+			<ul type="disc">
+			  <li>First, make sure       that the appropriate glassware is on the workbench. </li>
+			  <li>Click the <strong>chemical</strong> and drag       it to a container on the workbench. </li>
+			  <li>Release the mouse       button.  <a name="ChemicalsShelfIcons" id="ChemicalsShelfIcons"/></li>
+			  <li>A prompt will       appear asking you to enter the amount to be added to the container. </li>
+			  <li>Enter the <strong>amount</strong> in mL for       liquids and g for solids. </li>
+			  <li>Click <strong>OK.</strong> </li>
+			</ul>
+			<p>See Lab  Environment for more information about the lab environment and the lab  windows.<br />
+			 <br>
+			<span>Chemicals  Shelf Icons </span>
+			<br>
+			<br>
+			  The Chemicals Shelf contains the chemical  compounds and preparations for the current lab. They are displayed on the shelf  in the following order: liquids, solids, gases. Each chemical is represented by  an icon and its chemical formula.</p>
+			<table border="1" cellpadding="0" width="30%">
+			  <tr>
+			    <td width="31%">Icon </td>
+			    <td width="65%">Name</td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image048.jpg" alt="1" width="51" height="78" border="0" /></td>
+			    <td ><p align="center">Liquid</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image050.jpg" alt="1" width="33" height="83" border="0" /></td>
+			    <td><p align="center">Water</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image052.jpg" alt="1" width="41" height="76" border="0" /></td>
+			    <td><p align="center">Solid.    Solid Preparation</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image054.jpg" alt="1" width="40" height="84" border="0" /></td>
+			    <td><p align="center">Gas,    Gas Preparation</p></td>
+			  </tr>
+			  <tr>
+			    <td style="text-align:center"><img src="resources/images/image056.jpg" alt="1" width="26" height="77" border="0" /></td>
+			    <td><p align="center">Indicator</p></td>
+			  </tr>
+			</table>
+			<a name="DataWindow" id="DataWindow"/>
+			<br>
+			<span>Data Window</span>
+			<br>
+			<br>
+			  <p>The Data Window displays data pertaining to  the selected item used in the current lab.<br />
+			  To view data for any tool or glassware object:</p>
+			<ul type="disc">
+			  <li>Make sure the       Data Window is open. </li>
+			  <li>Point and click       on any object on the workbench. </li>
+			  <li>Current       information about that object is displayed in the Data Window. &nbsp;</li>
+			</ul>
+</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

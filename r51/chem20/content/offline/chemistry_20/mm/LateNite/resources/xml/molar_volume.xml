@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<lab>
+<name><![CDATA[Molar Volume of an Ideal Gas]]></name>
+<background><![CDATA[Robert Boyle found that under isothermal conditions (constant temperature), the pressure of a gas is inversely proportional to its volume. 
+
+This also means that the product of the pressure and volume is a constant. The equations that describe this relationship are <i>PV</i> = constant and <i>P<sub>1</sub>V<sub>1</sub></i> = <i>P<sub>2</sub>V<sub>2</sub></i> 
+
+Jacques Charles found that the volume of a gas under isobaric conditions (constant pressure) is directly proportional to its temperature. As the temperature increases, so does the volume that the gas occupies.
+
+The equations that describe this relationship are:
+
+<i>V/T</i> = constant
+
+and
+
+<i>V<sub>1</sub>/T<sub>1</sub></i> = <i>V<sub>2</sub>/T<sub>2</sub></i>
+
+It is possible to combine Boyle's law and Charles' law into a combined gas law:
+<i>P<sub>1</sub>V<sub>1</sub>/T<sub>1</sub></i> = <i>P<sub>2</sub>V<sub>2</sub>/T<sub>2</sub></i>
+
+The Ideal Gas Law includes the dependence of the volume on the number of gas moles, and an experimentally determined Universal Gas Constant, R. 
+
+This law is written as follows: 
+
+<i>(PV) / (nT) = R</i> (the ideal gas constant)
+
+or
+
+<i>PV = nRT </i>
+
+The accepted value for R is 8.314 L*kPa/mol*K. 
+
+One important result of the Ideal Gas Law is that under constant conditions of pressure and temperature, one mole of any gas will always occupy the same volume. For example, at STP, the molar volume of a gas is 22.4 L/mol; and at SATP, the molar volume of a gas is 24.8 L/mol. In this lab, at a typical room temperature of 21°C (294 K), the molar volume of an ideal gas is 24.5 L/mol.
+
+The volume that one mole of an ideal gas occupies when held at a specific temperature and pressure is referred to as a "molar volume." Most gases follow the Ideal Gas Law closely at atmospheric pressure and room temperature. 
+
+In this experiment you will determine the molar volume of hydrogen and compare it with the expected ideal gas law value. Hydrogen gas is produced in the reaction
+
+Zn(s) + 2HCl(aq)  ->  ZnCl<sub>2</sub>(aq) + H<sub>2</sub>(g)
+
+It is easy to calculate the number of moles of H<sub>2</sub>(g) produced since it is the same as the number of moles of zinc used in the reaction. Knowing the number of moles of H<sub>2</sub>(g) produced and measuring the volume that it occupies, one can calculate the molar volume of the gas at room temperature and pressure according to the equation
+
+Molar volume = measured volume / number of moles (L/mol)
+]]></background>
+<assignment><![CDATA[Assignment:
+
+1. Record the following: 
+
+     (a) mass of zinc used (g)
+
+     (b) molecular weight of zinc (g/mol)
+
+     (c) volume of 6 mol/L HCL (mL)
+
+     (d)  the maximum pressure reached during the experiment
+ 
+     (e)  the maximum temperature reached during the experiment
+
+      (f)  the final pressure in the gas piston at the conclusion of the experiment
+
+2.  Calculate the following: 
+
+     (a) moles of zinc reacted
+
+     (b) moles of hydrogen produced
+
+(c) molar volume of the ideal hydrogen gas at room temperature (final volume in the gas piston / moles of hydrogen gas), expressed as L/mol
+
+3. (a)  Compare the experimental value for the molar volume at 21°C with the value listed in the Background section of the lab manual using the following formula:
+
+% error = | <u>experimental molar volume - predicted molar volume</u>|  * 100%
+                                      predicted molar volume
+(b) In your opinion, is the percentage error acceptable? What may have been a source of error in this experiment? How does this compare to your hypothesis?
+
+
+]]></assignment>
+<procedure><![CDATA[
+
+1. Take an Erlenmeyer flask from the Glassware shelf and place it on the workbench. 
+
+2. Add 0.25 g of zinc to the Erlenmeyer flask.
+
+3. Double click on the Erlenmeyer flask and check off the checkbox for closing the flask to insert an air-tight rubber stopper into the flask.
+
+4. Take a thermometer and pressure gauge from the Tools shelf and attach them directly to the flask. Record the initial temperature and pressure. Ensure you change the temperature to record in Kelvin and the pressure in kilopascals.
+
+5. Add 10 mL of 6 mol/L HCl(aq) solution to the flask. The HCl(aq) is added as if by a syringe piercing the rubber stopper, maintaining the air-tight seal.
+
+6. Watch for evidence of the reaction between the zinc and HCl(aq). Record all of the indications that the reaction has occurred.
+
+7. The temperature will slowly fall as the flask cools. While you are waiting, take a gas syringe from the Glassware shelf and place it on the workbench.
+
+8. Once the flask has cooled down to room temperature (21°C), disconnect the thermometer and pressure gauge from the flask.
+
+9. Drag the syringe and drop it onto flask. This connects the two and allows gas to flow from the flask into the gas syringe until the pressure equalizes. What pressure is that? If you need, connect a pressure gauge to the gas syringe and measure the pressure inside.
+
+10. Click on the data window, then on the gas syringe, and record the volume of gas that is contained in the gas syringe. This volume indicates the amount of hydrogen gas produced during the experiment.
+]]></procedure>
+<entities>
+<chemicals>
+<chemical>
+<label>Water</label>
+<displayname>Water</displayname>
+<formula>H2O</formula>
+<type>2</type>
+<solubility>0</solubility>
+<boilingpoint>373</boilingpoint>
+<meltingpoint>273</meltingpoint>
+<dissolvedcolor>0x9cb9da</dissolvedcolor>
+<gascolor>0x9cb9da</gascolor>
+<liquidcolor>0x9cb9da</liquidcolor>
+<solidcolor>0x9cb9da</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>0</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-285.8</enthalpyofdissolved>
+<enthalpyofgas>-241.8</enthalpyofgas>
+<enthalpyofliquid>-285.8</enthalpyofliquid>
+<enthalpyofsolid>-291.8</enthalpyofsolid>
+<entropyofdissolved>70</entropyofdissolved>
+<entropyofgas>188.8</entropyofgas>
+<entropyofliquid>70</entropyofliquid>
+<entropyofsolid>41</entropyofsolid>
+<gmw>18.01528</gmw>
+<gasdensity>.006</gasdensity>
+<liquiddensity>1</liquiddensity>
+<soliddensity>.92</soliddensity>
+<gasheatcapacity>33.6</gasheatcapacity>
+<liquidheatcapacity>75.3</liquidheatcapacity>
+<solidheatcapacity>75</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Liquid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Hydrochloric Acid</label>
+<displayname>Hydrochloric Acid</displayname>
+<formula>HCl</formula>
+<type>4</type>
+<solubility>1000</solubility>
+<boilingpoint>188</boilingpoint>
+<meltingpoint>158.8</meltingpoint>
+<dissolvedcolor>0x9cb9da</dissolvedcolor>
+<gascolor>0x9cb9da</gascolor>
+<liquidcolor>0x9cb9da</liquidcolor>
+<solidcolor>0x9cb9da</solidcolor>
+<maxmolarity>22.8766</maxmolarity>
+<molarity>6</molarity>
+<chemicaltype>A</chemicaltype>
+<enthalpyofdissolved>-167.2</enthalpyofdissolved>
+<enthalpyofgas>-92.3</enthalpyofgas>
+<enthalpyofliquid>-105.3</enthalpyofliquid>
+<enthalpyofsolid>-107.3</enthalpyofsolid>
+<entropyofdissolved>56.5</entropyofdissolved>
+<entropyofgas>186.9</entropyofgas>
+<entropyofliquid>66.9</entropyofliquid>
+<entropyofsolid>56.9</entropyofsolid>
+<gmw>36.46064</gmw>
+<gasdensity>.1</gasdensity>
+<liquiddensity>.91</liquiddensity>
+<soliddensity>.9</soliddensity>
+<gasheatcapacity>29.1</gasheatcapacity>
+<liquidheatcapacity>29.1</liquidheatcapacity>
+<solidheatcapacity>29</solidheatcapacity>
+<vanthoffnumber>1.9</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>false</showmoles>
+<showmw>true</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>90.9</c>
+</chemical>
+<chemical>
+<label>Zinc</label>
+<displayname>Zinc</displayname>
+<formula>Zn</formula>
+<type>1</type>
+<solubility>0</solubility>
+<boilingpoint>907</boilingpoint>
+<meltingpoint>693</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0x990000</liquidcolor>
+<solidcolor>0x990000</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>0</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>130.4</enthalpyofgas>
+<enthalpyofliquid>80</enthalpyofliquid>
+<enthalpyofsolid>0</enthalpyofsolid>
+<entropyofdissolved>0</entropyofdissolved>
+<entropyofgas>161</entropyofgas>
+<entropyofliquid>35</entropyofliquid>
+<entropyofsolid>41.6</entropyofsolid>
+<gmw>65.39</gmw>
+<gasdensity>1</gasdensity>
+<liquiddensity>7.14</liquiddensity>
+<soliddensity>7.14</soliddensity>
+<gasheatcapacity>15</gasheatcapacity>
+<liquidheatcapacity>25.4</liquidheatcapacity>
+<solidheatcapacity>25.4</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>true</showchemical>
+<standardstate>Solid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Hydrogen Gas</label>
+<displayname>Hydrogen Gas</displayname>
+<formula>H2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>20.3</boilingpoint>
+<meltingpoint>13.6</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-150</enthalpyofliquid>
+<enthalpyofsolid>-180</enthalpyofsolid>
+<entropyofdissolved>0</entropyofdissolved>
+<entropyofgas>130.7</entropyofgas>
+<entropyofliquid>10.7</entropyofliquid>
+<entropyofsolid>.7</entropyofsolid>
+<gmw>2.01588</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>1</liquiddensity>
+<soliddensity>1</soliddensity>
+<gasheatcapacity>28.8</gasheatcapacity>
+<liquidheatcapacity>60</liquidheatcapacity>
+<solidheatcapacity>60</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Zinc Chloride</label>
+<displayname>Zinc Chloride</displayname>
+<formula>ZnCl2</formula>
+<type>1</type>
+<solubility>407.61</solubility>
+<boilingpoint>1000</boilingpoint>
+<meltingpoint>535</meltingpoint>
+<dissolvedcolor>0xE9E9E9</dissolvedcolor>
+<gascolor>0xE9E9E9</gascolor>
+<liquidcolor>0xE9E9E9</liquidcolor>
+<solidcolor>0xE9E9E9</solidcolor>
+<maxmolarity>10.8715</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>O</chemicaltype>
+<enthalpyofdissolved>-488.2</enthalpyofdissolved>
+<enthalpyofgas>-400</enthalpyofgas>
+<enthalpyofliquid>-450</enthalpyofliquid>
+<enthalpyofsolid>-485.1</enthalpyofsolid>
+<entropyofdissolved>80</entropyofdissolved>
+<entropyofgas>120</entropyofgas>
+<entropyofliquid>80</entropyofliquid>
+<entropyofsolid>111.5</entropyofsolid>
+<gmw>136.2954</gmw>
+<gasdensity>.8</gasdensity>
+<liquiddensity>2.92</liquiddensity>
+<soliddensity>2.91</soliddensity>
+<gasheatcapacity>40</gasheatcapacity>
+<liquidheatcapacity>71</liquidheatcapacity>
+<solidheatcapacity>71.3</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Solid</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>-0.000745324</a>
+<b>0.170303738</b>
+<c>75.91238</c>
+</chemical>
+<chemical>
+<label>Oxygen Gas</label>
+<displayname>Oxygen Gas</displayname>
+<formula>O2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>90.05</boilingpoint>
+<meltingpoint>54.21</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype>N</chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-213</enthalpyofliquid>
+<enthalpyofsolid>-220</enthalpyofsolid>
+<entropyofdissolved>205.2</entropyofdissolved>
+<entropyofgas>205.2</entropyofgas>
+<entropyofliquid>85.2</entropyofliquid>
+<entropyofsolid>75.2</entropyofsolid>
+<gmw>31.9988</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.8</liquiddensity>
+<soliddensity>.8</soliddensity>
+<gasheatcapacity>29.4</gasheatcapacity>
+<liquidheatcapacity>50</liquidheatcapacity>
+<solidheatcapacity>50</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+<chemical>
+<label>Nitrogen</label>
+<displayname>Nitrogen</displayname>
+<formula>N2</formula>
+<type>3</type>
+<solubility>0</solubility>
+<boilingpoint>78</boilingpoint>
+<meltingpoint>63</meltingpoint>
+<dissolvedcolor>0xFFFFFF</dissolvedcolor>
+<gascolor>0xFFFFFF</gascolor>
+<liquidcolor>0xFFFFFF</liquidcolor>
+<solidcolor>0xFFFFFF</solidcolor>
+<maxmolarity>0</maxmolarity>
+<molarity>N/A</molarity>
+<chemicaltype></chemicaltype>
+<enthalpyofdissolved>0</enthalpyofdissolved>
+<enthalpyofgas>0</enthalpyofgas>
+<enthalpyofliquid>-2.79</enthalpyofliquid>
+<enthalpyofsolid>-3.13</enthalpyofsolid>
+<entropyofdissolved>191.6</entropyofdissolved>
+<entropyofgas>191.6</entropyofgas>
+<entropyofliquid>79.5</entropyofliquid>
+<entropyofsolid>75</entropyofsolid>
+<gmw>28.0134</gmw>
+<gasdensity>0</gasdensity>
+<liquiddensity>.9</liquiddensity>
+<soliddensity>.9</soliddensity>
+<gasheatcapacity>29.1</gasheatcapacity>
+<liquidheatcapacity>57.8</liquidheatcapacity>
+<solidheatcapacity>60</solidheatcapacity>
+<vanthoffnumber>1</vanthoffnumber>
+<solutiontype>HSD</solutiontype>
+<showchemical>false</showchemical>
+<standardstate>Gas</standardstate>
+<showmoles>true</showmoles>
+<showmw>false</showmw>
+<phcolors>
+</phcolors>
+<ionizationconstant>1000</ionizationconstant>
+<a>0</a>
+<b>0</b>
+<c>0</c>
+</chemical>
+</chemicals>
+<containers>
+<container>
+<type>Erlenmeyer Flask</type>
+<label>Erlenmeyer Flask</label>
+<capacity>150</capacity>
+<weight>91.78</weight>
+<heattransferinner>10</heattransferinner>
+<maxpressure>4</maxpressure>
+</container>
+<container>
+<type>Gas Piston</type>
+<label>Gas Piston</label>
+<capacity>250</capacity>
+<weight>111.42</weight>
+<heattransferinner>6</heattransferinner>
+</container>
+</containers>
+<tools>
+<tool>
+<type>Measure</type>
+<label>Pressure Gauge</label>
+<weight>0</weight>
+</tool>
+<tool>
+<type>Measure</type>
+<label>Thermometer</label>
+<weight>0</weight>
+</tool>
+</tools>
+<reactions>
+<reaction>
+<name>Zn+HCl</name>
+<reactants>
+<reactant>1||Zn</reactant>
+<reactant>2||HCl</reactant>
+</reactants>
+<products>
+<product>1||ZnCl2</product>
+<product>1||H2</product>
+</products>
+<insolution>true</insolution> 
+<insolutiondeltah>-153.8</insolutiondeltah> 
+<insolutiondeltas>56.1</insolutiondeltas> 
+<notinsolution>false</notinsolution>
+<notinsolutiondeltah>-300.5</notinsolutiondeltah> 
+<notinsolutiondeltas>-171.2</notinsolutiondeltas>
+<mintemp>0</mintemp>
+<maxtemp>0</maxtemp>
+</reaction>
+</reactions>
+</entities>
+</lab>

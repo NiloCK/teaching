@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<example>
+
+<control> 
+	<name>Please select one</name>
+	<descrp><![CDATA[<font size = "16"> </font>]]> </descrp>
+	<cond></cond>
+	<red></red>
+	<blue></blue>
+	<mag></mag>
+</control>
+
+<control> 
+	<name>distilled water</name>
+	<descrp><![CDATA[<font size = "16">distilled water, H<font size="8" >2</font>O(l)</font>]]> </descrp>
+	<cond>images/test/conductivity_neg.jpg</cond>
+	<red>images/test/litmus_test_red_neg.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+<control> 
+	<name>hydrochloric acid </name>
+	<descrp><![CDATA[<font size = "16">hydrochloric acid, HCl(aq)</font>]]> </descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_test_red_neg.jpg</red>
+	<blue>images/test/litmus_blue_test.jpg</blue>
+	<mag>images/test/magnesium_test_pos_2.jpg</mag>
+</control>
+
+<control> 
+	<name>sodium hydroxide</name>
+	<descrp><![CDATA[<font size = "16">sodium hydroxide, NaOH(aq)</font>]]> </descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_red_test.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+<control> 
+	<name>calcium hydroxide</name>
+	<descrp><![CDATA[<font size = "16">calcium hydroxide, Ca(OH)<font size="8">2</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_red_test.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+<control> 
+	<name>ammonia</name>
+	<descrp><![CDATA[<font size = "16">ammonia, NH<font size="8">3</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_red_test.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+<control> 
+	<name>sodium carbonate</name>
+	<descrp><![CDATA[<font size = "16">sodium carbonate, Na<font size="8">2</font>CO<font size="8">3</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_red_test.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+<control> 
+	<name>sodium hydrogen carbonate</name>
+	<descrp><![CDATA[<font size = "16">sodium hydrogen carbonate, NaHCO<font size="8">3</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_red_test.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+
+<control> 
+	<name>sodium hydrogen sulfate</name>
+	<descrp><![CDATA[<font size = "16">sodium hydrogen sulfate, NaHSO<font size="8">4</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_test_red_neg.jpg</red>
+	<blue>images/test/litmus_blue_test.jpg</blue>
+	<mag>images/test/magnesium_test_pos_2.jpg</mag>
+</control>
+
+<control> 
+	<name>calcium oxide</name>
+	<descrp><![CDATA[<font size = "16">calcium oxide, CaO(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_red_test.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+<control> 
+	<name>carbon dioxide</name>
+	<descrp><![CDATA[<font size = "16">carbon dioxide, CO<font size="8">2</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_test_red_neg.jpg</red>
+	<blue>images/test/litmus_blue_test.jpg</blue>
+	<mag>images/test/magnesium_test_pos_2.jpg</mag>
+</control>
+
+<control> 
+	<name>aluminium nitrate</name>
+	<descrp><![CDATA[<font size = "16">aluminium nitrate, Al(NO<font size="8">3</font>)<font size="8">3</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_test_red_neg.jpg</red>
+	<blue>images/test/litmus_blue_test.jpg</blue>
+	<mag>images/test/magnesium_test_pos_2.jpg</mag>
+</control>
+
+<control> 
+	<name>sodium nitrate</name>
+	<descrp><![CDATA[<font size = "16">sodium nitrate, NaNO<font size="8">3</font>(aq)</font>]]></descrp>
+	<cond>images/test/conductivity_pos.jpg</cond>
+	<red>images/test/litmus_test_red_neg.jpg</red>
+	<blue>images/test/litmus_test_blue_neg.jpg</blue>
+	<mag>images/test/magnesium_test_neg_2.jpg</mag>
+</control>
+
+</example>

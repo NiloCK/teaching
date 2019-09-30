@@ -1,0 +1,34 @@
+8
+
+dir
+80
+svn+ssh://omry@lnl/lnl/projects/trunk/alberta/deployment/resources/pages/resources
+svn+ssh://omry@lnl/lnl
+
+
+
+2008-02-17T06:19:03.093238Z
+70
+omry
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+fd16422b-425f-4e62-bb56-aed3671923b0
+
+images
+dir
+
+css
+dir
+

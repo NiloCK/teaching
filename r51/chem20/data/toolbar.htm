@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=8;FF=3;OtherUA=4" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>ADLC</title>
+		
+		<link href="css/toolbar.css" rel="stylesheet" type="text/css" />
+		
+		<script type="text/javascript" src="js/jquery-1.6.3.min.js"></script>
+		<script type="text/javascript">
+			var hideTOC = false;
+			var prevState = false;
+			var nextState = false;
+			var topicIndex = -1;
+			var menubar = parent.ocv_menubar;
+			var titlebar = parent.ocv_titlebar;
+			var prev_btn, next_btn;
+			
+			function updateTitle( title )
+			{
+				$("#ttl").html( title ? title : "" );
+			}
+			
+			function toggleTOC()
+			{
+				parent.toggleTOC( hideTOC ? "250,*" : "0,*" );
+				
+				var altText = hideTOC ? "hide sidebar" : "show sidebar";
+				$(this).attr("title",altText);
+				$("img",this).attr("alt",altText);
+				
+				hideTOC = !hideTOC;
+			}
+			
+			function undockTopic()
+			{
+				window.open( parent.ocv_content.location.href, "ocv_win", "location=1,resizable=1,menubar=1,toolbar=1,scrollbars=1,status=1" );
+			}
+			
+			function updateNavControls()
+			{
+				topicIndex = $.inArray(menubar.topicId, titlebar.topicIds);
+				
+				if (topicIndex===0)
+				{
+					prev_btn.unbind("click");
+					$("img",prev_btn).attr("src",parent.root + "img/prev_disabled.gif");
+					prevState = false;
+				}
+				else if( !prevState && topicIndex>0 )
+				{
+					prev_btn.bind("click",function(){goToTopic(-1);});
+					$("img",prev_btn).attr("src",parent.root + "img/prev.gif");
+					prevState = true;
+				}
+				
+				if( topicIndex==titlebar.topicIds.length-1 )
+				{
+					next_btn.unbind("click");
+					$("img",next_btn).attr("src",parent.root + "img/next_disabled.gif");
+					nextState = false;
+				}
+				else if( !nextState && topicIndex<titlebar.topicIds.length-1 )
+				{
+					next_btn.bind("click",function(){goToTopic(1);});
+					$("img",next_btn).attr("src",parent.root + "img/next.gif");
+					nextState = true;
+				}
+			}
+			
+			function goToTopic( dir )
+			{
+				topicIndex = $.inArray(menubar.topicId, titlebar.topicIds) + dir;
+				
+				menubar.topicId = titlebar.topicIds[ topicIndex ];
+				menubar.updateTopic( menubar.topicId );
+				
+				updateNavControls();
+			}
+			
+			$(function(){
+				$("#toggleFrame").bind("click",toggleTOC);
+				$("#undock").bind("click",undockTopic);
+				prev_btn = $("#prev_btn");
+				next_btn = $("#next_btn");
+			});
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="topicDesc">
+			<div id="ttl">Table of Contents</div>
+			<div id="toc"><a href="content.htm" onclick="parent.ocv_menubar.showTableOfContents();" target="ocv_content">Back to Table of Contents</a></div>
+		</div>
+		<div id="toolbar">
+			<div id="fscontrols">
+				<a href="javascript://" id="toggleFrame" title="Show/hide the sidebar"><img src="img/toggleFrame.gif" class="imageButton" height="16" width="16" border="0" alt="Show/hide the sidebar" /></a>
+				<img src="img/separator.gif" class="separator" height="16" width="6" alt="" />
+				<a href="javascript://" id="undock" title="Undock - opens topic in a new window"><img src="img/undock.gif" class="imageButton" height="16" width="16" border="0" alt="Undock - opens topic in a new window" /></a>
+			</div>
+			<div id="navcontrols">
+				<img src="img/separator.gif" class="separator" height="16" width="6" alt="" />
+				<a href="javascript://" id="prev_btn" title="Go to previous topic"><img src="img/prev_disabled.gif" class="imageButton" height="16" width="16" border="0" alt="Go to previous topic" /></a>
+				<img src="img/separator.gif" class="separator" height="16" width="6" alt="" />
+				<a href="javascript://" id="next_btn" title="Go to next topic"><img src="img/next_disabled.gif" class="imageButton" height="16" width="16" border="0" alt="Go to next topic" /></a>
+			</div>
+		</div>
+	</body>
+</html>
