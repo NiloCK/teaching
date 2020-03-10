@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Introduction</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/simple.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<script>
+		if (window.location.href.indexOf('file') === 0) {
+			count = 0;
+
+			console.log('Setting a reload...');
+			setInterval(function () {
+				console.log(`refresh in ${10 - ++count}...`);
+				
+				if (count === 10) {
+					// window.location.reload();
+				}
+			}, 1000);
+		} else {
+			console.log('No reload necessary');
+		}
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<h1>Who is this guy?</h1>
+					<h3 class="fragment">Mr. Kennedy</h3>
+				</section>
+				<section data-background-image='./img/homeTown.jpg'></section>
+				<section>
+					<h4>4th year in Yellowknife</h4>
+					<h4 class="fragment">Wife teaches at JH Sissons</h4>
+					<h4 class="fragment">Subbed</h4>
+					<h4 class="fragment">Worked as an EA</h4>
+				</section>
+				<section data-background-image='./img/daughter.jpg'></section>
+				<section data-background-image='./img/dog.jpg'></section>
+				<section data-background-image='./img/team.jpg'></section>
+				<section>
+					<h3>My background:</h3>
+					<ul>
+						<li class='fragment'>Math</li>
+						<li class='fragment'>Computer Science</li>
+						<li class="fragment">Education</li>
+					</ul>
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h2>What are we doing here?</h2>
+				</section>
+				<section>
+					<h2>Learning Strategies</h2>
+					<ul>
+						<li class='fragment'>Three credit course</li>
+						<li class='fragment'>Pass / Fail</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Expectations for a passing grade:</h2>
+					<ul>
+						<li class="fragment">Show up!</li>
+						<li class="fragment">Participate in discussions</li>
+						<li class="fragment"><em>Try</em> the tools, strategies, and ideas we learn about</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tools:</h2>
+					<ul>
+						<li class='fragment'>G-Suite: Calendar, Classroom, Tasks</li>
+						<li class='fragment'>Powerschool</li>
+						<li class='fragment'>Speech-to-text, Text-to-speech</li>
+						<li class='fragment'>email!</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Ideas:</h2>
+					<ul>
+						<li class='fragment'>Learning and Forgetting</li>
+						<li class='fragment'>Human Skill Development</li>
+						<li class='fragment'>Effective Practice</li>
+						<li class='fragment'>Using Feedback</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Strategies for...</h2>
+					<ul>
+						<li class="fragment">Procrastination</li>
+						<li class="fragment">Self-advocacy</li>
+						<li class="fragment">Building habits</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			navigationMode: 'linear',
+			hash: true,
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/highlight/highlight.js' },
+				{ src: 'plugin/notes/notes.js', async: true }
+			],
+		});
+	</script>
+</body>
+
+</html>
