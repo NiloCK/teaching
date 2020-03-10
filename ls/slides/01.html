@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/simple.css"> 
+	<link rel="stylesheet" href="css/theme/simple.css">
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/monokai.css">
@@ -23,13 +23,14 @@
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
 	<script>
+
 		if (window.location.href.indexOf('file') === 0) {
 			count = 0;
 
 			console.log('Setting a reload...');
 			setInterval(function () {
 				console.log(`refresh in ${10 - ++count}...`);
-				
+
 				if (count === 10) {
 					// window.location.reload();
 				}
@@ -37,12 +38,18 @@
 		} else {
 			console.log('No reload necessary');
 		}
+
+
 	</script>
 </head>
 
 <body>
 	<div class="reveal">
 		<div class="slides">
+			<section>
+				<h1>Welcome!</h1>
+				<h3 id='currentDate'></h3>
+			</section>
 			<section>
 				<section>
 					<h1>Who is this guy?</h1>
@@ -133,6 +140,30 @@
 				{ src: 'plugin/notes/notes.js', async: true }
 			],
 		});
+
+		
+		let months = [
+			'January',
+			'February',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'August',
+			'September',
+			'October',
+			'November',
+			'December'
+		]
+
+		let d = new Date();
+		let s = '';
+		s += months[d.getMonth()];
+		s += ` ${d.getDate()}`;
+
+		document.getElementById('currentDate').innerText = s;
+		console.log(`Current date: ${s}`);
 	</script>
 </body>
 
