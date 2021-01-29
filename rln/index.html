@@ -41,4 +41,27 @@
       }, 1000);
 
     }
-    attachTS();</script><title>Range Lake North Programming Club</title><link href="/rln/static/css/main.1f9e7078.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/rln/static/js/main.c8039d98.js"></script></body></html>
+    attachTS();</script><title>Range Lake North Programming Club</title><link href="/rln/static/css/main.1f9e7078.css" rel="stylesheet">
+    </head>
+    <body><noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+    <script type="text/javascript" src="/rln/static/js/main.c8039d98.js"></script>
+    <script>
+        setInterval( () => {
+            let btns = document.getElementsByTagName('button');
+            for( let i=0; i< btns.length; i++) {
+              if (btns[i].innerText.indexOf('Log In') !== -1
+                 ||
+                  btns[i].innerText.indexOf('Browse our code') !== -1
+                 ) {
+                btns[i].classList.add('disabled');
+                btns[i].title = 'Database Currently Disabled - Long live the RLN Programming Club!'
+              }
+
+            }
+            document.getElementById('fileBrowser').classList.add('disabled');
+        }, 250);
+    </script>
+    </body>
+
+</html>
