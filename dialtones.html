@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="phone" tabindex="0">
+      <div class="row">
+        <button class="spacer"></button>
+        <button class="label c1">c1</button>
+        <button class="label c2">c2</button>
+        <button class="label c3">c3</button>
+      </div>
+      <div class="row">
+        <button class="label r1">r1</button>
+        <button id="b1" class="r1 c1">1</button>
+        <button id="b2" class="r1 c2">2</button>
+        <button id="b3" class="r1 c3">3</button>
+      </div>
+      <div class="row">
+        <button class="label r2">r2</button>
+        <button id="b4" class="r2 c1">4</button>
+        <button id="b5" class="r2 c2">5</button>
+        <button id="b6" class="r2 c3">6</button>
+      </div>
+      <div class="row">
+        <button class="label r3">r3</button>
+        <button id="b7" class="r3 c1">7</button>
+        <button id="b8" class="r3 c2">8</button>
+        <button id="b9" class="r3 c3">9</button>
+      </div>
+      <div class="row">
+        <button class="label r4">r4</button>
+        <button id="bstar" class="r4 c1">*</button>
+        <button id="b0" class="r4 c2">0</button>
+        <button id="bpound" class="r4 c3">#</button>
+      </div>
+    </div>
+    <style>
+      body {
+        background-color: rgb(1, 36, 46);
+      }
+      button {
+        width: 100px;
+        height: 100px;
+        border-radius: 20%;
+        background-color: #2dd0d0;
+        box-shadow: 3px 5px #000;
+        border: 3px solid #000000;
+        font-size: 2em;
+        font-weight: bold;
+        color: #000;
+        margin: 8px;
+        transition: 0.06s;
+      }
+      button.spacer {
+        color:rgba(0, 0, 0, 0);
+        background-color:rgba(0, 0, 0, 0);
+        border: 0px;
+        box-shadow: 0px 0px #000;
+      }
+      .label {
+        font-size: 2em;
+        width: 100px;
+        height: 100px;
+        color: #000000;
+        background-color: #bef2f2
+      }
+      button:active,
+      button[active] {
+        box-shadow: 0px 0px #000;
+        transition: 0.08s;
+        transform: translateY(5px) translateX(3px);
+      }
+    </style>
+  </body>
+</html>
+
+<script>
+  // real-life pitches
+  let realPitches = {
+    r1: 697,
+    r2: 770,
+    r3: 852,
+    r4: 941,
+    c1: 1209,
+    c2: 1336,
+    c3: 1477,
+  };
+
+  let chromatic = {
+    b0: 2 * 261.63, // "c"
+    b1: 2 * 277.18, // "c#"
+    b2: 2 * 293.66, // "d"
+    b3: 2 * 311.13, // "d#"
+    b4: 2 * 329.63, // "e"
+    b5: 2 * 349.23, // "f"
+    b6: 2 * 369.99, // "f#"
+    b7: 2 * 392.0, // "g"
+    b8: 2 * 415.3, // "g#"
+    b9: 2 * 440.0, // "a"
+    bstar: 2 * 466.16, // "a#"
+    bpound: 2 * 493.88, // "b"
+  };
+
+  let harmonized = {
+    r1: 0.75 * 2 * 261.63, // "c"
+    r2: 0.75 * 2 * 277.18, // "c#"
+    r3: 0.75 * 2 * 293.66, // "d"
+    r4: 0.75 * 2 * 311.13, // "d#"
+    c1: 0.75 * 2 * 329.63, // e
+    c2: 0.75 * 2 * 392.0, // g
+    c3: 0.75 * 2 * 493.88, // b
+
+  }
+
+  let oscillators = {};
+
+  // for (let key in realPitches) {
+  //     wireButtonsToPitch([`.${key}`], realPitches[key]);
+  // }
+//   for (let key in chromatic) {
+//     wireButtonsToPitch([`#${key}`], chromatic[key]);
+//   }
+    for (let key in harmonized) {
+        wireButtonsToPitch([`.${key}`], harmonized[key]);
+    }
+
+  /**
+   *
+   * @param {string[]} classnames
+   * @param {number} pitch
+   */
+  function wireButtonsToPitch(classnames, pitch) {
+    console.log(`Wiring ${classnames} to osc: ${pitch}`);
+
+    const onEvents = ["mousedown", "touchstart"];
+    const offEvents = ["mouseup", "mouseleave", "touchend", "touchcancel"];
+
+    classnames.forEach((cn) => {
+      document.querySelectorAll(cn).forEach((b) => {
+        console.log(`Wiring ${b.id} to osc: ${pitch}`);
+
+        if (/b[0-9|pound|star]/.test(b.id)) {
+          const key = b.id.substring(1);
+
+          document.addEventListener("keydown", (e) => {
+            // console.log(e)
+            if (
+              e.key === "Numpad" + key ||
+              e.key === "Digit" + key ||
+              e.key === key ||
+              (e.key == "*" && key == "star") ||
+              (e.key == "#" && key == "pound")
+            ) {
+              b.setAttribute("active", true);
+              if (!oscillators[pitch]) {
+                oscillators[pitch] = getOscillator(pitch);
+              }
+              oscillators[pitch].start();
+            }
+          });
+          document.addEventListener("keyup", (e) => {
+            if (
+              e.key === "Numpad" + key ||
+              e.key === "Digit" + key ||
+              e.key === key ||
+              (e.key == "*" && key == "star") ||
+              (e.key == "#" && key == "pound")
+            ) {
+              // oscillator.stop();
+              b.removeAttribute("active");
+              if (oscillators[pitch]) {
+                oscillators[pitch].stop();
+                oscillators[pitch] = null;
+              }
+            }
+          });
+        }
+
+        onEvents.forEach((e) => {
+          b.addEventListener(e, () => {
+            oscillators[pitch] = getOscillator(pitch);
+            oscillators[pitch].start();
+          });
+        });
+        offEvents.forEach((e) => {
+          b.addEventListener(e, () => {
+            if (oscillators[pitch]) {
+              oscillators[pitch].stop();
+              oscillators[pitch] = null;
+            }
+          });
+        });
+      });
+    });
+  }
+
+  function getOscillator(freq) {
+    const context = new AudioContext();
+    const oscillator = context.createOscillator();
+    oscillator.type = "sine";
+    oscillator.frequency.value = freq;
+    oscillator.connect(context.destination);
+    return oscillator;
+  }
+
+  function closetToCenter(a, b) {
+    var aRect = a.getBoundingClientRect();
+    var bRect = b.getBoundingClientRect();
+    var aCenter = aRect.top + aRect.height / 2;
+    var bCenter = bRect.top + bRect.height / 2;
+    var viewHeight = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight
+    );
+    var aDistance = Math.abs(aCenter - viewHeight / 2);
+    var bDistance = Math.abs(bCenter - viewHeight / 2);
+    return aDistance < bDistance ? a : b;
+  }
+
+  function componentIsCurrentlyVisible(component) {
+    var rect = component.getBoundingClientRect();
+    var viewHeight = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight
+    );
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  }
+</script>
