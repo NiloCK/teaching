@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="phone" tabindex="0">
+      <div class="row label">
+        <button class="spacer"></button>
+        <button class="label c1">c1</button>
+        <button class="label c2">c2</button>
+        <button class="label c3">c3</button>
+      </div>
+      <div class="row">
+        <button class="label r1">r1</button>
+        <button id="b1" class="r1 c1">1</button>
+        <button id="b2" class="r1 c2">2</button>
+        <button id="b3" class="r1 c3">3</button>
+      </div>
+      <div class="row">
+        <button class="label r2">r2</button>
+        <button id="b4" class="r2 c1">4</button>
+        <button id="b5" class="r2 c2">5</button>
+        <button id="b6" class="r2 c3">6</button>
+      </div>
+      <div class="row">
+        <button class="label r3">r3</button>
+        <button id="b7" class="r3 c1">7</button>
+        <button id="b8" class="r3 c2">8</button>
+        <button id="b9" class="r3 c3">9</button>
+      </div>
+      <div class="row">
+        <button class="label r4">r4</button>
+        <button id="bstar" class="r4 c1">*</button>
+        <button id="b0" class="r4 c2">0</button>
+        <button id="bpound" class="r4 c3">#</button>
+      </div>
+    </div>
+    <div id="editor">
+    </div>
+    <style>
+      /* dark mode: */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: rgb(1, 36, 46);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        body {
+          background-color: rgb(255, 255, 255);
+        }
+      }
+
+      #phone {
+        /* width: 100%; */
+        /* height: 100%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height: 100%;
+      }
+      .row {
+        max-height: 20%;
+      }
+
+      button {
+        height: 90px;
+        width: 80px;
+        max-height: 10%;
+        border-radius: 20%;
+        background-color: #2dd0d0;
+        box-shadow: 3px 5px #000;
+        border: 3px solid #000000;
+        font-size: 2em;
+        font-weight: bold;
+        color: #000;
+        margin: 8px;
+        transition: 0.06s;
+      }
+      button.spacer {
+        color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        border: 0px;
+        box-shadow: 0px 0px #000;
+      }
+      @keyframes ring {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.012);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      button.label {
+        font-size: 2em;
+        width: 80px;
+        height: 90px;
+        color: #000000;
+        background-color: #bef2f2;
+      }
+      button.label.ringing {
+        animation: ring 0.25s infinite;
+        background-color: rgba(255, 149, 170, 0.528);
+        transition: all 0.1s;
+      }
+      button:active,
+      button[active] {
+        box-shadow: 0px 0px #000;
+        transition: 0.08s;
+        transform: translateY(5px) translateX(3px);
+      }
+      button.label.ringing[active] {
+        box-shadow: 0px 0px #000;
+        transform: translateY(5px) translateX(3px);
+        background-color: rgba(255, 149, 170, 0.528);
+        transition: all 0.1s;
+      }
+    </style>
+  </body>
+</html>
+
+<script>
+  const rx = /[bcr]([0-9]|pound|star)/
+  function parseURLQueryParamTones() {
+    let ret = {
+      tones: {},
+    };
+    let urlParams = new URLSearchParams(window.location.search);
+    for (k of urlParams.keys() )
+    {
+      console.log(k)
+      if (rx.test(k)) {
+        ret.tones[k] = parseFloat( urlParams.get(k) );
+      } else {
+        if (urlParams.get(k) === "false") { ret[k] = false; }
+        else if (urlParams.get(k) === "true") { ret[k] = true; }
+        else { ret[k] = urlParams.get(k); }
+      }
+    }
+    
+    return ret;
+  }
+
+  function toParams(obj) {
+    let ret = "?";
+    for (k of Object.keys(obj)) {
+      ret += `${k}=${obj[k]}&`;
+    }
+    return ret;
+  }
+  
+  const params = parseURLQueryParamTones();
+  
+  console.log(params)
+  
+  const withLabels = params.labels; // should be from params?
+
+  if (!withLabels) {
+    document.querySelectorAll(`.label`).forEach((e) => {
+      e.style.display = "none";
+    });
+  }
+
+  // real-life pitches
+  const realPitches = {
+    r1: 697,
+    r2: 770,
+    r3: 852,
+    r4: 941,
+    c1: 1209,
+    c2: 1336,
+    c3: 1477,
+  };
+
+  const chromatic = {
+    b0: 2 * 261.63, // "c"
+    b1: 2 * 277.18, // "c#"
+    b2: 2 * 293.66, // "d"
+    b3: 2 * 311.13, // "d#"
+    b4: 2 * 329.63, // "e"
+    b5: 2 * 349.23, // "f"
+    b6: 2 * 369.99, // "f#"
+    b7: 2 * 392.0, // "g"
+    b8: 2 * 415.3, // "g#"
+    b9: 2 * 440.0, // "a"
+    bstar: 2 * 466.16, // "a#"
+    bpound: 2 * 493.88, // "b"
+  };
+
+  const harmonized = {
+    r1: 0.75 * 2 * 261.63, // "c"
+    r2: 0.75 * 2 * 277.18, // "c#"
+    r3: 0.75 * 2 * 293.66, // "d"
+    r4: 0.75 * 2 * 311.13, // "d#"
+    c1: 0.75 * 2 * 329.63, // e
+    c2: 0.75 * 2 * 392.0, // g
+    c3: 0.75 * 2 * 493.88, // b
+  };
+
+  let oscillators = {};
+  let scale = params.scale === 'real' ? realPitches :
+              params.scale === 'chromatic' ? chromatic :
+              params.scale === 'harmonized' ? harmonized : realPitches // default
+  // override with specified tones
+  scale = Object.assign(scale, params.tones)
+
+  function wireScale() {
+
+    for (let key in scale) {
+      wireButtonsToPitch([`.${key}`], scale[key]);
+      wireButtonsToPitch([`#${key}`], scale[key]);
+    }
+  }
+
+  wireScale();
+  console.log(`Link is: ${window.location.href + toParams(scale)}`);
+
+  /**
+   *
+   * @param {string[]} classnames
+   * @param {number} pitch
+   */
+  function wireButtonsToPitch(classnames, pitch) {
+    console.log(`Wiring ${classnames} to osc: ${pitch}`);
+
+    const onEvents = ["mousedown", "touchstart"];
+    const offEvents = ["mouseup", "mouseleave", "touchend", "touchcancel"];
+
+    classnames.forEach((cn) => {
+      document.querySelectorAll(cn).forEach((b) => {
+        // console.log(`Wiring ${b.id} to osc: ${pitch}`);
+
+        if (rx.test(b.id)) {
+          const key = b.id.substring(1);
+
+          document.addEventListener("keydown", (e) => {
+            // console.log(e)
+            if (
+              e.key === "Numpad" + key ||
+              e.key === "Digit" + key ||
+              e.key === key ||
+              (e.key == "*" && key == "star") ||
+              (e.key == "#" && key == "pound")
+            ) {
+              b.setAttribute("active", true);
+              if (cn.startsWith(".")) {
+                document.querySelector(`${cn}.label`).classList.add("ringing");
+              }
+              if (!oscillators[cn]) {
+                oscillators[cn] = getOscillator(pitch);
+              }
+              oscillators[cn].start();
+            }
+          });
+          document.addEventListener("keyup", (e) => {
+            if (
+              e.key === "Numpad" + key ||
+              e.key === "Digit" + key ||
+              e.key === key ||
+              (e.key == "*" && key == "star") ||
+              (e.key == "#" && key == "pound")
+            ) {
+              // oscillator.stop();
+              b.removeAttribute("active");
+
+              if (cn.startsWith(".")) {
+                document
+                  .querySelector(`${cn}.label`)
+                  .classList.remove("ringing");
+              }
+
+              if (oscillators[cn]) {
+                oscillators[cn].stop();
+                oscillators[cn] = null;
+              }
+            }
+          });
+        }
+
+        onEvents.forEach((e) => {
+          b.addEventListener(e, () => {
+            oscillators[cn] = getOscillator(pitch);
+            oscillators[cn].start();
+            if (cn.startsWith(".")) {
+              document.querySelector(`${cn}.label`).classList.add("ringing");
+            }
+          });
+
+        });
+        offEvents.forEach((e) => {
+          b.addEventListener(e, () => {
+            if (oscillators[cn]) {
+              oscillators[cn].stop();
+              oscillators[cn] = null;
+            }
+            if (cn.startsWith(".")) {
+              document
+                .querySelector(`${cn}.label`)
+                .classList.remove("ringing");
+            }
+          });
+        });
+      });
+    });
+  }
+
+  const context = new AudioContext(); // is this better than ctx per oscillator?
+
+  function getOscillator(freq) {
+    // const context = new AudioContext();
+    const oscillator = context.createOscillator();
+    oscillator.type = "sine";
+    oscillator.frequency.value = freq;
+    oscillator.connect(context.destination);
+    return oscillator;
+  }
+</script>
